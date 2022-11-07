@@ -10,7 +10,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x]
         
     steps:
     - uses: actions/checkout@v3
@@ -34,7 +34,7 @@ jobs:
     
     # Run Tailwind CLI tool to scan your template files for classes and build your CSS
     - name: Build CSS
-      run: npx tailwindcss -i ./Styles/app.css -o ./wwwroot/app.css --watch
+      run: npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --watch
     # https://tailwindcss.com/docs/installation
       
     # publishes Blazor project to the release-folder
