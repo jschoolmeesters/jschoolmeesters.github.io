@@ -19,16 +19,19 @@ jobs:
         
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish BlazorPortfolio.csproj -c Release --output ./Release
+      run: dotnet publish BlazorPortfolio.csproj -c Release --output ./release
+      
+    - name: copy publish output to a folder
+      run: cp /home/runner/work/BlazorPortfolio/BlazorPortfolio/release release
       
     # changes the base-tag in index.html from '/' to 'BlazorPortfolio' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to BlazorPortfolio
-      run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorPortfolio\/" \/>/g' wwwroot/index.html
+    #- name: Change base-tag in index.html from / to BlazorPortfolio
+    #  run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorPortfolio\/" \/>/g' wwwroot/index.html
       
     # copy index.html to 404.html to serve the same file when a file is not found
-    - name: copy index.html to 404.html
-      run: cp wwwroot/index.html wwwroot/404.html
+    #- name: copy index.html to 404.html
+    #  run: cp wwwroot/index.html wwwroot/404.html
       
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
-    - name: Add .nojekyll file
-      run: touch wwwroot/.nojekyll
+    #- name: Add .nojekyll file
+    #  run: touch wwwroot/.nojekyll
