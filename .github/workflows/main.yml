@@ -8,6 +8,13 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
+    - name: Wait for tests to succeed
+      uses: lewagon/wait-on-check-action@v1.2.0
+      with:
+        ref: ${{ github.ref }}
+        check-name: 'Node.js CI'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        wait-interval: 10
     # uses GitHub's checkout action to checkout code from the master branch
     - uses: actions/checkout@v3    
     
