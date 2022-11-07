@@ -16,11 +16,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '3.1.x'
-        
-    #npm install -D tailwindcss
-    #npx tailwindcss init
-    #npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
-    #https://tailwindcss.com/docs/installation
+    
+    # Run Tailwind CLI tool to scan your template files for classes and build your CSS
+    # npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+    # https://tailwindcss.com/docs/installation
         
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
