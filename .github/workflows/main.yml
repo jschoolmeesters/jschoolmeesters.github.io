@@ -22,7 +22,7 @@ jobs:
       run: dotnet publish BlazorPortfolio.csproj -c Release --output ./release
       
     - name: copy publish output to a folder
-      run: cp /home/runner/work/BlazorPortfolio/BlazorPortfolio/release release -r
+      run: cp /home/runner/work/BlazorPortfolio/BlazorPortfolio/release ../../../../../../release -r
       
     # changes the base-tag in index.html from '/' to 'BlazorPortfolio' to match GitHub Pages repository subdirectory
     #- name: Change base-tag in index.html from / to BlazorPortfolio
