@@ -23,6 +23,9 @@ jobs:
     # uses GitHub's checkout action to checkout code from the master branch
     - uses: actions/checkout@v3    
     
+    - name: Initialize npm
+      run: npm init
+    
     - name: Setup Flowbite for Tailwind components
       run: npm i flowbite
     
