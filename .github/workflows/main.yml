@@ -23,20 +23,20 @@ jobs:
     # uses GitHub's checkout action to checkout code from the master branch
     - uses: actions/checkout@v3    
     
-    - name: Initialize npm
-      run: npm init flowbite
-    
-    - name: Setup Flowbite for Tailwind components
-      run: npm i flowbite
-    
     # sets up .NET Core SDK 3.1
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '3.1.x'
+        
+    - name: Initialize npm
+      run: npm init tailwindcss
 
     - name: Install Tailwind CSS
       run: npm install -D tailwindcss
+      
+    - name: Setup Flowbite for Tailwind components
+      run: npm i flowbite
     
     # Run Tailwind CLI tool to scan your template files for classes and build your CSS
     - name: Build CSS
