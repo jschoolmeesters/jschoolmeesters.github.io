@@ -34,7 +34,7 @@ jobs:
     
     # Run Tailwind CLI tool to scan your template files for classes and build your CSS
     - name: Build CSS
-      run: npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --watch
+      run: npx tailwindcss -o ./wwwroot/css/tailwind.css
     # https://tailwindcss.com/docs/installation
       
     # publishes Blazor project to the release-folder
