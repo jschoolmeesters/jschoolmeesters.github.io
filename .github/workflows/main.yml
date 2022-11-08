@@ -37,13 +37,13 @@ jobs:
       
     - name: Initialize Tailwind CSS
       run: npx tailwindcss init
+      
+    - name: Setup Flowbite for Tailwind components
+      run: npm i flowbite
     
     # Run Tailwind CLI tool to scan your template files for classes and build your CSS
     - name: Build CSS
       run: npx tailwindcss -o ./wwwroot/css/tailwind.css
-
-    - name: Setup Flowbite for Tailwind components
-      run: npm i flowbite
       
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
