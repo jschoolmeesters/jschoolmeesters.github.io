@@ -38,8 +38,8 @@ jobs:
     - name: Initialize Tailwind CSS
       run: npx tailwindcss init
       
-    - name: Setup Flowbite for Tailwind components
-      run: npm i flowbite
+    #- name: Setup Flowbite for Tailwind components
+    #  run: npm i flowbite
     
     # Run Tailwind CLI tool to scan your template files for classes and build your CSS
     - name: Build CSS
