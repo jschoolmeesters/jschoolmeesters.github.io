@@ -1,11 +1,53 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <NavMenu/>
+<NavMenu/>
 
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+<main class="shrink w-full max-w-6xl mx-auto p-3">
+    <div class="fixed w-full max-w-6xl">
+            <div class="sm:hidden flex flex-row bg-gray-200 w-full py-4 px-10">
+               <ul>
+                  <li class="inline p-1.5 m-2 font-base bg-gray-300 p-2.5 rounded dm:bg-gray-200">
+                  Development 
+                  <i class="inline" data-feather="chevron-down"></i>
+               </li>
+               <li class="inline p-1.5 m-2 font-base bg-gray-300 p-2.5 rounded dm:bg-gray-200">
+                  Sound
+                  <i class="inline" data-feather="chevron-down"></i>
+               </li>
+               </ul>
+            </div>
+            <div class="flex flex-col sm:flex-row bg-gray-100 w-full py-6 px-10">
+               <div class="basis-1/2">
+                  <span class="">
+                     <i class="inline w-5" data-feather="music"></i>
+                     <span class="inline ml-0.5 font-semibold text-sm tracking-wider bg-gradient-to-r from-fuchsia-500 rounded to-pink-500 p-1 text-gray-50 mb-3">CREATIVE</span>
+                  </span>
+                  <div class="mr-4 mt-2 bg-gray-100 font-light tracking-wide">
+                     <ul>
+                        <li class="cursor-pointer text-gray-500 hover:text-gray-700 p-3 sm:bg-gray-100 first:mt-3 sm:mb-0 hover:bg-gray-200">
+                           <span class="text-gray-700">Sync work</span>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur ante quis pretium tincidunt.</p>
+                        </li>
+                        <li class="cursor-pointer text-gray-500 hover:text-gray-700 p-3 sm:bg-gray-100 last:mb-3 hover:bg-gray-200 border-t-2">
+                           <span class="text-gray-700">Ghost production</span>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur ante quis pretium tincidunt.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="basis-1/2">
+                  <i class="inline w-5" data-feather="sliders"></i>
+                  <div class="inline ml-0.5 font-semibold text-sm tracking-wider rounded bg-gradient-to-r from-cyan-500 to-blue-500 p-1 text-gray-50">TECHNICAL</div>
+                  <div class="mt-2 bg-gray-100 font-light tracking-wide">
+                     <ul>
+                        <li class="cursor-pointer text-gray-500 hover:text-gray-700 p-3 sm:bg-gray-100 mb-3 hover:bg-gray-200">
+                           <span class="text-base text-gray-700">Mixing and mastering</span>
+                           <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur ante quis pretium tincidunt.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+        </div>
+    @Body
+</main>
