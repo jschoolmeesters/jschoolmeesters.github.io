@@ -1,7 +1,7 @@
 {
   "entryAssembly": "BlazorPortfolio",
   "resources": {
-    "hash": "sha256-9emW49SxeYjZXegrAlScjoXt1zDDSlQt4AAd1Px88jQ=",
+    "hash": "sha256-7B+LQqbKv+0zvlqpjTRwrbK8rp6zY4Ifa/9Nc6psapw=",
     "runtime": {
       "dotnet.6.0.29.2xjs4qx1tr.js": "sha256-BV1wi9qAMCmpfZ+aXPplngN3cFgig0bFqWhNad3R5Lo=",
       "dotnet.timezones.blat": "sha256-csJ9EjcYXaAQrYK1S5WLY51YBLmp7zcST7wH0IDbvgg=",
@@ -11,7 +11,7 @@
       "icudt_no_CJK.dat": "sha256-OxylFgLJlFqixsj+nLxYVsv5iZLvfIKMpLf9hrWaChA="
     },
     "assembly": {
-      "BlazorPortfolio.dll": "sha256-IMwb+BO4sK8sfznSM86sdnPhDR8B3nCM1pao/NRDDt4=",
+      "BlazorPortfolio.dll": "sha256-zvhQIGyXypsQKwoiJjWT+M97BsvnKF6cXWphA1U4r7A=",
       "Microsoft.AspNetCore.Components.dll": "sha256-2ddsWJHbZJHCCKG+lkqlxCaFW3n2OvpuF09XjQCbO78=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-leme8psWXpIpzo+NFbxPEwOCbt/u2UAXnzR7QzDK4+E=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-NkQ03Ms/B4VDUT38N0P+rG6tCMIvkSHsK4ZfEDTe7NE=",
