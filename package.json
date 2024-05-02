@@ -1,5 +1,9 @@
 {
   "devDependencies": {
-    "tailwindcss": "^3.2.2"
-  }
+    "daisyui": "^4.10.4",
+    "postcss-import": "^16.1.0"
+  },
+    "scripts": {
+        "build": "npx tailwindcss -o ./wwwroot/css/tailwind.css"
+    }
 }
