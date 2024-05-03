@@ -1,9 +1,11 @@
 ﻿@* This captures everything after /post/ instead of just one string *@
 @page "/post/{*slug}" 
 
-@using Markdig
+@using Markdig;
 @using System.Net.Http;
 @using System.Net.Http.Json;
+@using Markdig.Syntax;
+@using System.IO
 
 <PageTitle>Post</PageTitle>
 
@@ -29,8 +31,10 @@
             var uri = Path.Combine("posts", fileName + ".md");
             Console.WriteLine(uri);
             var markdownContent = await HttpClient.GetStringAsync(uri);
-            string htmlContent = Markdown.ToHtml(markdownContent);
-            HtmlContent = new MarkupString(htmlContent);
+            
+            // string htmlContent = Markdown.ToHtml(markdownContent);
+            // var doc = Markdown.Parse(markdownContent);
+            // HtmlContent = new MarkupString(htmlContent);
             // TODO: switch to stream reader instead of string reader for better performance
         }
         
