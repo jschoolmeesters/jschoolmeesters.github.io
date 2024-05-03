@@ -1,0 +1,39 @@
+﻿@* This captures everything after /post/ instead of just one string *@
+@page "/post/{*slug}" 
+
+@using Markdig
+@using System.Net.Http;
+@using System.Net.Http.Json;
+
+<PageTitle>Post</PageTitle>
+
+@HtmlContent
+
+@code {
+    // TODO: find out why httpclient gives nullable warning
+    [Inject]
+    private HttpClient HttpClient { get; set; }
+
+    [Parameter]
+    public string? Slug { get; set; }
+    public MarkupString HtmlContent { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(Slug))
+        {
+            var trimmedSlug = Slug.TrimEnd('/');
+            trimmedSlug = trimmedSlug.Contains('/') ? trimmedSlug.Substring(trimmedSlug.LastIndexOf(@"/")) : trimmedSlug;
+            var fileName = trimmedSlug.Length > 1 && trimmedSlug[0] == '/' ? trimmedSlug.Substring(1) : trimmedSlug;
+            Console.WriteLine(fileName);
+            var uri = Path.Combine("posts", fileName + ".md");
+            Console.WriteLine(uri);
+            var markdownContent = await HttpClient.GetStringAsync(uri);
+            string htmlContent = Markdown.ToHtml(markdownContent);
+            HtmlContent = new MarkupString(htmlContent);
+            // TODO: switch to stream reader instead of string reader for better performance
+        }
+        
+        base.OnInitialized();
+    }
+}

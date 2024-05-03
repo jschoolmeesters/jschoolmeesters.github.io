@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject NavigationManager NavigationManager
 <PageTitle>Jordy Schoolmeesters</PageTitle>
 
 
@@ -20,7 +21,7 @@ Github</button>
    <!--<h1 class="test text-[14.8vw] mt-12 text-[hsla(26,28%,95%,.7)]">Hi, I'm Jordy.</h1>-->
    </div>
 </div>
-
+<a @onclick="@( () => NavigationManager.NavigateTo("post/03-05-2024/my-first-blog-post", true) )">click me</a>
 <div class="w-full text-[#2d312a] bg-[#f6f2ef] p-4 open-sans-400 select-none">
    <span><h2 class="uppercase inline">blog</h2><i class="iconoir-rss-feed-tag text-xl float-right"></i></span>
 
