@@ -19,6 +19,9 @@ namespace BlazorPortfolio.Models {
         
         [YamlMember(Alias = "redirect_from")]
         public string[] RedirectFrom { get; set; }
+
+        [YamlMember(Alias = "date")]
+        public string Date { get; set; }
         
         [YamlIgnore]
         public IList<string> GetTags => Tags?
