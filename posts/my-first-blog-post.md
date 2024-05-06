@@ -6,6 +6,7 @@ image: /assets/images/posts/misc/parse-frontmatter.jpg
 image_credit_name: Ben Sweet
 image_credit_url: https://unsplash.com/@benjaminsweet
 image_alt: Man standing in dark room blue light
+date: "05/05/2024"
 ---
 # My First Blog Post
 
