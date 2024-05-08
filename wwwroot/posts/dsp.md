@@ -1,11 +1,7 @@
 ---
 layout: post
-title: "Parse Markdown Front Matter With C#"
-tags: dotnet
-image: /assets/images/posts/misc/parse-frontmatter.jpg
-image_credit_name: Ben Sweet
-image_credit_url: https://unsplash.com/@benjaminsweet
-image_alt: Man standing in dark room blue light
+title: "DSP adventures part 1: Discrete sequences and systems"
+tags: DSP, tutorial
 date: "05/05/2024"
 ---
 # My First Blog Post

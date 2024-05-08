@@ -9,11 +9,17 @@
 @using MarkdownHelper = BlazorPortfolio.Helpers.MarkdownHelper
 @using BlazorPortfolio.Models
 
-<PageTitle>@FrontMatter.Title</PageTitle>
-<h1>@FrontMatter.Title</h1>
-<h2>@FrontMatter.Date</h2>
+<PageTitle>@Title</PageTitle>
+<h1>@Title</h1>
+<h2>@Date</h2>
+<ul>
+    @foreach (var tag in Tags)
+    {
+        <li>@tag</li>
+    }
+</ul>
 
-
+@HtmlContent
 
 @code {
     // TODO: find out why httpclient gives nullable warning
@@ -24,6 +30,9 @@
     public string? Slug { get; set; }
     public MarkupString HtmlContent { get; set; }
     public PostFrontMatter FrontMatter { get; set; }
+    public string Title { get; set; } = "";
+    public string Date { get; set; } = "";
+    public string[] Tags { get; set; } = new string[] { };
 
     protected override async Task OnInitializedAsync()
     {
@@ -36,8 +45,16 @@
             var uri = Path.Combine("posts", fileName + ".md");
             Console.WriteLine(uri);
             var markdownContent = await HttpClient.GetStringAsync(uri);
+
+            // Extract front matter
             FrontMatter = MarkdownHelper.GetFrontMatter<PostFrontMatter>(markdownContent);
-            // TODO: store frontmatter into a new model called Post
+            Title = FrontMatter.Title;
+            Date = FrontMatter.Date;
+            Tags = FrontMatter.GetTags;
+            
+            // Extract content
+            var content = MarkdownHelper.GetContent(markdownContent);
+            HtmlContent = new MarkupString(Markdown.ToHtml(content));
             
             // string htmlContent = Markdown.ToHtml(markdownContent);
             // var doc = Markdown.Parse(markdownContent);

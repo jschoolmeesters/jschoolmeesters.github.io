@@ -28,8 +28,6 @@ namespace BlazorPortfolio.Helpers {
 
             var yaml =
                 block
-                // this is not a mistake
-                // we have to call .Lines 2x
                 .Lines // StringLineGroup[]
                 .Lines // StringLine[]
                 .OrderByDescending(x => x.Line)
@@ -40,6 +38,15 @@ namespace BlazorPortfolio.Helpers {
                 .Aggregate((s, agg) => agg + s);
 
             return YamlDeserializer.Deserialize<T>(yaml);
+        }
+
+        // TODO: combine this with GetFrontMatter to prevent double parsing
+        public static string GetContent(this string markdown)
+        {
+            var document = Markdown.Parse(markdown, Pipeline);
+            var frontMatterBlock = document.FirstOrDefault() as YamlFrontMatterBlock;
+            int frontMatterEnd = frontMatterBlock != null ? frontMatterBlock.Span.End : 0;
+            return markdown.Substring(frontMatterEnd).TrimStart();
         }
     }
 }
