@@ -1282,6 +1282,20 @@ html {
   margin-inline-start: -1px;
 }
 
+.btn-ghost {
+  background-color: transparent;
+  color: hsla(26,28%,95%,.7);
+  border-width: 1px;
+  border-color: hsla(26,28%,95%,.2);
+}
+
+.btn-ghost:hover {
+  background-color: #00000050;
+  border-width: 1px;
+  border-color: hsla(26,28%,95%,.2);
+  color: hsla(26,28%,95%,.7);
+}
+
 .float-right {
   float: right;
 }
@@ -1486,6 +1500,128 @@ html {
 .saturate-150 {
   --tw-saturate: saturate(1.5);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+html {
+  background: #2a2d31;
+  font-family: open-sans-400 !important;
+}
+
+body {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tribal-img {
+  background-image: url("../media/tribal-img.svg");
+  background-size: auto 140%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1) blur(1px);
+  opacity: 50%;
+  content:"";
+}
+
+.post-preview:hover h2 {
+  text-decoration: underline;
+}
+
+.bg-animate {
+  background-size: 500%;
+  animation: animation 180s linear infinite;
+}
+
+.blur-animate {
+  background-size: 500%;
+  animation: animationfast 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+}
+
+.text-blur {
+  animation: text-blur-animation 12s linear infinite;
+  background-image: url("../media/abstract-light-blue-background-luxury-cloth(1).jpg");
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+mark {
+  overflow:hidden;
+}
+
+mark:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url("https://jschoolmeesters.github.io/BlazorPortfolio/media/abstract-light-blue-background-luxury-cloth(1).jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: 500%;
+  animation: bg-pos-animation 180s linear infinite, bg-blur-animation 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+}
+
+/* ANIMATION TIMINGS */
+
+@keyframes bg-pos-animation {
+  0%,
+    100% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes bg-blur-animation {
+  0%,
+    100% {
+    filter: blur(7px);
+  }
+
+  50% {
+    filter: blur(4px);
+  }
+}
+
+@keyframes text-blur-animation {
+  0% {
+    filter: blur(1px);
+  }
+
+  50% {
+    filter: blur(0px);
+  }
+
+  100% {
+    filter: blur(1px);
+  }
+}
+
+@keyframes wrapper-sat-animation {
+  0% {
+    filter: saturate(2);
+  }
+
+  100% {
+    filter: saturate(4);
+  }
+}
+
+/* FONTS */
+
+.open-sans-400 {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .hover\:cursor-pointer:hover {
