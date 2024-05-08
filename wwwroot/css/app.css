@@ -1,133 +1,144 @@
-﻿body {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
- }
- html {
-    background: #f6f2ef;
-    font-family: open-sans-400;
- }
- 
- h1 {
-    font-family: suisse-works-medium-italic;
- }
- h1 .regular {
-       font-family: suisse-screen-regular-italic;
- }
- 
- .under {
-    text-decoration: underline;
-    text-decoration-color: #d2691e;
-    text-decoration-thickness: 3px;
- }
- 
- .btn {
-    /*background: #2d312a !important;*/
-    @apply bg-blue-500;
-    color: #a6a999;
-    border-width: 1px;
-    border-color: hsla(26,28%,95%,.2);
- }
- 
- .btn-orange {
-    /*background: #4476a9; /* #c2601e;  Complementary: #1e80c2 */
-    background: none;
-    color: hsla(26,28%,95%,.7);
-    border-width: 1px;
-    border-color: hsla(26,28%,95%,.2);
- }
- 
- .btn-orange:hover {
-    /*background: #c1601c;#1e80c2*/
-    background: #188D9A;
-    border-width: 1px;
-    border-color: hsla(26,28%,95%,.2);
-    color: #f6f2ef;
- }
- 
- .post-preview:hover h2 {
-    text-decoration: underline;
- }
- 
- .bg-animate {
-     background-size: 400%;
- 
-     -webkit-animation: animation 6s ease infinite;
-     -moz-animation: animation 6s ease infinite;
-     animation: animation 6s ease infinite;
- }
- 
- @keyframes animation {
-     0%,
-     100% {
-         background-position: 0% 50%;
-     }
-     
-     50% {
-         background-position: 100% 50%;
-     }
- }
- 
- /* FONTS */
- 
- @font-face {
-   font-family: suisse-screen-monitor;
-   src: url(../fonts/SuisseScreen-Monitor-WebTrial.woff2);
- }
- @font-face {
-   font-family: suisse-screen-regular-italic;
-   src: url(../fonts/SuisseScreen-RegularItalic-WebTrial.woff2);
- }
- @font-face {
-   font-family: suisse-neue-regular;
-   src: url(../fonts/SuisseNeue-Regular-WebTrial.woff2);
- }
- @font-face {
-   font-family: suisse-neue-medium;
-   src: url(../fonts/SuisseNeue-Medium-WebTrial.woff2);
- }
- @font-face {
-   font-family: suisse-works-regular-italic;
-   src: url(../fonts/SuisseWorks-RegularItalic-WebTrial.woff2);
- }
- @font-face {
-   font-family: suisse-works-medium-italic;
-   src: url(../fonts/SuisseWorks-MediumItalic-WebTrial.woff2);
- }
- @font-face {
-   font-family: suisse-intl-medium;
-   src: url(../fonts/SuisseIntl-Medium-WebTrial.woff);
- }
- 
- @font-face {
-   font-family: suisse-intl-regular;
-   src: url(../fonts/SuisseIntl-Regular-WebTrial.woff);
- }
- .open-sans-400 {
-   font-family: "Open Sans", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 400;
-   font-style: normal;
-   font-variation-settings:
-     "wdth" 100;
- }
- 
- .text-tribal {
-    font-family: tribal;
- }
- 
- .ftw {
-    font-size: 22.5vw;
-    text-align: left;
- }
- 
- @media only screen and (min-width: 501px) {
-    .ftw {
-       font-size: 7rem;
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+   background: #2a2d31;
+   font-family: open-sans-400 !important;
+}
+
+body {
+   max-width: 1280px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.tribal-img {
+   background-image: url("../media/tribal-img.svg");
+   background-size: auto 140%;
+   background-repeat: no-repeat;
+   background-position: center;
+   filter: invert(1) blur(1px);
+   opacity: 50%;
+   content:"";
+}
+
+@layer components {
+    .btn-ghost {
+        @apply bg-transparent;
+        @apply text-[hsla(26,28%,95%,.7)];
+        @apply border-[1px];
+        @apply border-[hsla(26,28%,95%,.2)];
     }
- }
- 
- @font-face {
-   font-family: tribal;
-   src: url(../fonts/Tribal.ttf);
- }
+        
+    .btn-ghost:hover {
+        @apply bg-[#00000050];
+        @apply border-[1px];
+        @apply border-[hsla(26,28%,95%,.2)];
+        @apply text-[hsla(26,28%,95%,.7)];
+    }
+}
+
+.post-preview:hover h2 {
+   text-decoration: underline;
+}
+
+.bg-animate {
+    background-size: 500%;
+    -webkit-animation: animation 600s linear infinite;
+    -moz-animation: animation 600s linear infinite;
+    animation: animation 180s linear infinite;
+}
+
+.blur-animate {
+    background-size: 500%;
+    -webkit-animation: animationfast 600s linear infinite;
+    -moz-animation: animationfast 600s linear infinite;
+    animation: animationfast 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+}
+
+.text-blur {
+   -webkit-animation: text-blur-animation 12s linear infinite;
+   -moz-animation: text-blur-animation 12s linear infinite;
+   animation: text-blur-animation 12s linear infinite;
+   background-image: url("../media/abstract-light-blue-background-luxury-cloth(1).jpg");
+   width: 100%;
+   height: 100%;
+   display: inline-block;
+}
+
+mark {
+   overflow:hidden;
+}
+
+mark:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url("https://jschoolmeesters.github.io/BlazorPortfolio/media/abstract-light-blue-background-luxury-cloth(1).jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: 500%;
+  -webkit-animation: bg-pos-animation 180s linear infinite, bg-blur-animation 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+  -moz-animation: bg-pos-animation 180s linear infinite, bg-blur-animation 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+  animation: bg-pos-animation 180s linear infinite, bg-blur-animation 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+}
+
+/* ANIMATION TIMINGS */
+
+@keyframes bg-pos-animation {
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes bg-blur-animation {
+    0%,
+    100% {
+         filter: blur(7px);
+    }
+    50% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes text-blur-animation {
+    0% {
+         filter: blur(1px);
+    }
+    50% {
+         filter: blur(0px);
+    }
+    100% {
+         filter: blur(1px);
+    }
+}
+
+@keyframes wrapper-sat-animation {
+    0% {
+         filter: saturate(2);
+    }
+    100% {
+         filter: saturate(4);
+    }
+}
+
+/* FONTS */
+
+.open-sans-400 {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}

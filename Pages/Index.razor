@@ -2,26 +2,30 @@
 @inject NavigationManager NavigationManager
 <PageTitle>Jordy Schoolmeesters</PageTitle>
 
-
 <div class="wrapper max-w-[500px] mx-auto">
-<div class="w-full text-[#a6a999] bg-[#2d312a] p-4 select-none">
-   <span><h2 class="uppercase inline">home</h2><i class="iconoir-home-simple text-xl float-right"></i></span>
+<div class="w-full text-[#a6a999] bg-[#141612] p-4 select-none">
+   <div class=""><h2 class="inline-block bg-[#2d312a]">./index.html</h2><i class="iconoir-home-simple text-xl float-right bg-[#2d312a] p-0.5"></i></div>
    
    <div class="mt-4">
-      <h3 class="text-2xl open-sans-400 mb-2 text-[hsla(26,28%,95%,.7)]">I'm a computing science student and C# developer with an interest in the world of sound and DSP, which I will explore throughout my posts here.</h3>
+      <h3 class="text-xl open-sans-400 mb-2 text-[hsla(26,28%,95%,.7)]"><i>Hey!</i> I'm Jordy - a computing science student, C# developer and producer interested in the field of DSP. <a class="underline" href="">Here</a> I'll be sharing insights, tutorials and tips on all things DSP, coding and music production.</h3>
    <div class="join">
-      <button class="btn btn-orange btn-sm join-item open-sans-400"><i class="iconoir-github text-lg"></i>
+      <button class="btn btn-ghost btn-sm join-item open-sans-400"><i class="iconoir-github text-lg"></i>
 Github</button>
-      <button class="btn btn-orange btn-sm join-item open-sans-400"><i class="iconoir-linkedin text-lg"></i>LinkedIn</button>
-      <button class="btn btn-orange btn-sm join-item open-sans-400"><i class="iconoir-mail text-lg"></i>Email</button>
+      <button class="btn btn-ghost btn-sm join-item open-sans-400"><i class="iconoir-linkedin text-lg"></i>LinkedIn</button>
+      <button class="btn btn-ghost btn-sm join-item open-sans-400"><i class="iconoir-mail text-lg"></i>Email</button>
    </div>
    </div>
-   <div id="s1" class="mt-12 tooltip tooltip-top w-full" data-tip="Jordy">
-   <div class="select-none text-tribal mb-4 ftw"><mark class="bg-animate bg-gradient-to-b from-[#21686C] to-[#75E7D3] text-[#3B3B3B]">JORDY</mark></div> <!-- nieuw: #4E92DD, oud: #4476A9 , coolblauw:#21686C, vorige from #21686C to #ABEDC1, alt-blauw:from-[#188D9A] to-[#75E7D3] -->
-   <!--<h1 class="test text-[14.8vw] mt-12 text-[hsla(26,28%,95%,.7)]">Hi, I'm Jordy.</h1>-->
+   <div class="mt-8 w-full">
+      <div class="select-none text-tribal mb-4 h-[30vh] max-h-[40vw] hue-rotate-90 invert saturate-150">
+         <mark class="bg-transparent text-[#fff]">
+            <span class="mi-blend-difference text-blur inline-block py-2 opacity-50 h-full">
+               <div class="tribal-img w-full h-full"></div>
+            </span>   
+         </mark>         
+      </div>
    </div>
 </div>
-<a @onclick="@( () => NavigationManager.NavigateTo("post/03-05-2024/my-first-blog-post", true) )">click me</a>
+
 <div class="w-full text-[#2d312a] bg-[#f6f2ef] p-4 open-sans-400 select-none">
    <span><h2 class="uppercase inline">blog</h2><i class="iconoir-rss-feed-tag text-xl float-right"></i></span>
 
@@ -44,8 +48,8 @@ Github</button>
    </div>
 </div>
 
-<div class="w-full bg-[hsla(26,28%,95%,.9)] text-[#2d312a] p-4 select-none">
-   <span class="block"><h2 class="inline uppercase">footer</h2><i class="iconoir-arrow-up text-xl float-right"></i></span>
+<div class="w-full bg-[hsla(26,28%,95%,.9)] text-[#2d312a] px-4 pb-4 select-none">
+   <span class="block"><h2 class="inline-block uppercase mt-4">footer</h2><i class="iconoir-arrow-up text-xl hover:bg-[#00000010] hover:cursor-pointer float-right p-3 mt-2 rounded-lg"></i></span>
    <div class="mt-4">
       <h3 class="text-md open-sans-400 mb-2 inline ">© 2024 <span class="underline cursor-pointer">Jordy Schoolmeesters</span></h3>
       <span>-</span>
