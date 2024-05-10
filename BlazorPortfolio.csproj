@@ -14,4 +14,97 @@
     <PackageReference Include="YamlDotNet" Version="15.1.2" />
   </ItemGroup>
 
+  <UsingTask TaskName="Hello" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <Input ParameterType="System.String" Required="True" Output="False" />
+      <Output ParameterType="System.String" Output="True" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="$(NugetPackageRoot)\Markdig\0.37.0\lib\net8.0\Markdig.dll" />
+      <Code Type="Fragment" Language="cs">
+        StringBuilder jsonBuilder = new StringBuilder("[\n");
+        string[] paths = Input.Split(';');
+
+        foreach (string path in paths) {
+          var content = File.ReadAllText(path);
+
+          var start = content.IndexOf("---") + 3;
+          var newContent = content.Substring(start);
+          var end = newContent.IndexOf("---");
+
+          if (start >= 0)
+          {
+            if (end >= 0)
+            {
+              var frontMatter = content.Substring(start, end + start - 3).Trim();
+
+              jsonBuilder.Append("{");
+
+              // Split the input string by semicolons
+              string[] parts = frontMatter.Split('\n');
+
+              // Add id
+              var lastSlash = path.LastIndexOf("\\");
+          
+              var idWithExtension = path.Substring(lastSlash + 1);
+              var idWithoutExtension = idWithExtension.Remove(idWithExtension.IndexOf(".md"));
+              jsonBuilder.Append($"\"id\":\"{idWithoutExtension}\", ");
+
+              foreach (string part in parts)
+              {
+                  // Split each part by colon
+                  string[] keyValue = part.Split(':');
+                  // Ensure we have a key-value pair
+                  if (keyValue.Length == 2)
+                  {
+                    
+                      // Remove leading/trailing whitespaces and quotes
+                      string key = keyValue[0].Trim();
+                      string value = keyValue[1].Trim().Trim('"');
+
+                      // Append the key-value pair to the JSON string
+                      jsonBuilder.Append($"\"{key}\":\"{value}\", ");
+                  }
+              }
+
+              // Remove last comma
+              jsonBuilder.Length = jsonBuilder.Length - 2;
+
+              // Close the JSON object
+              jsonBuilder.Append("},\n");
+
+            }
+          }
+          else
+          {
+            Output = string.Empty;
+          }
+        }
+
+        // Remove last comma
+        jsonBuilder.Length = jsonBuilder.Length - 2;
+        jsonBuilder.Append("\n]");
+        
+        // Get the final JSON string
+        string jsonString = jsonBuilder.ToString();
+
+        // Output the JSON string
+        Output = jsonString;
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="CreatePostsJson" AfterTargets="Build">
+    <ItemGroup>
+        <FilePaths Include="wwwroot\posts\*.md" />
+    </ItemGroup>
+
+    <Message Importance="High" Text="Contents: @(FilePaths)" />
+
+    <Hello Input="@(FilePaths)">
+      <Output PropertyName="JsonContent" TaskParameter="Output" />
+    </Hello>
+
+    <WriteLinesToFile File="wwwroot\posts\posts.json" Lines="$(JsonContent)" Overwrite="true" Encoding="UTF-8"/>
+  </Target>
 </Project>
