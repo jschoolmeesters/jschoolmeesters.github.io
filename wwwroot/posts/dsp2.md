@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DSP adventures part 2"
+title: "DSP adventures part 2 - Periodic sampling"
 tags: DSP, tutorial
 date: "05/06/2024"
 ---

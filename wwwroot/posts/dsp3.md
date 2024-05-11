@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "DSP adventures part 3"
-tags: DSP, tutorial
+title: "Blazor blogging - How to get everything set up"
+tags: Blazor, tutorial
 date: "05/07/2024"
 ---
 # My First Blog Post
