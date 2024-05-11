@@ -1,18 +1,26 @@
+using System.Text.Json.Serialization;
 
 namespace BlazorPortfolio.Models {
     public class Post
     {
-        //public string FileName { get; set; }
-        public string Title { get; set; }
-        public DateOnly Date { get; set; }
-        
-        Post(PostFrontMatter fm) {
-            Title = fm.Title;
-            
-        }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-        //todo: method to get everything you need from filename
-        //like frontmatter, but not the content because thats memory heavy
-        //and should only happen in oninitiailzed in Post page
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        [JsonPropertyName("date")]
+        public string Date { get; set; }
+
+        [JsonPropertyName("tags")]
+        public string Tags { get; set; }
+
+        /*
+        Post(string id, string title, string date) {
+            Id = id;
+            Title = title;
+            Date = date;
+        }
+        */
     }
 }

@@ -14,6 +14,10 @@
     <PackageReference Include="YamlDotNet" Version="15.1.2" />
   </ItemGroup>
 
+  <Target Name="TailwindCSS" BeforeTargets="Build">
+    <Exec Command="npx tailwindcss -i wwwroot/css/app.css -o wwwroot/css/app.min.css"/>
+  </Target>
+
   <UsingTask TaskName="CreatePostsJson" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
       <Input ParameterType="System.String" Required="True" Output="False" />
@@ -97,8 +101,6 @@
     <ItemGroup>
         <FilePaths Include="wwwroot\posts\*.md" />
     </ItemGroup>
-
-    <Message Importance="High" Text="Contents: @(FilePaths)" />
 
     <CreatePostsJson Input="@(FilePaths)">
       <Output PropertyName="JsonContent" TaskParameter="Output" />
