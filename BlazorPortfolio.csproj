@@ -14,13 +14,12 @@
     <PackageReference Include="YamlDotNet" Version="15.1.2" />
   </ItemGroup>
 
-  <UsingTask TaskName="Hello" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+  <UsingTask TaskName="CreatePostsJson" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
       <Input ParameterType="System.String" Required="True" Output="False" />
       <Output ParameterType="System.String" Output="True" />
     </ParameterGroup>
     <Task>
-      <Reference Include="$(NugetPackageRoot)\Markdig\0.37.0\lib\net8.0\Markdig.dll" />
       <Code Type="Fragment" Language="cs">
         StringBuilder jsonBuilder = new StringBuilder("[\n");
         string[] paths = Input.Split(';');
@@ -101,9 +100,9 @@
 
     <Message Importance="High" Text="Contents: @(FilePaths)" />
 
-    <Hello Input="@(FilePaths)">
+    <CreatePostsJson Input="@(FilePaths)">
       <Output PropertyName="JsonContent" TaskParameter="Output" />
-    </Hello>
+    </CreatePostsJson>
 
     <WriteLinesToFile File="wwwroot\posts\posts.json" Lines="$(JsonContent)" Overwrite="true" Encoding="UTF-8"/>
   </Target>
