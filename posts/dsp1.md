@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DSP adventures part 1"
+title: "DSP adventures part 1 - Discrete sequences and systems"
 tags: DSP, tutorial
 date: "05/05/2024"
 ---
