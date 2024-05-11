@@ -1,0 +1,5 @@
+﻿[
+{"id":"wwwroot/posts/dsp1", "layout":"post", "title":"DSP adventures part 1", "tags":"DSP, tutorial", "date":"05/05/2024"},
+{"id":"wwwroot/posts/dsp2", "layout":"post", "title":"DSP adventures part 2", "tags":"DSP, tutorial", "date":"05/06/2024"},
+{"id":"wwwroot/posts/dsp3", "layout":"post", "title":"DSP adventures part 3", "tags":"DSP, tutorial", "date":"05/07/2024"}
+]
