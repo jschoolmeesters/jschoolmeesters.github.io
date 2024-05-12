@@ -1472,6 +1472,14 @@ html {
   color: hsla(26,28%,5%,.5);
 }
 
+.input-nav {
+  --tw-text-opacity: 1;
+  color: rgb(166 169 153 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 35 30 / var(--tw-bg-opacity));
+  border-style: none;
+}
+
 .float-right {
   float: right;
 }

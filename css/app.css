@@ -46,6 +46,12 @@ body {
     .input-search > input::placeholder, .input-search > i {
         @apply text-[hsla(26,28%,5%,.5)];
     }
+
+    .input-nav {
+        @apply text-[#a6a999];
+        @apply bg-[#20231e];
+        @apply border-none;
+    }
 }
 
 .post-preview:hover h2 {
