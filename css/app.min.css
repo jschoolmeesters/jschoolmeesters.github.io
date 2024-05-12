@@ -1514,6 +1514,10 @@ html {
   margin-top: 1rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -1536,6 +1540,10 @@ html {
 
 .table {
   display: table;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-\[1px\] {
@@ -1627,6 +1635,11 @@ html {
   padding: 1rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1635,6 +1648,11 @@ html {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pb-4 {
@@ -1725,6 +1743,10 @@ body {
   filter: invert(1) blur(1px);
   opacity: 50%;
   content:"";
+}
+
+.tribal-icon {
+  filter: invert(75%) sepia(12%) saturate(261%) hue-rotate(31deg) brightness(88%) contrast(87%);
 }
 
 .post-preview:hover h2 {

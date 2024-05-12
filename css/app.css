@@ -23,6 +23,10 @@ body {
    content:"";
 }
 
+.tribal-icon {
+    filter: invert(75%) sepia(12%) saturate(261%) hue-rotate(31deg) brightness(88%) contrast(87%);
+}
+
 @layer components {
     .btn-ghost {
         @apply bg-transparent;
