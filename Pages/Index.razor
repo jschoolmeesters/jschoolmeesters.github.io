@@ -37,10 +37,7 @@
          <i class="iconoir-search text-2xl"></i>
       </label>
       
-      @foreach (var item in Posts.Where(p => string.IsNullOrEmpty(SearchValue) ? true : p.Title.ToLower().Contains(SearchValue.ToLower()))
-                                 .OrderBy(p => p.DateAsDateTime)
-                                 .Take(3)
-                                 .Select((post, i) => ( post, i ))) {
+      @foreach (var item in FilteredPosts) {
          var post = item.post;
          var index = item.i;
          <div @onclick="@(() => NavigateToPost(post))" class="my-4 hover:cursor-pointer post-preview">
@@ -53,7 +50,7 @@
                }
             </div>
          </div>
-         @if (index < Posts.Count - 1) {
+         @if (index < FilteredPosts.Count - 1) {
             <div class="w-full h-[1px] bg-[#2d312a] my-4"></div>
          }
       }
@@ -78,7 +75,17 @@
    private List<Models.Post> Posts { get; set; } = new List<Models.Post>();
    private string SearchValue { get; set; } = String.Empty;
 
-
+   private List<(Models.Post post, int i)> FilteredPosts
+   {
+      get
+      {
+         return Posts.Where(p => string.IsNullOrEmpty(SearchValue) ? true : p.Title.ToLower().Contains(SearchValue.ToLower()))
+                                 .OrderBy(p => p.DateAsDateTime)
+                                 .Take(3)
+                                 .Select((post, i) => ( post, i ))
+                                 .ToList();
+      }
+   }
    protected override async Task OnInitializedAsync()
    {
       var jsonContent = await HttpClient.GetStringAsync("posts/posts.json");

@@ -1462,8 +1462,6 @@ html {
   --tw-bg-opacity: 1;
   background-color: rgb(223 220 217 / var(--tw-bg-opacity));
   border-style: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 .input-search > input::-moz-placeholder {
