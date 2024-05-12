@@ -37,6 +37,15 @@ body {
         @apply border-[hsla(26,28%,95%,.2)];
         @apply text-[hsla(26,28%,95%,.7)];
     }
+
+    .input-search, .input-search:focus {
+        @apply bg-[#DFDCD9];
+        @apply border-none;
+    }
+
+    .input-search > input::placeholder, .input-search > i {
+        @apply text-[hsla(26,28%,5%,.5)];
+    }
 }
 
 .post-preview:hover h2 {

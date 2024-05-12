@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 namespace BlazorPortfolio.Models {
@@ -14,6 +15,12 @@ namespace BlazorPortfolio.Models {
 
         [JsonPropertyName("tags")]
         public string Tags { get; set; }
+
+        public DateTime DateAsDateTime {
+            get {
+                return DateTime.Parse(Date, new CultureInfo("nl-NL"));
+            }
+        }
 
         /*
         Post(string id, string title, string date) {

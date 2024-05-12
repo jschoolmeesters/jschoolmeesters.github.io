@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using System.Text.Json
 @using BlazorPortfolio.Models;
+@using System.Globalization
 @inject NavigationManager NavigationManager
 <PageTitle>Jordy Schoolmeesters</PageTitle>
 
@@ -30,19 +31,29 @@
 
    <div class="w-full text-[#2d312a] bg-[#f6f2ef] p-4 open-sans-400 select-none">
       <span><h2 class="uppercase inline">blog</h2><i class="iconoir-rss-feed-tag text-xl float-right"></i></span>
-      @* TODO: convert date string into actual DateOnly for ordering instead of string *@
-      @foreach (var (post, i) in Posts.OrderBy(p => p.Date).Select((post, i) => ( post, i ))) { 
+      
+      <label class="input input-bordered input-search flex items-center gap-2 mt-4">
+         <input type="text" class="grow" placeholder="Search..." @oninput="@HandleInputChange" @bind-value="@SearchValue"/>
+         <i class="iconoir-search text-2xl"></i>
+      </label>
+      
+      @foreach (var item in Posts.Where(p => string.IsNullOrEmpty(SearchValue) ? true : p.Title.ToLower().Contains(SearchValue.ToLower()))
+                                 .OrderBy(p => p.DateAsDateTime)
+                                 .Take(3)
+                                 .Select((post, i) => ( post, i ))) {
+         var post = item.post;
+         var index = item.i;
          <div @onclick="@(() => NavigateToPost(post))" class="my-4 hover:cursor-pointer post-preview">
             <h2 class="text-2xl">@post.Title</h2>
             <div class="text-lg">@post.Date</div>
             <div>
                @* TODO: add sorting to tags *@
-               @foreach(string tag in post.Tags.Split(',').Order().ToList()) {
+               @foreach (string tag in post.Tags.Split(',').Order()) {
                   <div class="badge bg-[#2d312a] text-[hsla(26,28%,95%,.7)] ml-1">@tag</div>
                }
             </div>
          </div>
-         @if (i < Posts.Count - 1) {
+         @if (index < Posts.Count - 1) {
             <div class="w-full h-[1px] bg-[#2d312a] my-4"></div>
          }
       }
@@ -52,9 +63,9 @@
    <div class="w-full bg-[hsla(26,28%,95%,.9)] text-[#2d312a] px-4 pb-4 select-none">
       <span class="block"><h2 class="inline-block uppercase mt-4">footer</h2><i class="iconoir-arrow-up text-xl hover:bg-[#00000010] hover:cursor-pointer float-right p-3 mt-2 rounded-lg"></i></span>
       <div class="mt-4">
-         <h3 class="text-md open-sans-400 mb-2 inline ">© 2024 <span class="underline cursor-pointer">Jordy Schoolmeesters</span></h3>
+         <h3 class="text-md open-sans-400 mb-2 inline">© 2024 <span @onclick="@(() => NavigationManager.NavigateTo("."))" class="underline cursor-pointer">Jordy Schoolmeesters</span></h3>
          <span>-</span>
-         <h3 class="text-md open-sans-400 mb-2 inline underline cursor-pointer">Source code</h3>
+         <a href="https://github.com/jschoolmeesters/BlazorPortfolio"><h3 class="text-md open-sans-400 mb-2 inline underline cursor-pointer">Source code</h3></a>
          <span>-</span>
          <h3 class="text-md open-sans-400 mb-2 inline underline cursor-pointer">Changelog</h3>
       </div>
@@ -65,10 +76,8 @@
    [Inject]
    private HttpClient HttpClient { get; set; }
    private List<Models.Post> Posts { get; set; } = new List<Models.Post>();
-   private void NavigateToPost(Models.Post post)
-   {
-      NavigationManager.NavigateTo("post/" + post.Date + "/" + post.Id);
-   }
+   private string SearchValue { get; set; } = String.Empty;
+
 
    protected override async Task OnInitializedAsync()
    {
@@ -78,5 +87,15 @@
          Posts = posts;
 
       Console.WriteLine("hohoho");
+   }
+
+   private void NavigateToPost(Models.Post post)
+   {
+      NavigationManager.NavigateTo("post/" + post.Date + "/" + post.Id);
+   }
+
+   private void HandleInputChange(ChangeEventArgs e)
+   {
+      SearchValue = e.Value.ToString();
    }
 }
