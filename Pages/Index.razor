@@ -10,8 +10,9 @@
       <!--<div class=""><h2 class="inline-block bg-[#2d312a]">index.html</h2><i class="iconoir-home-simple text-xl float-right bg-[#2d312a] p-0.5"></i></div>-->
 
       <div class="input input-bordered input-nav flex items-center">
-         <!--<span class="grow">Latest post: @(Posts.Select(p => p.DateAsDateTime).ToList().OrderByDescending(p => p).First().ToShortDateString())</span>-->
-         <span class="grow"><img class="h-6 tribal-icon" src="media/tribal-icon.svg"/></span>
+         <span class="grow">Latest post: @(Posts.Select(p => p.DateAsDateTime).ToList().OrderByDescending(p => p).First().ToShortDateString())</span>
+         <!--<img class="h-6 tribal-icon" src="media/tribal-icon.svg"/>-->
+         <span class="grow"></span>
          <i class="iconoir-menu text-2xl"></i>
       </div>
 
