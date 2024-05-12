@@ -7,8 +7,13 @@
 
 <div class="wrapper max-w-[500px] mx-auto">
    <div class="w-full text-[#a6a999] bg-[#141612] p-4 select-none">
-   <div class=""><h2 class="inline-block bg-[#2d312a]">index.html</h2><i class="iconoir-home-simple text-xl float-right bg-[#2d312a] p-0.5"></i></div>
-      
+      <!--<div class=""><h2 class="inline-block bg-[#2d312a]">index.html</h2><i class="iconoir-home-simple text-xl float-right bg-[#2d312a] p-0.5"></i></div>-->
+
+      <div class="input input-bordered input-nav flex items-center gap-2">
+         <span class="grow">Latest post: @(Posts.Select(p => p.DateAsDateTime).ToList().OrderByDescending(p => p).First().ToShortDateString())</span>
+         <i class="iconoir-menu text-2xl"></i>
+      </div>
+
       <div class="mt-8">
          <h3 class="text-xl open-sans-400 mb-2 text-[hsla(26,28%,95%,.7)]"><span class="font-semibold"><i>Hey!</i> I'm Jordy</span> - a computing science student, C# developer and producer interested in the field of DSP. Here, I'll be sharing insights, tutorials and tips on all things DSP, coding and music production.</h3>
       <div class="join">
@@ -21,7 +26,7 @@
       <div class="mt-8 w-full">
          <div class="select-none text-tribal mb-4 h-[30vh] max-h-[40vw] hue-rotate-90 invert saturate-150">
             <mark class="bg-transparent text-[#fff]">
-               <span class="mi-blend-difference text-blur inline-block py-2 opacity-50 h-full">
+               <span class="text-blur inline-block py-2 opacity-50 h-full">
                   <div class="tribal-img w-full h-full"></div>
                </span>   
             </mark>         
