@@ -1478,12 +1478,9 @@ html {
   --tw-bg-opacity: 1;
   background-color: rgb(32 35 30 / var(--tw-bg-opacity));
   border-style: none;
-}
-
-.btn {
-  font-family: "Sharp Grotesk Book", sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
+  font-family: "Sharp Grotesk Book", sans-serif;
 }
 
 .float-right {
@@ -1606,9 +1603,8 @@ html {
   border-bottom-width: 1px;
 }
 
-.border-\[\#a6a999\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(166 169 153 / var(--tw-border-opacity));
+.border-\[hsla\(26\2c 28\%\2c 95\%\2c \.3\)\] {
+  border-color: hsla(26,28%,95%,.3);
 }
 
 .bg-\[\#141612\] {

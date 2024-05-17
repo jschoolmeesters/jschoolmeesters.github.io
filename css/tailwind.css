@@ -1564,9 +1564,8 @@ html {
   border-bottom-width: 1px;
 }
 
-.border-\[\#a6a999\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(166 169 153 / var(--tw-border-opacity));
+.border-\[hsla\(26\2c 28\%\2c 95\%\2c \.3\)\] {
+  border-color: hsla(26,28%,95%,.3);
 }
 
 .bg-\[\#141612\] {

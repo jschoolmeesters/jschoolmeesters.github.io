@@ -55,12 +55,10 @@ body {
         @apply text-[#a6a999];
         @apply bg-[#20231e];
         @apply border-none;
+        @apply text-xs;
+        @apply sharp-grotesk-book;
     }
 
-    .btn {
-        @apply sharp-grotesk-book;
-        @apply text-xs;
-    }
 }
 
 .post-preview:hover h2 {
