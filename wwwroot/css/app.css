@@ -56,6 +56,11 @@ body {
         @apply bg-[#20231e];
         @apply border-none;
     }
+
+    .btn {
+        @apply sharp-grotesk-book;
+        @apply text-xs;
+    }
 }
 
 .post-preview:hover h2 {
@@ -160,4 +165,39 @@ mark:before {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+}
+
+.sharp-grotesk-medium {
+    font-family: sharpGroteskMedium, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: medium;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+* {
+    font-family: "Sharp Grotesk Book", sans-serif;
+}
+
+.sharp-grotesk-medium {
+    font-family: "Sharp Grotesk Medium", sans-serif;
+}
+
+.sharp-grotesk-book {
+    font-family: "Sharp Grotesk Book", sans-serif;
+}
+
+@font-face {
+    font-family: "Sharp Grotesk Book";
+    src: url("../fonts/Sharp Grotesk/TTF-Windows/Book22.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sharp Grotesk Medium";
+    src: url("../fonts/Sharp Grotesk/TTF-Windows/Medium22.ttf");
+    font-weight: 500;
+    font-style: normal;
 }
