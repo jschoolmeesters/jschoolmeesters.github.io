@@ -53,7 +53,7 @@ body {
 
     .input-nav {
         @apply text-[#f6f2ef];
-        @apply bg-[#393e36];
+        @apply bg-[#2d312a];
         @apply border-none;
         @apply text-xs;
         @apply sharp-grotesk-book;
