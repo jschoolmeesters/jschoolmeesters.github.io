@@ -52,8 +52,8 @@ body {
     }
 
     .input-nav {
-        @apply text-[#a6a999];
-        @apply bg-[#20231e];
+        @apply text-[#f6f2ef];
+        @apply bg-[#393e36];
         @apply border-none;
         @apply text-xs;
         @apply sharp-grotesk-book;
