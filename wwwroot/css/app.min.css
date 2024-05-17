@@ -788,6 +788,16 @@ html {
     --glass-border-opacity: 15%;
   }
 
+  .btn-ghost:hover {
+    border-color: transparent;
+  }
+
+  @supports (color: oklch(0% 0 0)) {
+    .btn-ghost:hover {
+      background-color: var(--fallback-bc,oklch(var(--bc)/0.2));
+    }
+  }
+
   .btn-disabled:hover,
     .btn[disabled]:hover,
     .btn:disabled:hover {
@@ -1053,6 +1063,22 @@ html {
 .btn.glass.btn-active {
   --glass-opacity: 25%;
   --glass-border-opacity: 15%;
+}
+
+.btn-ghost {
+  border-width: 1px;
+  border-color: transparent;
+  background-color: transparent;
+  color: currentColor;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  outline-color: currentColor;
+}
+
+.btn-ghost.btn-active {
+  border-color: transparent;
+  background-color: var(--fallback-bc,oklch(var(--bc)/0.2));
 }
 
 .btn.btn-disabled,
@@ -1418,6 +1444,20 @@ html {
   margin-inline-start: -1px;
 }
 
+.btn-ghost {
+  background-color: transparent;
+  color: hsla(26,28%,95%,.7);
+  border-width: 1px;
+  border-color: hsla(26,28%,95%,.2);
+}
+
+.btn-ghost:hover {
+  background-color: #00000050;
+  border-width: 1px;
+  border-color: hsla(26,28%,95%,.2);
+  color: hsla(26,28%,95%,.7);
+}
+
 .input-search, .input-search:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(223 220 217 / var(--tw-bg-opacity));
@@ -1648,6 +1688,10 @@ html {
   text-transform: uppercase;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .text-\[\#2d312a\] {
   --tw-text-opacity: 1;
   color: rgb(45 49 42 / var(--tw-text-opacity));
@@ -1833,6 +1877,10 @@ mark:before {
   font-family: "Sharp Grotesk Medium", sans-serif;
 }
 
+.sharp-grotesk-medium-italic {
+  font-family: "Sharp Grotesk Medium Italic", sans-serif;
+}
+
 .sharp-grotesk-book {
   font-family: "Sharp Grotesk Book", sans-serif;
 }
@@ -1855,6 +1903,16 @@ mark:before {
   font-weight: 500;
 
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Sharp Grotesk Medium Italic";
+
+  src: url("../fonts/Sharp Grotesk/TTF-Windows/MediumItalic22.ttf");
+
+  font-weight: 500;
+
+  font-style: italic;
 }
 
 .hover\:cursor-pointer:hover {

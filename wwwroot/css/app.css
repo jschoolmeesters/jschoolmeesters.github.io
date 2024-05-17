@@ -184,6 +184,10 @@ mark:before {
     font-family: "Sharp Grotesk Medium", sans-serif;
 }
 
+.sharp-grotesk-medium-italic {
+    font-family: "Sharp Grotesk Medium Italic", sans-serif;
+}
+
 .sharp-grotesk-book {
     font-family: "Sharp Grotesk Book", sans-serif;
 }
@@ -200,4 +204,11 @@ mark:before {
     src: url("../fonts/Sharp Grotesk/TTF-Windows/Medium22.ttf");
     font-weight: 500;
     font-style: normal;
+}
+
+@font-face {
+    font-family: "Sharp Grotesk Medium Italic";
+    src: url("../fonts/Sharp Grotesk/TTF-Windows/MediumItalic22.ttf");
+    font-weight: 500;
+    font-style: italic;
 }
