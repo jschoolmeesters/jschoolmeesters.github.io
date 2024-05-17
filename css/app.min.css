@@ -1474,9 +1474,9 @@ html {
 
 .input-nav {
   --tw-text-opacity: 1;
-  color: rgb(166 169 153 / var(--tw-text-opacity));
+  color: rgb(246 242 239 / var(--tw-text-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(32 35 30 / var(--tw-bg-opacity));
+  background-color: rgb(57 62 54 / var(--tw-bg-opacity));
   border-style: none;
   font-size: 0.75rem;
   line-height: 1rem;
