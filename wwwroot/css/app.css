@@ -52,7 +52,7 @@ body {
     }
 
     .input-nav {
-        @apply text-[#f6f2ef];
+        @apply text-[hsla(26,28%,95%,.7)];
         @apply bg-[#2d312a];
         @apply border-none;
         @apply text-xs;
