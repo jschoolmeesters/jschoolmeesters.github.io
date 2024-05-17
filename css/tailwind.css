@@ -1640,10 +1640,6 @@ html {
   text-transform: uppercase;
 }
 
-.italic {
-  font-style: italic;
-}
-
 .text-\[\#2d312a\] {
   --tw-text-opacity: 1;
   color: rgb(45 49 42 / var(--tw-text-opacity));

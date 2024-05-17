@@ -1473,8 +1473,7 @@ html {
 }
 
 .input-nav {
-  --tw-text-opacity: 1;
-  color: rgb(246 242 239 / var(--tw-text-opacity));
+  color: hsla(26,28%,95%,.7);
   --tw-bg-opacity: 1;
   background-color: rgb(45 49 42 / var(--tw-bg-opacity));
   border-style: none;
@@ -1677,10 +1676,6 @@ html {
 
 .uppercase {
   text-transform: uppercase;
-}
-
-.italic {
-  font-style: italic;
 }
 
 .text-\[\#2d312a\] {
