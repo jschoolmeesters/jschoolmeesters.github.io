@@ -4,7 +4,7 @@ title: "DSP adventures part 1 - Discrete sequences and systems"
 tags: DSP, tutorial
 date: "05/05/2024"
 ---
-# My First Blog Post
+## My First Blog Post
 
 Published on: 2022-07-01
 

@@ -4,7 +4,7 @@ title: "DSP adventures part 2 - Periodic sampling"
 tags: DSP, tutorial
 date: "05/06/2024"
 ---
-# My First Blog Post
+## My First Blog Post
 
 Published on: 2022-07-01
 
