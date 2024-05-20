@@ -1,5 +1,36 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
 
 <main>
-    @Body
+    <div class="wrapper max-w-[500px] mx-auto">
+        <div class="w-full text-[#a6a999] bg-[#141612] select-none">
+            <div class="flex items-center border-b border-[hsla(26,28%,95%,.3)] p-4">
+                <span>Jordy Schoolmeesters</span>
+                <span class="grow"></span>
+                <button class="btn input-nav btn-sm" @onclick="@(() => ShowMenu = !ShowMenu)">Menu</button>
+            </div>
+
+            <ul class="border-b border-[hsla(26,28%,95%,.3)] @(ShowMenu ? "" : "hidden")">
+                <li class="w-full p-4 text-xl hover:bg-[hsla(26,28%,95%,.1)] hover:cursor-pointer" @onclick="@(() => { NavigationManager.NavigateTo("/"); ShowMenu = false; })">Home</li>
+            </ul>
+        </div>
+
+        @Body
+
+        <div class="w-full bg-[hsla(26,28%,95%,.9)] text-[#2d312a] px-4 pb-4 select-none">
+            <span class="block"><h2 class="inline-block uppercase mt-4">footer</h2><i class="iconoir-arrow-up text-xl float-right mt-4 rounded-lg"></i></span>
+            <div class="mt-4">
+                <h3 class="text-md mb-2 inline">© 2024 <span @onclick="@(() => NavigationManager.NavigateTo("."))" class="underline cursor-pointer">Jordy Schoolmeesters</span></h3>
+                <span>-</span>
+                <a href="https://github.com/jschoolmeesters/BlazorPortfolio"><h3 class="text-md mb-2 inline underline cursor-pointer">Source code</h3></a>
+                <span>-</span>
+                <h3 class="text-md mb-2 inline underline cursor-pointer">Changelog</h3>
+            </div>
+        </div>
+    </div>
 </main>
+
+
+@code {
+       private bool ShowMenu { get; set; } = false;
+}

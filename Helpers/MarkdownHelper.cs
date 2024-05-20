@@ -46,7 +46,7 @@ namespace BlazorPortfolio.Helpers {
             var document = Markdown.Parse(markdown, Pipeline);
             var frontMatterBlock = document.FirstOrDefault() as YamlFrontMatterBlock;
             int frontMatterEnd = frontMatterBlock != null ? frontMatterBlock.Span.End : 0;
-            return markdown.Substring(frontMatterEnd).TrimStart();
+            return markdown.Substring(frontMatterEnd + 1).TrimStart();
         }
     }
 }

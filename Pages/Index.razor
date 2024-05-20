@@ -5,29 +5,19 @@
 @inject NavigationManager NavigationManager
 <PageTitle>Jordy Schoolmeesters</PageTitle>
 
-<div class="wrapper max-w-[500px] mx-auto">
-   <div class="w-full text-[#a6a999] bg-[#141612] pb-4 select-none">
-      <!--<div class=""><h2 class="inline-block bg-[#2d312a]">index.html</h2><i class="iconoir-home-simple text-xl float-right bg-[#2d312a] p-0.5"></i></div>-->
 
-      <div class="flex items-center border-b border-[hsla(26,28%,95%,.3)] p-4">
-         @*<span class="grow">Latest post: @(Posts.Select(p => p.DateAsDateTime).ToList().OrderByDescending(p => p).First().ToShortDateString())</span>*@
-         <span>Jordy Schoolmeesters</span>
-         @*<img class="h-6 tribal-icon" src="media/tribal-icon.svg"/>*@
-         <span class="grow"></span>
-         <button class="btn input-nav btn-sm">Menu</button>
-         <!--<i class="iconoir-menu text-2xl"></i>-->
-      </div>
 
-      <div class="mt-6 px-4">
-         <h3 class="text-xl mb-2 text-[hsla(26,28%,95%,.7)]"><span class="sharp-grotesk-medium">Hey! I'm Jordy</span> - a computing science student, C# developer and producer interested in the field of DSP. Here, I'll be sharing insights, tutorials and tips on all things DSP, coding and music production.</h3>
+<div class="w-full text-[#a6a999] bg-[#141612] pb-4 select-none">
+   <div class="mt-6 px-4 w-full">
+      <h3 class="text-xl mb-2 text-[hsla(26,28%,95%,.7)]"><span class="sharp-grotesk-medium">Hey! I'm Jordy</span> - a computing science student, C# developer and producer interested in the field of DSP. Here, I'll be sharing insights, tutorials and tips on all things DSP, coding and music production.</h3>
       <div class="join">
          <button class="btn btn-ghost btn-sm open-sans-400 join-item"><i class="iconoir-github text-lg"></i>
    Github</button>
          <button class="btn btn-ghost btn-sm open-sans-400 join-item"><i class="iconoir-linkedin text-lg"></i>LinkedIn</button>
          <button class="btn btn-ghost btn-sm open-sans-400 join-item"><i class="iconoir-mail text-lg"></i>Email</button>
       </div>
-      </div>
-      <div class="mt-8 w-full px-4">
+   
+      <div class="mt-8">
          <div class="select-none text-tribal mb-4 h-[30vh] max-h-[40vw] hue-rotate-90 invert saturate-150">
             <mark class="bg-transparent text-[#fff]">
                <span class="text-blur inline-block py-2 opacity-50 h-full">
@@ -37,53 +27,46 @@
          </div>
       </div>
    </div>
-
-   <div class="w-full text-[#2d312a] bg-[#f6f2ef] p-4 open-sans-400 select-none">
-      <span><h2 class="uppercase inline">blog</h2><i class="iconoir-rss-feed-tag text-xl float-right"></i></span>
-      
-      <label class="input input-bordered input-search flex items-center gap-2 mt-4">
-         <input type="text" class="grow" placeholder="Search..." @oninput="@HandleInputChange" @bind-value="@SearchValue"/>
-         <i class="iconoir-search text-2xl"></i>
-      </label>
-      
-      @foreach (var item in FilteredPosts) {
-         var post = item.post;
-         var index = item.i;
-         <div @onclick="@(() => NavigateToPost(post))" class="my-4 hover:cursor-pointer post-preview">
-            <h2 class="text-xl">@post.Title</h2>
-            <div class="text-lg">@post.Date</div>
-            <div>
-               @* TODO: add sorting to tags *@
-               @foreach (string tag in post.Tags.Split(',').Order()) {
-                  <div class="badge bg-[#2d312a] text-[hsla(26,28%,95%,.7)] ml-1">@tag</div>
-               }
-            </div>
-         </div>
-         @if (index < FilteredPosts.Count - 1) {
-            <div class="w-full h-[1px] bg-[#2d312a] my-4"></div>
-         }
-      }
-
-   </div>
-
-   <div class="w-full bg-[hsla(26,28%,95%,.9)] text-[#2d312a] px-4 pb-4 select-none">
-      <span class="block"><h2 class="inline-block uppercase mt-4">footer</h2><i class="iconoir-arrow-up text-xl hover:bg-[#00000010] hover:cursor-pointer float-right p-3 mt-2 rounded-lg"></i></span>
-      <div class="mt-4">
-         <h3 class="text-md mb-2 inline">© 2024 <span @onclick="@(() => NavigationManager.NavigateTo("."))" class="underline cursor-pointer">Jordy Schoolmeesters</span></h3>
-         <span>-</span>
-         <a href="https://github.com/jschoolmeesters/BlazorPortfolio"><h3 class="text-md mb-2 inline underline cursor-pointer">Source code</h3></a>
-         <span>-</span>
-         <h3 class="text-md mb-2 inline underline cursor-pointer">Changelog</h3>
-      </div>
-   </div>
 </div>
+
+<div class="w-full text-[#2d312a] bg-[#f6f2ef] p-4 open-sans-400 select-none">
+   <span><h2 class="uppercase inline">blog</h2><i class="iconoir-rss-feed-tag text-xl float-right"></i></span>
+   
+   <label class="input input-bordered input-search flex items-center gap-2 mt-4 pl-[1.125rem] pr-3">
+      <input type="text" class="grow" placeholder="Search..." @oninput="@HandleInputChange" @bind-value="@SearchValue"/>
+      <i class="text-2xl p-1.5 rounded-lg iconoir-@(string.IsNullOrEmpty(SearchValue) ? "search" : "xmark hover:bg-[#00000010] hover:cursor-pointer")" @onclick="@(() => SearchValue = string.Empty)"></i>
+   </label>
+
+   @*<div class="open-sans-400 flex items-center mt-4 pb-0.5 px-2"><span class="cursor-pointer">Date<i class="iconoir-arrow-down"></i></span></div>
+   <div class="w-full h-[1px] bg-[#2d312a] mb-4"></div>*@
+   
+   @foreach (var item in FilteredPosts) {
+      var post = item.post;
+      var index = item.i;
+      <div @onclick="@(() => NavigateToPost(post))" class="my-4 hover:cursor-pointer post-preview">
+         <h2 class="text-xl">@post.Title</h2>
+         <div class="text-lg">@post.Date</div>
+         <div>
+            @* TODO: add sorting to tags *@
+            @foreach (string tag in post.Tags.Split(',').Order()) {
+               <div class="badge bg-[#2d312a] text-[hsla(26,28%,95%,.7)] ml-1">@tag</div>
+            }
+         </div>
+      </div>
+      @if (index < FilteredPosts.Count - 1) {
+         <div class="w-full h-[1px] bg-[#2d312a] my-4"></div>
+      }
+   }
+
+</div>
+
+
 
 @code {
    [Inject]
    private HttpClient HttpClient { get; set; }
    private List<Models.Post> Posts { get; set; } = new List<Models.Post>();
    private string SearchValue { get; set; } = String.Empty;
-
    private List<(Models.Post post, int i)> FilteredPosts
    {
       get

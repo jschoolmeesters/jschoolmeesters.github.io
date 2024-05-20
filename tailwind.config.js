@@ -1,9 +1,10 @@
 module.exports = {
-  content: ["./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}"],
+  content: ["./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}"],
   theme: { extend: {} },
   plugins: [
     require('daisyui'),
     require('tailwindcss'),
+    require('@tailwindcss/typography'),
   ],
   daisyui: {
     themes: [
