@@ -84,8 +84,6 @@
       var posts = JsonSerializer.Deserialize<List<Models.Post>>(jsonContent);
       if (posts != null)
          Posts = posts;
-
-      Console.WriteLine("hohoho");
    }
 
    private void NavigateToPost(Models.Post post)
