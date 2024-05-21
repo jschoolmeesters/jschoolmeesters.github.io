@@ -2616,8 +2616,8 @@ details.collapse summary::-webkit-details-marker {
   line-height: 2rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
