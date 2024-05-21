@@ -2768,6 +2768,27 @@ nav .text-slideup {
   }
 }
 
+.opacity-fade {
+  animation-name: opacity-fade;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  -webkit-animation-name: opacity-fade;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-name: opacity-fade;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-fill-mode: both;
+}
+
+@keyframes opacity-fade {
+  50% {
+    opacity: 1
+  }
+}
+
 html {
   background: #2a2d31;
   font-family: open-sans-400 !important;
