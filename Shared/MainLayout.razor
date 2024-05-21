@@ -3,42 +3,42 @@
 
 <main>
     <div class="wrapper max-w-[500px] mx-auto">
-        <div class="z-[1000] fixed top-0 w-full max-w-[500px] text-[#a6a999] bg-[#141612] select-none">
+        <div class="z-[1000] fixed top-0 w-full max-w-[500px] text-[hsla(26,28%,95%,.9)] bg-[#141612] select-none">
             <div class="z-[1000] flex items-center border-b border-[hsla(26,28%,95%,.3)] p-4">
                 <span>Jordy Schoolmeesters</span>
                 <span class="grow"></span>
-                <button class="btn input-nav btn-sm" @onclick="@(() => ShowMenu = !ShowMenu)">Menu</button>
+                <button @onclick="@(() => ShowMenu = !ShowMenu)">Menu</button>
             </div>
         </div>
 
         <aside class="text-[#a6a999] bg-[#141612] wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[999] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
         <nav class="flex absolute inset-0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-            <div class="flex flex-col justify-between">
+            <div class="flex flex-col justify-between pb-16">
             <div></div>
             <ul class="p-4 flex flex-col items-start">
                 <li class="overflow-hidden">
                 <a href="/" aria-current="page" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup">Index</span>
+                    <span class="text-slideup animation-delay-0 text-[hsla(26,28%,95%,.9)]">Index</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
                 <a href="/patreon" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup">Blog</span>
+                    <span class="text-slideup animation-delay-1">Blog</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
                 <a href="/store" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup">Samples</span>
+                    <span class="text-slideup animation-delay-2">Samples</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
                 <a href="/about" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup">About</span>
+                    <span class="text-slideup animation-delay-3">About</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
                 <button type="button" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup">Contact</span>
+                    <span class="text-slideup animation-delay-4">Contact</span>
                 </button>
                 </li>
             </ul>
