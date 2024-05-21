@@ -2728,6 +2728,14 @@ nav .text-slideup {
   animation-duration: 0.85s;
   animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
   animation-fill-mode: both;
+  -webkit-animation-name: slide-up;
+  -webkit-animation-duration: 0.85s;
+  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-name: slide-up;
+  -moz-animation-duration: 0.85s;
+  -moz-animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  -moz-animation-fill-mode: both;
 }
 
 .animation-delay-0 {
