@@ -3,19 +3,53 @@
 
 <main>
     <div class="wrapper max-w-[500px] mx-auto">
-        <div class="w-full text-[#a6a999] bg-[#141612] select-none">
-            <div class="flex items-center border-b border-[hsla(26,28%,95%,.3)] p-4">
+        <div class="z-[1000] fixed top-0 w-full max-w-[500px] text-[#a6a999] bg-[#141612] select-none">
+            <div class="z-[1000] flex items-center border-b border-[hsla(26,28%,95%,.3)] p-4">
                 <span>Jordy Schoolmeesters</span>
                 <span class="grow"></span>
                 <button class="btn input-nav btn-sm" @onclick="@(() => ShowMenu = !ShowMenu)">Menu</button>
             </div>
-
-            <ul class="border-b border-[hsla(26,28%,95%,.3)] @(ShowMenu ? "" : "hidden")">
-                <li class="w-full p-4 text-xl hover:bg-[hsla(26,28%,95%,.1)] hover:cursor-pointer" @onclick="@(() => { NavigationManager.NavigateTo("/"); ShowMenu = false; })">Home</li>
-            </ul>
         </div>
 
-        @Body
+        <aside class="text-[#a6a999] bg-[#141612] wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[999] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+        <nav class="flex absolute inset-0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+            <div class="flex flex-col justify-between">
+            <div></div>
+            <ul class="p-4 flex flex-col items-start">
+                <li class="overflow-hidden">
+                <a href="/" aria-current="page" class="flex text-5xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup">Index</span>
+                </a>
+                </li>
+                <li class="overflow-hidden">
+                <a href="/patreon" class="flex text-5xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup">Blog</span>
+                </a>
+                </li>
+                <li class="overflow-hidden">
+                <a href="/store" class="flex text-5xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup">Samples</span>
+                </a>
+                </li>
+                <li class="overflow-hidden">
+                <a href="/about" class="flex text-5xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup">About</span>
+                </a>
+                </li>
+                <li class="overflow-hidden">
+                <button type="button" class="flex text-5xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup">Contact</span>
+                </button>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        </aside>
+
+
+        <div class="mt-[5.5rem]">
+            @Body
+        </div>
 
         <div class="w-full bg-[hsla(26,28%,95%,.9)] text-[#2d312a] px-4 pb-4 select-none">
             <span class="block"><h2 class="inline-block uppercase mt-4">footer</h2><i class="iconoir-arrow-up text-xl float-right mt-4 rounded-lg"></i></span>
