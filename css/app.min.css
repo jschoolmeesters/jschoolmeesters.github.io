@@ -2304,16 +2304,6 @@ details.collapse summary::-webkit-details-marker {
   color: hsla(26,28%,5%,.5);
 }
 
-.input-nav {
-  color: hsla(26,28%,95%,.7);
-  --tw-bg-opacity: 1;
-  background-color: rgb(45 49 42 / var(--tw-bg-opacity));
-  border-style: none;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-family: "Sharp Grotesk Book", sans-serif;
-}
-
 .collapse {
   visibility: collapse;
 }
@@ -2595,6 +2585,10 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0.125rem;
 }
 
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -2679,6 +2673,10 @@ details.collapse summary::-webkit-details-marker {
   color: hsla(26,28%,95%,.7);
 }
 
+.text-\[hsla\(26\2c 28\%\2c 95\%\2c \.9\)\] {
+  color: hsla(26,28%,95%,.9);
+}
+
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -2715,6 +2713,51 @@ details.collapse summary::-webkit-details-marker {
 .saturate-150 {
   --tw-saturate: saturate(1.5);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+nav li > a > span {
+  width: -moz-max-content;
+  width: max-content;
+  white-space: nowrap;
+  margin: 0;
+}
+
+nav .text-slideup {
+  /*animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;*/
+  animation-name: slide-up;
+  animation-duration: 0.85s;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: both;
+}
+
+.animation-delay-0 {
+  animation-delay: 0s;
+}
+
+.animation-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(3.75rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 html {
