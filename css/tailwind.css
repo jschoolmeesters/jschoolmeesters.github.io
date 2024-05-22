@@ -2308,6 +2308,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 1000;
 }
 
+.z-\[2\] {
+  z-index: 2;
+}
+
 .z-\[999\] {
   z-index: 999;
 }
@@ -2721,6 +2725,10 @@ details.collapse summary::-webkit-details-marker {
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.mix-blend-difference {
+  mix-blend-mode: difference;
 }
 
 .hue-rotate-90 {
