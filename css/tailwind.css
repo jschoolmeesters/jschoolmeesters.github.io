@@ -2300,10 +2300,6 @@ details.collapse summary::-webkit-details-marker {
   top: 0px;
 }
 
-.top-\[4\.25rem\] {
-  top: 4.25rem;
-}
-
 .z-0 {
   z-index: 0;
 }
@@ -2404,10 +2400,6 @@ details.collapse summary::-webkit-details-marker {
 
 .h-\[50vh\] {
   height: 50vh;
-}
-
-.h-\[calc\(90vh-4\.25rem\)\] {
-  height: calc(90vh - 4.25rem);
 }
 
 .h-full {

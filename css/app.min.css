@@ -2328,10 +2328,6 @@ details.collapse summary::-webkit-details-marker {
   top: 0px;
 }
 
-.top-\[4\.25rem\] {
-  top: 4.25rem;
-}
-
 .z-0 {
   z-index: 0;
 }
@@ -2432,10 +2428,6 @@ details.collapse summary::-webkit-details-marker {
 
 .h-\[50vh\] {
   height: 50vh;
-}
-
-.h-\[calc\(90vh-4\.25rem\)\] {
-  height: calc(90vh - 4.25rem);
 }
 
 .h-full {
@@ -2784,9 +2776,9 @@ details.collapse summary::-webkit-details-marker {
 
 .haha {
   background-image: url("../media/newtribal.svg");
-  background-size: 90% 100%;
+  background-size: 90% auto;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   opacity: 100%;
   content:"";
   animation: tribal-animation 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
