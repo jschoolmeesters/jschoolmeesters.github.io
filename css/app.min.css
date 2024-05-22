@@ -2316,12 +2316,20 @@ details.collapse summary::-webkit-details-marker {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .inset-0 {
   inset: 0px;
 }
 
 .top-0 {
   top: 0px;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .z-\[1000\] {
@@ -2356,6 +2364,10 @@ details.collapse summary::-webkit-details-marker {
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .ml-1 {
@@ -2410,6 +2422,10 @@ details.collapse summary::-webkit-details-marker {
   height: 30vh;
 }
 
+.h-\[50vh\] {
+  height: 50vh;
+}
+
 .h-full {
   height: 100%;
 }
@@ -2456,6 +2472,10 @@ details.collapse summary::-webkit-details-marker {
           user-select: none;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -2470,6 +2490,10 @@ details.collapse summary::-webkit-details-marker {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -2545,6 +2569,11 @@ details.collapse summary::-webkit-details-marker {
   background-color: transparent;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -2559,6 +2588,15 @@ details.collapse summary::-webkit-details-marker {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .px-2 {
@@ -2597,10 +2635,6 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 1rem;
 }
 
-.pb-6 {
-  padding-bottom: 1.5rem;
-}
-
 .pl-\[1\.125rem\] {
   padding-left: 1.125rem;
 }
@@ -2630,6 +2664,11 @@ details.collapse summary::-webkit-details-marker {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl {
@@ -2714,6 +2753,10 @@ details.collapse summary::-webkit-details-marker {
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.mix-blend-difference {
+  mix-blend-mode: difference;
 }
 
 .hue-rotate-90 {
@@ -2833,6 +2876,17 @@ body {
   background-position: center;
   filter: invert(1) blur(1px);
   opacity: 50%;
+  content:"";
+}
+
+.tribal-img-new {
+  background-image: url("../media/tribal-img.svg");
+  background-size: auto 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1) brightness(0.1);
+  /*filter: invert(1);*/
+  opacity: 100%;
   content:"";
 }
 
