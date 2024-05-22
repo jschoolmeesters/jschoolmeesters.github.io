@@ -2776,11 +2776,12 @@ details.collapse summary::-webkit-details-marker {
 
 .haha {
   background-image: url("../media/newtribal.svg");
-  background-size: 90% auto;
+  background-size: 90% 90%;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 100%;
   content:"";
+  animation: tribal-animation 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
 }
 
 nav li > a > span {
@@ -2974,6 +2975,20 @@ mark:before {
 
   100% {
     filter: blur(1px);
+  }
+}
+
+@keyframes tribal-animation {
+  0% {
+    filter: brightness(200%);
+  }
+
+  50% {
+    filter: brightness(150%);
+  }
+
+  100% {
+    filter: brightness(200%);
   }
 }
 
