@@ -2524,10 +2524,6 @@ details.collapse summary::-webkit-details-marker {
   border-radius: 0.5rem;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
-
 .border-t {
   border-top-width: 1px;
 }
@@ -2755,10 +2751,6 @@ details.collapse summary::-webkit-details-marker {
   opacity: 0.5;
 }
 
-.mix-blend-difference {
-  mix-blend-mode: difference;
-}
-
 .hue-rotate-90 {
   --tw-hue-rotate: hue-rotate(90deg);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2774,10 +2766,13 @@ details.collapse summary::-webkit-details-marker {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.ftw {
-  font-family: Fit;
-  width: 600px;
-  font-size: 72px;
+.haha {
+  background-image: url("../media/newtribal.svg");
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 100%;
+  content:"";
 }
 
 nav li > a > span {
@@ -2884,7 +2879,7 @@ body {
   background-size: auto 70%;
   background-repeat: no-repeat;
   background-position: center;
-  filter: invert(1) brightness(0.1);
+  filter: invert(12%) sepia(19%) saturate(489%) hue-rotate(51deg) brightness(89%) contrast(81%) opacity(10%);
   /*filter: invert(1);*/
   opacity: 100%;
   content:"";
