@@ -107,6 +107,17 @@ body {
    content:"";
 }
 
+.tribal-img-new {
+    background-image: url("../media/tribal-img.svg");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(1) brightness(0.1);
+    /*filter: invert(1);*/
+    opacity: 100%;
+    content:"";
+ }
+
 .tribal-icon {
     filter: invert(75%) sepia(12%) saturate(261%) hue-rotate(31deg) brightness(88%) contrast(87%);
 }
