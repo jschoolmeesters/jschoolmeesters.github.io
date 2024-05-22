@@ -2776,7 +2776,7 @@ details.collapse summary::-webkit-details-marker {
 
 .haha {
   background-image: url("../media/newtribal.svg");
-  background-size: 90% 90%;
+  background-size: 90% 100%;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 100%;
