@@ -2336,6 +2336,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 1000;
 }
 
+.z-\[2\] {
+  z-index: 2;
+}
+
 .z-\[999\] {
   z-index: 999;
 }
@@ -2751,6 +2755,10 @@ details.collapse summary::-webkit-details-marker {
   opacity: 0.5;
 }
 
+.mix-blend-difference {
+  mix-blend-mode: difference;
+}
+
 .hue-rotate-90 {
   --tw-hue-rotate: hue-rotate(90deg);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2879,7 +2887,7 @@ body {
   background-size: auto 70%;
   background-repeat: no-repeat;
   background-position: center;
-  filter: invert(12%) sepia(19%) saturate(489%) hue-rotate(51deg) brightness(89%) contrast(81%) opacity(10%);
+  filter: invert(12%) sepia(19%) saturate(489%) hue-rotate(51deg) brightness(89%) contrast(81%) opacity(50%);
   /*filter: invert(1);*/
   opacity: 100%;
   content:"";
