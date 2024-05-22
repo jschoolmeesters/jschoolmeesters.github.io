@@ -2418,6 +2418,10 @@ details.collapse summary::-webkit-details-marker {
   max-height: 40vw;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -2593,6 +2597,10 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 1rem;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .pl-\[1\.125rem\] {
   padding-left: 1.125rem;
 }
@@ -2613,6 +2621,10 @@ details.collapse summary::-webkit-details-marker {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+
+.text-\[50vh\] {
+  font-size: 50vh;
 }
 
 .text-lg {
@@ -2644,6 +2656,14 @@ details.collapse summary::-webkit-details-marker {
 
 .leading-\[1\.05\] {
   line-height: 1.05;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.tracking-\[0\.01em\] {
+  letter-spacing: 0.01em;
 }
 
 .tracking-wide {
@@ -2713,6 +2733,12 @@ details.collapse summary::-webkit-details-marker {
 .saturate-150 {
   --tw-saturate: saturate(1.5);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.ftw {
+  font-family: Fit;
+  width: 600px;
+  font-size: 72px;
 }
 
 nav li > a > span {
@@ -2944,6 +2970,10 @@ mark:before {
   font-family: "Sharp Grotesk Book", sans-serif;
 }
 
+.sharp-grotesk-semibold {
+  font-family: "Sharp Grotesk SemiBold", sans-serif;
+}
+
 @font-face {
   font-family: "Sharp Grotesk Book";
 
@@ -2972,6 +3002,16 @@ mark:before {
   font-weight: 500;
 
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Sharp Grotesk SemiBold";
+
+  src: url("../fonts/Sharp Grotesk/TTF-Windows/Black10.ttf");
+
+  font-weight: 600;
+
+  font-style: normal;
 }
 
 @media (min-width: 1024px) {
