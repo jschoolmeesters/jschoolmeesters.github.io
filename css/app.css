@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.ftw {
-	font-family: Fit;
-	width: 600px;
-	font-size: 72px;
-}
+.haha {
+    background-image: url("../media/newtribal.svg");
+    background-size: 90% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 100%;
+    content:"";
+ }
   
 nav li > a > span {
     width: max-content;
@@ -112,7 +115,7 @@ body {
     background-size: auto 70%;
     background-repeat: no-repeat;
     background-position: center;
-    filter: invert(1) brightness(0.1);
+    filter: invert(12%) sepia(19%) saturate(489%) hue-rotate(51deg) brightness(89%) contrast(81%) opacity(50%);
     /*filter: invert(1);*/
     opacity: 100%;
     content:"";
