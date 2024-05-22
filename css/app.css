@@ -109,7 +109,7 @@ body {
 
 .tribal-img-new {
     background-image: url("../media/tribal-img.svg");
-    background-size: auto 50%;
+    background-size: auto 70%;
     background-repeat: no-repeat;
     background-position: center;
     filter: invert(1) brightness(0.1);
