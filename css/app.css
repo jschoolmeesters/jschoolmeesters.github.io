@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.ftw {
+	font-family: Fit;
+	width: 600px;
+	font-size: 72px;
+}
   
 nav li > a > span {
     width: max-content;
@@ -270,6 +274,10 @@ mark:before {
     font-family: "Sharp Grotesk Book", sans-serif;
 }
 
+.sharp-grotesk-semibold {
+    font-family: "Sharp Grotesk SemiBold", sans-serif;
+}
+
 @font-face {
     font-family: "Sharp Grotesk Book";
     src: url("../fonts/Sharp Grotesk/TTF-Windows/Book22.ttf");
@@ -289,4 +297,11 @@ mark:before {
     src: url("../fonts/Sharp Grotesk/TTF-Windows/MediumItalic22.ttf");
     font-weight: 500;
     font-style: italic;
+}
+
+@font-face {
+    font-family: "Sharp Grotesk SemiBold";
+    src: url("../fonts/Sharp Grotesk/TTF-Windows/Black10.ttf");
+    font-weight: 600;
+    font-style: normal;
 }

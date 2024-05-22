@@ -2390,6 +2390,10 @@ details.collapse summary::-webkit-details-marker {
   max-height: 40vw;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -2565,6 +2569,10 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 1rem;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .pl-\[1\.125rem\] {
   padding-left: 1.125rem;
 }
@@ -2585,6 +2593,10 @@ details.collapse summary::-webkit-details-marker {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+
+.text-\[50vh\] {
+  font-size: 50vh;
 }
 
 .text-lg {
@@ -2616,6 +2628,10 @@ details.collapse summary::-webkit-details-marker {
 
 .leading-\[1\.05\] {
   line-height: 1.05;
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .tracking-wide {
