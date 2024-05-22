@@ -4,9 +4,9 @@
 
 .haha {
     background-image: url("../media/newtribal.svg");
-    background-size: 90% 100%;
+    background-size: 90% auto;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     opacity: 100%;
     content:"";
     -webkit-animation: tribal-animation 6s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
