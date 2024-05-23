@@ -17,29 +17,29 @@
             <div></div>
             <ul class="p-4 flex flex-col items-start">
                 <li class="overflow-hidden">
-                <a href="/" aria-current="page" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                <a aria-current="page" class="cursor-pointer flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
                     <span class="text-slideup animation-delay-0 text-[hsla(26,28%,95%,.9)]">Index</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
-                <a href="/patreon" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup animation-delay-1">Blog</span>
+                <a class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup animation-delay-1 line-through">Blog</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
-                <a href="/store" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup animation-delay-2">Samples</span>
+                <a class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup animation-delay-2 line-through">Samples</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
-                <a href="/about" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup animation-delay-3">About</span>
+                <a class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup animation-delay-3 line-through">About</span>
                 </a>
                 </li>
                 <li class="overflow-hidden">
-                <button type="button" class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <span class="text-slideup animation-delay-4">Contact</span>
-                </button>
+                <a class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <span class="text-slideup animation-delay-4 line-through">Contact</span>
+                </a>
                 </li>
             </ul>
             </div>
@@ -51,8 +51,8 @@
             @Body
         </div>
 
-        <div class="w-full bg-[hsla(26,28%,95%,.9)] text-[#2d312a] px-4 pb-4 select-none">
-            <span class="block"><h2 class="inline-block uppercase mt-4">footer</h2><i class="iconoir-arrow-up text-xl float-right mt-4 rounded-lg"></i></span>
+        <div class="w-full px-4 pb-4 select-none">
+            <div class="flex mt-4 pb-0.5 text-[hsla(26,28%,95%,.5)]"><span class="self-center text-md">The end</span></div>
             <div class="mt-4">
                 <h3 class="text-md mb-2 inline">© 2024 <span @onclick="@(() => NavigationManager.NavigateTo("."))" class="underline cursor-pointer">Jordy Schoolmeesters</span></h3>
                 <span>-</span>

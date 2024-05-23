@@ -7,7 +7,7 @@
 
 
 
-<div class="w-full relative text-[#a6a999] bg-[#141612] pb-4 select-none">
+<div class="w-full relative text-[hsla(26,28%,95%,1)] bg-[#141612] pb-4 select-none">
    <div class="w-full h-[50vh] overflow-hidden">
       <div class="haha absolute mix-blend-difference inset-0  mx-auto w-full h-[50vh] object-cover z-[2]"></div>
       @*<div class=" mt-6 px-0 w-full relative flex flex-row justify-start items-center overflow-hidden">
@@ -28,10 +28,10 @@
    </p>
 </div>
 
-<div class="w-full text-[#2d312a] bg-[#f6f2ef] p-4 open-sans-400 select-none">
-   <span><h2 class="uppercase inline">blog</h2><i class="iconoir-rss-feed-tag text-xl float-right"></i></span>
-   
-   <label class="input input-bordered input-search flex items-center gap-2 mt-4 pl-[1.125rem] pr-3">
+<div class="w-full p-4 select-none">
+   <div class="flex mt-4 pb-0.5 text-[hsla(26,28%,95%,.5)]"><span class="self-center text-md">Latest posts</span>&#8198;<i class="self-center text-md iconoir-post"></i></div>
+
+   <label class="bg-blend-difference input input-bordered input-search flex items-center gap-2 mt-4 pl-[1.125rem] pr-3">
       <input type="text" class="grow" placeholder="Search..." @oninput="@HandleInputChange" @bind-value="@SearchValue"/>
       <i class="text-2xl p-1.5 rounded-lg iconoir-@(string.IsNullOrEmpty(SearchValue) ? "search" : "xmark hover:bg-[#00000010] hover:cursor-pointer")" @onclick="@(() => SearchValue = string.Empty)"></i>
    </label>
@@ -53,7 +53,7 @@
          </div>
       </div>
       @if (index < FilteredPosts.Count - 1) {
-         <div class="w-full h-[1px] bg-[#2d312a] my-4"></div>
+         <div class="w-full h-[1px] bg-[hsla(26,28%,95%,.9)] my-4"></div>
       }
    }
 
