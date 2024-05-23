@@ -93,6 +93,9 @@
    private void NavigateToPost(Models.Post post)
    {
       var baseUri = NavigationManager.BaseUri;
+      Console.WriteLine("baseUri: " + baseUri);
+      Console.WriteLine("postDate: " + post.Date);
+      Console.WriteLine("postId: " + post.Id.Substring(post.Id.LastIndexOf('/')));
       NavigationManager.NavigateTo(Path.Combine(baseUri, "post", post.Date, post.Id.Substring(post.Id.LastIndexOf('/'))));
    }
 
