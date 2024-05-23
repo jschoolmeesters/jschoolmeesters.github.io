@@ -66,8 +66,6 @@
 
 </div>
 
-
-
 @code {
    [Inject]
    private HttpClient HttpClient { get; set; }
@@ -94,7 +92,8 @@
 
    private void NavigateToPost(Models.Post post)
    {
-      NavigationManager.NavigateTo("post/" + post.Date + "/" + post.Id);
+      var baseUri = NavigationManager.BaseUri;
+      NavigationManager.NavigateTo(Path.Combine(baseUri, "post", post.Date, post.Id));
    }
 
    private void HandleInputChange(ChangeEventArgs e)
