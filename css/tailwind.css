@@ -1971,10 +1971,6 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -2031,6 +2027,10 @@ details.collapse summary::-webkit-details-marker {
   width: 1.75rem;
 }
 
+.w-\[10rem\] {
+  width: 10rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2039,8 +2039,21 @@ details.collapse summary::-webkit-details-marker {
   max-width: 500px;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-none {
+  flex: none;
+}
+
 .grow {
   flex-grow: 1;
+}
+
+.translate-y-\[-0\.375rem\] {
+  --tw-translate-y: -0.375rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {
@@ -2221,6 +2234,10 @@ details.collapse summary::-webkit-details-marker {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-2xl {
