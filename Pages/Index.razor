@@ -93,10 +93,10 @@
    private void NavigateToPost(Models.Post post)
    {
       var baseUri = NavigationManager.BaseUri;
-      Console.WriteLine("baseUri: " + baseUri);
+      Console.WriteLine("baseUri: " + NavigationManager.BaseUri);
       Console.WriteLine("postDate: " + post.Date);
-      Console.WriteLine("postId: " + post.Id.Substring(post.Id.LastIndexOf('/')));
-      NavigationManager.NavigateTo(Path.Combine(baseUri, "post", post.Date, post.Id.Substring(post.Id.LastIndexOf('/'))));
+      Console.WriteLine("postId: " + post.Id.Substring(post.Id.LastIndexOf('/') + 1));
+      NavigationManager.NavigateTo(Path.Combine(baseUri, "post", post.Date, post.Id.Substring(post.Id.LastIndexOf('/') + 1)));
    }
 
    private void HandleInputChange(ChangeEventArgs e)
