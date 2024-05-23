@@ -24,13 +24,13 @@
    </div>
 
    <div class="flex my-4 px-4 w-full">
-      <p class="flex-1 w-2/3 text-[hsla(26,28%,95%,.9)]">
+      <p class="text-sm flex-1 w-2/3 text-[hsla(26,28%,95%,.9)]">
          Hey! I'm Jordy - a computing science student, C# developer and producer interested in the field of DSP.
       </p>
-      <ul class="flex-none w-[10rem] text-md text-right">
-         <li><a href="https://github.com/jschoolmeesters">[GitHub]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-         <li><a href="https://www.linkedin.com/in/jordyschoolmeesters">[LinkedIn]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-         <li><a href="mailto:someone@example.com">[Mail]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
+      <ul class="flex-none w-[8.75rem] text-sm text-right">
+         <li class="text-[hsla(26,28%,95%,.9)]"><a href="https://github.com/jschoolmeesters">[GitHub]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
+         <li class="text-[hsla(26,28%,95%,.9)]"><a href="https://www.linkedin.com/in/jordyschoolmeesters">[LinkedIn]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
+         <li class="text-[hsla(26,28%,95%,.9)]"><a href="mailto:someone@example.com">[Mail]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
       </ul>
    </div>
 </div>
@@ -50,8 +50,8 @@
       var post = item.post;
       var index = item.i;
       <div @onclick="@(() => NavigateToPost(post))" class="my-4 hover:cursor-pointer post-preview">
-         <h2 class="text-xl">@post.Title</h2>
-         <div class="text-lg">@post.Date</div>
+         <h2 class="text-lg text-[hsla(26,28%,95%,.9)]">@post.Title</h2>
+         <div class="text-md text-[hsla(26,28%,95%,.5)]">@post.Date</div>
          <div>
             @* TODO: add sorting to tags *@
             @foreach (string tag in post.Tags.Split(',').Order()) {
