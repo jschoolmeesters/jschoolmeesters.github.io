@@ -93,7 +93,7 @@
    private void NavigateToPost(Models.Post post)
    {
       var baseUri = NavigationManager.BaseUri;
-      NavigationManager.NavigateTo(Path.Combine(baseUri, "post", post.Date, post.Id));
+      NavigationManager.NavigateTo(Path.Combine(baseUri, "post", post.Date, post.Id.Substring(post.Id.LastIndexOf('/'))));
    }
 
    private void HandleInputChange(ChangeEventArgs e)
