@@ -30,7 +30,7 @@
 
 .haha {
     background-image: url("../media/newtribal.svg");
-    background-size: 90% auto;
+    background-size: 90% auto; /*was 90% auto*/
     background-repeat: no-repeat;
     background-position: top;
     opacity: 100%;
@@ -170,12 +170,12 @@ body {
     }
 
     .input-search, .input-search:focus {
-        @apply bg-[#DFDCD9];
+        @apply bg-[#2d312a];
         @apply border-none;
     }
 
     .input-search > input::placeholder, .input-search > i {
-        @apply text-[hsla(26,28%,5%,.5)];
+        @apply text-[hsla(26,28%,95%,.9)];
     }
 
     .input-nav {

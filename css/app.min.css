@@ -768,34 +768,6 @@ html {
   }
 }
 
-.footer {
-  display: grid;
-  width: 100%;
-  grid-auto-flow: row;
-  place-items: start;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-  row-gap: 2.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.footer > * {
-  display: grid;
-  place-items: start;
-  gap: 0.5rem;
-}
-
-@media (min-width: 48rem) {
-  .footer {
-    grid-auto-flow: column;
-  }
-
-  .footer-center {
-    grid-auto-flow: row dense;
-  }
-}
-
 .label {
   display: flex;
   -webkit-user-select: none;
@@ -1943,16 +1915,16 @@ details.collapse summary::-webkit-details-marker {
 
 .input-search, .input-search:focus {
   --tw-bg-opacity: 1;
-  background-color: rgb(223 220 217 / var(--tw-bg-opacity));
+  background-color: rgb(45 49 42 / var(--tw-bg-opacity));
   border-style: none;
 }
 
 .input-search > input::-moz-placeholder {
-  color: hsla(26,28%,5%,.5);
+  color: hsla(26,28%,95%,.9);
 }
 
 .input-search > input::placeholder, .input-search > i {
-  color: hsla(26,28%,5%,.5);
+  color: hsla(26,28%,95%,.9);
 }
 
 .collapse {
@@ -1989,10 +1961,6 @@ details.collapse summary::-webkit-details-marker {
 
 .z-\[999\] {
   z-index: 999;
-}
-
-.float-right {
-  float: right;
 }
 
 .m-2 {
@@ -2039,10 +2007,6 @@ details.collapse summary::-webkit-details-marker {
 
 .block {
   display: block;
-}
-
-.inline-block {
-  display: inline-block;
 }
 
 .inline {
@@ -2143,6 +2107,10 @@ details.collapse summary::-webkit-details-marker {
   gap: 0.5rem;
 }
 
+.self-center {
+  align-self: center;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -2175,11 +2143,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-\[\#2d312a\] {
   --tw-bg-opacity: 1;
   background-color: rgb(45 49 42 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#f6f2ef\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 242 239 / var(--tw-bg-opacity));
 }
 
 .bg-\[hsla\(26\2c 28\%\2c 95\%\2c \.9\)\] {
@@ -2336,14 +2299,13 @@ details.collapse summary::-webkit-details-marker {
   letter-spacing: 0.05em;
 }
 
-.text-\[\#2d312a\] {
-  --tw-text-opacity: 1;
-  color: rgb(45 49 42 / var(--tw-text-opacity));
-}
-
 .text-\[\#a6a999\] {
   --tw-text-opacity: 1;
   color: rgb(166 169 153 / var(--tw-text-opacity));
+}
+
+.text-\[hsla\(26\2c 28\%\2c 95\%\2c \.5\)\] {
+  color: hsla(26,28%,95%,.5);
 }
 
 .text-\[hsla\(26\2c 28\%\2c 95\%\2c \.7\)\] {
@@ -2352,6 +2314,10 @@ details.collapse summary::-webkit-details-marker {
 
 .text-\[hsla\(26\2c 28\%\2c 95\%\2c \.9\)\] {
   color: hsla(26,28%,95%,.9);
+}
+
+.text-\[hsla\(26\2c 28\%\2c 95\%\2c 1\)\] {
+  color: hsla(26,28%,95%,1);
 }
 
 .text-gray-300 {
@@ -2371,6 +2337,14 @@ details.collapse summary::-webkit-details-marker {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.line-through {
+  text-decoration-line: line-through;
+}
+
+.bg-blend-difference {
+  background-blend-mode: difference;
 }
 
 .mix-blend-difference {
@@ -2407,6 +2381,7 @@ details.collapse summary::-webkit-details-marker {
 .haha {
   background-image: url("../media/newtribal.svg");
   background-size: 90% auto;
+  /*was 90% auto*/
   background-repeat: no-repeat;
   background-position: top;
   opacity: 100%;
