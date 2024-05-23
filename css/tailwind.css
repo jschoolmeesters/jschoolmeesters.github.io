@@ -2144,8 +2144,8 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(45 49 42 / var(--tw-bg-opacity));
 }
 
-.bg-\[hsla\(26\2c 28\%\2c 95\%\2c \.9\)\] {
-  background-color: hsla(26,28%,95%,.9);
+.bg-\[hsla\(26\2c 28\%\2c 95\%\2c \.5\)\] {
+  background-color: hsla(26,28%,95%,.5);
 }
 
 .bg-gray-50 {
