@@ -1,6 +1,6 @@
 {
     "navigationFallback": {
-      "rewrite": "/index.html",
+      "redirect": "/index.html",
       "exclude": ["/media/*.{png,jpg,gif}", "/css/*", "/fonts/*", "posts/*"]
     }
   }
