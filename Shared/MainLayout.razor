@@ -75,9 +75,9 @@
     private void NavigateToPage(string page) {
         var uri = Path.Combine(NavigationManager.BaseUri, page);
 
-        if (uri == NavigationManager.Uri)
-            ShowMenu = false;
-        else
+        if (!(uri == NavigationManager.Uri))
             NavigationManager.NavigateTo(uri);
+            
+        ShowMenu = false;
     }
 }
