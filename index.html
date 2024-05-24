@@ -15,8 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
 </head>
 
-<body class="open-sans-400">
-    <div id="app">Loading...</div>
+<body>
+    <div id="app">
+        <div class="linear-progress">
+            <span class="z-[2000] w-full absolute text-md mix-blend-difference text-[hsla(26,28%,95%,.9)] inline-block text-center top-1/2 translate-y-[-50%]">
+                <span class="block after:content-[var(--blazor-load-percentage-text)]"></span><span class="block">[Loading]</span>
+            </span>
+        </div>
+    </div>
 
     <!--
     <div id="blazor-error-ui">
