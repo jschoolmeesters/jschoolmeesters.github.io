@@ -11,7 +11,7 @@
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer  text-sm">DSP, Sound, Music production</span>
                 }
                 <span class="grow"></span>
-                <button class="text-sm" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE [×]" : "MENU [=]")</button>
+                <button class="text-sm" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE (×)" : "MENU (=)")</button>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
         </div>
 
         <div class="w-full px-4 pb-4 select-none">
-            <div class="flex mt-4 pb-0.5 text-[hsla(26,28%,95%,.5)]"><span class="self-center text-md">The end</span></div>
+            <div class="flex justify-between mt-4 pb-0.5 text-[hsla(26,28%,95%,.5)]"><span class="self-center text-md uppercase">The end</span><div class="flex">(<i class="self-center text-md iconoir-arrow-up"></i>)</div></div>
             <div class="mt-4">
                 <h3 class="text-md mb-2 inline">© 2024 <span @onclick="@(() => NavigateToPage(""))" class="underline cursor-pointer">Jordy Schoolmeesters</span></h3>
                 <span>-</span>
