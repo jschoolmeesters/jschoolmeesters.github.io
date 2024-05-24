@@ -8,6 +8,7 @@
 @using System.IO
 @using MarkdownHelper = BlazorPortfolio.Helpers.MarkdownHelper
 @using BlazorPortfolio.Models
+@using System.Text.Json
 
 <PageTitle>@Title</PageTitle>
 
@@ -34,7 +35,7 @@
     public PostFrontMatter FrontMatter { get; set; }
     public string Title { get; set; } = "";
     public string Date { get; set; } = "";
-    public string[] Tags { get; set; } = new string[] { };
+    public IEnumerable<string> Tags { get; set; } = new string[] { };
 
     protected override async Task OnInitializedAsync()
     {
@@ -43,6 +44,27 @@
             var trimmedSlug = Slug.TrimEnd('/');
             trimmedSlug = trimmedSlug.Contains('/') ? trimmedSlug.Substring(trimmedSlug.LastIndexOf(@"/")) : trimmedSlug;
             var fileName = trimmedSlug.Length > 1 && trimmedSlug[0] == '/' ? trimmedSlug.Substring(1) : trimmedSlug;
+
+var jsonContent = await HttpClient.GetStringAsync("posts/posts.json");
+            var posts = JsonSerializer.Deserialize<List<Models.Post>>(jsonContent);
+                foreach (var post in posts) {
+                    Console.WriteLine(post.Id);
+                }
+/*
+            var jsonContent = await HttpClient.GetStringAsync("posts/posts.json");
+            var posts = JsonSerializer.Deserialize<List<Models.Post>>(jsonContent);
+            if (posts != null) {
+                var post = posts.FirstOrDefault(p => p.Id.EndsWith("/" + fileName));
+                if (post != null) {
+                    Title = post.Title;
+                    Date = post.Date;
+                    Tags = post.TagsAsList;
+                }
+            } else {
+                Console.WriteLine("Post not found.");
+            }
+             */   
+
             Console.WriteLine(fileName);
             var uri = Path.Combine("posts", fileName + ".md");
             Console.WriteLine(uri);

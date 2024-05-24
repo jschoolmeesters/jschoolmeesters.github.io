@@ -22,6 +22,12 @@ namespace BlazorPortfolio.Models {
             }
         }
 
+        public List<string> TagsAsList {
+            get {
+                return Tags.Split(',').ToList();
+            }
+        }
+
         /*
         Post(string id, string title, string date) {
             Id = id;
