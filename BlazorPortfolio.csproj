@@ -47,7 +47,7 @@
               string[] parts = frontMatter.Split('\n');
 
               // Add id
-              var lastSlash = path.LastIndexOf("\\");
+              var lastSlash = path.LastIndexOf(Path.DirectorySeparatorChar);
           
               var idWithExtension = path.Substring(lastSlash + 1);
               var idWithoutExtension = idWithExtension.Remove(idWithExtension.IndexOf(".md"));
