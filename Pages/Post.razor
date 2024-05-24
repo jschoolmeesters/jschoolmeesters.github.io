@@ -32,7 +32,6 @@
     [Parameter]
     public string? Slug { get; set; }
     public MarkupString HtmlContent { get; set; }
-    public PostFrontMatter FrontMatter { get; set; }
     public string Title { get; set; } = "";
     public string Date { get; set; } = "";
     public IEnumerable<string> Tags { get; set; } = new string[] { };
@@ -45,45 +44,21 @@
             trimmedSlug = trimmedSlug.Contains('/') ? trimmedSlug.Substring(trimmedSlug.LastIndexOf(@"/")) : trimmedSlug;
             var fileName = trimmedSlug.Length > 1 && trimmedSlug[0] == '/' ? trimmedSlug.Substring(1) : trimmedSlug;
 
-var jsonContent = await HttpClient.GetStringAsync("posts/posts.json");
-            var posts = JsonSerializer.Deserialize<List<Models.Post>>(jsonContent);
-                foreach (var post in posts) {
-                    Console.WriteLine(post.Id);
-                }
-/*
             var jsonContent = await HttpClient.GetStringAsync("posts/posts.json");
             var posts = JsonSerializer.Deserialize<List<Models.Post>>(jsonContent);
             if (posts != null) {
-                var post = posts.FirstOrDefault(p => p.Id.EndsWith("/" + fileName));
+                var post = posts.FirstOrDefault(p => p.Id == fileName);
                 if (post != null) {
                     Title = post.Title;
                     Date = post.Date;
                     Tags = post.TagsAsList;
+                    var contentStartIndex = post.ContentStartIndex;
+
+                    var uri = Path.Combine("posts", post.Id + ".md");
+                    var markdownContent = await HttpClient.GetStringAsync(uri);
+                    HtmlContent = new MarkupString(Markdown.ToHtml(markdownContent.Substring(contentStartIndex)));
                 }
-            } else {
-                Console.WriteLine("Post not found.");
             }
-             */   
-
-            Console.WriteLine(fileName);
-            var uri = Path.Combine("posts", fileName + ".md");
-            Console.WriteLine(uri);
-            var markdownContent = await HttpClient.GetStringAsync(uri);
-
-            // Extract front matter
-            FrontMatter = MarkdownHelper.GetFrontMatter<PostFrontMatter>(markdownContent);
-            Title = FrontMatter.Title;
-            Date = FrontMatter.Date;
-            Tags = FrontMatter.GetTags;
-            
-            // Extract content
-            var content = MarkdownHelper.GetContent(markdownContent);
-            HtmlContent = new MarkupString(Markdown.ToHtml(content));
-            
-            // string htmlContent = Markdown.ToHtml(markdownContent);
-            // var doc = Markdown.Parse(markdownContent);
-            // HtmlContent = new MarkupString(htmlContent);
-            // TODO: switch to stream reader instead of string reader for better performance
         }
         
         base.OnInitialized();

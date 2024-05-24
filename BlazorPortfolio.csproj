@@ -48,11 +48,13 @@
 
               // Add id
               var lastSlash = path.LastIndexOf(Path.DirectorySeparatorChar);
-          
               var idWithExtension = path.Substring(lastSlash + 1);
               var idWithoutExtension = idWithExtension.Remove(idWithExtension.IndexOf(".md"));
               jsonBuilder.Append($"\"id\":\"{idWithoutExtension}\", ");
-              Console.WriteLine("idWithoutExtension: " + idWithoutExtension);
+
+              // Add contentStartIndex for reading content quickly
+              var contentStartIndex = (end + 7).ToString();
+              jsonBuilder.Append($"\"contentStartIndex\":{contentStartIndex}, ");
 
               foreach (string part in parts)
               {
