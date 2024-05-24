@@ -26,6 +26,15 @@
     </div>
     
     -->
+    <script type="text/javascript">
+        (function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var path = urlParams.get('path');
+            if (path) {
+                history.replaceState({}, '', path);
+            }
+        })();
+    </script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 
