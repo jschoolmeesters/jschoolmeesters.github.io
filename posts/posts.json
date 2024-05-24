@@ -1,5 +1,5 @@
 ﻿[
-{"id":"wwwroot/posts/dsp1", "layout":"post", "title":"DSP adventures part 1 - Discrete sequences and systems", "tags":"DSP, tutorial", "date":"05/05/2024"},
-{"id":"wwwroot/posts/dsp2", "layout":"post", "title":"DSP adventures part 2 - Periodic sampling", "tags":"DSP, tutorial", "date":"05/06/2024"},
-{"id":"wwwroot/posts/dsp3", "layout":"post", "title":"Blazor blogging - How to get everything set up", "tags":"Blazor, tutorial", "date":"05/07/2024"}
+{"id":"dsp1", "layout":"post", "title":"DSP adventures part 1 - Discrete sequences and systems", "tags":"DSP, tutorial", "date":"05/05/2024"},
+{"id":"dsp2", "layout":"post", "title":"DSP adventures part 2 - Periodic sampling", "tags":"DSP, tutorial", "date":"05/06/2024"},
+{"id":"dsp3", "layout":"post", "title":"Blazor blogging - How to get everything set up", "tags":"Blazor, tutorial", "date":"05/07/2024"}
 ]
