@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}"],
+  content: ["./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}", "./Components/*.{razor,html,cshtml}"],
   theme: { extend: {} },
   plugins: [
     require('daisyui'),
