@@ -2214,14 +2214,6 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 1rem;
 }
 
-.pb-0 {
-  padding-bottom: 0px;
-}
-
-.pb-0\.5 {
-  padding-bottom: 0.125rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
 }
