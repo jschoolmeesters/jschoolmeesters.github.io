@@ -1975,12 +1975,24 @@ details.collapse summary::-webkit-details-marker {
   margin-left: 0.25rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
 
 .mt-\[5\.5rem\] {
   margin-top: 5.5rem;
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .block {
@@ -2103,6 +2115,14 @@ details.collapse summary::-webkit-details-marker {
   gap: 0.5rem;
 }
 
+.gap-y-0 {
+  row-gap: 0px;
+}
+
+.gap-y-0\.5 {
+  row-gap: 0.125rem;
+}
+
 .self-center {
   align-self: center;
 }
@@ -2218,6 +2238,10 @@ details.collapse summary::-webkit-details-marker {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
