@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav-link.active, .nav-link.active:hover {
+    color: hsla(26,28%,95%,.9);
+}
+
+.nav-link {
+    color: hsla(26,28%,95%,.5);
+}
+
+.nav-link:not(.disabled):hover {
+    color: hsla(26,28%,95%,.7);
+}
+
 .linear-progress {
     background: hsla(26,28%,95%,.3);
     height: 1px;
