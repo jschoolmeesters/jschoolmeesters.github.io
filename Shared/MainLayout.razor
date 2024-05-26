@@ -7,7 +7,7 @@
     <div class="wrapper w-full max-w-[500px] mx-auto">
         <div class="z-[1000] fixed top-0 w-full max-w-[500px] text-[hsla(26,28%,95%,.9)] bg-[#141612] select-none">
             <div class="z-[1000] flex items-center pt-8 pb-4 px-4">
-                @if (ShowMenu || NavigationManager.Uri.Contains("post")) {
+                @if (ShowMenu || NavigationManager.Uri.Contains("blog")) {
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer text-sm">Jordy Schoolmeesters</span>
                 } else {
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer  text-sm">DSP, Sound, Music production</span>
