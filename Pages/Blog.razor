@@ -1,32 +1,9 @@
-﻿@page "/"
+@page "/blog"
 @using System.Text.Json
 @using BlazorPortfolio.Models;
 @using System.Globalization
 @inject NavigationManager NavigationManager
-<PageTitle>Jordy Schoolmeesters — Computer Scientist</PageTitle>
-
-<div class="w-full relative text-[hsla(26,28%,95%,1)] bg-[#141612] select-none">
-   <div class="w-full h-[50vh] overflow-hidden pb-4">
-      <div class="haha absolute mix-blend-difference inset-0  mx-auto w-full h-[50vh] object-cover z-[2]"></div>
-      <div class="wrapper">
-         <div class="marquee">
-            <p class="sharp-grotesk-semibold text-[50vh] h-[50vh] leading-none text-[hsla(26,28%,95%,.9)] uppercase">&#8198;Jordy&#8198;Schoolmeesters</p>
-            <p class="sharp-grotesk-semibold text-[50vh] h-[50vh] leading-none text-[hsla(26,28%,95%,.9)] uppercase">&#8198;Jordy&#8198;Schoolmeesters</p>
-         </div>
-      </div>
-   </div>
-
-   <div class="flex my-4 px-4 w-full">
-      <p class="text-sm flex-1 w-2/3 text-[hsla(26,28%,95%,.9)]">
-         Hey! I'm Jordy - a computing science student, C# developer and producer interested in the field of DSP.
-      </p>
-      <ul class="flex-none w-[8.75rem] text-sm text-right">
-         <li class="text-[hsla(26,28%,95%,.9)]"><a href="https://github.com/jschoolmeesters">[GitHub]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-         <li class="text-[hsla(26,28%,95%,.9)]"><a href="https://www.linkedin.com/in/jordyschoolmeesters">[LinkedIn]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-         <li class="text-[hsla(26,28%,95%,.9)]"><a href="mailto:someone@example.com">[Mail]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-      </ul>
-   </div>
-</div>
+<PageTitle>Jordy Schoolmeesters — Blog</PageTitle>
 
 <div class="w-full p-4 select-none">
    <div class="flex justify-between mt-4 text-[hsla(26,28%,95%,.5)]"><span class="self-center text-md uppercase">Latest posts&#8198;[@Posts.Count]</span><div class="flex">(<i class="self-center text-md iconoir-post-solid"></i>)</div></div>
@@ -53,10 +30,7 @@
          <div class="w-full h-[1px] bg-[hsla(26,28%,95%,.5)] my-4"></div>
       }
    }
-
 </div>
-
-<BlazorPortfolio.Components.Footer />
 
 @code {
    [Inject]

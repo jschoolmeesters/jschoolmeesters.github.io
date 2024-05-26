@@ -17,35 +17,35 @@
             </div>
         </div>
 
-        <aside class="opacity-fade text-[hsla(26,28%,95%,.5)] bg-[#141612] wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[999] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+        <aside class="opacity-fade text-[hsla(26,28%,95%,.7)] bg-[#141612] wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[999] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
         <nav class="flex absolute inset-0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
             <div class="flex flex-col justify-end w-full">
                 <div></div>
                 <ul class="p-4 flex flex-col items-start">
                     <li class="overflow-hidden">
-                    <a aria-current="page" class="cursor-pointer flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                        <span @onclick="@(() => NavigateToPage(""))" class="text-slideup animation-delay-0 text-[hsla(26,28%,95%,.9)]">Index</span>
-                    </a>
+                        <NavLink href="/" @onclick="@(() => ShowMenu = false)" Match="NavLinkMatch.All" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            <span class="text-slideup animation-delay-0">Index</span>
+                        </NavLink>
                     </li>
                     <li class="overflow-hidden">
-                    <a class="cursor-pointer hover:text-[hsla(26,28%,95%,.7)] flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                        <span @onclick="@(() => NavigateToPage("blog"))" class="text-slideup animation-delay-1">Blog<span class="text-3xl align-top">[@PostCount]</span></span>
-                    </a>
+                        <NavLink href="/blog" @onclick="@(() => ShowMenu = false)" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            <span class="text-slideup animation-delay-1">Blog<span class="text-3xl align-top">[@PostCount]</span></span>
+                        </NavLink>
                     </li>
                     <li class="overflow-hidden">
-                    <a class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <NavLink class="nav-link disabled flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
                         <span class="text-slideup animation-delay-2 line-through">Services</span>
-                    </a>
+                    </NavLink>
                     </li>
                     <li class="overflow-hidden">
-                    <a class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <NavLink class="nav-link disabled flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
                         <span class="text-slideup animation-delay-3 line-through">About</span>
-                    </a>
+                    </NavLink>
                     </li>
                     <li class="overflow-hidden">
-                    <a class="flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <NavLink class="nav-link disabled flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
                         <span class="text-slideup animation-delay-4 line-through">Contact</span>
-                    </a>
+                    </NavLink>
                     </li>
                 </ul>
             <BlazorPortfolio.Components.Footer />
