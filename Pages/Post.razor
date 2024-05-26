@@ -104,6 +104,6 @@
    private void NavigateToPost(Models.Post post)
    {
       var baseUri = NavigationManager.BaseUri;
-      NavigationManager.NavigateTo(Path.Combine(baseUri, "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1)), true);
+      NavigationManager.NavigateTo(Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1)), true);
    }
 }
