@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 .linear-progress {
-    background: #000;
-    width: 100vw;
-    height: 100vh;
+    background: hsla(26,28%,95%,.3);
+    height: 1px;
     overflow: hidden;
     position: relative;
 }
@@ -18,7 +17,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: #141612;
+    background: hsla(26,28%,95%,.9);
     scale: var(--blazor-load-percentage, 0%) 100%;
     transform-origin: left top;
     transition: scale ease-out 0.5s;

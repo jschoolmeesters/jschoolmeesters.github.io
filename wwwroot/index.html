@@ -19,9 +19,10 @@
 
 <body>
     <div id="app">
-        <div class="linear-progress">
-            <span class="z-[2000] w-full absolute text-md mix-blend-difference text-[hsla(26,28%,95%,.9)] inline-block text-center top-1/2 translate-y-[-50%]">
-                <span class="block after:content-[var(--blazor-load-percentage-text)]"></span><span class="block">[Loading]</span>
+        <div class="absolute top-1/2 translate-y-[-50%] w-[100vw] px-4">
+            <div class="linear-progress w-full"></div>
+            <span class="flex flex-row justify-between z-[2000] w-full relative text-md text-[hsla(26,28%,95%,.9)]">
+                <span class="block uppercase">Loading</span><span class="block after:content-['['var(--blazor-load-percentage-text)']']"></span>
             </span>
         </div>
     </div>
