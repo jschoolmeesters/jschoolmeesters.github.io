@@ -2009,10 +2009,6 @@ details.collapse summary::-webkit-details-marker {
   display: block;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 .inline {
   display: inline;
 }
@@ -2047,6 +2043,10 @@ details.collapse summary::-webkit-details-marker {
 
 .w-7 {
   width: 1.75rem;
+}
+
+.w-\[100vw\] {
+  width: 100vw;
 }
 
 .w-\[8\.75rem\] {
@@ -2095,6 +2095,10 @@ details.collapse summary::-webkit-details-marker {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -2254,10 +2258,6 @@ details.collapse summary::-webkit-details-marker {
   text-align: left;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .text-right {
   text-align: right;
 }
@@ -2377,9 +2377,8 @@ details.collapse summary::-webkit-details-marker {
 }
 
 .linear-progress {
-  background: #000;
-  width: 100vw;
-  height: 100vh;
+  background: hsla(26,28%,95%,.3);
+  height: 1px;
   overflow: hidden;
   position: relative;
 }
@@ -2392,7 +2391,7 @@ details.collapse summary::-webkit-details-marker {
   content: '';
   position: absolute;
   inset: 0;
-  background: #141612;
+  background: hsla(26,28%,95%,.9);
   scale: var(--blazor-load-percentage, 0%) 100%;
   transform-origin: left top;
   transition: scale ease-out 0.5s;
@@ -2983,8 +2982,8 @@ mark:before {
   }
 }
 
-.after\:content-\[var\(--blazor-load-percentage-text\)\]::after {
-  --tw-content: var(--blazor-load-percentage-text);
+.after\:content-\[\'\[\'var\(--blazor-load-percentage-text\)\'\]\'\]::after {
+  --tw-content: '['var(--blazor-load-percentage-text)']';
   content: var(--tw-content);
 }
 

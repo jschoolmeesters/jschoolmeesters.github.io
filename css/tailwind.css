@@ -1995,10 +1995,6 @@ details.collapse summary::-webkit-details-marker {
   display: block;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 .inline {
   display: inline;
 }
@@ -2033,6 +2029,10 @@ details.collapse summary::-webkit-details-marker {
 
 .w-7 {
   width: 1.75rem;
+}
+
+.w-\[100vw\] {
+  width: 100vw;
 }
 
 .w-\[8\.75rem\] {
@@ -2081,6 +2081,10 @@ details.collapse summary::-webkit-details-marker {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -2238,10 +2242,6 @@ details.collapse summary::-webkit-details-marker {
 
 .text-left {
   text-align: left;
-}
-
-.text-center {
-  text-align: center;
 }
 
 .text-right {
@@ -2611,8 +2611,8 @@ details.collapse summary::-webkit-details-marker {
   }
 }
 
-.after\:content-\[var\(--blazor-load-percentage-text\)\]::after {
-  --tw-content: var(--blazor-load-percentage-text);
+.after\:content-\[\'\[\'var\(--blazor-load-percentage-text\)\'\]\'\]::after {
+  --tw-content: '['var(--blazor-load-percentage-text)']';
   content: var(--tw-content);
 }
 
