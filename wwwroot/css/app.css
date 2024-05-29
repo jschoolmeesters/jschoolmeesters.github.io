@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .trib {
-    filter: invert(87%) sepia(89%) saturate(5735%) hue-rotate(355deg) brightness(108%) contrast(102%);
+    filter: invert(92%) sepia(2%) saturate(571%) hue-rotate(330deg) brightness(87%) contrast(93%);
 }
 
 .nav-link.active, .nav-link.active:hover {
