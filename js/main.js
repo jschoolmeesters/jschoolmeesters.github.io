@@ -6,6 +6,8 @@ var createScene = async function () {
     var engine = new BABYLON.Engine(canvas, true);
 
     var scene = new BABYLON.Scene(engine);
+    // Set the scene's clear color to transparent
+    scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);  // RGBA value with alpha = 0
     scene.useRightHandedSystem = true;
     scene.enablePhysics(new BABYLON.Vector3(0, -2, 0), new BABYLON.CannonJSPlugin());
 
@@ -105,34 +107,9 @@ var createScene = async function () {
         box.rotate(new BABYLON.Vector3(0, 0, 1), -1.8);
         box.position = new BABYLON.Vector3(0, 3.8, 0);
         //box.physicsImpostor = new BABYLON.PhysicsImpostor(box, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 1, restitution: 0.6, friction: 0.5 }, scene);
-
-    BABYLON.SceneLoader.ImportMesh("", "../media/", "model-genelec.glb", scene, function (newMeshes) {
-        // Scale loaded mesh
-        newMeshes[0].scaling.scaleInPlace(2.5);
-        newMeshes[0].position.set(0,0,0);
-
-        // Create a physics root and add all children
-        var physicsRoot = new BABYLON.Mesh("", scene);
-        physicsRoot.addChild(newMeshes[0]);
-        
-        // Create a box collider
-        var boxCollider = BABYLON.MeshBuilder.CreateBox("box1", { width:1.9,height:3,depth:2 }, scene);
-        //boxCollider.position.y = 0;
-        //boxCollider.position.z = 0;
-        boxCollider.isVisible = false; // Set to false to make the collider invisible
-
-        // Add the boxCollider to the physicsRoot
-        physicsRoot.addChild(boxCollider);
-
-        // Enable physics on the colliders first, then the physics root of the mesh
-        boxCollider.physicsImpostor = new BABYLON.PhysicsImpostor(boxCollider, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0 }, scene);
-        //physicsRoot.physicsImpostor = new BABYLON.PhysicsImpostor(physicsRoot, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0.5,restitution:0.8 }, scene);
-        physicsRoot.rotate(new BABYLON.Vector3(0, 0, -1), 29.85);
-        physicsRoot.position = new BABYLON.Vector3(-3, 2, 0);
-        //physicsRoot.rotation.z = Math.PI / 6;
-    });
-
+/*
     BABYLON.SceneLoader.ImportMesh("", "../media/", "model-keyboard.glb", scene, function (newMeshes) {
+        
         // Scale loaded mesh
         newMeshes[0].scaling.scaleInPlace(8);
         newMeshes[0].position.set(0,-0.2,0);
@@ -140,9 +117,11 @@ var createScene = async function () {
         // Create a physics root and add all children
         var physicsRoot = new BABYLON.Mesh("", scene);
         physicsRoot.addChild(newMeshes[0]);
-        physicsRoot.rotate(new BABYLON.Vector3(-1, 0, 0), 30);
-        physicsRoot.rotate(new BABYLON.Vector3(0, -1, 0), 0.25);
-        
+        //physicsRoot.rotate(new BABYLON.Vector3(-1, 0, 0), 30);
+        //physicsRoot.rotate(new BABYLON.Vector3(0, -1, 0), 0.25);
+        physicsRoot.rotate(new BABYLON.Vector3(0, 1, 0), 0.5);
+        physicsRoot.rotate(new BABYLON.Vector3(0, 0, 0), 0.4);
+
         // Create a box collider
         var boxCollider = BABYLON.MeshBuilder.CreateBox("box1", { width:4,height:1.5,depth:2.2 }, scene);
         boxCollider.position.y = 0;
@@ -156,10 +135,11 @@ var createScene = async function () {
         boxCollider.physicsImpostor = new BABYLON.PhysicsImpostor(boxCollider, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0 }, scene);
         //physicsRoot.physicsImpostor = new BABYLON.PhysicsImpostor(physicsRoot, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0.5,restitution:1 }, scene);
 
-        physicsRoot.position = new BABYLON.Vector3(-0.5, 6, 0.2);
+        physicsRoot.position = new BABYLON.Vector3(-1.5, 2, 1);
        
     });
-
+*/
+    /*
     BABYLON.SceneLoader.ImportMesh("", "../media/", "model-glasses.glb", scene, function (newMeshes) {
         // Scale loaded mesh
         newMeshes[0].scaling.scaleInPlace(2);
@@ -187,33 +167,7 @@ var createScene = async function () {
         physicsRoot.position = new BABYLON.Vector3(-2.5, 1, 1);
         //physicsRoot.rotation.z = Math.PI / 6;
     });
-
-    BABYLON.SceneLoader.ImportMesh("", "../media/", "model-hold.glb", scene, function (newMeshes) {
-        // Scale loaded mesh
-        newMeshes[0].scaling.scaleInPlace(0.025);
-        newMeshes[0].position.set(-0.2,0,-0.7);
-
-        // Create a physics root and add all children
-        var physicsRoot = new BABYLON.Mesh("", scene);
-        physicsRoot.addChild(newMeshes[0]);
-        physicsRoot.rotate(new BABYLON.Vector3(0, 1, 0), 0.6);
-        
-        // Create a box collider
-        var boxCollider = BABYLON.MeshBuilder.CreateBox("box1", { width:2.8,height:2,depth:1.6 }, scene);
-        boxCollider.position.y = 0;
-        boxCollider.position.z = 0;
-        boxCollider.isVisible = false; // Set to false to make the collider invisible
-        physicsRoot.addChild(boxCollider);
-
-        // Enable physics on the colliders first, then the physics root of the mesh
-        boxCollider.physicsImpostor = new BABYLON.PhysicsImpostor(boxCollider, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0 }, scene);
-        //physicsRoot.physicsImpostor = new BABYLON.PhysicsImpostor(physicsRoot, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0.5,restitution:1 }, scene);
-
-
-
-        physicsRoot.position = new BABYLON.Vector3(0.7, 2, 0);
-       
-    });
+    */
 
     engine.runRenderLoop(function () {
         scene.render();

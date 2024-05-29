@@ -1953,12 +1953,24 @@ details.collapse summary::-webkit-details-marker {
   inset: 0px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
 .top-0 {
   top: 0px;
 }
 
 .top-1\/2 {
   top: 50%;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .z-\[1000\] {
@@ -2039,6 +2051,10 @@ details.collapse summary::-webkit-details-marker {
   height: 50vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .max-h-\[500px\] {
   max-height: 500px;
 }
@@ -2057,6 +2073,10 @@ details.collapse summary::-webkit-details-marker {
 
 .w-\[100vw\] {
   width: 100vw;
+}
+
+.w-\[70\%\] {
+  width: 70%;
 }
 
 .w-\[8\.75rem\] {
@@ -2203,11 +2223,6 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
-.bg-red-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
-}
-
 .bg-none {
   background-image: none;
 }
@@ -2231,6 +2246,10 @@ details.collapse summary::-webkit-details-marker {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-3 {
