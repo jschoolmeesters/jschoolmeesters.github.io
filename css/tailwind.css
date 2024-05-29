@@ -2075,12 +2075,12 @@ details.collapse summary::-webkit-details-marker {
   width: 100vw;
 }
 
-.w-\[8\.75rem\] {
-  width: 8.75rem;
+.w-\[75\%\] {
+  width: 75%;
 }
 
-.w-\[80\%\] {
-  width: 80%;
+.w-\[8\.75rem\] {
+  width: 8.75rem;
 }
 
 .w-full {
@@ -2248,10 +2248,6 @@ details.collapse summary::-webkit-details-marker {
   padding: 1rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2408,6 +2404,10 @@ details.collapse summary::-webkit-details-marker {
 
 .bg-blend-difference {
   background-blend-mode: difference;
+}
+
+.mix-blend-color-burn {
+  mix-blend-mode: color-burn;
 }
 
 .mix-blend-difference {
