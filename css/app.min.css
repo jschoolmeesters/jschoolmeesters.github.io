@@ -2089,12 +2089,12 @@ details.collapse summary::-webkit-details-marker {
   width: 100vw;
 }
 
-.w-\[70\%\] {
-  width: 70%;
-}
-
 .w-\[8\.75rem\] {
   width: 8.75rem;
+}
+
+.w-\[80\%\] {
+  width: 80%;
 }
 
 .w-full {
@@ -2429,7 +2429,7 @@ details.collapse summary::-webkit-details-marker {
 }
 
 .trib {
-  filter: invert(87%) sepia(89%) saturate(5735%) hue-rotate(355deg) brightness(78%) contrast(102%);
+  filter: invert(87%) sepia(89%) saturate(5735%) hue-rotate(355deg) brightness(108%) contrast(102%);
 }
 
 .nav-link.active, .nav-link.active:hover {

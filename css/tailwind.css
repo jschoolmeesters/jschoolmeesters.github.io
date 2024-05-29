@@ -2075,12 +2075,12 @@ details.collapse summary::-webkit-details-marker {
   width: 100vw;
 }
 
-.w-\[70\%\] {
-  width: 70%;
-}
-
 .w-\[8\.75rem\] {
   width: 8.75rem;
+}
+
+.w-\[80\%\] {
+  width: 80%;
 }
 
 .w-full {
