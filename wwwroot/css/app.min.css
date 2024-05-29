@@ -2286,6 +2286,10 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 1rem;
 }
 
+.pb-\[10vh\] {
+  padding-bottom: 10vh;
+}
+
 .pl-\[1\.125rem\] {
   padding-left: 1.125rem;
 }
