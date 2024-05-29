@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.trib {
+    filter: invert(87%) sepia(89%) saturate(5735%) hue-rotate(355deg) brightness(78%) contrast(102%);
+}
+
 .nav-link.active, .nav-link.active:hover {
     color: hsla(26,28%,95%,.9);
 }
