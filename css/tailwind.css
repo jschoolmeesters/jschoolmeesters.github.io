@@ -2003,6 +2003,10 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -2270,10 +2274,6 @@ details.collapse summary::-webkit-details-marker {
 
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pb-\[10vh\] {
-  padding-bottom: 10vh;
 }
 
 .pl-\[1\.125rem\] {
