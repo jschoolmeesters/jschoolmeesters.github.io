@@ -218,6 +218,10 @@ var createScene = async function () {
     engine.runRenderLoop(function () {
         scene.render();
     });
+
+    window.addEventListener("resize", function () {
+        engine.resize();
+    });
 }
 
 
@@ -248,6 +252,4 @@ waitForElm("#renderCanvas").then(() => {
     createScene();
 });
 
-window.addEventListener("resize", function () {
-    engine.resize();
-});
+
