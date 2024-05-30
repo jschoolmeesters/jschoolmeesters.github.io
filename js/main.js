@@ -32,10 +32,14 @@ var createScene = async function () {
     var light = new BABYLON.HemisphericLight("omni", new BABYLON.Vector3(0, 1, 0.1), scene);
 	light.diffuse = new BABYLON.Color3(0.1, 0.1, 0.17);
 	light.specular = new BABYLON.Color3(0.1, 0.1, 0.1);
-    var light2 = new BABYLON.HemisphericLight("dirlight", new BABYLON.Vector3(1, -0.75, 0.25), scene);
+    var light2 = new BABYLON.HemisphericLight("dirlight", new BABYLON.Vector3(1, 0, 1), scene);
 	light2.diffuse = new BABYLON.Color3(1, 1, 1);
-	light.specular = new BABYLON.Color3(0.58, 0.49, .5);
-    
+	light2.specular = new BABYLON.Color3(0.58, 0.49, .5);
+
+    var light3 = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(10, 2, 2), new BABYLON.Vector3(-1, 0, 0), Math.PI / 3, 2, scene);
+    light3.diffuse = new BABYLON.Color3(1, 1, 1);
+	light3.specular = new BABYLON.Color3(0.58, 0.49, .5);
+
     // Create walls
     var wallMaterial = new BABYLON.StandardMaterial("wallMat", scene);
     wallMaterial.diffuseColor = new BABYLON.Color3(1, 1, 1);
@@ -78,7 +82,11 @@ var createScene = async function () {
     camera.alpha = BABYLON.Tools.ToRadians(62); // Horizontal angle
     camera.beta = BABYLON.Tools.ToRadians(60);  // Vertical angle
     
-    
+    window.addEventListener("scroll", function () {
+        var prop = 1 + (this.window.scrollY / this.window.innerHeight)/2.5;
+        camera.radius = 22 * prop;
+        camera.beta = BABYLON.Tools.ToRadians(60 + (this.window.scrollY/12)); // Horizontal angle
+    });
 
     camera.radius = 22; // Distance from the target
 
@@ -139,15 +147,17 @@ var createScene = async function () {
        
     });
 */
-    /*
+
+
     BABYLON.SceneLoader.ImportMesh("", "../media/", "model-glasses.glb", scene, function (newMeshes) {
         // Scale loaded mesh
-        newMeshes[0].scaling.scaleInPlace(2);
-        newMeshes[0].position.set(0,-3.4,-1.8);
+        var mesh = newMeshes[0];
+        mesh.scaling.scaleInPlace(1);
+        mesh.position.set(0,-3.4,-1.8);
 
         // Create a physics root and add all children
         var physicsRoot = new BABYLON.Mesh("", scene);
-        physicsRoot.addChild(newMeshes[0]);
+        physicsRoot.addChild(mesh);
         
         
         // Create a box collider
@@ -158,16 +168,16 @@ var createScene = async function () {
         
         // Add the boxCollider to the physicsRoot
         physicsRoot.addChild(boxCollider);
-        physicsRoot.rotate(new BABYLON.Vector3(0, 1, 0), 0.1);
+        physicsRoot.rotate(new BABYLON.Vector3(0, 1, 0), 1);
 
         // Enable physics on the colliders first, then the physics root of the mesh
         boxCollider.physicsImpostor = new BABYLON.PhysicsImpostor(boxCollider, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0 }, scene);
         //physicsRoot.physicsImpostor = new BABYLON.PhysicsImpostor(physicsRoot, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0.5,restitution:1 }, scene);
 
-        physicsRoot.position = new BABYLON.Vector3(-2.5, 1, 1);
+        physicsRoot.position = new BABYLON.Vector3(-0.2, 5.5, 3);
         //physicsRoot.rotation.z = Math.PI / 6;
     });
-    */
+    
 
     BABYLON.SceneLoader.ImportMesh("", "../media/", "model-rocks.glb", scene, function (newMeshes) {
         
