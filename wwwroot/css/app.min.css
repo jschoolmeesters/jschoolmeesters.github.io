@@ -1987,10 +1987,6 @@ details.collapse summary::-webkit-details-marker {
   z-index: 10;
 }
 
-.z-\[-1\] {
-  z-index: -1;
-}
-
 .z-\[1000\] {
   z-index: 1000;
 }
@@ -2288,6 +2284,11 @@ details.collapse summary::-webkit-details-marker {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-4 {
