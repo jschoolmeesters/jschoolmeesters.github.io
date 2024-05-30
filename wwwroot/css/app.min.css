@@ -874,6 +874,19 @@ html {
   justify-self: end;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: var(--navbar-padding, 0.5rem);
+  min-height: 4rem;
+  width: 100%;
+}
+
+:where(.navbar > *:not(script, style)) {
+  display: inline-flex;
+  align-items: center;
+}
+
 .swap {
   position: relative;
   display: inline-grid;
@@ -1991,6 +2004,14 @@ details.collapse summary::-webkit-details-marker {
   z-index: 1000;
 }
 
+.z-\[1050\] {
+  z-index: 1050;
+}
+
+.z-\[1100\] {
+  z-index: 1100;
+}
+
 .z-\[2000\] {
   z-index: 2000;
 }
@@ -2059,6 +2080,10 @@ details.collapse summary::-webkit-details-marker {
 
 .hidden {
   display: none;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .h-\[100vw\] {
@@ -2444,6 +2469,25 @@ details.collapse summary::-webkit-details-marker {
 
 .mix-blend-difference {
   mix-blend-mode: difference;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.content-\[\'\'\] {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.navbar-bg {
+  height: 100%;
 }
 
 .trib {

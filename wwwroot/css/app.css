@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar-bg {
+    height: 100%;
+}
+
 .trib {
     filter: invert(92%) sepia(2%) saturate(571%) hue-rotate(330deg) brightness(87%) contrast(93%);
 }

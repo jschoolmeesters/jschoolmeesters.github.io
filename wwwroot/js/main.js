@@ -1,3 +1,14 @@
+window.addEventListener("scroll", function() {
+    var elementTarget = document.getElementById("navbar-trigger");
+    if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight) - 72) { // 4.5rem = 72px of the navbar
+        var element = document.getElementById("navbar");
+        element.classList.add("navbar-bg");
+    } else {
+        var element = document.getElementById("navbar");
+        element.classList.remove("navbar-bg");
+    }
+});
+
 var canvas = null;
 var engine = null;
 
