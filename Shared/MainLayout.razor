@@ -6,15 +6,16 @@
 <main>
     <div class="wrapper w-full max-w-[500px] mx-auto">
         <div class="z-[1000] fixed top-0 w-full max-w-[500px] text-[#f6f2ef] bg-none select-none">
-            <div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-bg" : "") z-[1050] absolute inset-0 h-0 w-full bg-[#141612] content-[''] transition-all duration-300"></div>
-            <div class="relative z-[1100] flex items-center pt-8 pb-4 px-4">
-                @if (ShowMenu || NavigationManager.Uri.Contains("blog")) {
+            @*<div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-bg" : "") z-[1050] absolute inset-0 h-0 w-full bg-[#141612] content-[''] transition-all duration-300"></div>*@
+            <div class="relative z-[1100] flex items-center p-4">
+                @*@if (ShowMenu || NavigationManager.Uri.Contains("blog")) {
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer text-sm">Jordy Schoolmeesters</span>
                 } else {
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer  text-sm">DSP, Sound, Music production</span>
-                }
+                }*@
                 <span class="grow"></span>
-                <button class="text-sm" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE [×]" : "MENU [=]")</button>
+                @*<button class="text-sm" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE [×]" : "MENU [=]")</button>*@
+                <button class="w-[2.6rem] h-[2.6rem] bg-[#f6f2ef] content-['']" @onclick="@(() => ShowMenu = !ShowMenu)"></button>
             </div>
         </div>
 
@@ -54,7 +55,7 @@
             </nav>
         </aside>
 
-        <div class="mt-[4.25rem]">
+        <div>
             @Body
         </div>
 

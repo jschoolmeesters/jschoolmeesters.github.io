@@ -374,6 +374,10 @@ mark:before {
     font-family: "Sharp Grotesk SemiBold", sans-serif;
 }
 
+.neue-haas-grotesk-regular {
+    font-family: "Neue Haas Grotesk Regular", sans-serif;
+}
+
 @font-face {
     font-family: "Sharp Grotesk Book";
     src: url("../fonts/Sharp Grotesk/TTF-Windows/Book22.ttf");
@@ -399,5 +403,12 @@ mark:before {
     font-family: "Sharp Grotesk SemiBold";
     src: url("../fonts/Sharp Grotesk/TTF-Windows/Black10.ttf");
     font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk Regular";
+    src: url("../fonts/Neue Haas Grotesk/NEUEHAASGROTESKTEXT.TTF");
+    font-weight: 400;
     font-style: normal;
 }
