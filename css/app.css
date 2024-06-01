@@ -407,8 +407,12 @@ mark:before {
     font-family: "FK Grotesk Neue Medium", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
     font-family: "FK Grotesk Neue", sans-serif;
+}
+
+p {
+    font-family: "FK Grotesk Neue Medium", sans-serif;
 }
 
 @font-face {
