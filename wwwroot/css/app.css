@@ -161,8 +161,7 @@ nav li > a > span {
 
 
 html {
-   background: #2a2d31;
-   font-family: open-sans-400 !important;
+   background: #000; /*#2a2d31;*/
 }
 
 body {
@@ -375,9 +374,6 @@ mark:before {
     font-family: "Sharp Grotesk SemiBold", sans-serif;
 }
 
-.neue-haas-grotesk-regular {
-    font-family: "Neue Haas Grotesk Regular", sans-serif;
-}
 
 @font-face {
     font-family: "Sharp Grotesk Book";
@@ -407,9 +403,40 @@ mark:before {
     font-style: normal;
 }
 
+.fk-grotesk-neue-medium {
+    font-family: "FK Grotesk Neue Medium", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: "FK Grotesk Neue Medium", sans-serif;
+    @apply tracking-tighter;
+}
+
 @font-face {
-    font-family: "Neue Haas Grotesk Regular";
-    src: url("../fonts/Neue Haas Grotesk/NEUEHAASGROTESKTEXT.TTF");
+    font-family: "FK Grotesk Neue Medium";
+    src: url(".wwwroot/fonts/FK Grotesk Neue Trial/FKGroteskNeueTrial-Medium.otf");
+    font-weight: 500;
+    font-style: medium;
+}
+
+.fk-grotesk-neue-light {
+    font-family: "FK Grotesk Neue Light", sans-serif;
+}
+
+@font-face {
+    font-family: "FK Grotesk Neue Light";
+    src: url(".wwwroot/fonts/FK Grotesk Neue Trial/FKGroteskNeueTrial-Light.otf");
+    font-weight: 300;
+    font-style: light;
+}
+
+.fk-raster-grotesk-compact-blended {
+    font-family: "FK Raster Grotesk Compact Blended", sans-serif;
+}
+
+@font-face {
+    font-family: "FK Raster Grotesk Compact Blended";
+    src: url("../fonts/FK Raster Grotesk Trial/FKRasterGroteskCompactTrial-Blended.otf");
     font-weight: 400;
     font-style: normal;
 }

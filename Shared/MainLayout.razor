@@ -7,7 +7,7 @@
     <div class="wrapper w-full max-w-[500px] mx-auto">
         <div class="z-[1000] fixed top-0 w-full max-w-[500px] text-[#f6f2ef] bg-none select-none">
             @*<div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-bg" : "") z-[1050] absolute inset-0 h-0 w-full bg-[#141612] content-[''] transition-all duration-300"></div>*@
-            <div class="relative z-[1100] flex items-center p-4">
+            <div class="relative z-[1100] flex items-center px-4 py-5">
                 @*@if (ShowMenu || NavigationManager.Uri.Contains("blog")) {
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer text-sm">Jordy Schoolmeesters</span>
                 } else {
@@ -15,7 +15,8 @@
                 }*@
                 <span class="grow"></span>
                 @*<button class="text-sm" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE [×]" : "MENU [=]")</button>*@
-                <button class="w-[1.5rem] h-[1.5rem] @(ShowMenu ? "bg-[hsla(26,28%,95%,.5)]" : "bg-[#f6f2ef]") content-['']" @onclick="@(() => ShowMenu = !ShowMenu)"></button>
+                @*<button class="w-[1.8rem] h-[1.8rem]" @onclick="@(() => EyeSaver = !EyeSaver)"><i class="iconoir-eye text-[1.8rem] w-[1.8rem] h-[1.8rem] text-white overflow-hidden leading-0"></i></button>*@
+                <button class="w-[1.8rem] h-[1.8rem] @(ShowMenu ? "bg-[hsla(26,28%,95%,.5)]" : "bg-[#f6f2ef]") " @onclick="@(() => ShowMenu = !ShowMenu)"><i class="iconoir-arrow-up-right text-[1.8rem] w-[1.8rem] h-[1.8rem] text-black overflow-hidden leading-0"></i></button>
             </div>
         </div>
 
@@ -55,7 +56,7 @@
             </nav>
         </aside>
 
-        <div>
+        <div class="@(EyeSaver ? "contrast-50" : "")">
             @Body
         </div>
 
@@ -67,6 +68,7 @@
    [Inject]
    private HttpClient HttpClient { get; set; }
     private bool ShowMenu { get; set; } = false;
+    private bool EyeSaver { get; set; } = false;
     private int PostCount { get; set; } = 0;
 
     private void NavigateToPage(string page) {
