@@ -3031,11 +3031,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .fk-grotesk-neue {
-  font-family: "FK Raster Grotesk Neue", sans-serif;
+  font-family: "FK Grotesk Neue", sans-serif;
 }
 
 @font-face {
-  font-family: "FK Raster Grotesk Neue";
+  font-family: "FK Grotesk Neue";
 
   src: url("../fonts/FK Grotesk Neue Trial/fk-grotesk-neue-regular.woff2");
 
