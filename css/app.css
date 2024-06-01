@@ -408,8 +408,7 @@ mark:before {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    font-family: "FK Grotesk Neue Medium", sans-serif;
-    @apply tracking-tighter;
+    font-family: "FK Grotesk Neue", sans-serif;
 }
 
 @font-face {
@@ -437,6 +436,18 @@ h1, h2, h3, h4, h5, h6, p {
 @font-face {
     font-family: "FK Raster Grotesk Compact Blended";
     src: url("../fonts/FK Raster Grotesk Trial/FKRasterGroteskCompactTrial-Blended.otf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fk-grotesk-neue {
+    font-family: "FK Raster Grotesk Neue", sans-serif;
+
+}
+
+@font-face {
+    font-family: "FK Raster Grotesk Neue";
+    src: url("../fonts/FK Grotesk Neue Trial/fk-grotesk-neue-regular.woff2");
     font-weight: 400;
     font-style: normal;
 }

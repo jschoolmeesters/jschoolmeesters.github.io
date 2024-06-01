@@ -2503,6 +2503,10 @@ details.collapse summary::-webkit-details-marker {
   letter-spacing: 0em;
 }
 
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
 .tracking-wide {
   letter-spacing: 0.025em;
 }
