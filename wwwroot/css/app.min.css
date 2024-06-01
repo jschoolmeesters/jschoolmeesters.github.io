@@ -2501,6 +2501,10 @@ details.collapse summary::-webkit-details-marker {
   font-weight: 600;
 }
 
+.font-thin {
+  font-weight: 100;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -2515,6 +2519,10 @@ details.collapse summary::-webkit-details-marker {
 
 .tracking-normal {
   letter-spacing: 0em;
+}
+
+.tracking-tighter {
+  letter-spacing: -0.05em;
 }
 
 .tracking-wide {
@@ -2985,8 +2993,7 @@ mark:before {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  font-family: "FK Grotesk Neue Medium", sans-serif;
-  letter-spacing: -0.05em;
+  font-family: "FK Grotesk Neue", sans-serif;
 }
 
 @font-face {
@@ -3021,6 +3028,20 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "FK Raster Grotesk Compact Blended";
 
   src: url("../fonts/FK Raster Grotesk Trial/FKRasterGroteskCompactTrial-Blended.otf");
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+.fk-grotesk-neue {
+  font-family: "FK Raster Grotesk Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "FK Raster Grotesk Neue";
+
+  src: url("../fonts/FK Grotesk Neue Trial/fk-grotesk-neue-regular.woff2");
 
   font-weight: 400;
 
