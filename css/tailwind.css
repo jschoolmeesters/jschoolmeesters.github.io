@@ -2107,6 +2107,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 510;
 }
 
+.float-right {
+  float: right;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -2139,6 +2143,10 @@ details.collapse summary::-webkit-details-marker {
 
 .ml-1 {
   margin-left: 0.25rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mt-12 {

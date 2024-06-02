@@ -2121,6 +2121,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 510;
 }
 
+.float-right {
+  float: right;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -2153,6 +2157,10 @@ details.collapse summary::-webkit-details-marker {
 
 .ml-1 {
   margin-left: 0.25rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mt-12 {
@@ -2974,13 +2982,6 @@ mark:before {
   font-style: normal;
   font-variation-settings:
         "wdth" 100;
-}
-
-* {
-  font-family: "Sharp Grotesk Book", sans-serif;
-}
-
-.sharp-grotesk-medium {
   font-family: "Sharp Grotesk Medium", sans-serif;
 }
 
@@ -3084,6 +3085,10 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-weight: 400;
 
   font-style: normal;
+}
+
+* {
+  font-family: "FK Grotesk Neue", sans-serif;
 }
 
 .fk-grotesk-neue {
