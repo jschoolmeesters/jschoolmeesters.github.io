@@ -3035,11 +3035,11 @@ mark:before {
   font-family: "FK Grotesk Neue Medium", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p, a {
   font-family: "FK Grotesk Neue", sans-serif;
 }
 
-p, a {
+.something {
   font-family: "FK Grotesk Neue Medium", sans-serif;
 }
 
