@@ -5,7 +5,7 @@
 @inject NavigationManager NavigationManager
 <PageTitle>Jordy Schoolmeesters — Computer Scientist</PageTitle>
 
-<div class="w-full relative select-none">
+<div class="w-full relative">
    @*
    <div class="relative w-[100vw] max-w-[500px] h-[100vw] max-h-[500px] mb-8">
       <canvas id="renderCanvas" class="w-full h-full"></canvas>
@@ -53,7 +53,12 @@
    </ul>
 
    <img class="w-full mt-12 rounded" src="https://i.seadn.io/gcs/files/396a124e569b6ee79d34a010035f2da0.png?auto=format&dpr=1&w=1000">
+
+   <BlazorPortfolio.Components.Links />
 </div>
+
+
+
    @*
    <div id="navbar-trigger" class="flex my-4 px-4 w-full">
       <p class="text-sm flex-1 w-2/3 text-[hsla(26,28%,95%,.9)]">
@@ -95,8 +100,6 @@
    }
 
 </div>
-
-<BlazorPortfolio.Components.Footer />
 
 @code {
    [Inject]
