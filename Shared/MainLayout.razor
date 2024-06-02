@@ -5,22 +5,23 @@
 
 <main>
     <div class="wrapper w-full max-w-[500px] mx-auto">
-        <div class="z-[1000] fixed top-0 w-full max-w-[500px] text-[#f6f2ef] bg-none select-none">
+        <div class="z-[500] fixed top-0 w-full max-w-[500px] select-none">
             @*<div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-bg" : "") z-[1050] absolute inset-0 h-0 w-full bg-[#141612] content-[''] transition-all duration-300"></div>*@
-            <div class="relative z-[1100] flex items-center px-4 py-5">
+            <div class="relative z-[510] flex items-center text-white bg-black pt-6 pb-2 px-4">
                 @*@if (ShowMenu || NavigationManager.Uri.Contains("blog")) {
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer text-sm">Jordy Schoolmeesters</span>
                 } else {
                     <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer  text-sm">DSP, Sound, Music production</span>
                 }*@
+                <span @onclick="@(() => NavigateToPage(""))" class="fk-grotesk-neue cursor-pointer text-sm uppercase">Jordy Schoolmeesters</span>
                 <span class="grow"></span>
-                @*<button class="text-sm" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE [×]" : "MENU [=]")</button>*@
+                <button class="text-sm fk-grotesk-neue" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE" : "MENU")</button>
                 @*<button class="w-[1.8rem] h-[1.8rem]" @onclick="@(() => EyeSaver = !EyeSaver)"><i class="iconoir-eye text-[1.8rem] w-[1.8rem] h-[1.8rem] text-white overflow-hidden leading-0"></i></button>*@
-                <button class="w-[1.8rem] h-[1.8rem] @(ShowMenu ? "bg-[hsla(26,28%,95%,.5)]" : "bg-[#f6f2ef]") " @onclick="@(() => ShowMenu = !ShowMenu)"><i class="iconoir-arrow-up-right text-[1.8rem] w-[1.8rem] h-[1.8rem] text-black overflow-hidden leading-0"></i></button>
+                @*<button class="w-[1.8rem] h-[1.8rem] @(ShowMenu ? "bg-[hsla(26,28%,95%,.5)]" : "bg-[#f6f2ef]") " @onclick="@(() => ShowMenu = !ShowMenu)"><i class="iconoir-arrow-up-right text-[1.8rem] w-[1.8rem] h-[1.8rem] text-black overflow-hidden leading-0"></i></button>*@
             </div>
         </div>
 
-        <aside class="opacity-fade text-[hsla(26,28%,95%,.7)] bg-[#141612] wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[999] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+        <aside class="opacity-fade text-[hsla(26,28%,95%,.7)] bg-black wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[499] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
             <nav class="flex absolute inset-0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
                 <div class="flex flex-col justify-end w-full">
                     <div></div>

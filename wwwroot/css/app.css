@@ -24,7 +24,7 @@
 }
 
 .linear-progress {
-    background: hsla(26,28%,95%,.3);
+    background: #ffffff30;/*hsla(26,28%,95%,.3);*/
     height: 1px;
     overflow: hidden;
     position: relative;
@@ -38,7 +38,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: hsla(26,28%,95%,.9);
+    background: white; /*hsla(26,28%,95%,.9);*/
     scale: var(--blazor-load-percentage, 0%) 100%;
     transform-origin: left top;
     transition: scale ease-out 0.5s;
@@ -161,7 +161,11 @@ nav li > a > span {
 
 
 html {
-   background: #000; /*#2a2d31;*/
+   background: black; /*#2a2d31;*/
+   color: white;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-rendering: optimizeLegibility;
 }
 
 body {
@@ -411,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "FK Grotesk Neue", sans-serif;
 }
 
-p {
+p, a {
     font-family: "FK Grotesk Neue Medium", sans-serif;
 }
 
