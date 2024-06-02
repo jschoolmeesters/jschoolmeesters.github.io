@@ -19,6 +19,9 @@ namespace BlazorPortfolio.Models {
         [JsonPropertyName("contentStartIndex")]
         public int ContentStartIndex { get; set; }
 
+        [JsonPropertyName("description")]
+        public string Description { get; set; } = "";
+
         public DateTime DateAsDateTime {
             get {
                 return DateTime.Parse(Date, new CultureInfo("nl-NL"));

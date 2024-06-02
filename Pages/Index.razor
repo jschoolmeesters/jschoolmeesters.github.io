@@ -40,7 +40,7 @@
       *@
    </div>
 
-<div class="p-3">
+<div class="p-3 pb-0">
    <p class="text-2xl tracking-[-0.035em] leading-none">Computing Science student, C# developer and music producer currently currently specializing in the field of DSP.</p><br>
    <p class="text-2xl tracking-[-0.035em] leading-none">Here, I'll be sharing my progress, insights, tutorials and tips on all things DSP, coding and music production.</p><br>
    <p class="text-2xl tracking-[-0.035em] leading-none">Currently working at Archive-IT, based in Reuver, the Netherlands.</p>
@@ -73,30 +73,26 @@
    *@
 </div>
 
-<div class="w-full p-4 select-none">
-   <div class="flex justify-between mt-4 text-[hsla(26,28%,95%,.5)]"><span class="self-center text-md uppercase">Latest posts&#8198;[@Posts.Count]</span><div class="flex">(<i class="self-center text-md iconoir-post-solid"></i>)</div></div>
-   <div class="mt-3" />
-   <label class="bg-blend-difference input input-bordered input-search flex items-center gap-2 pl-[1.125rem] pr-3">
-      <input type="text" class="grow" placeholder="Search..." @oninput="@HandleInputChange" @bind-value="@SearchValue"/>
-      <i class="text-2xl p-1.5 rounded-lg iconoir-@(string.IsNullOrEmpty(SearchValue) ? "search" : "xmark hover:bg-[#00000010] hover:cursor-pointer")" @onclick="@(() => SearchValue = string.Empty)"></i>
-   </label>
+<div class="w-full px-3">
+   <h2 class="text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
    
    @foreach (var item in FilteredPosts) {
       var post = item.post;
       var index = item.i;
-      <div @onclick="@(() => NavigateToPost(post))" class="my-4 hover:cursor-pointer post-preview">
-         <h2 class="text-lg text-[hsla(26,28%,95%,.9)]">@post.Title</h2>
-         <div class="text-md text-[hsla(26,28%,95%,.5)]">@post.Date</div>
-         <div>
-            @* TODO: add sorting to tags *@
-            @foreach (string tag in post.Tags.Split(',').Order()) {
-               <div class="badge bg-[#2d312a] text-[hsla(26,28%,95%,.7)] ml-1">@tag</div>
-            }
+
+      <div @onclick="@(() => NavigateToPost(post))" class="my-3 border rounded border-white z-[1000] relative block bg-black">
+         <div class="p-4">
+            <div class="flex flex-row justify-between">
+               <h2 class="text-xs uppercase p-0 m-0 text-start">@String.Join(", ", post.Tags.Split(',').Order())</h2>
+               <h2 class="text-xs uppercase p-0 m-0 text-end">@post.DateAsUriString</h2>
+            </div>
+            <h1 class="text-3xl tracking-tighter uppercase p-0 m-0 mt-3 leading-none">@post.Title</h1>
+            <p class="text-lg tracking-[-0.035em] leading-none mt-6">@post.Description</p>
+         </div>
+         <div class="w-full p-3 h-[3.75rem] overflow-hidden border-t border-white">
+            <p class="align-middle tracking-normal text-4xl h-[3rem] leading-none uppercase">Read✦</p>
          </div>
       </div>
-      @if (index < FilteredPosts.Count - 1) {
-         <div class="w-full h-[1px] bg-[hsla(26,28%,95%,.5)] my-4"></div>
-      }
    }
 
 </div>
