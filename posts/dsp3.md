@@ -3,6 +3,7 @@ layout: post
 title: "Blazor blogging - How to get everything set up"
 tags: Blazor, tutorial
 date: "05/07/2024"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam volutpat venenatis lorem eu molestie. Praesent sagittis ultricies mi ut dictum. Quisque in rhoncus ex. Sed rhoncus feugiat ornare."
 ---
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
