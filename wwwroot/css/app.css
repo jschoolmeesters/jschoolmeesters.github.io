@@ -58,8 +58,8 @@ article ol {
 }
 
 article code {
-    @apply bg-neutral-800;
-    @apply text-neutral-400;
+    @apply bg-neutral-900;
+    @apply text-neutral-300;
     @apply rounded;
     @apply px-1;
 }

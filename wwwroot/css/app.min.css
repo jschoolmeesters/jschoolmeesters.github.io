@@ -2223,9 +2223,9 @@ article ol {
 
 article code {
   --tw-bg-opacity: 1;
-  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(163 163 163 / var(--tw-text-opacity));
+  color: rgb(212 212 212 / var(--tw-text-opacity));
   border-radius: 0.25rem;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
