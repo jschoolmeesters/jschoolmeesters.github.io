@@ -2153,6 +2153,10 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 0.5rem;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -2163,6 +2167,10 @@ details.collapse summary::-webkit-details-marker {
 
 .ml-1 {
   margin-left: 0.25rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .mt-12 {
@@ -2491,20 +2499,12 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0px;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
 .pl-\[1\.125rem\] {
   padding-left: 1.125rem;
 }
 
 .pr-3 {
   padding-right: 0.75rem;
-}
-
-.pt-4 {
-  padding-top: 1rem;
 }
 
 .text-left {
@@ -2567,11 +2567,6 @@ details.collapse summary::-webkit-details-marker {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -2694,8 +2689,9 @@ details.collapse summary::-webkit-details-marker {
   content: var(--tw-content);
 }
 
+/* Markdown styling */
+
 .navbar-show {
-  background: red;
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

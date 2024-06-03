@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Markdown styling */
+
+
 
 .navbar-show {
     @apply translate-y-0;
