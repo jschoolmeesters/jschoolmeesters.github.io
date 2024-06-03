@@ -13,7 +13,7 @@
    </div>
    *@
 
-   <div class="m-3 border rounded border-white z-[1000] relative block bg-black">
+   <div class="m-3 border rounded border-white relative block bg-black">
       <div class="p-3">
          <h1 class="text-4xl tracking-tighter uppercase p-0 m-0 leading-none">Jordy</h1>
          <h1 class="text-4xl tracking-tighter uppercase p-0 m-0 leading-none">Schoolmeesters</h1>
@@ -40,12 +40,12 @@
       *@
    </div>
 
-<div class="p-3 pb-0">
+<div id="navbar-trigger" class="p-3 pb-0">
    <p class="text-2xl tracking-[-0.035em] leading-none">Computing Science student, C# developer and music producer currently currently specializing in the field of DSP.</p><br>
    <p class="text-2xl tracking-[-0.035em] leading-none">Here, I'll be sharing my progress, insights, tutorials and tips on all things DSP, coding and music production.</p><br>
    <p class="text-2xl tracking-[-0.035em] leading-none">Currently working at Archive-IT, based in Reuver, the Netherlands.</p>
 
-   <h2 class="text-sm p-0 m-0 mt-12 mb-2">Current goals:</h2>
+   <h2 class="text-sm p-0 m-0 mt-12 mb-2">Current goals</h2>
    <ul>
       <li><a class="text-2xl tracking-[-0.035em] leading-none" href="https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/">Signals and Systems course</a></li>
       <li><a class="text-2xl tracking-[-0.035em] leading-none" href="https://ocw.mit.edu/courses/res-6-008-digital-signal-processing-spring-2011/">Digital Signal Processing course</a></li>
@@ -80,7 +80,7 @@
       var post = item.post;
       var index = item.i;
 
-      <div @onclick="@(() => NavigateToPost(post))" class="my-3 border rounded border-white z-[1000] relative block bg-black">
+      <div @onclick="@(() => NavigateToPost(post))" class="my-3 border rounded border-white relative block bg-black">
          <div class="p-4">
             <div class="flex flex-row justify-between">
                <h2 class="text-xs uppercase p-0 m-0 text-start">@String.Join(", ", post.Tags.Split(',').Order())</h2>
