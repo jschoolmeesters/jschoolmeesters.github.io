@@ -4,7 +4,7 @@
 
 
 .navbar-bg {
-    height: 100%;
+    background: red;
 }
 
 .trib {
@@ -446,7 +446,6 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 * {
     font-family: "FK Grotesk Neue", sans-serif;
-
 }
 
 .fk-grotesk-neue {

@@ -2083,10 +2083,6 @@ details.collapse summary::-webkit-details-marker {
   z-index: 10;
 }
 
-.z-\[1000\] {
-  z-index: 1000;
-}
-
 .z-\[1050\] {
   z-index: 1050;
 }
@@ -2452,6 +2448,11 @@ details.collapse summary::-webkit-details-marker {
   padding-right: 1rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -2460,11 +2461,6 @@ details.collapse summary::-webkit-details-marker {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 
 .py-8 {
