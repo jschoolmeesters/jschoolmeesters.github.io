@@ -13,40 +13,53 @@
 
 <PageTitle>@Title</PageTitle>
 
-<div class="w-full p-4 select-none">
-    <h2 class="text-sm p-0 m-0 mt-12 mb-2">@Date</h2>
+<div class="w-full px-3 py-[3.5rem] select-none">
+    @*<div class="content-[''] w-full h-32 bg-[hsla(26,28%,95%,.5)] rounded"></div>*@
+    <h2 class="text-sm p-0 m-0 mt-3 mb-2">@Date</h2>
     <h1 class="text-3xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@Title</h1>
     @foreach (string tag in Tags) {
-        <div class="badge bg-black text-white border border-white rounded ml-2">@tag</div>
+        <div class="badge bg-black text-white border border-white rounded mr-2">@tag</div>
     }
 
-    <article class="prose lg:prose-xl mt-4 py-4 text-white">@HtmlContent</article>
+    <article class="py-4 text-white">@HtmlContent</article>
 
-    @if (PreviousPost != null) {
-        
-        <div @onclick="@(() => NavigateToPost(PreviousPost))" class="hover:cursor-pointer post-preview border-b border-[hsla(26,28%,95%,.3)] py-4">
-            <p class="text-[hsla(26,28%,95%,.5)] uppercase">Previous post</p>
-            <h2 class="text-lg text-[hsla(26,28%,95%,.9)]">@PreviousPost.Title</h2>
-            <div class="text-md text-[hsla(26,28%,95%,.5)]">@PreviousPost.Date</div>
-            <div>
-                @foreach (string tag in PreviousPost.Tags.Split(',')) {
-                    <div class="badge bg-[#2d312a] text-[hsla(26,28%,95%,.7)] ml-1">@tag</div>
-                }
+    <div class="mt-9 flex flex-row border border-white rounded divide-x divide-white">
+        @if (PreviousPost != null) {
+            <div @onclick="@(() => NavigateToPost(PreviousPost))" class="flex-1 cursor-pointer flex flex-col justify-between">
+                <div class="p-3">
+                    <p class="text-sm p-0 m-0 mb-2">Previous post</p>
+                    <h2 class="text-xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@PreviousPost.Title</h2>
+                    <div class="text-sm p-0 m-0 mt-3 mb-2 uppercase">@PreviousPost.Date</div>
+                    <div class="w-full overflow-x-scroll">
+                        @foreach (string tag in PreviousPost.TagsAsList) {
+                            <div class="badge bg-black text-white border border-white rounded mr-2">@tag</div>
+                        }
+                    </div>
+                </div>
+                <div class="w-full overflow-hidden border-t border-white p-3">
+                    <p class="align-middle tracking-normal text-xl uppercase">Read✦</p>
+                </div>
             </div>
-        </div>
-    }
-    @if (NextPost != null) {
-        <div @onclick="@(() => NavigateToPost(NextPost))" class="hover:cursor-pointer post-preview border-b border-[hsla(26,28%,95%,.3)] py-4">
-            <span class="text-[hsla(26,28%,95%,.5)] uppercase">Next post</span>
-            <h2 class="text-lg text-[hsla(26,28%,95%,.9)]">@NextPost.Title</h2>
-            <div class="text-md text-[hsla(26,28%,95%,.5)]">@NextPost.Date</div>
-            <div>
-                @foreach (string tag in NextPost.Tags.Split(',')) {
-                    <div class="badge bg-[#2d312a] text-[hsla(26,28%,95%,.7)] ml-1">@tag</div>
-                }
+        }
+
+        @if (NextPost != null) {
+            <div @onclick="@(() => NavigateToPost(NextPost))" class="flex-1 flex flex-col cursor-pointer justify-between">
+                <div class="p-3">
+                    <p class="text-sm p-0 m-0 mb-2">Next post</p>
+                    <h2 class="text-xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@NextPost.Title</h2>
+                    <div class="text-sm p-0 m-0 mt-3 mb-2 uppercase">@NextPost.Date</div>
+                    <div class="w-full overflow-x-scroll">
+                        @foreach (string tag in NextPost.TagsAsList) {
+                            <div class="badge bg-black text-white border border-white rounded mr-2">@tag</div>
+                        }
+                    </div>
+                </div>
+                <div class="w-full overflow-hidden border-t border-white p-3">
+                    <p class="align-middle tracking-normal text-xl uppercase">Read✦</p>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
 
 
