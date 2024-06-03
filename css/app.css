@@ -2,8 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Markdown styling */
+/* BEGIN Markdown styling */
 
+article * {
+    color: white;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6,
+article p, article a, article ul, article ol, article li, article blockquote {
+    @apply tracking-[-0.035em];
+    @apply leading-none;
+    @apply my-3;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    @apply mt-6;
+    @apply mb-3;
+}
+
+article p {
+    @apply text-lg;
+}
+
+article h1 {
+    @apply text-4xl;
+}
+
+article h2 {
+    @apply text-3xl;
+    @apply border-b-2;
+    @apply border-[hsla(26,28%,95%,.3)];
+    @apply pb-2;
+}
+
+article h3 {
+    @apply text-2xl;
+}
+
+article h4 {
+    @apply text-xl;
+}
+
+article h5 {
+    @apply text-lg;
+}
+
+article ul {
+    @apply list-disc;
+    @apply pl-4;
+}
+
+article ol {
+    @apply list-decimal;
+    @apply pl-4;
+}
+
+article code {
+    @apply bg-neutral-800;
+    @apply text-neutral-400;
+    @apply rounded;
+    @apply px-1;
+}
+
+article pre > code {
+    @apply p-3;
+    @apply block;
+    @apply w-full;
+}
+
+/* END Markdown styling*/
 
 
 .navbar-show {
