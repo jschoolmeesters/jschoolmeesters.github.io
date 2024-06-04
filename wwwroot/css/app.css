@@ -20,7 +20,7 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     @apply mb-3;
 }
 
-article p {
+article p, article p > code {
     @apply text-lg;
 }
 
@@ -58,7 +58,7 @@ article ol {
 }
 
 article code {
-    @apply bg-neutral-900;
+    @apply bg-neutral-800;
     @apply text-neutral-300;
     @apply rounded;
     @apply px-1;
@@ -528,4 +528,12 @@ h1, h2, h3, h4, h5, h6, p, a {
     src: url("../fonts/FK Grotesk Neue Trial/fk-grotesk-neue-regular.woff2");
     font-weight: 400;
     font-style: normal;
+}
+
+/* 
+Fix to prevent FocusOnNavigate in App.razor from adding outline to the first h1 on a page
+https://www.reddit.com/r/Blazor/comments/xl09d8/blazor_h1_element_is_focused_on_startup_for_no/
+*/
+h1:focus {
+    outline: none;
 }

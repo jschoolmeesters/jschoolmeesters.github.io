@@ -2,20 +2,15 @@
 @inject NavigationManager NavigationManager
 @using Components
 @using System.Text.Json
+@inject IJSRuntime JS
 
 <main>
     <div class="wrapper w-full max-w-[500px] mx-auto">
         <div class="z-[500] fixed top-0 w-full max-w-[500px]">
-            @*<div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-bg" : "") z-[1050] absolute inset-0 h-0 w-full bg-[#141612] content-[''] transition-all duration-300"></div>*@
             <div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-show" : "") transition-transform -translate-y-full relative z-[510] flex items-center text-white bg-black py-2 px-6">
-                @*@if (ShowMenu || NavigationManager.Uri.Contains("blog")) {
-                    <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer text-sm">Jordy Schoolmeesters</span>
-                } else {
-                    <span @onclick="@(() => NavigateToPage(""))" class="cursor-pointer  text-sm">DSP, Sound, Music production</span>
-                }*@
-                <span @onclick="@(() => NavigateToPage(""))" class="fk-grotesk-neue cursor-pointer text-4xl uppercase">✦</span>
+                <span @onclick="@(async () => NavigateToPage(""))" class="fk-grotesk-neue cursor-pointer text-4xl uppercase">✦</span>
                 <span class="grow"></span>
-                <button class="text-sm fk-grotesk-neue" @onclick="@(() => ShowMenu = !ShowMenu)">@(ShowMenu ? "CLOSE" : "MENU")</button>
+                <button class="text-sm fk-grotesk-neue" @onclick="@(async () => OnMenuClick())">@(ShowMenu ? "CLOSE" : "MENU")</button>
                 @*<button class="w-[1.8rem] h-[1.8rem]" @onclick="@(() => EyeSaver = !EyeSaver)"><i class="iconoir-eye text-[1.8rem] w-[1.8rem] h-[1.8rem] text-white overflow-hidden leading-0"></i></button>*@
                 @*<button class="w-[1.8rem] h-[1.8rem] @(ShowMenu ? "bg-[hsla(26,28%,95%,.5)]" : "bg-[#f6f2ef]") " @onclick="@(() => ShowMenu = !ShowMenu)"><i class="iconoir-arrow-up-right text-[1.8rem] w-[1.8rem] h-[1.8rem] text-black overflow-hidden leading-0"></i></button>*@
             </div>
@@ -27,12 +22,12 @@
                     <div></div>
                     <ul class="p-4 flex flex-col items-start">
                         <li class="overflow-hidden">
-                            <NavLink href="/" @onclick="@(() => ShowMenu = false)" Match="NavLinkMatch.All" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            <NavLink href="/" @onclick="@(async () => OnMenuClick(false))" Match="NavLinkMatch.All" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
                                 <span class="text-slideup animation-delay-0">Index</span>
                             </NavLink>
                         </li>
                         <li class="overflow-hidden">
-                            <NavLink href="/blog" @onclick="@(() => ShowMenu = false)" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            <NavLink href="/blog" @onclick="@(async () => OnMenuClick(false))" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
                                 <span class="text-slideup animation-delay-1">Blog<span class="text-3xl align-top">[@PostCount]</span></span>
                             </NavLink>
                         </li>
@@ -58,7 +53,6 @@
                 </div>
             </nav>
         </aside>
-
         <div class="@(EyeSaver ? "contrast-50" : "")">
             @Body
         </div>
@@ -74,13 +68,28 @@
     private bool EyeSaver { get; set; } = false;
     private int PostCount { get; set; } = 0;
 
-    private void NavigateToPage(string page) {
+    private async void PreventScrolling(bool val) {
+        await JS.InvokeVoidAsync("preventScrolling", val);
+    }
+
+    private async void OnMenuClick() {
+        var val = !ShowMenu;
+        ShowMenu = val;
+        PreventScrolling(val);
+    }
+
+    private async void OnMenuClick(bool val) {
+        ShowMenu = val;
+        PreventScrolling(val);
+    }
+
+    private async void NavigateToPage(string page) {
         var uri = Path.Combine(NavigationManager.BaseUri, page);
 
         if (!(uri == NavigationManager.Uri))
             NavigationManager.NavigateTo(uri);
             
-        ShowMenu = false;
+        OnMenuClick(false);
     }
 
    protected override async Task OnInitializedAsync()
