@@ -2203,9 +2203,23 @@ article a {
   text-decoration-line: underline;
   --tw-bg-opacity: 1;
   background-color: rgb(53 20 3 / var(--tw-bg-opacity));
+  border-radius: 0.25rem;
+}
+
+article a > i {
+  color: hsla(26,28%,95%,.7);
+  vertical-align: middle;
+}
+
+article p > a {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-  border-radius: 0.25rem;
+}
+
+article p > a > i {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
 }
 
 /* END Markdown styling*/

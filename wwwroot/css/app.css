@@ -94,8 +94,21 @@ article a {
     @apply text-[#f37330];
     @apply underline;
     @apply bg-[#351403];
-    @apply px-1;
     @apply rounded;
+}
+
+article a > i {
+    @apply text-[hsla(26,28%,95%,.7)];
+    @apply align-middle;
+}
+
+article p > a {
+    @apply px-1;
+}
+
+article p > a > i {
+    @apply text-sm;
+    @apply ml-1;
 }
 
 /* END Markdown styling*/

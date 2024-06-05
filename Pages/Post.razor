@@ -7,6 +7,7 @@
 @using Markdig.Syntax;
 @using System.IO
 @using MarkdownHelper = BlazorPortfolio.Helpers.MarkdownHelper
+@using CustomLinkExtension = BlazorPortfolio.Helpers.CustomLinkExtension
 @using BlazorPortfolio.Models
 @using System.Text.Json
 @inject NavigationManager NavigationManager
@@ -99,7 +100,8 @@
 
                     var uri = Path.Combine("posts", post.Id + ".md");
                     var markdownContent = await HttpClient.GetStringAsync(uri);
-                    HtmlContent = new MarkupString(Markdown.ToHtml(markdownContent.Substring(contentStartIndex)));
+                    var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Use<CustomLinkExtension>().Build();
+                    HtmlContent = new MarkupString(Markdown.ToHtml(markdownContent.Substring(contentStartIndex), pipeline));
 
                     var orderedPosts = posts.OrderBy(p => p.DateAsDateTime).Select((post, i) => ( post, i )).ToList();
                     var currentIndex = orderedPosts.FindIndex(p => p.post.Id == post.Id);
