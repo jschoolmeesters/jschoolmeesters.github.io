@@ -21,7 +21,7 @@
     <h2 class="text-sm p-0 m-0 mt-3 mb-2">@Date</h2>
     <h1 class="text-3xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@Title</h1>
     @foreach (string tag in Tags) {
-        <div class="badge bg-black text-white border border-white rounded mr-2">@tag</div>
+        <div class="badge bg-black text-white border border-white rounded mr-2 uppercase">@tag</div>
     }
 
     <article class="py-4 text-white">@HtmlContent</article>
@@ -35,7 +35,7 @@
                     <div class="text-sm p-0 m-0 mt-3 mb-2 uppercase">@PreviousPost.Date</div>
                     <div class="w-full overflow-x-scroll">
                         @foreach (string tag in PreviousPost.TagsAsList) {
-                            <div class="badge bg-black text-white border border-white rounded mr-2">@tag</div>
+                            <div class="badge bg-black text-white border border-white rounded mr-2 uppercase">@tag</div>
                         }
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="text-sm p-0 m-0 mt-3 mb-2 uppercase">@NextPost.Date</div>
                     <div class="w-full overflow-x-scroll">
                         @foreach (string tag in NextPost.TagsAsList) {
-                            <div class="badge bg-black text-white border border-white rounded mr-2">@tag</div>
+                            <div class="badge bg-black text-white border border-white rounded mr-2 uppercase">@tag</div>
                         }
                     </div>
                 </div>
