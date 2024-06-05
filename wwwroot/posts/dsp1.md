@@ -1,25 +1,44 @@
 ---
 layout: post
-title: "DSP adventures part 1 - Discrete sequences and systems"
-tags: DSP, tutorial
-date: "05/05/2024"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam volutpat venenatis lorem eu molestie. Praesent sagittis ultricies mi ut dictum. Quisque in rhoncus ex. Sed rhoncus feugiat ornare."
+title: "First steps (WIP)"
+tags: rant, me
+date: "05/06/2024"
+description: "Welcome to my new blog! In this first post will discuss my personal goals for the coming years, which will in turn decide the course that the future content will be heading."
 ---
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+Welcome to my new blog! In this first post will discuss my personal goals for the coming years, which will in turn decide the course that the future content will be heading.
 
-## What I've accomplished
+## Current state of affairs
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+At the moment I have completed the first two years of my bachelor Computing Science at Radboud University and have been working as a C# developer for roughly four years (part-time). Besides this, I have also been pursuing a carreer as a music producer. 
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
+However, recently I decided to focus on finishing my study and find out which specialization is the best fit for me, while sharing my progress and other content on my page.
 
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
+## Choosing a specialization
 
-## What's next
+Personally I'm not the biggest fan of Data Science, but I would love to specialize in a future-oriented field that synergizes well with the rise of AI and cloud computing.
 
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+What are my strengths? Programming and logic.
 
-### Some code
-```
-var hello = "hello world";
-```
+What are my weaknesses? Calculus.
+
+### Digital Signal Processing (DSP)
+
+The first idea I had for a specialization was the field of Digital Signal Processing (DSP). This seemed to make a lot of sense considering that I enjoy nerding out about the most insignificant details of music production software.
+
+Yet after doing some research (looking on Reddit) on the current state of the field and job prospects, I realised that it was not what I originally expected:
+- Specializing in the technology behind DSP requires a very stong mathmatical background.
+- Currently, around half of all papers published on DSP already use AI instead of traditional DSP techniques and I can only assume this to increase in the future.
+- There are few DSP software engineer jobs and the pay is average.
+- The field (except for AI research) seems stagnant.
+
+### Advanced Computing and Systems
+
+I found [this](https://www.universiteitleiden.nl/en/education/study-programmes/master/computer-science/advanced-computing-and-systems) specialization of the master's programme Computer Science at Universiteit Leiden, called: Advanced Computing and Systems.
+
+#### Pro's:
+- Perfectly suits my strengths and weaknesses
+- Future-oriented
+- New and evolving field
+
+#### Con's:
+- Market that these jobs are based around is still maturing and changing

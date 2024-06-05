@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* BEGIN Post progress bar */
+
+.progress-segment {
+    height: 0.4rem;
+    background-color: #ffffff30;
+    flex: 1;
+    -webkit-box-flex: 4;
+    -ms-flex: 4;
+    -webkit-transition: all .6s cubic-bezier(.645,.045,.355,1);
+    transition: all .6s cubic-bezier(.645,.045,.355,1);
+}
+
+.progress-segment.active {
+    background-color: white;
+    flex: 4;
+}
+
+/* END Post progress bar */
+
+
 /* BEGIN Markdown styling */
 
 article * {
@@ -20,7 +40,7 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     @apply mb-3;
 }
 
-article p, article p > code {
+article p, article p > code, article a, article ul, article ol, article li, article blockquote {
     @apply text-lg;
 }
 
@@ -68,6 +88,14 @@ article pre > code {
     @apply p-3;
     @apply block;
     @apply w-full;
+}
+
+article a {
+    @apply text-[#f37330];
+    @apply underline;
+    @apply bg-[#351403];
+    @apply px-1;
+    @apply rounded;
 }
 
 /* END Markdown styling*/
