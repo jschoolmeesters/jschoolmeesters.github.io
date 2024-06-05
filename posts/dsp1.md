@@ -42,3 +42,16 @@ I found [this](https://www.universiteitleiden.nl/en/education/study-programmes/m
 
 #### Con's:
 - Market that these jobs are based around is still maturing and changing
+
+## So what's next?
+
+Even though the master is still two years away, summer is coming, which means I can already start working on some of the requirements I'm currently lacking at:
+- Excellent programming skills in C and C++, preferably at system and application levels
+- Good scripting (bash, Python) and command-line skills in a Linux-based terminal environment
+- Good knowledge and understanding of digital systems design fundamentals (including most topics of: binary arithmetic and codes, boolean algebra, combinational logic circuits, sequential circuits, memory basics, computer design basics)
+- ~~Good knowledge and understanding of computer architecture, operating systems, and networking~~
+- Basic knowledge of compiler construction and excellent skills in using compilers
+- Basic knowledge of image processing
+- ~~Good academic reading and writing skills; proficient in LaTeX~~
+- ~~Excellent command of English, both in writing and speaking~~
+- ~~Independent and critical research attitude~~
