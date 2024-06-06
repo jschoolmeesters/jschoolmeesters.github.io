@@ -72,6 +72,12 @@
     private ValueTask PreventScrolling(bool val) {
         return JS.InvokeVoidAsync("preventScrolling", val);
     }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        await base.OnAfterRenderAsync(firstRender);
+        await JS.InvokeVoidAsync("fadeIn");
+    }
+
     private async Task OnMenuClick() {
         var val = !ShowMenu;
         ShowMenu = val;
