@@ -55,3 +55,7 @@ Even though the master is still two years away, summer is coming, which means I 
 - ~~Good academic reading and writing skills; proficient in LaTeX~~
 - ~~Excellent command of English, both in writing and speaking~~
 - ~~Independent and critical research attitude~~
+
+## A small test
+
+Even though the master is still two years away, summer is coming, which means I can already start working on some of the requirements I'm currently lacking at:
