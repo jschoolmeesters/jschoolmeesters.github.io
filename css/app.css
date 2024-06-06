@@ -15,8 +15,11 @@
 }
 
 .progress-segment.active {
-    background-color: white;
     flex: 4;
+}
+
+.progress-segment.fill {
+    background-color: white;
 }
 
 /* END Post progress bar */
