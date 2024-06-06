@@ -117,3 +117,23 @@ window.initializeProgressBar = () => {
     // Update on scroll
     window.addEventListener("scroll", updateProgress);
 };
+
+
+/* Lenis smooth scroll */
+
+const lenis = new Lenis({
+    syncTouch: true,
+    wheelMultiplier: 1.25,
+    touchMultiplier: 1,
+})
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)

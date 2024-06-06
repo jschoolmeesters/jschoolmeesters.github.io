@@ -15,7 +15,7 @@
 
 <PageTitle>@Title</PageTitle>
 
-<div class="w-full px-3 pt-[4.9rem] pb-[3.5rem] select-none">
+<div class="w-full px-3 pt-[4.9rem] pb-3 select-none">
     
     @*<div class="content-[''] w-full h-32 bg-[hsla(26,28%,95%,.5)] rounded"></div>*@
     <h2 class="text-sm p-0 m-0 mt-3 mb-2">@Date</h2>
@@ -26,9 +26,9 @@
 
     <article class="py-4 text-white">@HtmlContent</article>
 
-    <div class="mt-9 flex flex-row border border-white rounded divide-x divide-white">
+    <div class="flex flex-row @(PreviousPost == null && NextPost == null ? "" : "border mt-9 border-white") rounded divide-x divide-white">
         @if (PreviousPost != null) {
-            <div @onclick="@(() => NavigateToPost(PreviousPost))" class="flex-1 cursor-pointer flex flex-col justify-between">
+            <div @onclick="@(() => NavigateToPost(PreviousPost))" class="flex-1 cursor-pointer flex flex-col justify-between divide-y divide-white">
                 <div class="p-3">
                     <p class="text-sm p-0 m-0 mb-2">Previous post</p>
                     <h2 class="text-xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@PreviousPost.Title</h2>
@@ -46,7 +46,7 @@
         }
 
         @if (NextPost != null) {
-            <div @onclick="@(() => NavigateToPost(NextPost))" class="flex-1 flex flex-col cursor-pointer justify-between">
+            <div @onclick="@(() => NavigateToPost(NextPost))" class="flex-1 flex flex-col cursor-pointer justify-between divide-y divide-white">
                 <div class="p-3">
                     <p class="text-sm p-0 m-0 mb-2">Next post</p>
                     <h2 class="text-xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@NextPost.Title</h2>
@@ -57,7 +57,7 @@
                         }
                     </div>
                 </div>
-                <div class="w-full overflow-hidden border-t border-white p-3">
+                <div class="w-full overflow-hidden p-3">
                     <p class="align-middle tracking-normal text-xl uppercase">Read✦</p>
                 </div>
             </div>

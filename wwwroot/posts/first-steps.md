@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First steps (WIP)"
+title: "First steps"
 tags: rant, me
 date: "05/06/2024"
 description: "Welcome to my new blog! In this first post will discuss my personal goals for the coming years, which will in turn decide the course that the future content will be heading."
@@ -41,7 +41,7 @@ I found [this](https://www.universiteitleiden.nl/en/education/study-programmes/m
 - New and evolving field
 
 #### Con's:
-- Market that these jobs are based around is still maturing and changing
+- Not sure yet?
 
 ## So what's next?
 
@@ -55,7 +55,3 @@ Even though the master is still two years away, summer is coming, which means I 
 - ~~Good academic reading and writing skills; proficient in LaTeX~~
 - ~~Excellent command of English, both in writing and speaking~~
 - ~~Independent and critical research attitude~~
-
-## A small test
-
-Even though the master is still two years away, summer is coming, which means I can already start working on some of the requirements I'm currently lacking at:

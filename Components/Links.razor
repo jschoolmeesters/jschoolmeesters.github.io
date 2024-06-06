@@ -1,14 +1,23 @@
+@inject NavigationManager NavigationManager
+
 <div class="mt-3 w-full">
     <div class="flex flex-row w-full">
         <ul class="flex-1 w-1/2 gap-y-0">
-            <li><a class="text-lg tracking-[-0.035em] leading-none" href="">Email</a></li>
-            <li><a class="text-lg tracking-[-0.035em] leading-none" href="">GitHub</a></li>
-            <li><a class="text-lg tracking-[-0.035em] leading-none" href="">LinkedIn</a></li>
+            <li><a @onclick="@(() => NavigationManager.NavigateTo($"mailto:{HappySheep}"))" class="text-lg tracking-[-0.035em] leading-none cursor-pointer">Email</a></li>
+            <li><a class="text-lg tracking-[-0.035em] leading-none" href="https://github.com/jschoolmeesters">GitHub</a></li>
+            <li><a class="text-lg tracking-[-0.035em] leading-none" href="https://www.linkedin.com/in/jordyschoolmeesters">LinkedIn</a></li>
         </ul>
         <ul class="flex-1 w-1/2 gap-y-0">
-            <li><a class="text-lg tracking-[-0.035em] leading-none" href="">Goodreads</a></li>
-            <li><a class="text-lg tracking-[-0.035em] leading-none" href="">Letterboxd</a></li>
-            <li><a class="text-lg tracking-[-0.035em] leading-none" href="">Strava</a></li>
+            <li><a class="text-lg tracking-[-0.035em] leading-none" href="https://www.goodreads.com/user/show/164155958-jordy-schoolmeesters">Goodreads</a></li>
+            <li><a class="text-lg tracking-[-0.035em] leading-none" href="https://letterboxd.com/">Letterboxd</a></li>
+            <li><a class="text-lg tracking-[-0.035em] leading-none" href="https://strava.app.link/6NGhlQ5sdKb">Strava</a></li>
         </ul>
     </div>
 </div>
+
+@code {
+    private string Sheep = "_dgYn#hX]ddacZZhiZgh5gj#ca";
+    private string HappySheep {
+        get => new string(Sheep.Select(c => (char)(c + 11)).ToArray());
+    }
+}
