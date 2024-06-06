@@ -11,6 +11,29 @@ main.loaded {
     opacity:1;
 }
 
+/* BEGIN Lenis */
+
+html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+/* END Lenis */
 
 /* BEGIN Post progress bar */
 
@@ -104,9 +127,9 @@ article pre > code {
 }
 
 article a {
-    @apply text-[#f37330];
+    @apply text-[#435ef4];
     @apply underline;
-    @apply bg-[#351403];
+    @apply bg-[#040e47];
     @apply rounded;
 }
 

@@ -1772,6 +1772,12 @@ details.collapse summary::-webkit-details-marker {
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
 .divide-white > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-divide-opacity));
@@ -1901,8 +1907,8 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0px;
 }
 
-.pb-\[3\.5rem\] {
-  padding-bottom: 3.5rem;
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .pl-\[1\.125rem\] {

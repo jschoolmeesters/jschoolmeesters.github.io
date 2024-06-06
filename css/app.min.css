@@ -1786,6 +1786,12 @@ details.collapse summary::-webkit-details-marker {
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
 .divide-white > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-divide-opacity));
@@ -1915,8 +1921,8 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0px;
 }
 
-.pb-\[3\.5rem\] {
-  padding-bottom: 3.5rem;
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .pl-\[1\.125rem\] {
@@ -2117,6 +2123,30 @@ main.loaded {
   opacity:1;
 }
 
+/* BEGIN Lenis */
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* END Lenis */
+
 /* BEGIN Post progress bar */
 
 .progress-segment {
@@ -2218,10 +2248,10 @@ article pre > code {
 
 article a {
   --tw-text-opacity: 1;
-  color: rgb(243 115 48 / var(--tw-text-opacity));
+  color: rgb(67 94 244 / var(--tw-text-opacity));
   text-decoration-line: underline;
   --tw-bg-opacity: 1;
-  background-color: rgb(53 20 3 / var(--tw-bg-opacity));
+  background-color: rgb(4 14 71 / var(--tw-bg-opacity));
   border-radius: 0.25rem;
 }
 
