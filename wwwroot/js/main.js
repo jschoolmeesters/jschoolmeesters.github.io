@@ -99,6 +99,11 @@ window.initializeProgressBar = () => {
             } else {
                 seg.classList.remove("active");
             }
+            if (idx <= highlightedIndex) {
+                seg.classList.add("fill");
+            } else {
+                seg.classList.remove("fill");
+            }
         });
     }
 
