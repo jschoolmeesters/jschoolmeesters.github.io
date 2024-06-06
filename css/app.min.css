@@ -1923,6 +1923,10 @@ details.collapse summary::-webkit-details-marker {
   padding-right: 0.75rem;
 }
 
+.pt-0 {
+  padding-top: 0px;
+}
+
 .pt-\[4\.9rem\] {
   padding-top: 4.9rem;
 }
