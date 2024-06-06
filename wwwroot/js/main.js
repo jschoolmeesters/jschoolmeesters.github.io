@@ -122,7 +122,6 @@ window.initializeProgressBar = () => {
 /* Lenis smooth scroll */
 
 const lenis = new Lenis({
-    syncTouch: true,
     wheelMultiplier: 1.25,
     touchMultiplier: 1,
 })
