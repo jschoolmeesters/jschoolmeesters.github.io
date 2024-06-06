@@ -1502,10 +1502,6 @@ details.collapse summary::-webkit-details-marker {
   z-index: 10;
 }
 
-.z-\[1999\] {
-  z-index: 1999;
-}
-
 .z-\[2000\] {
   z-index: 2000;
 }
@@ -1911,13 +1907,12 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 2rem;
 }
 
-.py-\[3\.5rem\] {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-
 .pb-0 {
   padding-bottom: 0px;
+}
+
+.pb-\[3\.5rem\] {
+  padding-bottom: 3.5rem;
 }
 
 .pl-\[1\.125rem\] {
@@ -1926,6 +1921,10 @@ details.collapse summary::-webkit-details-marker {
 
 .pr-3 {
   padding-right: 0.75rem;
+}
+
+.pt-\[4\.9rem\] {
+  padding-top: 4.9rem;
 }
 
 .text-left {

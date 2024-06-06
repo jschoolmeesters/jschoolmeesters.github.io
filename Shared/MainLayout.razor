@@ -10,10 +10,11 @@
             <div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-show" : "") transition-transform -translate-y-full relative z-[510] flex items-center text-white bg-black py-2 px-6">
                 <span @onclick="@(async () => NavigateToPage(""))" class="fk-grotesk-neue cursor-pointer text-4xl uppercase">✦</span>
                 <span class="grow"></span>
-                <button class="text-sm fk-grotesk-neue" @onclick="@(async () => OnMenuClick())">@(ShowMenu ? "CLOSE" : "MENU")</button>
+                <button class="text-sm fk-grotesk-neue" @onclick="@(async () => await OnMenuClick())">@(ShowMenu ? "CLOSE" : "MENU")</button>
                 @*<button class="w-[1.8rem] h-[1.8rem]" @onclick="@(() => EyeSaver = !EyeSaver)"><i class="iconoir-eye text-[1.8rem] w-[1.8rem] h-[1.8rem] text-white overflow-hidden leading-0"></i></button>*@
                 @*<button class="w-[1.8rem] h-[1.8rem] @(ShowMenu ? "bg-[hsla(26,28%,95%,.5)]" : "bg-[#f6f2ef]") " @onclick="@(() => ShowMenu = !ShowMenu)"><i class="iconoir-arrow-up-right text-[1.8rem] w-[1.8rem] h-[1.8rem] text-black overflow-hidden leading-0"></i></button>*@
             </div>
+            <div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-black relative p-2 w-full gap-x-1"></div>
         </div>
 
         <aside class="opacity-fade text-[hsla(26,28%,95%,.7)] bg-black wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[499] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">

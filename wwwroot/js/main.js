@@ -1,28 +1,27 @@
 window.addEventListener("scroll", function() {
-    // wait until target exists first
-    var elementTarget = document.getElementById("navbar-trigger");
-    if (window.scrollY > (elementTarget.offsetTop)) {
-        var element = document.getElementById("navbar");
+    const elementTarget = document.getElementById("navbar-trigger");
+    let element = document.getElementById("navbar");
+    if (elementTarget == null || window.scrollY > (elementTarget?.offsetTop))  
         element.classList.add("navbar-show");
-    } else {
-        var element = document.getElementById("navbar");
+    else
         element.classList.remove("navbar-show");
-    }
 });
 
 window.preventScrolling = (val) => {
-    if (val) {
+    if (val)
         document.body.style.overflow = "hidden";
-    } else {
+    else
         document.body.style.overflow = "auto";
-    }
 };
 
 // Post progress bar
 window.initializeProgressBar = () => {
-    const progressContainer = document.getElementById("progress-container");
-    const sections = document.querySelectorAll("article h2");
-    const numSections = sections.length;
+    let progressContainer = document.getElementById("progress-container");
+    progressContainer.innerHTML = "";
+
+    let sections = document.querySelectorAll("article h2");
+    let numSections = sections.length;
+    const windowHeight = window.innerHeight;
 
     // Create progress segments
     for (let i = 0; i < numSections; i++) {
@@ -33,31 +32,65 @@ window.initializeProgressBar = () => {
 
     const progressSegments = document.querySelectorAll(".progress-segment");
 
+    function rec(index, cumulativeHeight, scrollPosition, matches) {
+        if (index < 0) {
+            if (matches.includes(0)) {
+                if (scrollPosition === 0)
+                    return 0;
+                else
+                    return Math.max(...matches);
+            } else if (matches.length > 0) {
+                return Math.max(...matches); // Spread operator to handle the array correctly
+            } else {
+                return 0;
+            }
+        } else {
+            const section = sections[index];
+            if (!section) {
+                console.warn(`Section at index ${index} is undefined.`);
+                return rec(index - 1, cumulativeHeight, scrollPosition, matches);
+            }
+            
+            const sectionTop = section.offsetTop;
+            if (isNaN(sectionTop)) {
+                console.warn(`sectionTop is NaN for index ${index}`);
+            }
+    
+            let sectionHeight = 0;
+    
+            if (index < numSections - 1) {
+                sectionHeight = sections[index + 1].offsetTop - sectionTop;
+            } else {
+                sectionHeight = document.body.clientHeight - sectionTop;
+            }
+    
+            let newCumulativeHeight = cumulativeHeight + sectionHeight;
+    
+            if (newCumulativeHeight <= windowHeight) {
+                if (index === sections.length - 1 && scrollPosition + windowHeight >= sectionTop) {
+                    matches.push(index);
+                } else if (scrollPosition + windowHeight <= sectionTop + sectionHeight && scrollPosition + windowHeight >= sectionTop) {
+                    matches.push(index);
+                }
+                return rec(index - 1, newCumulativeHeight, scrollPosition, matches);
+            } else {
+                if (scrollPosition <= sectionTop + sectionHeight && (scrollPosition >= sectionTop || index === 0)) {
+                    matches.push(index);
+                }
+                return rec(index - 1, newCumulativeHeight, scrollPosition, matches);
+            }
+        }
+    }
+    
+
     function updateProgress() {
         const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.body.scrollHeight;
 
         let highlightedIndex = -1;
-
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            // Check if we are at the bottom of the page and if cumulative height of sections from bottom is less than the view height
-            if (scrollPosition + windowHeight >= documentHeight) {
-                let cumulativeHeight = 0;
-                for (let i = numSections - 1; i >= 0; i--) {
-                    cumulativeHeight += sections[i].clientHeight;
-                    if (cumulativeHeight < windowHeight && scrollPosition + windowHeight >= sections[i].offsetTop) {
-                        highlightedIndex = i;
-                        break;
-                    }
-                }
-            } else if (scrollPosition >= sectionTop - windowHeight + sectionHeight / 2) {
-                highlightedIndex = index;
-            }
-        });
+       
+       sections = document.querySelectorAll("article h2");
+       numSections = sections.length;
+        highlightedIndex = rec(numSections - 1, 0, scrollPosition, []);
 
         // Update progress segments
         progressSegments.forEach((seg, idx) => {
