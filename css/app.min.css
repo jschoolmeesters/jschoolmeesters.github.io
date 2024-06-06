@@ -1502,6 +1502,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 10;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .z-\[2000\] {
   z-index: 2000;
 }
@@ -2102,6 +2106,15 @@ details.collapse summary::-webkit-details-marker {
 .content-\[\'\'\] {
   --tw-content: '';
   content: var(--tw-content);
+}
+
+main {
+  transition: opacity 0.1s ease-in;
+  opacity:0;
+}
+
+main.loaded {
+  opacity:1;
 }
 
 /* BEGIN Post progress bar */

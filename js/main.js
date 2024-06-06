@@ -14,6 +14,10 @@ window.preventScrolling = (val) => {
         document.body.style.overflow = "auto";
 };
 
+window.fadeIn = () => {
+    document.body.querySelector("main").classList.add('loaded');
+};
+
 // Post progress bar
 window.initializeProgressBar = () => {
     let progressContainer = document.getElementById("progress-container");

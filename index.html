@@ -23,11 +23,13 @@
 
 <body>
     <div id="app">
-        <div class="absolute top-1/2 translate-y-[-50%] w-[100vw] px-4">
-            <div class="linear-progress w-full"></div>
-            <span class="flex flex-row justify-between z-[2000] w-full relative text-md text-white">
-                <span class="block uppercase">Loading</span><span class="block after:content-['['var(--blazor-load-percentage-text)']']"></span>
-            </span>
+        <div id="loading-screen" class="absolute top-0 left-0 w-full h-full bg-black z-50">
+            <div class="absolute top-1/2 translate-y-[-50%] w-[100vw] px-4">
+                <div class="linear-progress w-full"></div>
+                <span class="flex flex-row justify-between z-[2000] w-full relative text-md text-white">
+                    <span class="block uppercase">Loading</span><span class="block after:content-['['var(--blazor-load-percentage-text)']']"></span>
+                </span>
+            </div>
         </div>
     </div>
 
