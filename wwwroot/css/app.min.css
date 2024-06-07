@@ -2170,7 +2170,7 @@ html.lenis, html.lenis body {
 
 /* BEGIN Markdown styling */
 
-article * {
+article {
   color: white;
 }
 
@@ -2248,10 +2248,10 @@ article pre > code {
 
 article a {
   --tw-text-opacity: 1;
-  color: rgb(67 94 244 / var(--tw-text-opacity));
+  color: rgb(67 124 244 / var(--tw-text-opacity));
   text-decoration-line: underline;
   --tw-bg-opacity: 1;
-  background-color: rgb(4 14 71 / var(--tw-bg-opacity));
+  background-color: rgb(3 11 53 / var(--tw-bg-opacity));
   border-radius: 0.25rem;
 }
 
@@ -2260,12 +2260,21 @@ article a > i {
   vertical-align: middle;
 }
 
-article p > a {
+article ul > li::marker, article ol > li::marker {
+  color: hsla(26,28%,95%,.3);
+}
+
+article ul > li, article ol > li {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+article p > a, article ul > li > a, article ol > li > a {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
 
-article p > a > i {
+article p > a > i, article ul > li > a > i, article ol > li > a {
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-left: 0.25rem;
