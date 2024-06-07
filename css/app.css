@@ -60,7 +60,7 @@ html.lenis, html.lenis body {
 
 /* BEGIN Markdown styling */
 
-article * {
+article {
     color: white;
 }
 
@@ -127,9 +127,9 @@ article pre > code {
 }
 
 article a {
-    @apply text-[#435ef4];
+    @apply text-[#437cf4];
     @apply underline;
-    @apply bg-[#040e47];
+    @apply bg-[#030b35];
     @apply rounded;
 }
 
@@ -138,11 +138,19 @@ article a > i {
     @apply align-middle;
 }
 
-article p > a {
+article ul > li::marker, article ol > li::marker {
+    @apply text-[hsla(26,28%,95%,.3)];
+}
+
+article ul > li, article ol > li {
+    @apply text-white;
+}
+
+article p > a, article ul > li > a, article ol > li > a {
     @apply px-1;
 }
 
-article p > a > i {
+article p > a > i, article ul > li > a > i, article ol > li > a {
     @apply text-sm;
     @apply ml-1;
 }
