@@ -6,8 +6,8 @@
 
 <main>
     <div class="wrapper w-full max-w-[500px] mx-auto">
-        <div class="z-[500] fixed top-0 w-full max-w-[500px]">
-            <div id="navbar" class="@((ShowMenu || NavigationManager.Uri.Contains("blog")) ? "navbar-show" : "") transition-transform -translate-y-full relative z-[510] flex items-center text-white bg-black py-2 px-6">
+        <div class="z-[500] fixed bottom-0 w-full max-w-[500px]">
+            <div id="navbar" class="navbar-show transition-transform -translate-y-full relative z-[510] flex items-center text-white bg-black py-2 px-6">
                 <span @onclick="@(async () => NavigateToPage(""))" class="fk-grotesk-neue cursor-pointer text-4xl uppercase">✦</span>
                 <span class="grow"></span>
                 <button class="text-sm fk-grotesk-neue" @onclick="@(async () => await OnMenuClick())">@(ShowMenu ? "CLOSE" : "MENU")</button>

@@ -1602,6 +1602,10 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 2.25rem;
 }
 
+.mt-\[4\.5rem\] {
+  margin-top: 4.5rem;
+}
+
 .block {
   display: block;
 }
@@ -2387,6 +2391,22 @@ nav .text-slideup {
   -moz-animation-fill-mode: both;
 }
 
+.text-slideup {
+  /*animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;*/
+  animation-name: slide-up;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: both;
+  -webkit-animation-name: slide-up;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-name: slide-up;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  -moz-animation-fill-mode: both;
+}
+
 .animation-delay-0 {
   animation-delay: 0s;
 }
@@ -2725,6 +2745,24 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-weight: 400;
 
   font-style: normal;
+}
+
+.helvetica-neue-medium {
+  font-family: "Helvetica Neue Medium", sans-serif;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Medium";
+
+  src:  url('../fonts/Helvetica Neue/HelveticaNeue-Medium.woff2') format('woff2'), 
+          url('../fonts/Helvetica Neue/HelveticaNeue-Medium.woff') format('woff'), 
+          url('../fonts/Helvetica Neue/HelveticaNeue-Medium.ttf') format('ttf');
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-display: swap;
 }
 
 /* 
