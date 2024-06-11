@@ -645,6 +645,18 @@ h1, h2, h3, h4, h5, h6, p, a {
     font-display: swap;
 }
 
+.new-edge-666 {
+    font-family: "New Edge 666", 'Times New Roman', serif;
+    /*font-variation-settings: "wght" 400, "crrr" 0, "ital" 0;*/
+}
+
+@font-face {
+    font-family: "New Edge 666";
+    src: url('../fonts/New Edge 666/NewEdge666.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
 /* 
 Fix to prevent FocusOnNavigate in App.razor from adding outline to the first h1 on a page
 https://www.reddit.com/r/Blazor/comments/xl09d8/blazor_h1_element_is_focused_on_startup_for_no/
