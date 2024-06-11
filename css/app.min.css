@@ -1582,6 +1582,10 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 3rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1600,10 +1604,6 @@ details.collapse summary::-webkit-details-marker {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.mt-\[0\.05rem\] {
-  margin-top: 0.05rem;
 }
 
 .block {
@@ -1941,6 +1941,11 @@ details.collapse summary::-webkit-details-marker {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-4 {
