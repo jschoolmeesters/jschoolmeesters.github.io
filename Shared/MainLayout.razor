@@ -19,11 +19,11 @@
         </div>*@
 
         <div class="z-[500] fixed top-0 w-full max-w-[500px]">
-            <div id="navbar" class="navbar-show transition-transform -translate-y-full relative z-[510] flex items-center text-white py-2 px-3">
+            <div id="navbar" class="navbar-show transition-transform -translate-y-full relative z-[510] flex items-center text-white py-3 px-3">
                 <span @onclick="@(async () => NavigateToPage(""))" class="align-middle new-edge-666 cursor-pointer text-sm px-4 pt-[0.2rem] pb-[0.05rem] rounded-full text-black bg-[#edeeee]">Jordy Schoolmeesters</span>
                 <span class="grow"></span>
                 <button class="text-sm pl-3 pr-1.5 py-0.5 rounded-full text-black bg-[#edeeee]" @onclick="@(async () => await OnMenuClick())">
-                    <span class="align-middle new-edge-666 mt-[0.05rem]">@(ShowMenu ? "Close" : "Menu")</span>
+                    <span class="align-middle new-edge-666 pt-[0.2rem] pb-[0.05rem]">@(ShowMenu ? "Close" : "Menu")</span>
                     <span class="align-middle w-[1rem] h-[1rem] inline-block rounded-full bg-[#cbcccc]"></span>
                 </button>
             </div>
