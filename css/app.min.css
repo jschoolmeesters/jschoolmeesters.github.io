@@ -1583,6 +1583,10 @@ details.collapse summary::-webkit-details-marker {
   margin-right: 0.5rem;
 }
 
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1637,6 +1641,10 @@ details.collapse summary::-webkit-details-marker {
 
 .h-32 {
   height: 8rem;
+}
+
+.h-\[1\.75rem\] {
+  height: 1.75rem;
 }
 
 .h-\[1\.8rem\] {
@@ -1842,6 +1850,11 @@ details.collapse summary::-webkit-details-marker {
   border-top-width: 1px;
 }
 
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1850,11 +1863,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-\[\#2d312a\] {
   --tw-bg-opacity: 1;
   background-color: rgb(45 49 42 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#edeeee\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(237 238 238 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#f6f2ef\] {
@@ -1879,6 +1887,16 @@ details.collapse summary::-webkit-details-marker {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-stone-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
+}
+
+.bg-stone-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 
 .p-0 {
@@ -1920,14 +1938,9 @@ details.collapse summary::-webkit-details-marker {
   padding-right: 1.5rem;
 }
 
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.py-0\.5 {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -1991,10 +2004,6 @@ details.collapse summary::-webkit-details-marker {
 
 .align-middle {
   vertical-align: middle;
-}
-
-.align-bottom {
-  vertical-align: bottom;
 }
 
 .text-2xl {
@@ -2323,15 +2332,15 @@ article p > a > i, article ul > li > a > i, article ol > li > a {
   filter: invert(92%) sepia(2%) saturate(571%) hue-rotate(330deg) brightness(87%) contrast(93%);
 }
 
-.nav-link.active, .nav-link.active:hover {
+.dark .nav-link.active, .dark .nav-link.active:hover {
   color: hsla(26,28%,95%,.9);
 }
 
-.nav-link {
+.dark .nav-link {
   color: hsla(26,28%,95%,.5);
 }
 
-.nav-link:not(.disabled):hover {
+.dark .nav-link:not(.disabled):hover {
   color: hsla(26,28%,95%,.7);
 }
 
@@ -2491,9 +2500,6 @@ nav .text-slideup {
 }
 
 html {
-  background: black;
-  /*#2a2d31;*/
-  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -2808,6 +2814,24 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-style: normal;
 }
 
+.ballinger {
+  font-family: "Ballinger", sans-serif;
+}
+
+@font-face {
+  font-display: auto;
+
+  font-family: "Ballinger";
+
+  font-stretch: normal;
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  src: url(https://use.typekit.net/af/83d7d7/00000000000000007735e8ab/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/83d7d7/00000000000000007735e8ab/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/83d7d7/00000000000000007735e8ab/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype")
+}
+
 /* 
 Fix to prevent FocusOnNavigate in App.razor from adding outline to the first h1 on a page
 https://www.reddit.com/r/Blazor/comments/xl09d8/blazor_h1_element_is_focused_on_startup_for_no/
@@ -2828,6 +2852,30 @@ h1:focus {
 
 .hover\:bg-\[\#00000010\]:hover {
   background-color: #00000010;
+}
+
+.dark\:border-white:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.dark\:bg-black:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.dark\:bg-stone-800:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 37 36 / var(--tw-bg-opacity));
+}
+
+.dark\:text-\[hsla\(26\2c 28\%\2c 95\%\2c \.7\)\]:is(.dark *) {
+  color: hsla(26,28%,95%,.7);
+}
+
+.dark\:text-white:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
