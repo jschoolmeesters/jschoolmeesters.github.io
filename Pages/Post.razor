@@ -21,10 +21,10 @@
     <h2 class="text-sm p-0 m-0 mt-3 mb-2">@Date</h2>
     <h1 class="text-3xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@Title</h1>
     @foreach (string tag in Tags) {
-        <div class="badge bg-black text-white border border-white rounded mr-2 uppercase">@tag</div>
+        <div class="badge bg-transparent text-black dark:text-white border border-black dark:border-white rounded mr-2 uppercase">@tag</div>
     }
 
-    <article class="py-4 text-white">@HtmlContent</article>
+    <article class="py-4 text-black dark:text-white">@HtmlContent</article>
 
     <div class="flex flex-row @(PreviousPost == null && NextPost == null ? "" : "border mt-9 border-white") rounded divide-x divide-white">
         @if (PreviousPost != null) {

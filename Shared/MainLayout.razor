@@ -6,26 +6,15 @@
 
 <main class="@(DarkMode ? "dark" : "")">
     <div class="wrapper w-full max-w-[500px] mx-auto bg-stone-100 text-black dark:bg-black dark:text-white">
-        @* te
-        <div class="z-[500] fixed bottom-0 w-full max-w-[500px]">
-            <div id="navbar" class="navbar-show transition-transform -translate-y-full relative z-[510] flex items-center text-white bg-black py-2 px-6">
-                <span @onclick="@(async () => NavigateToPage(""))" class="fk-grotesk-neue cursor-pointer text-4xl uppercase">✦</span>
-                <span class="grow"></span>
-                <button class="text-sm fk-grotesk-neue" @onclick="@(async () => await OnMenuClick())">@(ShowMenu ? "CLOSE" : "MENU")</button>
-                *@@*<button class="w-[1.8rem] h-[1.8rem]" @onclick="@(() => EyeSaver = !EyeSaver)"><i class="iconoir-eye text-[1.8rem] w-[1.8rem] h-[1.8rem] text-white overflow-hidden leading-0"></i></button>*@
-                @*<button class="w-[1.8rem] h-[1.8rem] @(ShowMenu ? "bg-[hsla(26,28%,95%,.5)]" : "bg-[#f6f2ef]") " @onclick="@(() => ShowMenu = !ShowMenu)"><i class="iconoir-arrow-up-right text-[1.8rem] w-[1.8rem] h-[1.8rem] text-black overflow-hidden leading-0"></i></button>*@
-            @*</div>
-            <div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-black relative pt-0 p-2 w-full gap-x-1"></div>
-        </div>*@
 
         <div class="z-[500] fixed top-0 w-full max-w-[500px]">
-            <div id="navbar" class="navbar-show transition-transform -translate-y-full relative z-[510] flex items-center text-white my-3 mx-3">
+            <div id="navbar" class="navbar-show transition-transform -translate-y-full relative z-[510] flex items-center bg-stone-100 dark:bg-black p-3">
                 <span @onclick="@(async () => NavigateToPage(""))" class="inline-block cursor-pointer text-sm py-1 px-3 rounded-full text-black bg-stone-200 dark:bg-stone-800 dark:text-white">Jordy Schoolmeesters</span>
                 <span class="grow"></span>
                 <span @onclick="@(()=> DarkMode = !DarkMode)" class="text-xl h-[1.75rem] rounded-full text-black dark:text-white mr-3"><span class=" @(DarkMode ? "iconoir-half-moon" : "iconoir-sun-light")"</span></span>
                 <span @onclick="@(async () => await OnMenuClick())" class="inline-block cursor-pointer text-sm py-1 px-3 rounded-full text-black bg-stone-200 dark:bg-stone-800 dark:text-white">@(ShowMenu ? "Close ×" : "Menu =")</span>
             </div>
-            <div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-black relative pt-0 p-2 w-full gap-x-1"></div>
+            <div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-stone-100 dark:bg-black relative pt-0 p-2 w-full gap-x-1"></div>
         </div>
 
         <aside class="opacity-fade text-black dark:text-[hsla(26,28%,95%,.7)] bg-stone-100 dark:bg-black wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[499] @(ShowMenu ? "" : "hidden")" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
