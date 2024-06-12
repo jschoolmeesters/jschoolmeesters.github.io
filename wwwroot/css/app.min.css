@@ -2055,10 +2055,6 @@ details.collapse summary::-webkit-details-marker {
   letter-spacing: 0em;
 }
 
-.tracking-tight {
-  letter-spacing: -0.025em;
-}
-
 .tracking-tighter {
   letter-spacing: -0.05em;
 }
@@ -2746,11 +2742,7 @@ mark:before {
   font-family: "FK Grotesk Neue Medium", sans-serif;
 }
 
-h1 {
-  font-family: "Helvetica Neue Medium", sans-serif;
-}
-
-h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a {
   font-family: "FK Grotesk Neue", sans-serif;
 }
 
