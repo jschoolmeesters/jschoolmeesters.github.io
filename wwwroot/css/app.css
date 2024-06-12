@@ -167,15 +167,15 @@ article p > a > i, article ul > li > a > i, article ol > li > a {
     filter: invert(92%) sepia(2%) saturate(571%) hue-rotate(330deg) brightness(87%) contrast(93%);
 }
 
-.nav-link.active, .nav-link.active:hover {
+.dark .nav-link.active, .dark .nav-link.active:hover {
     color: hsla(26,28%,95%,.9);
 }
 
-.nav-link {
+.dark .nav-link {
     color: hsla(26,28%,95%,.5);
 }
 
-.nav-link:not(.disabled):hover {
+.dark .nav-link:not(.disabled):hover {
     color: hsla(26,28%,95%,.7);
 }
 
@@ -333,8 +333,6 @@ nav li > a > span {
 
 
 html {
-   background: black; /*#2a2d31;*/
-   color: white;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    text-rendering: optimizeLegibility;
@@ -655,6 +653,19 @@ h1, h2, h3, h4, h5, h6, p, a {
     src: url('../fonts/New Edge 666/NewEdge666.ttf');
     font-weight: 300;
     font-style: normal;
+}
+
+.ballinger {
+    font-family: "Ballinger", sans-serif;
+}
+
+@font-face {
+    font-display: auto;
+    font-family: "Ballinger";
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://use.typekit.net/af/83d7d7/00000000000000007735e8ab/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/83d7d7/00000000000000007735e8ab/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/83d7d7/00000000000000007735e8ab/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype")
 }
 
 /* 

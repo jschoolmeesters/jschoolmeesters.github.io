@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}", "./Components/*.{razor,html,cshtml}"],
+  darkMode: 'class',
   theme: { extend: {} },
   plugins: [
     require('daisyui'),
