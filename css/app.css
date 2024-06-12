@@ -39,7 +39,8 @@ html.lenis, html.lenis body {
 
 .progress-segment {
     @apply h-1;
-    background-color: #ffffff30;
+    @apply bg-stone-300;
+    @apply dark:bg-stone-500;
     flex: 1;
     -webkit-box-flex: 4;
     -ms-flex: 4;
@@ -52,17 +53,14 @@ html.lenis, html.lenis body {
 }
 
 .progress-segment.fill {
-    background-color: white;
+    @apply bg-stone-400;
+    @apply dark:bg-stone-400;
 }
 
 /* END Post progress bar */
 
 
 /* BEGIN Markdown styling */
-
-article {
-    color: white;
-}
 
 article h1, article h2, article h3, article h4, article h5, article h6,
 article p, article a, article ul, article ol, article li, article blockquote {
@@ -87,7 +85,8 @@ article h1 {
 article h2 {
     @apply text-3xl;
     @apply border-b-2;
-    @apply border-[hsla(26,28%,95%,.3)];
+    @apply border-stone-300;
+    @apply dark:border-stone-600;
     @apply pb-2;
 }
 
@@ -114,8 +113,8 @@ article ol {
 }
 
 article code {
-    @apply bg-neutral-800;
-    @apply text-neutral-300;
+    @apply bg-stone-800;
+    @apply text-stone-300;
     @apply rounded;
     @apply px-1;
 }
@@ -127,23 +126,27 @@ article pre > code {
 }
 
 article a {
-    @apply text-[#437cf4];
+    @apply text-[#1e62f2];
+    @apply dark:text-[#437cf4];
     @apply underline;
-    @apply bg-[#030b35];
     @apply rounded;
+    @apply px-1.5;
 }
 
 article a > i {
-    @apply text-[hsla(26,28%,95%,.7)];
+    @apply text-stone-600;
+    @apply dark:text-stone-300;
     @apply align-middle;
 }
 
 article ul > li::marker, article ol > li::marker {
-    @apply text-[hsla(26,28%,95%,.3)];
+    @apply text-stone-400;
+    @apply dark:text-stone-600;
 }
 
 article ul > li, article ol > li {
-    @apply text-white;
+    @apply text-black;
+    @apply dark:text-white;
 }
 
 article p > a, article ul > li > a, article ol > li > a {

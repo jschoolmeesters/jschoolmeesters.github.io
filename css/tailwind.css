@@ -1520,11 +1520,6 @@ details.collapse summary::-webkit-details-marker {
   margin: 0.75rem;
 }
 
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1633,10 +1628,6 @@ details.collapse summary::-webkit-details-marker {
   height: 1.75rem;
 }
 
-.h-\[1\.8rem\] {
-  height: 1.8rem;
-}
-
 .h-\[100vw\] {
   height: 100vw;
 }
@@ -1675,10 +1666,6 @@ details.collapse summary::-webkit-details-marker {
 
 .w-7 {
   width: 1.75rem;
-}
-
-.w-\[1\.8rem\] {
-  width: 1.8rem;
 }
 
 .w-\[100vw\] {
@@ -1851,11 +1838,6 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(45 49 42 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#f6f2ef\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 242 239 / var(--tw-bg-opacity));
-}
-
 .bg-\[hsla\(26\2c 28\%\2c 95\%\2c \.5\)\] {
   background-color: hsla(26,28%,95%,.5);
 }
@@ -1883,6 +1865,10 @@ details.collapse summary::-webkit-details-marker {
 .bg-stone-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(231 229 228 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .p-0 {
@@ -1917,11 +1903,6 @@ details.collapse summary::-webkit-details-marker {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .py-1 {
@@ -2010,10 +1991,6 @@ details.collapse summary::-webkit-details-marker {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
-}
-
-.text-\[1\.8rem\] {
-  font-size: 1.8rem;
 }
 
 .text-lg {
@@ -2152,6 +2129,10 @@ details.collapse summary::-webkit-details-marker {
 
 .hover\:bg-\[\#00000010\]:hover {
   background-color: #00000010;
+}
+
+.dark\:border-none:is(.dark *) {
+  border-style: none;
 }
 
 .dark\:border-white:is(.dark *) {
