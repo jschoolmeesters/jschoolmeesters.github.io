@@ -1782,8 +1782,8 @@ details.collapse summary::-webkit-details-marker {
   row-gap: 0.125rem;
 }
 
-.gap-y-6 {
-  row-gap: 1.5rem;
+.gap-y-3 {
+  row-gap: 0.75rem;
 }
 
 .divide-x > :not([hidden]) ~ :not([hidden]) {
