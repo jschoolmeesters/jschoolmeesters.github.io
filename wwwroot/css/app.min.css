@@ -1665,10 +1665,6 @@ details.collapse summary::-webkit-details-marker {
   max-height: 500px;
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
 .w-1\/2 {
   width: 50%;
 }
@@ -1897,6 +1893,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-stone-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(231 229 228 / var(--tw-bg-opacity));
+}
+
+.bg-stone-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 249 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -2394,16 +2395,8 @@ article p > a > i, article ul > li > a > i, article ol > li > a {
   filter: invert(92%) sepia(2%) saturate(571%) hue-rotate(330deg) brightness(87%) contrast(93%);
 }
 
-.dark .nav-link.active, .dark .nav-link.active:hover {
-  color: hsla(26,28%,95%,.9);
-}
-
-.dark .nav-link {
-  color: hsla(26,28%,95%,.5);
-}
-
-.dark .nav-link:not(.disabled):hover {
-  color: hsla(26,28%,95%,.7);
+.nav-link.active > span::after {
+  content: "✦";
 }
 
 .linear-progress {
@@ -2933,10 +2926,6 @@ h1:focus {
 .dark\:bg-stone-800:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(41 37 36 / var(--tw-bg-opacity));
-}
-
-.dark\:text-\[hsla\(26\2c 28\%\2c 95\%\2c \.7\)\]:is(.dark *) {
-  color: hsla(26,28%,95%,.7);
 }
 
 .dark\:text-white:is(.dark *) {
