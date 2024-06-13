@@ -64,8 +64,33 @@
 
       <BlazorPortfolio.Components.Links />
 
-      <h2 class="text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
-      
+      <h2 class="text-sm p-0 m-0 mt-12 mb-2 first-child:">Latest posts</h2>
+
+      @foreach (var item in FilteredPosts) {
+         var post = item.post;
+         var index = item.i;
+
+         <div class="cursor-pointer border-t border-b py-3 border-black dark:border-white flex flex-row" @onclick="@(() => NavigateToPost(post))">
+            <div class="pr-3">
+               <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
+            </div>
+            <div class="grow flex flex-col">
+               <h2 class="text-2xl tracking-[-0.035em] leading-none">@post.Title</h2>
+               <div class="mt-1.5">
+                  @foreach (string tag in post.TagsAsList) {
+                     <div class="badge align-middle text-xs bg-transparent rounded-full text-black dark:text-white border border-black dark:border-white mr-2 uppercase">@tag</div>
+                  }
+               </div>
+               <div class="flex flex-row mt-3">
+                  <div class="basis-1/2 text-stone-600"><span>@post.DateAsUriString</span></div>
+                  <div class="basis-1/2 text-end"><span class="">x min read <span class="iconoir-arrow-right align-middle"></span></span></div>
+               </div>
+            </div>
+         </div>
+
+      }
+
+      @*
       @foreach (var item in FilteredPosts) {
          var post = item.post;
          var index = item.i;
@@ -84,6 +109,7 @@
             </div>
          </div>
       }
+      *@
 
       <div class="text-lg grid grid-cols-2 gap-y-3 pt-12 pb-6">
          <div class="col-span-2">(© 2024 Jordy Schoolmeesters)</div>
