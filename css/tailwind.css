@@ -1882,6 +1882,11 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 
+.bg-stone-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 249 / var(--tw-bg-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -2182,10 +2187,6 @@ details.collapse summary::-webkit-details-marker {
 .dark\:bg-stone-800:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(41 37 36 / var(--tw-bg-opacity));
-}
-
-.dark\:text-\[hsla\(26\2c 28\%\2c 95\%\2c \.7\)\]:is(.dark *) {
-  color: hsla(26,28%,95%,.7);
 }
 
 .dark\:text-white:is(.dark *) {

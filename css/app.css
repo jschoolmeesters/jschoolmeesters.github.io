@@ -170,16 +170,10 @@ article p > a > i, article ul > li > a > i, article ol > li > a {
     filter: invert(92%) sepia(2%) saturate(571%) hue-rotate(330deg) brightness(87%) contrast(93%);
 }
 
-.dark .nav-link.active, .dark .nav-link.active:hover {
-    color: hsla(26,28%,95%,.9);
-}
 
-.dark .nav-link {
-    color: hsla(26,28%,95%,.5);
-}
 
-.dark .nav-link:not(.disabled):hover {
-    color: hsla(26,28%,95%,.7);
+.nav-link.active > span::after {
+    content: "✦";
 }
 
 .linear-progress {
