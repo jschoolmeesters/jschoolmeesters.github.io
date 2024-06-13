@@ -64,7 +64,7 @@
 
       <BlazorPortfolio.Components.Links />
 
-      <h2 class="text-sm p-0 m-0 mt-12 mb-2 first-child:">Latest posts</h2>
+      <h2 class="text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
 
       @foreach (var item in FilteredPosts) {
          var post = item.post;
@@ -83,7 +83,7 @@
                </div>
                <div class="flex flex-row mt-3">
                   <div class="basis-1/2"><span>@post.DateAsUriString</span></div>
-                  <div class="basis-1/2 text-end"><span class="">x min read <span class="iconoir-arrow-right align-middle"></span></span></div>
+                  <div class="basis-1/2 text-end"><span class="">5 min read <span class="iconoir-arrow-right align-middle"></span></span></div>
                </div>
             </div>
          </div>
