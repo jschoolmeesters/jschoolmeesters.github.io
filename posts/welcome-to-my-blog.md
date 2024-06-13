@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "First steps"
+title: "Welcome to my blog!"
 tags: rant, me
 date: "05/06/2024"
 description: "Welcome to my new blog! In this first post will discuss my personal goals for the coming years, which will in turn decide the course that the future content will be heading."
 ---
 Welcome to my new blog! In this first post will discuss my personal goals for the coming years, which will decide the course that the future content will be heading.
 
-## Current state of affairs
+## Where we're currently at
 
-At the moment I have completed the first two years of my bachelor Computing Science at Radboud University and have been working as a C# developer for roughly four years (part-time). Besides this, I have also been trying pursuing a career as a music producer. 
+At the moment I have completed the first two years of my bachelor Computing Science at Radboud University and have been working as a C# developer for roughly four years (part-time). Besides this, I have also been pursuing a career as a music producer. 
 
 However, recently I decided to focus on finishing my study and find out which specialization is the best fit for me, while sharing my progress and other content on my page.
 

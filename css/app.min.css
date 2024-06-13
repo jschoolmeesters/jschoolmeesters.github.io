@@ -1114,10 +1114,6 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1em;
 }
 
-.input-bordered {
-  border-color: var(--fallback-bc,oklch(var(--bc)/0.2));
-}
-
 .input:focus,
   .input:focus-within {
   box-shadow: none;
@@ -1449,17 +1445,16 @@ details.collapse summary::-webkit-details-marker {
 }
 
 .input-search, .input-search:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(45 49 42 / var(--tw-bg-opacity));
+  background-color: transparent;
   border-style: none;
 }
 
 .input-search > input::-moz-placeholder {
-  color: hsla(26,28%,95%,.9);
+  color: red;
 }
 
 .input-search > input::placeholder, .input-search > i {
-  color: hsla(26,28%,95%,.9);
+  color: red;
 }
 
 .collapse {
@@ -1574,12 +1569,16 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 2rem;
 }
 
-.ml-1 {
-  margin-left: 0.25rem;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-1\.5 {
+  margin-top: 0.375rem;
 }
 
 .mt-12 {
@@ -1644,10 +1643,6 @@ details.collapse summary::-webkit-details-marker {
 
 .h-\[100vw\] {
   height: 100vw;
-}
-
-.h-\[1px\] {
-  height: 1px;
 }
 
 .h-\[3\.25rem\] {
@@ -1716,6 +1711,10 @@ details.collapse summary::-webkit-details-marker {
 
 .grow {
   flex-grow: 1;
+}
+
+.basis-1\/2 {
+  flex-basis: 50%;
 }
 
 .-translate-y-full {
@@ -1849,6 +1848,10 @@ details.collapse summary::-webkit-details-marker {
   border-width: 1px;
 }
 
+.border-b {
+  border-bottom-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -1861,11 +1864,6 @@ details.collapse summary::-webkit-details-marker {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.bg-\[\#2d312a\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(45 49 42 / var(--tw-bg-opacity));
 }
 
 .bg-\[hsla\(26\2c 28\%\2c 95\%\2c \.5\)\] {
@@ -1948,6 +1946,11 @@ details.collapse summary::-webkit-details-marker {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-4 {
@@ -2104,10 +2107,6 @@ details.collapse summary::-webkit-details-marker {
   color: hsla(26,28%,95%,.5);
 }
 
-.text-\[hsla\(26\2c 28\%\2c 95\%\2c \.7\)\] {
-  color: hsla(26,28%,95%,.7);
-}
-
 .text-\[hsla\(26\2c 28\%\2c 95\%\2c \.9\)\] {
   color: hsla(26,28%,95%,.9);
 }
@@ -2132,6 +2131,11 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.text-stone-600 {
+  --tw-text-opacity: 1;
+  color: rgb(87 83 78 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -2139,10 +2143,6 @@ details.collapse summary::-webkit-details-marker {
 
 .line-through {
   text-decoration-line: line-through;
-}
-
-.bg-blend-difference {
-  background-blend-mode: difference;
 }
 
 .mix-blend-color-burn {
@@ -2775,7 +2775,7 @@ mark:before {
   font-family: "FK Grotesk Neue Medium", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a, span {
   font-family: "FK Grotesk Neue", sans-serif;
 }
 
