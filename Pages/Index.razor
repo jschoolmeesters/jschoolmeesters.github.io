@@ -39,69 +39,58 @@
       </div>
    </div>*@
 
-<div class="p-3 pb-0 mt-16">
-   <h2 class="text-sm p-0 m-0 mb-2">About me</h2>
+   <div class="p-3 pb-9 mt-16">
+      <h2 class="text-sm p-0 m-0 mb-2">About me</h2>
 
-   <p class="text-2xl tracking-[-0.035em] leading-none">Computing Science student, C# developer and music producer specializing in high performance computing and embedded systems.</p><br>
-   <p class="text-2xl tracking-[-0.035em] leading-none">Here, I'll be sharing my progress, insights, tutorials and tips on all things coding and music production.</p><br>
-   <p class="text-2xl tracking-[-0.035em] leading-none">Currently working at Archive-IT, based in Reuver, the Netherlands.</p>
-
-   <h2 class="text-sm p-0 m-0 mt-12 mb-2">Current projects</h2>
-   <ul class="text-2xl tracking-[-0.035em] leading-none">
-      <li>MIT OCW courses on C/C++</li>
-      <li>Making an RTOS for an ARM CORTEX© M4 based microcontroller</li>
-   </ul>
-
-   <h2 class="text-sm p-0 m-0 mt-12 mb-2">Current goals</h2>
-   <ul class="text-2xl tracking-[-0.035em] leading-none">
-      <li>Excelling at C/C++</li>
-      <li>Refreshing Bash/Python skills</li>
-      <li><a href="https://www.ru.nl/courseguides/science/bachelor/bachelor-computing-science/">Computing Science bachelor</a></li>
-   </ul>
-
-   <img class="border border-black dark:border-none w-full mt-12 rounded" src="https://i.seadn.io/gcs/files/396a124e569b6ee79d34a010035f2da0.png?auto=format&dpr=1&w=1000">
-
-   <BlazorPortfolio.Components.Links />
-</div>
-
-
-
-   @*
-   <div id="navbar-trigger" class="flex my-4 px-4 w-full">
-      <p class="text-sm flex-1 w-2/3 text-[hsla(26,28%,95%,.9)]">
-         Hey! I'm Jordy - a computing science student, C# developer and producer interested in the field of DSP.
-      </p>
-      <ul class="flex-none w-[8.75rem] text-sm text-right">
-         <li class="text-[hsla(26,28%,95%,.9)]"><a href="https://github.com/jschoolmeesters">[GitHub]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-         <li class="text-[hsla(26,28%,95%,.9)]"><a href="https://www.linkedin.com/in/jordyschoolmeesters">[LinkedIn]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-         <li class="text-[hsla(26,28%,95%,.9)]"><a href="mailto:someone@example.com">[Email]<i class="iconoir-open-new-window text-xs translate-y-[-0.375rem] text-[hsla(26,28%,95%,.5)]"></i></a></li>
-      </ul>
+      <p class="text-2xl tracking-[-0.035em] leading-none">Computing Science student, C# developer and music producer specializing in high performance computing and embedded systems.</p><br>
+      <p class="text-2xl tracking-[-0.035em] leading-none">Here, I'll be sharing my progress, insights, tutorials and tips on all things coding and music production.</p><br>
+      <p class="text-2xl tracking-[-0.035em] leading-none">Currently working at Archive-IT, based in Reuver, the Netherlands.</p>
    </div>
-   *@
-</div>
+   <div class="px-3 bg-white dark:bg-black">
+      <h2 class="text-sm p-0 m-0 pt-6 mb-2">Current projects</h2>
+      <ul class="text-2xl tracking-[-0.035em] leading-none">
+         <li>MIT OCW courses on C/C++</li>
+         <li>Making an RTOS for an ARM CORTEX© M4 based microcontroller</li>
+      </ul>
 
-<div class="w-full px-3">
-   <h2 class="text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
-   
-   @foreach (var item in FilteredPosts) {
-      var post = item.post;
-      var index = item.i;
+      <h2 class="text-sm p-0 m-0 mt-12 mb-2">Current goals</h2>
+      <ul class="text-2xl tracking-[-0.035em] leading-none">
+         <li>Excelling at C/C++</li>
+         <li>Refreshing Bash/Python skills</li>
+         <li><a href="https://www.ru.nl/courseguides/science/bachelor/bachelor-computing-science/">Computing Science bachelor</a></li>
+      </ul>
 
-      <div @onclick="@(() => NavigateToPost(post))" class="cursor-pointer my-3 border rounded border-black dark:border-white relative block">
-         <div class="p-4">
-            <div class="flex flex-row justify-between">
-               <h2 class="text-xs uppercase p-0 m-0 text-start">@String.Join(", ", post.Tags.Split(',').Order())</h2>
-               <h2 class="text-xs uppercase p-0 m-0 text-end">@post.DateAsUriString</h2>
+      <img class="border border-black dark:border-none w-full mt-12 rounded" src="https://i.seadn.io/gcs/files/396a124e569b6ee79d34a010035f2da0.png?auto=format&dpr=1&w=1000">
+
+      <BlazorPortfolio.Components.Links />
+
+      <h2 class="text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
+      
+      @foreach (var item in FilteredPosts) {
+         var post = item.post;
+         var index = item.i;
+
+         <div @onclick="@(() => NavigateToPost(post))" class="cursor-pointer my-3 border rounded border-black dark:border-white relative block">
+            <div class="p-4">
+               <div class="flex flex-row justify-between">
+                  <h2 class="text-xs uppercase p-0 m-0 text-start">@String.Join(", ", post.Tags.Split(',').Order())</h2>
+                  <h2 class="text-xs uppercase p-0 m-0 text-end">@post.DateAsUriString</h2>
+               </div>
+               <h1 class="text-3xl tracking-tighter uppercase p-0 m-0 mt-3 leading-none">@post.Title</h1>
+               <p class="text-lg tracking-[-0.035em] leading-none mt-6">@post.Description</p>
             </div>
-            <h1 class="text-3xl tracking-tighter uppercase p-0 m-0 mt-3 leading-none">@post.Title</h1>
-            <p class="text-lg tracking-[-0.035em] leading-none mt-6">@post.Description</p>
+            <div class="w-full p-3 h-[3.75rem] overflow-hidden border-t border-black dark:border-white">
+               <p class="align-middle tracking-normal text-4xl h-[3rem] leading-none uppercase">Read✦</p>
+            </div>
          </div>
-         <div class="w-full p-3 h-[3.75rem] overflow-hidden border-t border-black dark:border-white">
-            <p class="align-middle tracking-normal text-4xl h-[3rem] leading-none uppercase">Read✦</p>
-         </div>
-      </div>
-   }
+      }
 
+      <div class="text-lg grid grid-cols-2 gap-y-6 pt-12 pb-6">
+         <div class="col-span-2">(© 2024 Jordy Schoolmeesters)</div>
+         <div>Back to top <span class="iconoir-arrow-up align-middle"></span></div>
+         <div class="text-end">Shift + G</div>
+      </div>
+   </div>
 </div>
 
 @code {
