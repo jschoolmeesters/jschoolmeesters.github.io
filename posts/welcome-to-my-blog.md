@@ -39,9 +39,9 @@ I found [this](https://www.universiteitleiden.nl/en/education/study-programmes/m
 #### Con's:
 - Not sure yet?
 
-## So what's next?
+## So what's (possibly) next?
 
-Even though the master is still two years away, summer is coming, which means I could already start honing my C and C++ skills and work on some of the other requirements of the master (regardless of whether or not I will eventually choose it):
+Even though a master is still two years away, summer is coming, which means I could already start honing my C and C++ skills and work on some of the other generally useful requirements of the master such as:
 - Excellent programming skills in C and C++, preferably at system and application levels
 - Good scripting (bash, Python) and command-line skills in a Linux-based terminal environment
 - Good knowledge and understanding of digital systems design fundamentals (including most topics of: binary arithmetic and codes, boolean algebra, combinational logic circuits, sequential circuits, memory basics, computer design basics)
