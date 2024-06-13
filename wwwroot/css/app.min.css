@@ -1578,10 +1578,6 @@ details.collapse summary::-webkit-details-marker {
   margin-right: 0.5rem;
 }
 
-.mr-3 {
-  margin-right: 0.75rem;
-}
-
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1630,6 +1626,10 @@ details.collapse summary::-webkit-details-marker {
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -1638,16 +1638,16 @@ details.collapse summary::-webkit-details-marker {
   height: 8rem;
 }
 
-.h-\[1\.75rem\] {
-  height: 1.75rem;
-}
-
 .h-\[100vw\] {
   height: 100vw;
 }
 
 .h-\[1px\] {
   height: 1px;
+}
+
+.h-\[3\.25rem\] {
+  height: 3.25rem;
 }
 
 .h-\[3\.75rem\] {
@@ -1684,6 +1684,10 @@ details.collapse summary::-webkit-details-marker {
 
 .w-\[100vw\] {
   width: 100vw;
+}
+
+.w-\[3\.25rem\] {
+  width: 3.25rem;
 }
 
 .w-\[75\%\] {
@@ -1803,6 +1807,10 @@ details.collapse summary::-webkit-details-marker {
 .divide-white > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-divide-opacity));
+}
+
+.place-self-center {
+  place-self: center;
 }
 
 .self-center {
