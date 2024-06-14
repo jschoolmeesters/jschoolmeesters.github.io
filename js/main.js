@@ -67,17 +67,37 @@ let durationDefaultFastest = 0.9;
 CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
 CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
 
+window.postsLoaded = () => {
+    gsap.fromTo(".post.gsap-animate-transition", {
+        xPercent: 100,
+        autoAlpha: 0,
+    },{
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: durationDefault,
+        ease: "primary-ease",
+        scrollTrigger: {
+            trigger: '.left.gsap-animate-transition',
+            toggleActions: 'play none none reverse',
+           // pin: true, // pin the trigger element while active
+            start: 'top bottom', // when the top of the trigger hits the top of the viewport
+            //end: '+=500', // end after scrolling 500px beyond the start
+            //scrub: 1
+        }
+    })
+}
+
 // Animation - Page Loader Home Part 1
-window.initLoadHomePart1 = () => { 
+window.homeLoaded = () => { 
     gsap.to(".scroll.gsap-animate-transition", {
         opacity: 0,
         yPercent: 5, // Move down by 5% of the element's height
         scrollTrigger: {
-          start: "top+=100 top", // Start the animation after scrolling 100px from the top of the page
+          start: "top+=0 top", // Start the animation after scrolling 100px from the top of the page
           end: "+=200", // The animation will end after scrolling another 100px
           scrub: true // Smoothly animate the changes as the user scrolls
         }
-      });
+    });
 
     var tl = gsap.timeline();
 
@@ -135,7 +155,7 @@ window.initLoadHomePart1 = () => {
     }, "<");
 
     tl.fromTo(".fill.gsap-animate-transition", {
-        xPrecent: 0
+        xPercent: 0
     },{
         delay: 0.5,
         xPercent: 100,
