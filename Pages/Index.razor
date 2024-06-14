@@ -107,7 +107,7 @@
             var post = item.post;
             var index = item.i;
 
-            <div class="cursor-pointer border-t border-b py-3 border-black dark:border-white flex flex-row" @onclick="@(() => NavigateToPost(post))">
+            <div class="post gsap-animate-transition cursor-pointer border-t border-b py-3 border-black dark:border-white flex flex-row" @onclick="@(() => NavigateToPost(post))">
                <div class="pr-3">
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
@@ -124,31 +124,9 @@
                   </div>
                </div>
             </div>
-
          }
 
-         @*
-         @foreach (var item in FilteredPosts) {
-            var post = item.post;
-            var index = item.i;
-
-            <div @onclick="@(() => NavigateToPost(post))" class="cursor-pointer my-3 border rounded border-black dark:border-white relative block">
-               <div class="p-4">
-                  <div class="flex flex-row justify-between">
-                     <h2 class="text-xs uppercase p-0 m-0 text-start">@String.Join(", ", post.Tags.Split(',').Order())</h2>
-                     <h2 class="text-xs uppercase p-0 m-0 text-end">@post.DateAsUriString</h2>
-                  </div>
-                  <h1 class="text-3xl tracking-tighter uppercase p-0 m-0 mt-3 leading-none">@post.Title</h1>
-                  <p class="text-lg tracking-[-0.035em] leading-none mt-6">@post.Description</p>
-               </div>
-               <div class="w-full p-3 h-[3.75rem] overflow-hidden border-t border-black dark:border-white">
-                  <p class="align-middle tracking-normal text-4xl h-[3rem] leading-none uppercase">Read✦</p>
-               </div>
-            </div>
-         }
-         *@
-
-         <div class="text-lg tracking-[-0.035em] leading-none grid grid-cols-2 gap-y-3 pt-12 pb-6">
+         <div class="left gsap-animate-transition text-lg tracking-[-0.035em] leading-none grid grid-cols-2 gap-y-3 pt-12 pb-6">
             <div class="col-span-2">(© 2024 Jordy Schoolmeesters)</div>
             <div>Back to top <span class="iconoir-arrow-up align-middle"></span></div>
             <div class="text-end">Shift + G</div>
@@ -177,7 +155,11 @@
    protected async override Task OnAfterRenderAsync(bool firstRender)
    {
       if (firstRender)
-         await JS.InvokeVoidAsync("initLoadHomePart1");
+         await JS.InvokeVoidAsync("homeLoaded");
+   }
+
+   public async Task PostsLoaded() {
+      await JS.InvokeVoidAsync("postsLoaded");
    }
 
    protected override async Task OnInitializedAsync()
