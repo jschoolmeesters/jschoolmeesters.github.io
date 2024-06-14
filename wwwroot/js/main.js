@@ -125,12 +125,12 @@ window.initLoadHomePart1 = () => {
     }, "<");
 
     tl.fromTo(".fill.gsap-animate-transition", {
-        scaleX: 1
+        xPrecent: 0
     },{
-        delay: 0.3,
-        scaleX: 0,
+        delay: 0.5,
+        xPercent: 100,
         ease: "primary-ease",
-        duration: 2.5
+        duration: 3.5
     }, "<");
 
 }
