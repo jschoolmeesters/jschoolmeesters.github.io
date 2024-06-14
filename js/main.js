@@ -69,6 +69,16 @@ CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
 
 // Animation - Page Loader Home Part 1
 window.initLoadHomePart1 = () => { 
+    gsap.to(".scroll.gsap-animate-transition", {
+        opacity: 0,
+        yPercent: 5, // Move down by 5% of the element's height
+        scrollTrigger: {
+          start: "top+=100 top", // Start the animation after scrolling 100px from the top of the page
+          end: "+=200", // The animation will end after scrolling another 100px
+          scrub: true // Smoothly animate the changes as the user scrolls
+        }
+      });
+
     var tl = gsap.timeline();
 
     tl.set(".about.gsap-animate-transition", {
@@ -133,4 +143,13 @@ window.initLoadHomePart1 = () => {
         duration: 3.5
     }, "<");
 
+    tl.fromTo(".scroll.gsap-animate-transition", {
+        yPercent: 100,
+        autoAlpha: 0
+    },{
+        autoAlpha: 1,
+        yPercent: 0,
+        ease: "primary-ease",
+        duration: durationDefaultFaster
+    }, "-=2.5");
 }
