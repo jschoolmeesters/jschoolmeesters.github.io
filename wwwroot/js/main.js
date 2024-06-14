@@ -1,3 +1,5 @@
+// Hide navbar on scroll down, show on scroll up (broken)
+/*
 window.addEventListener("scroll", function() {
     const elementTarget = document.getElementById("navbar-trigger");
     let element = document.getElementById("navbar");
@@ -6,6 +8,9 @@ window.addEventListener("scroll", function() {
     else
         element.classList.remove("navbar-show");
 });
+*/
+
+// Prevent scrolling while menu is open
 
 window.preventScrolling = (val) => {
     if (val)
@@ -14,112 +19,13 @@ window.preventScrolling = (val) => {
         document.body.style.overflow = "auto";
 };
 
+// Fade in page after load
+
 window.fadeIn = () => {
     document.body.querySelector("main").classList.add('loaded');
 };
 
-// Post progress bar
-window.initializeProgressBar = () => {
-    let progressContainer = document.getElementById("progress-container");
-    progressContainer.innerHTML = "";
-
-    let sections = document.querySelectorAll("article h2");
-    let numSections = sections.length;
-    const windowHeight = window.innerHeight;
-
-    // Create progress segments
-    for (let i = 0; i < numSections; i++) {
-        const segment = document.createElement("div");
-        segment.classList.add("progress-segment");
-        progressContainer.appendChild(segment);
-    }
-
-    const progressSegments = document.querySelectorAll(".progress-segment");
-
-    function rec(index, cumulativeHeight, scrollPosition, matches) {
-        if (index < 0) {
-            if (matches.includes(0)) {
-                if (scrollPosition === 0)
-                    return 0;
-                else
-                    return Math.max(...matches);
-            } else if (matches.length > 0) {
-                return Math.max(...matches); // Spread operator to handle the array correctly
-            } else {
-                return 0;
-            }
-        } else {
-            const section = sections[index];
-            if (!section) {
-                console.warn(`Section at index ${index} is undefined.`);
-                return rec(index - 1, cumulativeHeight, scrollPosition, matches);
-            }
-            
-            const sectionTop = section.offsetTop;
-            if (isNaN(sectionTop)) {
-                console.warn(`sectionTop is NaN for index ${index}`);
-            }
-    
-            let sectionHeight = 0;
-    
-            if (index < numSections - 1) {
-                sectionHeight = sections[index + 1].offsetTop - sectionTop;
-            } else {
-                sectionHeight = document.body.clientHeight - sectionTop;
-            }
-    
-            let newCumulativeHeight = cumulativeHeight + sectionHeight;
-    
-            if (newCumulativeHeight <= windowHeight) {
-                if (index === sections.length - 1 && scrollPosition + windowHeight >= sectionTop) {
-                    matches.push(index);
-                } else if (scrollPosition + windowHeight <= sectionTop + sectionHeight && scrollPosition + windowHeight >= sectionTop) {
-                    matches.push(index);
-                }
-                return rec(index - 1, newCumulativeHeight, scrollPosition, matches);
-            } else {
-                if (scrollPosition <= sectionTop + sectionHeight && (scrollPosition >= sectionTop || index === 0)) {
-                    matches.push(index);
-                }
-                return rec(index - 1, newCumulativeHeight, scrollPosition, matches);
-            }
-        }
-    }
-    
-
-    function updateProgress() {
-        const scrollPosition = window.scrollY;
-
-        let highlightedIndex = -1;
-       
-       sections = document.querySelectorAll("article h2");
-       numSections = sections.length;
-        highlightedIndex = rec(numSections - 1, 0, scrollPosition, []);
-
-        // Update progress segments
-        progressSegments.forEach((seg, idx) => {
-            if (idx === highlightedIndex) {
-                seg.classList.add("active");
-            } else {
-                seg.classList.remove("active");
-            }
-            if (idx <= highlightedIndex) {
-                seg.classList.add("fill");
-            } else {
-                seg.classList.remove("fill");
-            }
-        });
-    }
-
-    // Initial update
-    updateProgress();
-
-    // Update on scroll
-    window.addEventListener("scroll", updateProgress);
-};
-
-
-/* Lenis smooth scroll */
+// Lenis smooth scroll
 
 const lenis = new Lenis({
     wheelMultiplier: 1.25,
@@ -136,3 +42,95 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf)
+
+/**
+ * vh fix for mobile
+ */
+function initCheckWindowHeight() {
+   // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+   let vh = window.innerHeight * 0.01;
+   document.documentElement.style.setProperty('--vh-in-px', `${vh}px`);
+}
+
+// GSAP animations
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(/*ScrollTrigger, */CustomEase);
+});
+
+let scroll;
+let transitionOffset = 1100;
+let staggerDefault = 0.07;
+let durationDefault = 1.47;
+let durationDefaultFaster = 1.2;
+let durationDefaultFastest = 0.9;
+
+CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
+CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
+
+// Animation - Page Loader Home Part 1
+window.initLoadHomePart1 = () => { 
+    var tl = gsap.timeline();
+
+    tl.set(".about.gsap-animate-transition", {
+        yPercent: 50
+    });
+
+    tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
+        autoAlpha: 0,
+        yPercent: 100,
+        rotate: 0.001
+    },{
+        autoAlpha: 1,
+        yPercent: 0,
+        rotate: 0.001,
+        ease: "primary-ease",
+        duration: durationDefault,
+        stagger: staggerDefault
+    }, "<");
+
+    tl.to(".about.gsap-animate-transition", {
+        yPercent: 0,
+        duration: durationDefaultFastest,
+        ease: "primary-ease"
+    }, "+=0.5");
+
+    tl.fromTo(".about-rest.gsap-lines.gsap-animate-transition .gsap-line-inner", {
+        autoAlpha: 0,
+        yPercent: 100,
+        rotate: 0.001
+    },{
+        //delay: 0.3,
+        autoAlpha: 1,
+        yPercent: 0,
+        rotate: 0.001,
+        ease: "primary-ease",
+        duration: durationDefault,
+        stagger: staggerDefault
+    }, "<");
+
+    tl.fromTo(".navbar.gsap-animate-transition", {
+        yPercent: -100
+    },{
+        yPercent: 0,
+        ease: "primary-ease",
+        duration: durationDefaultFaster
+    }, "<");
+
+    tl.fromTo(".darkmode.gsap-animate-transition", {
+        autoAlpha: 0
+    },{
+        autoAlpha: 1,
+        ease: "primary-ease",
+        duration: durationDefault
+    }, "<");
+
+    tl.fromTo(".fill.gsap-animate-transition", {
+        scaleX: 1
+    },{
+        delay: 0.3,
+        scaleX: 0,
+        ease: "primary-ease",
+        duration: 2.5
+    }, "<");
+
+}

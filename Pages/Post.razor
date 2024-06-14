@@ -121,9 +121,7 @@
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
-
-            JS.InvokeVoidAsync("initializeProgressBar");
-
+        JS.InvokeVoidAsync("initializeProgressBar");
     }
 
    private void NavigateToPost(Models.Post post)

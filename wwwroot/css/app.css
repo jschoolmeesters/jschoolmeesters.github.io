@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* BEGIN GSAP */
+
+.gsap-lines {
+    @apply relative;
+    @apply block;
+}
+
+.gsap-line {
+    @apply overflow-hidden;
+}
+
+.gsap-line-inner {
+    @apply relative;
+    @apply block;
+}
+
+/* END GSAP */
+
 main {
     transition: opacity 0.1s ease-in;
     opacity:0;
@@ -160,10 +178,6 @@ article p > a > i, article ul > li > a > i, article ol > li > a {
 
 /* END Markdown styling*/
 
-
-.navbar-show {
-    @apply translate-y-0;
-}
 
 
 .trib {
