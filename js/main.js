@@ -100,7 +100,7 @@ window.homeLoaded = () => {
     });
 
     gsap.set("aside.gsap-animate-transition", {
-        autoAlpha: 0
+        xPercent: 100
     });
 
     var tl = gsap.timeline();
@@ -184,19 +184,38 @@ window.homeLoaded = () => {
 window.openMenu = () => { 
     tl = gsap.timeline();
 
-    tl.to("aside.gsap-animate-transition", {
-        autoAlpha: 1,
+    // .content autoalpha from 1 to 0
+    tl.fromTo(".content.gsap-animate-transition", {
+        autoAlpha: 1
+    },{
+        autoAlpha: 0,
         ease: "primary-ease",
-        duration: durationDefaultFaster
+        duration: durationDefaultFastest
     });
+
+    tl.fromTo("aside.gsap-animate-transition", {
+        xPercent: 100
+    },{
+        xPercent: 0,
+        ease: "primary-ease1",
+        duration: durationDefaultFastest
+    }, "<");
 }
 
 window.closeMenu = () => { 
     tl = gsap.timeline();
 
-    tl.to("aside.gsap-animate-transition", {
-        autoAlpha: 0,
-        ease: "primary-ease",
-        duration: durationDefaultFaster
+    tl.fromTo(".content.gsap-animate-transition", {
+        autoAlpha: 0
+    },{
+        autoAlpha: 1,
     });
+
+    tl.fromTo("aside.gsap-animate-transition", {
+        xPercent: 0
+    },{
+        xPercent: 100,
+        ease: "primary-ease-out",
+        duration: durationDefaultFastest
+    }, "<");
 }
