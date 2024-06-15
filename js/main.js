@@ -197,7 +197,7 @@ window.openMenu = () => {
         xPercent: 100
     },{
         xPercent: 0,
-        ease: "primary-ease1",
+        ease: "primary-ease",
         duration: durationDefaultFastest
     }, "<");
 }
