@@ -99,11 +99,17 @@ window.homeLoaded = () => {
         }
     });
 
+    gsap.set("aside.gsap-animate-transition", {
+        autoAlpha: 0
+    });
+
     var tl = gsap.timeline();
 
+    /*
     tl.set(".about.gsap-animate-transition", {
         yPercent: 50
     });
+    */
 
     tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
         autoAlpha: 0,
@@ -122,7 +128,7 @@ window.homeLoaded = () => {
         yPercent: 0,
         duration: durationDefaultFastest,
         ease: "primary-ease"
-    }, "+=0.5");
+    }, "<");/*"+=0.5");*/
 
     tl.fromTo(".about-rest.gsap-lines.gsap-animate-transition .gsap-line-inner", {
         autoAlpha: 0,
@@ -138,13 +144,23 @@ window.homeLoaded = () => {
         stagger: staggerDefault
     }, "<");
 
+    // used to be xpercent animation
+    tl.fromTo(".fill.gsap-animate-transition", {
+        autoAlpha: 1
+    },{
+        delay: 0.5,
+        autoAlpha: 0,
+        ease: "primary-ease",
+        duration: durationDefault
+    }, "<");
+
     tl.fromTo(".navbar.gsap-animate-transition", {
         yPercent: -100
     },{
         yPercent: 0,
         ease: "primary-ease",
         duration: durationDefaultFaster
-    }, "<");
+    }, "< +=0.75");
 
     tl.fromTo(".darkmode.gsap-animate-transition", {
         autoAlpha: 0
@@ -152,15 +168,6 @@ window.homeLoaded = () => {
         autoAlpha: 1,
         ease: "primary-ease",
         duration: durationDefault
-    }, "<");
-
-    tl.fromTo(".fill.gsap-animate-transition", {
-        xPercent: 0
-    },{
-        delay: 0.5,
-        xPercent: 100,
-        ease: "primary-ease",
-        duration: 3.5
     }, "<");
 
     tl.fromTo(".scroll.gsap-animate-transition", {
@@ -171,5 +178,25 @@ window.homeLoaded = () => {
         yPercent: 0,
         ease: "primary-ease",
         duration: durationDefaultFaster
-    }, "-=2.5");
+    }, "<");
+}
+
+window.openMenu = () => { 
+    tl = gsap.timeline();
+
+    tl.to("aside.gsap-animate-transition", {
+        autoAlpha: 1,
+        ease: "primary-ease",
+        duration: durationDefaultFaster
+    });
+}
+
+window.closeMenu = () => { 
+    tl = gsap.timeline();
+
+    tl.to("aside.gsap-animate-transition", {
+        autoAlpha: 0,
+        ease: "primary-ease",
+        duration: durationDefaultFaster
+    });
 }
