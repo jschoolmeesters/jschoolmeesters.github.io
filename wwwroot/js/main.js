@@ -160,7 +160,7 @@ window.homeLoaded = () => {
         yPercent: 0,
         ease: "primary-ease",
         duration: durationDefaultFaster
-    }, "< +=0.75");
+    }, "< +=0.65");
 
     tl.fromTo(".darkmode.gsap-animate-transition", {
         autoAlpha: 0
