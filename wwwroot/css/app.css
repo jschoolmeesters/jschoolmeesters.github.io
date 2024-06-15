@@ -186,8 +186,8 @@ article p > a > i, article ul > li > a > i, article ol > li > a {
 
 
 
-.nav-link.active > span::after {
-    content: "✦";
+nav .active > .nav-link-icon::after {
+    content: "←";
 }
 
 .linear-progress {

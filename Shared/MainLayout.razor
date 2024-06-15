@@ -23,34 +23,32 @@
                 <div class="flex flex-col justify-end w-full">
                     <div></div>
                     <ul class="p-4 flex flex-col items-start">
-                        <li class="overflow-hidden">
-                            <NavLink href="/" @onclick="@(async () => await OnMenuClick(false))" Match="NavLinkMatch.All" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                                <span class="text-slideup animation-delay-0">Index</span>
+                        <li class="overflow-hidden border-t border-b w-full border-black dark:border-white">
+                            <NavLink href="/" @onclick="@(async () => await OnMenuClick(false))" Match="NavLinkMatch.All" class="py-6 flex flex-row text-4xl leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <span class="grow">Index</span><span class="nav-link-icon"></span>
                             </NavLink>
                         </li>
-                        <li class="overflow-hidden">
-                            <NavLink href="/blog" @onclick="@(async () => await OnMenuClick(false))" class="nav-link flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                                <span class="text-slideup animation-delay-1">Blog<span class="text-3xl align-top">[@PostCount]</span></span>
+                        <li class="overflow-hidden border-b w-full border-black dark:border-white">
+                            <NavLink href="/blog" @onclick="@(async () => await OnMenuClick(false))" class="py-6 flex flex-row text-4xl leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <span class="grow">Archive<span class="text-xl align-top">[@PostCount]</span></span><span class="nav-link-icon"></span>
                             </NavLink>
                         </li>
-                        <li class="overflow-hidden">
-                        <NavLink class="nav-link disabled flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                            <span class="text-slideup animation-delay-2 line-through">Services</span>
+                        <li class="overflow-hidden border-b w-full border-black dark:border-white">
+                        <NavLink class="py-6 flex flex-row disabled text-4xl leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            <span class="line-through grow">About</span><span class="nav-link-icon"></span>
                         </NavLink>
                         </li>
-                        <li class="overflow-hidden">
-                        <NavLink class="nav-link disabled flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                            <span class="text-slideup animation-delay-3 line-through">About</span>
-                        </NavLink>
-                        </li>
-                        <li class="overflow-hidden">
-                        <NavLink class="nav-link disabled flex text-6xl text-60 uppercase font-normal leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                            <span class="text-slideup animation-delay-4 line-through">Contact</span>
+                        <li class="overflow-hidden border-b w-full border-black dark:border-white">
+                        <NavLink class="py-6 flex flex-row disabled text-4xl leading-[1.05]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            <span class="line-through grow">Contact</span><span class="nav-link-icon"></span>
                         </NavLink>
                         </li>
                     </ul>
                     <div class="mb-4 mx-4">
                         <BlazorPortfolio.Components.Links />
+                    </div>
+                    <div class="mb-4 mx-4">
+                        <span class="text-lg tracking-[-0.035em] leading-none">(© 2024 Jordy Schoolmeesters)</span>
                     </div>
                 </div>
             </nav>
