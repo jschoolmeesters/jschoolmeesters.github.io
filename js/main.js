@@ -1,14 +1,24 @@
-// Hide navbar on scroll down, show on scroll up (broken)
-/*
-window.addEventListener("scroll", function() {
-    const elementTarget = document.getElementById("navbar-trigger");
-    let element = document.getElementById("navbar");
-    if (elementTarget == null || window.scrollY > (elementTarget?.offsetTop))  
-        element.classList.add("navbar-show");
-    else
-        element.classList.remove("navbar-show");
-});
-*/
+// Wait for dynamically generated elements to load
+// TODO: replace with MutationObserver (https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)
+
+function waitForElements(selector, count, interval = 100) {
+    return new Promise((resolve) => {
+        const checkElements = () => {
+            const elements = document.querySelectorAll(selector);
+            if (elements.length >= count) {
+                clearInterval(timer);
+                resolve(true);
+            }
+        };
+
+        const timer = setInterval(checkElements, interval);
+    });
+}
+
+window.waitForPosts = async function (count) {
+    return await waitForElements('.post.gsap-animate-transition', count);
+};
+
 
 // Prevent scrolling while menu is open
 
@@ -265,7 +275,7 @@ window.openMenu = () => {
         xPercent: 0,
         duration: durationDefaultFastest,
         ease: "primary-ease",
-        stagger: 0.035
+        stagger: 0.045
     }, "<")
 
     tl.fromTo(".nav-link.gsap-animate-transition", {
