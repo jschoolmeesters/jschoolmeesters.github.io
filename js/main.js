@@ -64,7 +64,7 @@ function initCheckWindowHeight() {
 
 // GSAP animations
 document.addEventListener("DOMContentLoaded", (event) => {
-    gsap.registerPlugin(/*ScrollTrigger, */CustomEase);
+    gsap.registerPlugin(ScrollTrigger, CustomEase);
 });
 
 let scroll;
@@ -79,22 +79,54 @@ CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
 
 window.beginTransitionBox = (x, y) => {
 
-    var tl = gsap.timeline();
+    return new Promise((resolve) => {
+        const tl = gsap.timeline({
+            onComplete: () => {
+                resolve();
+            }
+        });
 
-    tl.set(".transition-box.gsap-animate-transition", {
-        x: x,
-        y: y,
-        autoAlpha: 1,
+        tl.set(".transition-box.gsap-animate-transition", {
+            x: x,
+            y: y,
+            autoAlpha: 1,
+        });
+    
+        tl.fromTo(".transition-box.gsap-animate-transition", {
+            scaleX: 0,
+            scaleY: 0,
+        }, {
+            scaleX: 200,
+            scaleY: 200,
+            duration: durationDefault,
+            ease: "primary-ease",
+        });
     });
+}
 
-    tl.fromTo(".transition-box.gsap-animate-transition", {
-        scaleX: 0,
-        scaleY: 0,
-    }, {
-        scaleX: 200,
-        scaleY: 200,
-        duration: durationDefault,
-        ease: "primary-ease",
+window.endTransitionBox = () => {
+    return new Promise((resolve) => {
+        const tl = gsap.timeline({
+            onComplete: () => {
+                resolve();
+            }
+        });
+    
+        tl.fromTo(".transition-box.gsap-animate-transition", {
+            scaleX: 200,
+            scaleY: 200,
+        }, {
+            scaleX: 0,
+            scaleY: 0,
+            duration: durationDefaultFaster,
+            ease: "primary-ease",
+        });
+
+        tl.to(".transition-box.gsap-animate-transition", {
+            autoAlpha: 0,
+            duration: 0.1,
+            ease: "primary-ease",
+        });
     });
 }
 
