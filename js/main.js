@@ -109,7 +109,7 @@ window.homeLoaded = () => {
     },{
         yPercent: 0,
         autoAlpha: 1,
-        duration: durationDefault,
+        duration: durationDefaultFaster,
         ease: "primary-ease",
         scrollTrigger: {
             trigger: 'footer.gsap-animate-transition',
