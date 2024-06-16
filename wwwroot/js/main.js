@@ -67,20 +67,40 @@ let durationDefaultFastest = 0.9;
 CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
 CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
 
-window.postsLoaded = () => {
-    gsap.fromTo(".post.gsap-animate-transition", {
+window.animatePosts = () => {
+    gsap.fromTo(".post-border.gsap-animate-transition", {
         xPercent: 100,
+        //autoAlpha: 0,
+    },{
+        xPercent: 0,
+        //autoAlpha: 1,
+        duration: durationDefault,
+        ease: "primary-ease",
+        stagger: staggerDefault,
+        scrollTrigger: {
+            trigger: '.post.gsap-animate-transition',
+            toggleActions: 'play none none reverse',
+           // pin: true, // pin the trigger element while active
+            start: 'bottom bottom', // when the top of the trigger hits the top of the viewport
+            //end: '+=500', // end after scrolling 500px beyond the start
+            //scrub: 1
+        }
+    })
+
+    gsap.fromTo(".post.gsap-animate-transition", {
+        xPercent: 25,
         autoAlpha: 0,
     },{
         xPercent: 0,
         autoAlpha: 1,
-        duration: durationDefault,
+        duration: durationDefaultFaster,
         ease: "primary-ease",
+        stagger: 0.035,
         scrollTrigger: {
-            trigger: '.left.gsap-animate-transition',
+            trigger: '.post.gsap-animate-transition',
             toggleActions: 'play none none reverse',
            // pin: true, // pin the trigger element while active
-            start: 'top bottom', // when the top of the trigger hits the top of the viewport
+            start: 'bottom bottom', // when the top of the trigger hits the top of the viewport
             //end: '+=500', // end after scrolling 500px beyond the start
             //scrub: 1
         }
@@ -101,6 +121,27 @@ window.homeLoaded = () => {
 
     gsap.set("aside.gsap-animate-transition", {
         xPercent: 100
+    });
+
+
+    gsap.fromTo(".posts-header.gsap-animate-transition .gsap-line-inner", {
+        autoAlpha: 0,
+        yPercent: 100,
+        rotate: 0.001
+    },{
+        autoAlpha: 1,
+        yPercent: 0,
+        rotate: 0.001,
+        ease: "primary-ease",
+        duration: durationDefault,
+        scrollTrigger: {
+            trigger: '.posts-header.gsap-animate-transition',
+            toggleActions: 'play none none reverse',
+            //pin: true, // pin the trigger element while active
+            start: 'top bottom', // when the top of the trigger hits the top of the viewport
+            //end: () => `+=${document.querySelector('.links.gsap-animate-transition').offsetHeight / 2}`, // dynamically calculate the end position to the middle of the element
+            //scrub: 1
+        }
     });
 
     gsap.fromTo("footer.gsap-animate-transition", {

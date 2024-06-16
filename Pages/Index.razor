@@ -103,13 +103,18 @@
             <BlazorPortfolio.Components.Links />
          </div>
          
-         <h2 class="text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
+         <div class="posts-header gsap-animate-transition">
+            <div class="gsap-line">
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
+            </div>
+         </div>
 
+         <div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>
          @foreach (var item in FilteredPosts) {
             var post = item.post;
             var index = item.i;
 
-            <div class="post gsap-animate-transition cursor-pointer border-t border-b py-3 border-black dark:border-white flex flex-row" @onclick="@(() => NavigateToPost(post))">
+            <div class="post gsap-animate-transition cursor-pointer py-3 flex flex-row" @onclick="@(() => NavigateToPost(post))">
                <div class="pr-3">
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
@@ -126,6 +131,7 @@
                   </div>
                </div>
             </div>
+            <div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>
          }
 
          <footer class="gsap-animate-transition text-lg tracking-[-0.035em] leading-none grid grid-cols-2 gap-y-3 pt-12 pb-6">
@@ -146,17 +152,22 @@
       get
       {
          return Posts.Where(p => string.IsNullOrEmpty(SearchValue) ? true : p.Title.ToLower().Contains(SearchValue.ToLower()))
-                                 .OrderBy(p => p.DateAsDateTime)
+                                 .OrderByDescending(p => p.DateAsDateTime)
                                  .Take(3)
                                  .Select((post, i) => ( post, i ))
                                  .ToList();
       }
    }
 
-   protected async override Task OnAfterRenderAsync(bool firstRender)
+   protected override async Task OnAfterRenderAsync(bool firstRender)
    {
-      if (firstRender)
+      await base.OnAfterRenderAsync(firstRender);
+
+      if (firstRender) {
          await JS.InvokeVoidAsync("homeLoaded");
+         await Task.Delay(1000); // TODO: Replace by waiting in JS for post divs to exist in DOM
+         await JS.InvokeVoidAsync("animatePosts");
+      }
    }
 
    public async Task PostsLoaded() {
