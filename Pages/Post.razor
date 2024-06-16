@@ -118,10 +118,14 @@
         base.OnInitialized();
     }
 
-    protected override void OnAfterRender(bool firstRender)
+    protected override async void OnAfterRender(bool firstRender)
     {
-        base.OnAfterRender(firstRender);
-        JS.InvokeVoidAsync("initializeProgressBar");
+        await base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("initializeProgressBar");
+            await JS.InvokeVoidAsync("endTransitionBox");
+        }
     }
 
    private void NavigateToPost(Models.Post post)
