@@ -165,8 +165,13 @@
 
       if (firstRender) {
          await JS.InvokeVoidAsync("homeLoaded");
-         await Task.Delay(1000); // TODO: Replace by waiting in JS for post divs to exist in DOM
-         await JS.InvokeVoidAsync("animatePosts");
+        
+         while (FilteredPosts.Count == 0)
+            await Task.Delay(100);
+         bool result = await JS.InvokeAsync<bool>("waitForPosts", FilteredPosts.Count);
+
+         if (result)
+            await JS.InvokeVoidAsync("animatePosts");
       }
    }
 
