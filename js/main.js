@@ -91,7 +91,7 @@ window.postsLoaded = () => {
 window.homeLoaded = () => { 
     gsap.to(".scroll.gsap-animate-transition", {
         opacity: 0,
-        yPercent: 5, // Move down by 5% of the element's height
+        y: 15, // Move down by 5% of the element's height
         scrollTrigger: {
           start: "top+=0 top", // Start the animation after scrolling 100px from the top of the page
           end: "+=200", // The animation will end after scrolling another 100px
@@ -102,6 +102,42 @@ window.homeLoaded = () => {
     gsap.set("aside.gsap-animate-transition", {
         xPercent: 100
     });
+
+    gsap.fromTo("footer.gsap-animate-transition", {
+        yPercent: 100,
+        autoAlpha: 0,
+    },{
+        yPercent: 0,
+        autoAlpha: 1,
+        duration: durationDefault,
+        ease: "primary-ease",
+        scrollTrigger: {
+            trigger: 'footer.gsap-animate-transition',
+            toggleActions: 'play none none reverse',
+           // pin: true, // pin the trigger element while active
+            start: 'top bottom', // when the top of the trigger hits the top of the viewport
+            //end: '+=500', // end after scrolling 500px beyond the start
+            //scrub: 1
+        }
+    })
+
+    gsap.fromTo(".links.gsap-animate-transition", {
+        yPercent: -100,
+        autoAlpha: 0,
+    },{
+        yPercent: 0,
+        autoAlpha: 1,
+        duration: durationDefault,
+        ease: "primary-ease",
+        scrollTrigger: {
+            trigger: '.links.gsap-animate-transition',
+            toggleActions: 'play none none reverse',
+            //pin: true, // pin the trigger element while active
+            start: 'top bottom', // when the top of the trigger hits the top of the viewport
+            //end: 'bottom bottom', // end after scrolling 500px beyond the start
+            //scrub: 1
+        }
+    })
 
     var tl = gsap.timeline();
 
@@ -184,7 +220,6 @@ window.homeLoaded = () => {
 window.openMenu = () => { 
     tl = gsap.timeline();
 
-    // .content autoalpha from 1 to 0
     tl.fromTo(".content.gsap-animate-transition", {
         autoAlpha: 1
     },{
@@ -200,6 +235,36 @@ window.openMenu = () => {
         ease: "primary-ease",
         duration: durationDefaultFastest
     }, "<");
+
+    tl.fromTo(".nav-link-container.gsap-animate-transition", {
+        xPercent: 100
+    },{
+        xPercent: 0,
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+        stagger: staggerDefault
+    }, "<")
+
+    tl.fromTo(".nav-link.gsap-animate-transition", {
+        xPercent: 25,
+        autoAlpha: 0,
+    },{
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: durationDefaultFaster,
+        ease: "primary-ease",
+        stagger: staggerDefault
+    }, "< += 1.47")
+
+    tl.fromTo(".nav-bottom.gsap-animate-transition", {
+        xPercent: 25,
+        autoAlpha: 0,
+    },{
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: durationDefaultFaster,
+        ease: "primary-ease"
+    }, "< += 1.47")
 }
 
 window.closeMenu = () => { 
@@ -218,4 +283,19 @@ window.closeMenu = () => {
         ease: "primary-ease-out",
         duration: durationDefaultFastest
     }, "<");
+
+    tl.fromTo("nav.gsap-animate-transition", {
+        xPercent: 0,
+        autoAlpha: 1,
+    },{
+        xPercent: 25,
+        autoAlpha: 0,
+        duration: durationDefaultFastest,
+        ease: "primary-ease-out"
+    }, "<")
+
+    tl.to("nav.gsap-animate-transition", {
+        xPercent: 0,
+        autoAlpha: 1
+    });
 }
