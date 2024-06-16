@@ -1545,6 +1545,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 2;
 }
 
+.z-\[400\] {
+  z-index: 400;
+}
+
 .z-\[499\] {
   z-index: 499;
 }
@@ -2831,10 +2835,6 @@ h1:focus {
 
 .hover\:bg-\[\#00000010\]:hover {
   background-color: #00000010;
-}
-
-.dark\:border:is(.dark *) {
-  border-width: 1px;
 }
 
 .dark\:border-none:is(.dark *) {
