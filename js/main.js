@@ -114,27 +114,9 @@ window.homeLoaded = () => {
         scrollTrigger: {
             trigger: 'footer.gsap-animate-transition',
             toggleActions: 'play none none reverse',
-           // pin: true, // pin the trigger element while active
-            start: 'top bottom', // when the top of the trigger hits the top of the viewport
-            //end: '+=500', // end after scrolling 500px beyond the start
-            //scrub: 1
-        }
-    })
-
-    gsap.fromTo(".links.gsap-animate-transition", {
-        yPercent: -100,
-        autoAlpha: 0,
-    },{
-        yPercent: 0,
-        autoAlpha: 1,
-        duration: durationDefault,
-        ease: "primary-ease",
-        scrollTrigger: {
-            trigger: '.links.gsap-animate-transition',
-            toggleActions: 'play none none reverse',
             //pin: true, // pin the trigger element while active
             start: 'top bottom', // when the top of the trigger hits the top of the viewport
-            //end: 'bottom bottom', // end after scrolling 500px beyond the start
+            //end: () => `+=${document.querySelector('.links.gsap-animate-transition').offsetHeight / 2}`, // dynamically calculate the end position to the middle of the element
             //scrub: 1
         }
     })
@@ -237,23 +219,23 @@ window.openMenu = () => {
     }, "<");
 
     tl.fromTo(".nav-link-container.gsap-animate-transition", {
-        xPercent: 100
+        xPercent: 25
     },{
         xPercent: 0,
         duration: durationDefaultFastest,
         ease: "primary-ease",
-        stagger: staggerDefault
+        stagger: 0.035
     }, "<")
 
     tl.fromTo(".nav-link.gsap-animate-transition", {
-        xPercent: 25,
+        xPercent: 15,
         autoAlpha: 0,
     },{
         xPercent: 0,
         autoAlpha: 1,
         duration: durationDefaultFaster,
         ease: "primary-ease",
-        stagger: staggerDefault
+        stagger: 0.035
     }, "< += 1.47")
 
     tl.fromTo(".nav-bottom.gsap-animate-transition", {
