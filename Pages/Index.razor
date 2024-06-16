@@ -99,8 +99,10 @@
 
          <img class="border border-black dark:border-none w-full mt-12 rounded" src="https://i.seadn.io/gcs/files/396a124e569b6ee79d34a010035f2da0.png?auto=format&dpr=1&w=1000">
 
-         <BlazorPortfolio.Components.Links />
-
+         <div class="links gsap-animate-transition relative overflow-hidden">
+            <BlazorPortfolio.Components.Links />
+         </div>
+         
          <h2 class="text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
 
          @foreach (var item in FilteredPosts) {
@@ -126,11 +128,11 @@
             </div>
          }
 
-         <div class="left gsap-animate-transition text-lg tracking-[-0.035em] leading-none grid grid-cols-2 gap-y-3 pt-12 pb-6">
+         <footer class="gsap-animate-transition text-lg tracking-[-0.035em] leading-none grid grid-cols-2 gap-y-3 pt-12 pb-6">
             <div class="col-span-2">(© 2024 Jordy Schoolmeesters)</div>
             <div>Back to top ↑</div>
             <div class="text-end">Shift + G</div>
-         </div>
+         </footer>
       </div>
    </div>
 </div>
