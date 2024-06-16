@@ -111,22 +111,34 @@ window.endTransitionBox = () => {
                 resolve();
             }
         });
+
+        tl.fromTo(".transition-box-inner.gsap-animate-transition", {
+            scaleX: 1,
+            scaleY: 1,
+        }, {
+            scaleX: 10,
+            scaleY: 10,
+            duration: durationDefaultFaster,
+            ease: "primary-ease",
+        })
     
         tl.fromTo(".transition-box.gsap-animate-transition", {
             scaleX: 200,
             scaleY: 200,
         }, {
-            scaleX: 0,
-            scaleY: 0,
+            scaleX: 10,
+            scaleY: 10,
             duration: durationDefaultFaster,
             ease: "primary-ease",
         });
 
+;
+
         tl.to(".transition-box.gsap-animate-transition", {
             autoAlpha: 0,
-            duration: 0.1,
+            duration: 0.5,
             ease: "primary-ease",
-        });
+        }, "-=0.5");
     });
 }
 
