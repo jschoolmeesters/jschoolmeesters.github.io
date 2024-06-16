@@ -1656,6 +1656,10 @@ details.collapse summary::-webkit-details-marker {
   height: 3.25rem;
 }
 
+.h-\[max\(1vh\2c 1vw\)\] {
+  height: max(1vh,1vw);
+}
+
 .h-full {
   height: 100%;
 }
@@ -1686,6 +1690,10 @@ details.collapse summary::-webkit-details-marker {
 
 .w-\[8\.75rem\] {
   width: 8.75rem;
+}
+
+.w-\[max\(1vh\2c 1vw\)\] {
+  width: max(1vh,1vw);
 }
 
 .w-full {
@@ -1874,6 +1882,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
 .bg-stone-100 {
