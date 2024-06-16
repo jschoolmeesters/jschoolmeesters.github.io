@@ -1545,6 +1545,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 2;
 }
 
+.z-\[400\] {
+  z-index: 400;
+}
+
 .z-\[499\] {
   z-index: 499;
 }
