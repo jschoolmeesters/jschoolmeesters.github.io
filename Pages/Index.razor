@@ -6,11 +6,13 @@
 @inject IJSRuntime JS
 <PageTitle>Jordy Schoolmeesters — Computing Science</PageTitle>
 
-   <div class="scroll gsap-animate-transition z-[1] absolute left-1/2 translate-x-[-50%] bottom-0 pb-4">
-      <div class="relative text-lg tracking-[-0.035em] px-3 py-1 bg-black text-white dark:bg-white dark:text-black rounded-full cursor-pointer">
-         <span>Scroll</span><span class="ml-2 iconoir-arrow-down align-middle"></span>
-      </div>  
-   </div>
+<div class="transition-box gsap-animate-transition z-[2000] rounded-full bg-red-600 h-[max(1vh,1vw)] w-[max(1vh,1vw)] fixed content-['']"></div>
+
+<div class="scroll gsap-animate-transition z-[1] absolute left-1/2 translate-x-[-50%] bottom-0 pb-4">
+   <div class="relative text-lg tracking-[-0.035em] px-3 py-1 bg-black text-white dark:bg-white dark:text-black rounded-full cursor-pointer">
+      <span>Scroll</span><span class="ml-2 iconoir-arrow-down align-middle"></span>
+   </div>  
+</div>
 
 <div class="w-full relative">
 
@@ -114,7 +116,7 @@
             var post = item.post;
             var index = item.i;
 
-            <div class="post gsap-animate-transition cursor-pointer py-3 flex flex-row" @onclick="@(() => NavigateToPost(post))">
+            <div class="post gsap-animate-transition cursor-pointer py-3 flex flex-row" @onclick="@((e) => NavigateToPost(e, post))">
                <div class="pr-3">
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
@@ -187,8 +189,9 @@
          Posts = posts;
    }
 
-   private void NavigateToPost(Models.Post post)
+   private async Task NavigateToPost(MouseEventArgs e, Models.Post post)
    {
+      await JS.InvokeVoidAsync("beginTransitionBox", e.ClientX, e.ClientY);
       var baseUri = NavigationManager.BaseUri;
       NavigationManager.NavigateTo(Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1)));
    }

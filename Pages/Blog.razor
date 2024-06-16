@@ -48,7 +48,7 @@
       get
       {
          return Posts.Where(p => string.IsNullOrEmpty(SearchValue) ? true : p.Title.ToLower().Contains(SearchValue.ToLower()))
-                                 .OrderBy(p => p.DateAsDateTime)
+                                 .OrderByDescending(p => p.DateAsDateTime)
                                  .Take(3)
                                  .Select((post, i) => ( post, i ))
                                  .ToList();

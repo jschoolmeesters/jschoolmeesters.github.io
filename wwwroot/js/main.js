@@ -77,6 +77,27 @@ let durationDefaultFastest = 0.9;
 CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
 CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
 
+window.beginTransitionBox = (x, y) => {
+
+    var tl = gsap.timeline();
+
+    tl.set(".transition-box.gsap-animate-transition", {
+        x: x,
+        y: y,
+        autoAlpha: 1,
+    });
+
+    tl.fromTo(".transition-box.gsap-animate-transition", {
+        scaleX: 0,
+        scaleY: 0,
+    }, {
+        scaleX: 200,
+        scaleY: 200,
+        duration: durationDefault,
+        ease: "primary-ease",
+    });
+}
+
 window.animatePosts = () => {
     gsap.fromTo(".post-border.gsap-animate-transition", {
         xPercent: 100,
@@ -133,6 +154,9 @@ window.homeLoaded = () => {
         xPercent: 100
     });
 
+    gsap.set(".transition-box.gsap-animate-transition", {
+        autoAlpha: 0,
+    });
 
     gsap.fromTo(".posts-header.gsap-animate-transition .gsap-line-inner", {
         autoAlpha: 0,
