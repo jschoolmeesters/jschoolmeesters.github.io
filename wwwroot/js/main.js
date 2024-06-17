@@ -59,12 +59,13 @@ requestAnimationFrame(raf)
 function initCheckWindowHeight() {
    // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
    let vh = window.innerHeight * 0.01;
-   document.documentElement.style.setProperty('--vh-in-px', `${vh}px`);
+   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
 // GSAP animations
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger, CustomEase);
+    initCheckWindowHeight();
 });
 
 let scroll;

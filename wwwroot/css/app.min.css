@@ -859,6 +859,19 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.hero {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
 .input {
   flex-shrink: 1;
   -webkit-appearance: none;
@@ -1545,10 +1558,6 @@ details.collapse summary::-webkit-details-marker {
   z-index: 2;
 }
 
-.z-\[400\] {
-  z-index: 400;
-}
-
 .z-\[499\] {
   z-index: 499;
 }
@@ -1868,8 +1877,20 @@ details.collapse summary::-webkit-details-marker {
   border-bottom-width: 1px;
 }
 
+.border-l-2 {
+  border-left-width: 2px;
+}
+
 .border-t {
   border-top-width: 1px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
+}
+
+.border-dashed {
+  border-style: dashed;
 }
 
 .border-black {
@@ -2163,6 +2184,13 @@ details.collapse summary::-webkit-details-marker {
 .content-\[\'\'\] {
   --tw-content: '';
   content: var(--tw-content);
+}
+
+.hero {
+  height: 100vh;
+  /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  width: auto;
 }
 
 /* BEGIN GSAP */
@@ -2869,6 +2897,11 @@ h1:focus {
 .dark\:text-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark\:invert:is(.dark *) {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 640px) {

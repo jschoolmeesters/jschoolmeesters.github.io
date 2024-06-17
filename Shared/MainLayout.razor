@@ -10,6 +10,7 @@
 
     <div class="min-h-[100vh] wrapper w-full max-w-[500px] mx-auto bg-stone-100 text-black dark:bg-black dark:text-white">
 
+@*
         <div class="z-[500] fixed top-0 w-full max-w-[500px]">
             <div id="navbar" class="navbar gsap-animate-transition relative z-[510] flex items-center @(ShowMenu ? "bg-stone-50" : "bg-stone-100") dark:bg-black px-3">
                 <div class="inline-block h-[3.25rem]"><span @onclick="@(async () => NavigateToPage(""))" class="inline-block cursor-pointer text-sm py-1 px-3 my-3 rounded-full text-black bg-stone-200 dark:bg-stone-800 dark:text-white">Jordy Schoolmeesters</span></div>
@@ -19,6 +20,7 @@
             </div>
             <div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-stone-100 dark:bg-black relative pt-0 p-2 w-full gap-x-1"></div>
         </div>
+        *@
 
         <aside class="gsap-animate-transition text-black dark:text-white bg-stone-50 dark:bg-black wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[499]">
             <nav class="gsap-animate-transition flex absolute inset-0">
