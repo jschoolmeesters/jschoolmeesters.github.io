@@ -2173,6 +2173,10 @@ details.collapse summary::-webkit-details-marker {
   content: var(--tw-content);
 }
 
+.img-filter {
+  filter: sepia(49%) saturate(207%) hue-rotate(45deg) brightness(117%) contrast(92%);
+}
+
 .hero {
   height: 100vh;
   /* Use vh as a fallback for browsers that do not support Custom Properties */
