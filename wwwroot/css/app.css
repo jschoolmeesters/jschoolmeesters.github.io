@@ -618,6 +618,19 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 
 }
 
+/* add wwwroot\fonts\KMR-Apparat\KMR-Apparat-Heavy.otf */
+
+.kmr-apparat-heavy {
+    font-family: "KMR Apparat Heavy", sans-serif;
+}
+
+@font-face {
+    font-family: "KMR Apparat Heavy";
+    src: url("../fonts/KMR-Apparat/KMR-Apparat-Heavy.otf");
+    font-weight: 600;
+    font-style: normal;
+}
+
 /* 
 Fix to prevent FocusOnNavigate in App.razor from adding outline to the first h1 on a page
 https://www.reddit.com/r/Blazor/comments/xl09d8/blazor_h1_element_is_focused_on_startup_for_no/
