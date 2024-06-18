@@ -223,7 +223,7 @@ window.homeLoaded = () => {
         }
     });
 
-    gsap.fromTo("footer.gsap-animate-transition", {
+    gsap.fromTo(".footer-text.gsap-animate-transition", {
         yPercent: 100,
         autoAlpha: 0,
     },{

@@ -859,19 +859,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.hero {
-  display: grid;
-  width: 100%;
-  place-items: center;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero > * {
-  grid-column-start: 1;
-  grid-row-start: 1;
-}
-
 .input {
   flex-shrink: 1;
   -webkit-appearance: none;
@@ -1614,10 +1601,6 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -1644,6 +1627,10 @@ details.collapse summary::-webkit-details-marker {
 
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mt-9 {
@@ -1682,12 +1669,20 @@ details.collapse summary::-webkit-details-marker {
   height: 8rem;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-\[3\.25rem\] {
   height: 3.25rem;
 }
 
 .h-\[max\(1vh\2c 1vw\)\] {
   height: max(1vh,1vw);
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-full {
@@ -1881,20 +1876,8 @@ details.collapse summary::-webkit-details-marker {
   border-bottom-width: 1px;
 }
 
-.border-l-2 {
-  border-left-width: 2px;
-}
-
 .border-t {
   border-top-width: 1px;
-}
-
-.border-t-2 {
-  border-top-width: 2px;
-}
-
-.border-dashed {
-  border-style: dashed;
 }
 
 .border-black {
@@ -1929,11 +1912,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-stone-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 244 / var(--tw-bg-opacity));
-}
-
-.bg-stone-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 
 .bg-stone-50 {
@@ -2090,6 +2068,11 @@ details.collapse summary::-webkit-details-marker {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-lg {
@@ -2865,6 +2848,22 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   src: url('../fonts/SerifBabe/Serifbabe-Regular.woff2');
 }
 
+/* add wwwroot\fonts\KMR-Apparat\KMR-Apparat-Heavy.otf */
+
+.kmr-apparat-heavy {
+  font-family: "KMR Apparat Heavy", sans-serif;
+}
+
+@font-face {
+  font-family: "KMR Apparat Heavy";
+
+  src: url("../fonts/KMR-Apparat/KMR-Apparat-Heavy.otf");
+
+  font-weight: 600;
+
+  font-style: normal;
+}
+
 /* 
 Fix to prevent FocusOnNavigate in App.razor from adding outline to the first h1 on a page
 https://www.reddit.com/r/Blazor/comments/xl09d8/blazor_h1_element_is_focused_on_startup_for_no/
@@ -2899,11 +2898,6 @@ h1:focus {
 .dark\:bg-black:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.dark\:bg-stone-800:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(41 37 36 / var(--tw-bg-opacity));
 }
 
 .dark\:bg-white:is(.dark *) {
