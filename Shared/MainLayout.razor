@@ -70,7 +70,7 @@
    private HttpClient HttpClient { get; set; }
     private bool ShowMenu { get; set; } = false;
     private int PostCount { get; set; } = 0;
-    private bool DarkMode { get; set; } = false;
+    private bool DarkMode { get; set; } = true;
 
     private ValueTask PreventScrolling(bool val) {
         return JS.InvokeVoidAsync("preventScrolling", val);
