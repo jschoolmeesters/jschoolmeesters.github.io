@@ -6,10 +6,8 @@
 @inject IJSRuntime JS
 <PageTitle>Jordy Schoolmeesters — Computing Science</PageTitle>
 
-<div class="scroll gsap-animate-transition z-[1] absolute left-1/2 translate-x-[-50%] bottom-0 pb-4">
-   <div class="relative text-lg tracking-[-0.035em] px-3 py-1 bg-black text-white dark:bg-white dark:text-black rounded-full cursor-pointer">
-      <span>Scroll</span><span class="ml-2 iconoir-arrow-down align-middle"></span>
-   </div>  
+<div class="scroll gsap-animate-transition z-[1] absolute right-0 bottom-0 m-3">
+   <span class="flex flex-row justify-between cursor-pointer text-lg dark:bg-white w-[8rem] text-justify px-3 text-black dark:text-black"><span class="kmr-apparat-bold">Scroll</span><span class="kmr-apparat-bold">↓</span></span>
 </div>
 
 <div class="index gsap-animate-transition w-full relative bg-stone-100 dark:bg-black">
@@ -26,7 +24,7 @@
                <h2 class="about-first gsap-lines gsap-animate-transition p-0 m-0 mb-2">
                   <div class="gsap-line">
                      <div class="gsap-line-inner text-sm kmr-apparat-bold">
-                        ◼ About me
+                        <span class="square"></span> About me
                      </div>
                   </div>
                </h2>
@@ -101,13 +99,13 @@
    <div class="bg-white dark:bg-black z-0">
       <div class="fill gsap-animate-transition inset z-[2] absolute w-[100vw] h-full bg-stone-100 dark:bg-black"></div>
       <div class="px-3">
-         <h2 class="text-sm p-0 m-0 pt-6 mb-2 kmr-apparat-bold">◻ Current projects</h2>
+         <h2 class="text-sm p-0 m-0 pt-6 mb-2 kmr-apparat-bold"><span class="square"></span> Current projects</h2>
          <ul class="text-2xl tracking-[-0.035em] leading-none">
             <li>MIT OCW courses on C/C++</li>
             <li>Making an RTOS for an ARM CORTEX© M4 based microcontroller</li>
          </ul>
 
-         <h2 class="text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold">◼ Long-term goals</h2>
+         <h2 class="text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold"><span class="square"></span> Long-term goals</h2>
          <ul class="text-2xl tracking-[-0.035em] leading-none">
             <li>Excelling at C/C++</li>
             <li>Refreshing Bash/Python skills</li>
@@ -122,7 +120,7 @@
          
          <div class="posts-header gsap-animate-transition">
             <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold">◻ Latest posts</h2>
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold"><span class="square"></span> Latest posts</h2>
             </div>
          </div>
 

@@ -338,13 +338,7 @@ window.homeLoaded = () => {
 window.openMenu = () => { 
     tl = gsap.timeline();
 
-    tl.fromTo(".content.gsap-animate-transition", {
-        autoAlpha: 1
-    },{
-        autoAlpha: 0,
-        ease: "primary-ease",
-        duration: durationDefaultFastest
-    });
+    // TODO: blur .content using GSAP CSSPlugin
 
     tl.fromTo("aside.gsap-animate-transition", {
         xPercent: 100
@@ -388,11 +382,7 @@ window.openMenu = () => {
 window.closeMenu = () => { 
     tl = gsap.timeline();
 
-    tl.fromTo(".content.gsap-animate-transition", {
-        autoAlpha: 0
-    },{
-        autoAlpha: 1,
-    });
+    // TODO: unblur .content using GSAP CSSPlugin
 
     tl.fromTo("aside.gsap-animate-transition", {
         xPercent: 0
