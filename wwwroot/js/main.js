@@ -232,7 +232,7 @@ window.homeLoaded = () => {
         duration: durationDefaultFaster,
         ease: "primary-ease",
         scrollTrigger: {
-            trigger: 'footer.gsap-animate-transition',
+            trigger: '.footer-text.gsap-animate-transition',
             toggleActions: 'play none none reverse',
             //pin: true, // pin the trigger element while active
             start: 'top bottom', // when the top of the trigger hits the top of the viewport
@@ -241,82 +241,98 @@ window.homeLoaded = () => {
         }
     })
 
-    var tl = gsap.timeline();
+    return new Promise((resolve) => {
+        const tl = gsap.timeline({
+            onComplete: () => {
+                resolve();
+            }
+        });
 
-    /*
-    tl.set(".about.gsap-animate-transition", {
-        yPercent: 50
+        tl.fromTo(".index.gsap-animate-transition", {
+            yPercent: 100
+        }, {
+            yPercent: 0,
+            ease: "primary-ease",
+            duration: durationDefaultFaster
+        });
+    
+        /*
+        tl.set(".about.gsap-animate-transition", {
+            yPercent: 50
+        });
+        */
+    
+        tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
+            autoAlpha: 0,
+            yPercent: 100,
+            rotate: 0.001
+        },{
+            autoAlpha: 1,
+            yPercent: 0,
+            rotate: 0.001,
+            ease: "primary-ease",
+            duration: durationDefault,
+            stagger: staggerDefault
+        });
+    
+        /*
+        tl.to(".about.gsap-animate-transition", {
+            yPercent: 0,
+            duration: durationDefaultFastest,
+            ease: "primary-ease"
+        }, "<");/*"+=0.5");*/
+    
+        tl.fromTo(".about-rest.gsap-lines.gsap-animate-transition .gsap-line-inner", {
+            autoAlpha: 0,
+            yPercent: 100,
+            rotate: 0.001
+        },{
+            //delay: 0.3,
+            autoAlpha: 1,
+            yPercent: 0,
+            rotate: 0.001,
+            ease: "primary-ease",
+            duration: durationDefault,
+            stagger: staggerDefault
+        }, "<");
+    
+        // used to be xpercent animation
+        tl.fromTo(".fill.gsap-animate-transition", {
+            autoAlpha: 1
+        },{
+            delay: 0.5,
+            autoAlpha: 0,
+            ease: "primary-ease",
+            duration: durationDefault
+        }, "<");
+    
+        tl.fromTo(".navbar.gsap-animate-transition", {
+            yPercent: -100
+        },{
+            yPercent: 0,
+            ease: "primary-ease",
+            duration: durationDefaultFaster
+        }, "< +=0.65");
+    
+        tl.fromTo(".darkmode.gsap-animate-transition", {
+            autoAlpha: 0
+        },{
+            autoAlpha: 1,
+            ease: "primary-ease",
+            duration: durationDefault
+        }, "<");
+    
+        tl.fromTo(".scroll.gsap-animate-transition", {
+            yPercent: 100,
+            autoAlpha: 0
+        },{
+            autoAlpha: 1,
+            yPercent: 0,
+            ease: "primary-ease",
+            duration: durationDefaultFaster
+        }, "<");
+
     });
-    */
-
-    tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
-        autoAlpha: 0,
-        yPercent: 100,
-        rotate: 0.001
-    },{
-        autoAlpha: 1,
-        yPercent: 0,
-        rotate: 0.001,
-        ease: "primary-ease",
-        duration: durationDefault,
-        stagger: staggerDefault
-    }, "<");
-
-    tl.to(".about.gsap-animate-transition", {
-        yPercent: 0,
-        duration: durationDefaultFastest,
-        ease: "primary-ease"
-    }, "<");/*"+=0.5");*/
-
-    tl.fromTo(".about-rest.gsap-lines.gsap-animate-transition .gsap-line-inner", {
-        autoAlpha: 0,
-        yPercent: 100,
-        rotate: 0.001
-    },{
-        //delay: 0.3,
-        autoAlpha: 1,
-        yPercent: 0,
-        rotate: 0.001,
-        ease: "primary-ease",
-        duration: durationDefault,
-        stagger: staggerDefault
-    }, "<");
-
-    // used to be xpercent animation
-    tl.fromTo(".fill.gsap-animate-transition", {
-        autoAlpha: 1
-    },{
-        delay: 0.5,
-        autoAlpha: 0,
-        ease: "primary-ease",
-        duration: durationDefault
-    }, "<");
-
-    tl.fromTo(".navbar.gsap-animate-transition", {
-        yPercent: -100
-    },{
-        yPercent: 0,
-        ease: "primary-ease",
-        duration: durationDefaultFaster
-    }, "< +=0.65");
-
-    tl.fromTo(".darkmode.gsap-animate-transition", {
-        autoAlpha: 0
-    },{
-        autoAlpha: 1,
-        ease: "primary-ease",
-        duration: durationDefault
-    }, "<");
-
-    tl.fromTo(".scroll.gsap-animate-transition", {
-        yPercent: 100,
-        autoAlpha: 0
-    },{
-        autoAlpha: 1,
-        yPercent: 0,
-        ease: "primary-ease",
-        duration: durationDefaultFaster
-    }, "<");
 }
 
 window.openMenu = () => { 

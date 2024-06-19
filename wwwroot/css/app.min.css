@@ -1533,6 +1533,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 50;
 }
 
+.z-\[-1\] {
+  z-index: -1;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
@@ -1682,6 +1686,10 @@ details.collapse summary::-webkit-details-marker {
   height: 3.25rem;
 }
 
+.h-\[calc\(100vh-4\.75rem\)\] {
+  height: calc(100vh - 4.75rem);
+}
+
 .h-\[max\(1vh\2c 1vw\)\] {
   height: max(1vh,1vw);
 }
@@ -1748,6 +1756,11 @@ details.collapse summary::-webkit-details-marker {
 
 .basis-1\/2 {
   flex-basis: 50%;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .translate-x-\[-50\%\] {
@@ -1912,6 +1925,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-neutral-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
 
 .bg-stone-100 {
@@ -2173,6 +2191,10 @@ details.collapse summary::-webkit-details-marker {
   content: var(--tw-content);
 }
 
+.content-percentage::after {
+  content: calc(var(--blazor-load-percentage) * 1);
+}
+
 .img-filter {
   filter: sepia(49%) saturate(207%) hue-rotate(45deg) brightness(117%) contrast(92%);
 }
@@ -2202,14 +2224,16 @@ details.collapse summary::-webkit-details-marker {
 
 /* END GSAP */
 
+/*
 main {
-  transition: opacity 0.1s ease-in;
-  opacity:0;
+    transition: opacity 0.1s ease-in;
+    opacity:0;
 }
 
 main.loaded {
-  opacity:1;
+    opacity:1;
 }
+*/
 
 /* BEGIN Lenis */
 
@@ -2427,8 +2451,7 @@ nav .active > .nav-link-icon::after {
 }
 
 .linear-progress {
-  background: #ffffff30;
-  /*hsla(26,28%,95%,.3);*/
+  /*background: #ffffff30;hsla(26,28%,95%,.3);*/
   height: 1px;
   overflow: hidden;
   position: relative;
@@ -2442,7 +2465,7 @@ nav .active > .nav-link-icon::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: white;
+  background: black;
   /*hsla(26,28%,95%,.9);*/
   scale: var(--blazor-load-percentage, 0%) 100%;
   transform-origin: left top;
@@ -2868,6 +2891,22 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   font-style: normal;
 }
 
+/* add kmr apparat bold */
+
+.kmr-apparat-bold {
+  font-family: "KMR Apparat Bold", sans-serif;
+}
+
+@font-face {
+  font-family: "KMR Apparat Bold";
+
+  src: url("../fonts/KMR-Apparat/KMR-Apparat-Bold.woff");
+
+  font-weight: 700;
+
+  font-style: normal;
+}
+
 /* 
 Fix to prevent FocusOnNavigate in App.razor from adding outline to the first h1 on a page
 https://www.reddit.com/r/Blazor/comments/xl09d8/blazor_h1_element_is_focused_on_startup_for_no/
@@ -2879,6 +2918,11 @@ h1:focus {
 
 .after\:content-\[\'\[\'var\(--blazor-load-percentage-text\)\'\]\'\]::after {
   --tw-content: '['var(--blazor-load-percentage-text)']';
+  content: var(--tw-content);
+}
+
+.after\:content-\[var\(--blazor-load-percentage-text\)\]::after {
+  --tw-content: var(--blazor-load-percentage-text);
   content: var(--tw-content);
 }
 
@@ -2922,10 +2966,6 @@ h1:focus {
 .dark\:invert:is(.dark *) {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.dark\:filter-none:is(.dark *) {
-  filter: none;
 }
 
 @media (min-width: 640px) {

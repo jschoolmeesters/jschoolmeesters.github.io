@@ -12,43 +12,58 @@
    </div>  
 </div>
 
-<div class="w-full relative">
+<div class="index gsap-animate-transition w-full relative bg-stone-100 dark:bg-black">
 
    <div class="p-3 pb-9 bg-stone-100 pt-[4.75rem] dark:bg-black relative"> 
 
       <div class="about gsap-animate-transition">
-         <h2 class="about-first gsap-lines gsap-animate-transition text-sm p-0 m-0 mb-2">
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  About me
-               </div>
-            </div>
-         </h2>
 
-         <h1 class="about-first gsap-lines gsap-animate-transition text-2xl tracking-[-0.035em] leading-none">
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  Computing Science student, C#
-               </div>
+         <div class="flex flex-col h-[calc(100vh-4.75rem)] w-full">
+
+            <div class="grow"></div>
+
+            <div class="self-bottom">
+               <h2 class="about-first gsap-lines gsap-animate-transition p-0 m-0 mb-2">
+                  <div class="gsap-line">
+                     <div class="gsap-line-inner text-sm kmr-apparat-bold">
+                        About me
+                     </div>
+                  </div>
+               </h2>
+
+               <h1 class="about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
+                  <div class="gsap-line">
+                     <div class="gsap-line-inner">
+                        Computing Science
+                     </div>
+                  </div>
+                  <div class="gsap-line">
+                     <div class="gsap-line-inner">
+                        student specializing
+                     </div>
+                  </div>
+                  <div class="gsap-line">
+                     <div class="gsap-line-inner">
+                        in high performance
+                     </div>
+                  </div>
+                  <div class="gsap-line">
+                     <div class="gsap-line-inner">
+                        computing and
+                     </div>
+                  </div>
+                  <div class="gsap-line">
+                     <div class="gsap-line-inner">
+                        embedded systems.
+                     </div>
+                  </div>
+               </h1>
             </div>
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  developer and music producer
-               </div>
-            </div>
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  specializing in high performance
-               </div>
-            </div>
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  computing and embedded systems.
-               </div>
-            </div>
-         </h1>
-         <br>
-         <img src="media/chip.webp" class="dark:invert img-filter"/>
+            <br>
+            <img src="media/chip.webp" class="dark:invert img-filter"/>
+
+         </div>
+
          <br>
          <h1 class="about-rest gsap-lines gsap-animate-transition text-2xl tracking-[-0.035em] leading-none">
             <div class="gsap-line">
@@ -86,13 +101,13 @@
    <div class="bg-white dark:bg-black z-0">
       <div class="fill gsap-animate-transition inset z-[2] absolute w-[100vw] h-full bg-stone-100 dark:bg-black"></div>
       <div class="px-3">
-         <h2 class="text-sm p-0 m-0 pt-6 mb-2">Current projects</h2>
+         <h2 class="text-sm p-0 m-0 pt-6 mb-2 kmr-apparat-bold">Current projects</h2>
          <ul class="text-2xl tracking-[-0.035em] leading-none">
             <li>MIT OCW courses on C/C++</li>
             <li>Making an RTOS for an ARM CORTEX© M4 based microcontroller</li>
          </ul>
 
-         <h2 class="text-sm p-0 m-0 mt-12 mb-2">Current goals</h2>
+         <h2 class="text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold">Current goals</h2>
          <ul class="text-2xl tracking-[-0.035em] leading-none">
             <li>Excelling at C/C++</li>
             <li>Refreshing Bash/Python skills</li>
@@ -107,7 +122,7 @@
          
          <div class="posts-header gsap-animate-transition">
             <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-2">Latest posts</h2>
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold">Latest posts</h2>
             </div>
          </div>
 
@@ -175,8 +190,9 @@
             await Task.Delay(100);
          bool result = await JS.InvokeAsync<bool>("waitForPosts", FilteredPosts.Count);
 
-         if (result)
+         if (result) {
             await JS.InvokeVoidAsync("animatePosts");
+         }
       }
    }
 
