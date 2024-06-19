@@ -1726,6 +1726,10 @@ details.collapse summary::-webkit-details-marker {
   width: 8.75rem;
 }
 
+.w-\[8rem\] {
+  width: 8rem;
+}
+
 .w-\[max\(1vh\2c 1vw\)\] {
   width: max(1vh,1vw);
 }
@@ -2060,6 +2064,10 @@ details.collapse summary::-webkit-details-marker {
 
 .text-right {
   text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .text-end {
