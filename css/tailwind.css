@@ -1520,6 +1520,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 50;
 }
 
+.z-\[-1\] {
+  z-index: -1;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
@@ -1669,6 +1673,10 @@ details.collapse summary::-webkit-details-marker {
   height: 3.25rem;
 }
 
+.h-\[calc\(100vh-4\.75rem\)\] {
+  height: calc(100vh - 4.75rem);
+}
+
 .h-\[max\(1vh\2c 1vw\)\] {
   height: max(1vh,1vw);
 }
@@ -1735,6 +1743,11 @@ details.collapse summary::-webkit-details-marker {
 
 .basis-1\/2 {
   flex-basis: 50%;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .translate-x-\[-50\%\] {
@@ -1899,6 +1912,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-neutral-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
 
 .bg-stone-100 {
@@ -2162,6 +2180,11 @@ details.collapse summary::-webkit-details-marker {
 
 .after\:content-\[\'\[\'var\(--blazor-load-percentage-text\)\'\]\'\]::after {
   --tw-content: '['var(--blazor-load-percentage-text)']';
+  content: var(--tw-content);
+}
+
+.after\:content-\[var\(--blazor-load-percentage-text\)\]::after {
+  --tw-content: var(--blazor-load-percentage-text);
   content: var(--tw-content);
 }
 

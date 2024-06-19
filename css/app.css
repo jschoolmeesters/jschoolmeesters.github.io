@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.content-percentage::after {
+    content: calc(var(--blazor-load-percentage) * 1);
+}
+
 .img-filter {
     filter: sepia(49%) saturate(207%) hue-rotate(45deg) brightness(117%) contrast(92%);
 }
@@ -30,6 +34,7 @@
 
 /* END GSAP */
 
+/*
 main {
     transition: opacity 0.1s ease-in;
     opacity:0;
@@ -38,6 +43,7 @@ main {
 main.loaded {
     opacity:1;
 }
+*/
 
 /* BEGIN Lenis */
 
@@ -201,7 +207,7 @@ nav .active > .nav-link-icon::after {
 }
 
 .linear-progress {
-    background: #ffffff30;/*hsla(26,28%,95%,.3);*/
+    /*background: #ffffff30;hsla(26,28%,95%,.3);*/
     height: 1px;
     overflow: hidden;
     position: relative;
@@ -215,7 +221,7 @@ nav .active > .nav-link-icon::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: white; /*hsla(26,28%,95%,.9);*/
+    background: black; /*hsla(26,28%,95%,.9);*/
     scale: var(--blazor-load-percentage, 0%) 100%;
     transform-origin: left top;
     transition: scale ease-out 0.5s;
@@ -632,6 +638,19 @@ h1, h2, h3, h4, h5, h6, p, a, span {
     font-family: "KMR Apparat Heavy";
     src: url("../fonts/KMR-Apparat/KMR-Apparat-Heavy.otf");
     font-weight: 600;
+    font-style: normal;
+}
+
+/* add kmr apparat bold */
+
+.kmr-apparat-bold {
+    font-family: "KMR Apparat Bold", sans-serif;
+}
+
+@font-face {
+    font-family: "KMR Apparat Bold";
+    src: url("../fonts/KMR-Apparat/KMR-Apparat-Bold.woff");
+    font-weight: 700;
     font-style: normal;
 }
 
