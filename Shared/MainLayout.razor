@@ -15,7 +15,7 @@
                 <div class="inline-block h-[3.25rem]"><img src="media/apparat_logo_black.svg" @onclick="@(async () => NavigateToPage(""))" class="h-7 my-3 dark:invert"/></div>
                 <span class="grow"></span>
                 <div @onclick="@(()=> DarkMode = !DarkMode)" class="@(ShowMenu ? "" : "hidden") darkmode gsap-animate-transition text-xl h-[3.25rem] w-[3.25rem] rounded-full text-black dark:text-white grid cursor-pointer"><span class="block place-self-center @(DarkMode ? "iconoir-sun-light" : "iconoir-half-moon")"</span></div>
-                <div class="z-[511] inline-block h-[3.25rem]"><span @onclick="@(async () => await OnMenuClick())" class="inline-block cursor-pointer text-lg dark:bg-white px-3 my-2 kmr-apparat-bold text-black dark:text-black">@(ShowMenu ? "Close ☰" : "Menu ☰")</span></div>
+                <div class="z-[511] inline-block h-[3.25rem]"><span @onclick="@(async () => await OnMenuClick())" class="flex flex-row justify-between cursor-pointer text-lg dark:bg-white w-[8rem] text-justify px-3 my-2 text-black dark:text-black"><span class="kmr-apparat-bold">@(ShowMenu ? "Close" : "Menu")</span><span class="kmr-apparat-bold">☰</span></span></div>
             </div>
             <div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-stone-100 dark:bg-black relative pt-0 p-2 w-full gap-x-1"></div>
         </div>
