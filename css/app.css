@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --vh: '0px';
+}
+
+.h-hero {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(calc(var(--vh, 1vh) * 100) - 4.75rem);
+}
+
 .content-percentage::after {
     content: calc(var(--blazor-load-percentage) * 1);
 }
