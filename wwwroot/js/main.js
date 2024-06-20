@@ -187,7 +187,7 @@ window.animatePosts = () => {
 window.homeLoaded = () => { 
     gsap.to(".scroll.gsap-animate-transition", {
         opacity: 0,
-        y: 15, // Move down by 5% of the element's height
+        //y: 15, // Move down by 5% of the element's height
         scrollTrigger: {
           start: "top+=0 top", // Start the animation after scrolling 100px from the top of the page
           end: "+=200", // The animation will end after scrolling another 100px
