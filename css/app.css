@@ -19,6 +19,11 @@
     height: calc(calc(var(--vh, 1vh) * 100) - 4.75rem);
 }
 
+.mt-1\/4vh {
+    margin-top: calc(calc(100vh - 4.75rem) / 4); /* Fallback for browsers that do not support Custom Properties */
+    margin-top: calc(calc(calc(var(--vh, 1vh) * 100) - 4.75rem) / 4);
+}
+
 .content-percentage::after {
     content: calc(var(--blazor-load-percentage) * 1);
 }

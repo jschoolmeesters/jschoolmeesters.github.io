@@ -1618,6 +1618,10 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -2209,6 +2213,12 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
   /* Fallback for browsers that do not support Custom Properties */
   height: calc(calc(var(--vh, 1vh) * 100) - 4.75rem);
+}
+
+.mt-1\/4vh {
+  margin-top: calc(calc(100vh - 4.75rem) / 4);
+  /* Fallback for browsers that do not support Custom Properties */
+  margin-top: calc(calc(calc(var(--vh, 1vh) * 100) - 4.75rem) / 4);
 }
 
 .content-percentage::after {

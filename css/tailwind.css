@@ -1605,6 +1605,10 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
