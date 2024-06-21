@@ -1840,14 +1840,6 @@ details.collapse summary::-webkit-details-marker {
   row-gap: 0.125rem;
 }
 
-.gap-y-1 {
-  row-gap: 0.25rem;
-}
-
-.gap-y-1\.5 {
-  row-gap: 0.375rem;
-}
-
 .gap-y-3 {
   row-gap: 0.75rem;
 }
@@ -2150,10 +2142,6 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1;
 }
 
-.leading-tight {
-  line-height: 1.25;
-}
-
 .tracking-\[-0\.035em\] {
   letter-spacing: -0.035em;
 }
@@ -2230,17 +2218,16 @@ details.collapse summary::-webkit-details-marker {
   --vh: '0px';
 }
 
-ul.arrow-list li {
-  position: relative;
-  padding-left: 25px;
-  /* Adjust padding to make space for custom character */
+.leading-tighter {
+  line-height: 1.05;
 }
 
-ul.arrow-list li::before {
-  content: '⮡';
-  /* Custom character */
-  position: absolute;
-  left: 0;
+ul.arrow-list  {
+  list-style-image: url(../media/arrow-down-right.svg);
+}
+
+ul.arrow-list li {
+  padding-left: 1.5rem;
 }
 
 .ani-box {

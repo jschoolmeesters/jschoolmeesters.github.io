@@ -6,16 +6,21 @@
     --vh: '0px';
 }
 
-ul.arrow-list li {
-    position: relative;
-    padding-left: 25px; /* Adjust padding to make space for custom character */
+.leading-tighter {
+    line-height: 1.05;
 }
 
-ul.arrow-list li::before {
-    content: '⮡'; /* Custom character */
-    position: absolute;
-    left: 0;
+
+
+ul.arrow-list  {
+    list-style-image: url(../media/arrow-down-right.svg);
 }
+
+ul.arrow-list li {
+    @apply pl-6;
+}
+
+
 .ani-box {
     position: relative;
     --before-y-percent: 0%;
