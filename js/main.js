@@ -255,7 +255,7 @@ window.homeLoaded = () => {
         }, {
             yPercent: -100,
             ease: "primary-ease",
-            duration: durationDefaultUltraFast
+            duration: 0.75
         });
     
         tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
