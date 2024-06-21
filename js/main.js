@@ -115,33 +115,12 @@ window.endTransitionBox = () => {
             }
         });
 
-        tl.fromTo(".transition-box-inner.gsap-animate-transition", {
-            scaleX: 1,
-            scaleY: 1,
-        }, {
-            scaleX: 10,
-            scaleY: 10,
-            duration: durationDefaultFaster,
-            ease: "primary-ease",
-        })
-    
-        tl.fromTo(".transition-box.gsap-animate-transition", {
-            scaleX: 200,
-            scaleY: 200,
-        }, {
-            scaleX: 10,
-            scaleY: 10,
-            duration: durationDefaultFaster,
-            ease: "primary-ease",
-        });
-
-;
-
         tl.to(".transition-box.gsap-animate-transition", {
             autoAlpha: 0,
-            duration: 0.5,
+            duration: durationDefaultUltraFast,
             ease: "primary-ease",
-        }, "-=0.5");
+        })
+
     });
 }
 
@@ -398,9 +377,7 @@ window.closeMenu = () => {
 
     // TODO: unblur .content using GSAP CSSPlugin
 
-    tl.fromTo("aside.gsap-animate-transition", {
-        xPercent: 0
-    },{
+    tl.to("aside.gsap-animate-transition", {
         xPercent: 100,
         ease: "primary-ease-out",
         duration: durationDefaultFastest
