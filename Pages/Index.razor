@@ -96,14 +96,14 @@
 
    <div class="bg-white dark:bg-black z-0">
       <div class="px-3">
-         <h2 class="text-sm p-0 m-0 pt-6 mb-5 kmr-apparat-bold"><span class="square"></span> Current projects</h2>
-         <ul class="text-2xl tracking-[-0.035em] leading-none">
+         <h2 class="text-sm p-0 m-0 pt-6 mb-5 kmr-apparat-bold">Current projects</h2>
+         <ul class="arrow-list grid text-2xl tracking-[-0.035em] leading-tight">
             <li>MIT OCW courses on C/C++</li>
             <li>Making an RTOS for an ARM CORTEX© M4 based microcontroller</li>
          </ul>
 
-         <h2 class="text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold"><span class="square"></span> Long-term goals</h2>
-         <ul class="text-2xl tracking-[-0.035em] leading-none">
+         <h2 class="text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold">Long-term goals</h2>
+         <ul class="arrow-list grid text-2xl tracking-[-0.035em] leading-tight">
             <li>Excelling at C/C++</li>
             <li>Refreshing Bash/Python skills</li>
             <li><a href="https://www.ru.nl/courseguides/science/bachelor/bachelor-computing-science/">Computing Science bachelor</a></li>
@@ -117,7 +117,7 @@
          
          <div class="posts-header gsap-animate-transition">
             <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold"><span class="square"></span> Latest posts</h2>
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold">Latest posts</h2>
             </div>
          </div>
 
@@ -131,7 +131,7 @@
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
                <div class="grow flex flex-col">
-                  <h2 class="text-2xl tracking-[-0.035em] leading-none">@post.Title</h2>
+                  <h2 class="text-2xl tracking-[-0.035em] leading-tight">@post.Title</h2>
                   <div class="mt-1.5">
                      @foreach (string tag in post.TagsAsList) {
                         <div class="badge align-middle text-xs bg-transparent rounded-full text-black dark:text-white border border-black dark:border-white mr-2 uppercase">@tag</div>

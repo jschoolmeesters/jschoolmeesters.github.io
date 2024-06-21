@@ -6,6 +6,16 @@
     --vh: '0px';
 }
 
+ul.arrow-list li {
+    position: relative;
+    padding-left: 25px; /* Adjust padding to make space for custom character */
+}
+
+ul.arrow-list li::before {
+    content: '⮡'; /* Custom character */
+    position: absolute;
+    left: 0;
+}
 .ani-box {
     position: relative;
     --before-y-percent: 0%;
