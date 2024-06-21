@@ -1,7 +1,13 @@
 module.exports = {
   content: ["./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}", "./Components/*.{razor,html,cshtml}"],
   darkMode: 'class',
-  theme: { extend: {} },
+  theme: { 
+    extend: {
+      listStyleImage: {
+        subdir: "url('../media/subdirectory.svg')",
+      }
+    } 
+  },
   plugins: [
     require('daisyui'),
     require('tailwindcss'),
