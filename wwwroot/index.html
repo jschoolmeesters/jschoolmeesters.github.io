@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="loader gsap-animate-transition z-[-1] flex flex-col bg-[#707273] text-black min-h-[100vh] wrapper w-full max-w-[500px] left-1/2 -translate-x-1/2 absolute">
+    <div class="loader gsap-animate-transition z-[-2] flex flex-col bg-[#707273] text-black min-h-fullvh wrapper w-full max-w-[500px] left-1/2 -translate-x-1/2 absolute">
         <img src="media/apparat_logo_bold.svg" class="px-3 my-3 w-full h-auto inset-0 relative"/>
         <div class="relative">
             <div class="relative linear-progress w-full"></div>
@@ -32,6 +32,7 @@
             <span class="leading-none text-lg after:content-[var(--blazor-load-percentage-text)]"></span>
         </span>
     </div>
+    <div class="z-[-1] loader-fill gsap-animate-transition h-full w-full bg-black absolute translate-y-full content-['']"></div>
     <div id="app">
         <!--
         <div id="loading-screen" class="absolute top-0 left-0 w-full h-full bg-black z-50">
