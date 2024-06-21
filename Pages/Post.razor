@@ -26,43 +26,49 @@
 
     <article class="py-4 text-black dark:text-white">@HtmlContent</article>
 
-    <div class="flex flex-row @(PreviousPost == null && NextPost == null ? "" : "border mt-9 border-white") rounded divide-x divide-white">
         @if (PreviousPost != null) {
-            <div @onclick="@(() => NavigateToPost(PreviousPost))" class="flex-1 cursor-pointer flex flex-col justify-between divide-y divide-white">
-                <div class="p-3">
-                    <p class="text-sm p-0 m-0 mb-2">Previous post</p>
-                    <h2 class="text-xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@PreviousPost.Title</h2>
-                    <div class="text-sm p-0 m-0 mt-3 mb-2 uppercase">@PreviousPost.Date</div>
-                    <div class="w-full overflow-x-scroll">
-                        @foreach (string tag in PreviousPost.TagsAsList) {
-                            <div class="badge bg-black text-white border border-white rounded mr-2 uppercase">@tag</div>
-                        }
-                    </div>
-                </div>
-                <div class="w-full overflow-hidden border-t border-white p-3">
-                    <p class="align-middle tracking-normal text-xl uppercase">Read✦</p>
-                </div>
+            <div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>
+            <div class="post gsap-animate-transition cursor-pointer py-3 flex flex-row" @onclick="@(() => NavigateToPost(PreviousPost))">
+               <div class="pr-3">
+                  <span class="leading-none">←</span>
+               </div>
+               <div class="grow flex flex-col">
+                  <h2 class="text-2xl tracking-[-0.035em] leading-tighter">@PreviousPost.Title</h2>
+                  <div class="mt-1.5">
+                     @foreach (string tag in PreviousPost.TagsAsList) {
+                        <div class="badge align-middle text-xs bg-transparent rounded-full text-black dark:text-white border border-black dark:border-white mr-2 uppercase">@tag</div>
+                     }
+                  </div>
+                  <div class="flex flex-row mt-3">
+                     <div class="basis-1/2"><span>@PreviousPost.DateAsUriString</span></div>
+                     <div class="basis-1/2 text-end"><span class="">5 min read →</span></div>
+                  </div>
+               </div>
             </div>
+            <div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>
         }
 
         @if (NextPost != null) {
-            <div @onclick="@(() => NavigateToPost(NextPost))" class="flex-1 flex flex-col cursor-pointer justify-between divide-y divide-white">
-                <div class="p-3">
-                    <p class="text-sm p-0 m-0 mb-2">Next post</p>
-                    <h2 class="text-xl tracking-tighter uppercase p-0 m-0 mt-3 mb-3 leading-none">@NextPost.Title</h2>
-                    <div class="text-sm p-0 m-0 mt-3 mb-2 uppercase">@NextPost.Date</div>
-                    <div class="w-full overflow-x-scroll">
-                        @foreach (string tag in NextPost.TagsAsList) {
-                            <div class="badge bg-black text-white border border-white rounded mr-2 uppercase">@tag</div>
-                        }
-                    </div>
-                </div>
-                <div class="w-full overflow-hidden p-3">
-                    <p class="align-middle tracking-normal text-xl uppercase">Read✦</p>
-                </div>
+            <div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>
+            <div class="post gsap-animate-transition cursor-pointer py-3 flex flex-row" @onclick="@(() => NavigateToPost(NextPost))">
+               <div class="pr-3">
+                  <span class="leading-none">→</span>
+               </div>
+               <div class="grow flex flex-col">
+                  <h2 class="text-2xl tracking-[-0.035em] leading-tighter">@NextPost.Title</h2>
+                  <div class="mt-1.5">
+                     @foreach (string tag in NextPost.TagsAsList) {
+                        <div class="badge align-middle text-xs bg-transparent rounded-full text-black dark:text-white border border-black dark:border-white mr-2 uppercase">@tag</div>
+                     }
+                  </div>
+                  <div class="flex flex-row mt-3">
+                     <div class="basis-1/2"><span>@NextPost.DateAsUriString</span></div>
+                     <div class="basis-1/2 text-end"><span class="">5 min read →</span></div>
+                  </div>
+               </div>
             </div>
+            <div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>
         }
-    </div>
 </div>
 
 
@@ -123,7 +129,8 @@
         await base.OnAfterRenderAsync(firstRender);
         if (firstRender)
         {
-            await JS.InvokeVoidAsync("initializeProgressBar");
+            await JS.InvokeVoidAsync("homeLoaded");
+            //await JS.InvokeVoidAsync("initializeProgressBar");
             await JS.InvokeVoidAsync("endTransitionBox");
         }
     }
