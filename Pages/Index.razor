@@ -7,7 +7,7 @@
 <PageTitle>Jordy Schoolmeesters — Computing Science</PageTitle>
 
 <div class="scroll gsap-animate-transition z-[1] absolute right-0 bottom-0 m-3">
-   <span class="flex flex-row justify-between cursor-pointer text-lg dark:bg-white w-[8rem] text-justify px-3 text-black dark:text-black"><span class="kmr-apparat-bold">Scroll</span><span class="kmr-apparat-bold">↓</span></span>
+   <span class="flex flex-row justify-between cursor-pointer text-lg bg-black text-white dark:bg-white w-[8rem] text-justify px-3 dark:text-black"><span class="kmr-apparat-bold">Scroll</span><span class="kmr-apparat-bold">↓</span></span>
 </div>
 
 <div class="index gsap-animate-transition w-full relative bg-stone-100 dark:bg-black">
@@ -16,12 +16,10 @@
 
       <div class="about gsap-animate-transition">
 
-         <div class="flex flex-col h-hero w-full">
+         <div class="mt-1/4vh flex flex-col w-full">
 
-            <div class="grow"></div>
-
-            <div class="self-bottom border-b dark:border-white pb-3">
-               <h2 class="about-first gsap-lines gsap-animate-transition p-0 m-0 mb-2">
+            <div class="self-bottom border-b border-black dark:border-white pb-3">
+               <h2 class="about-first gsap-lines gsap-animate-transition p-0 m-0 mb-5">
                   <div class="gsap-line">
                      <div class="gsap-line-inner text-sm kmr-apparat-bold">
                         <span class="square"></span> About me
@@ -57,7 +55,7 @@
                   </div>
                </h1>
             </div>
-            <img src="https://static4.arrow.com/-/media/arrow/images/820-x-410/0/0218-what-is-a-microcontroller-article.jpg?mw=734&hash=F024E2C0707F137A62E82122A7652A98" class="my-3"/>
+            <img src="https://static4.arrow.com/-/media/arrow/images/820-x-410/0/0218-what-is-a-microcontroller-article.jpg?mw=734&hash=F024E2C0707F137A62E82122A7652A98" class="mt-3"/>
 
          </div>
 
@@ -98,28 +96,28 @@
    <div class="bg-white dark:bg-black z-0">
       <div class="fill gsap-animate-transition inset z-[2] absolute w-[100vw] h-full bg-stone-100 dark:bg-black"></div>
       <div class="px-3">
-         <h2 class="text-sm p-0 m-0 pt-6 mb-2 kmr-apparat-bold"><span class="square"></span> Current projects</h2>
+         <h2 class="text-sm p-0 m-0 pt-6 mb-5 kmr-apparat-bold"><span class="square"></span> Current projects</h2>
          <ul class="text-2xl tracking-[-0.035em] leading-none">
             <li>MIT OCW courses on C/C++</li>
             <li>Making an RTOS for an ARM CORTEX© M4 based microcontroller</li>
          </ul>
 
-         <h2 class="text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold"><span class="square"></span> Long-term goals</h2>
+         <h2 class="text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold"><span class="square"></span> Long-term goals</h2>
          <ul class="text-2xl tracking-[-0.035em] leading-none">
             <li>Excelling at C/C++</li>
             <li>Refreshing Bash/Python skills</li>
             <li><a href="https://www.ru.nl/courseguides/science/bachelor/bachelor-computing-science/">Computing Science bachelor</a></li>
          </ul>
 
+         @*
          <img class="border border-black dark:border-none w-full mt-12 rounded" src="https://i.seadn.io/gcs/files/396a124e569b6ee79d34a010035f2da0.png?auto=format&dpr=1&w=1000">
+         *@
 
-         <div class="links gsap-animate-transition relative overflow-hidden">
-            <BlazorPortfolio.Components.Links />
-         </div>
+
          
          <div class="posts-header gsap-animate-transition">
             <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold"><span class="square"></span> Latest posts</h2>
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold"><span class="square"></span> Latest posts</h2>
             </div>
          </div>
 
@@ -149,7 +147,13 @@
          }
 
          <footer class="pt-12 pb-6 flex flex-col">
-            <img src="media/apparat_logo_bold.svg" class="w-full h-auto dark:invert"/>
+            <img src="media/apparat_logo_bold.svg" class="w-full h-auto dark:invert py-3"/>
+
+            <h2 class="text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold"><span class="square"></span> Connect</h2>
+            <div class="links gsap-animate-transition relative overflow-hidden">
+               <BlazorPortfolio.Components.Links />
+            </div>
+
             <div class="footer-text gsap-animate-transition mt-6 text-lg tracking-[-0.035em] leading-none grid grid-cols-2 gap-y-3">
                <div>Back to top ↑</div>
                <div class="text-end">Shift + G</div>
