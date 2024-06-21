@@ -265,10 +265,11 @@ nav .active > .nav-link-icon::after {
 }
 
 .linear-progress:after {
+    height: 100%;
     content: '';
     position: absolute;
     inset: 0;
-    background: black; /*hsla(26,28%,95%,.9);*/
+    @apply bg-neutral-800; /*hsla(26,28%,95%,.9);*/
     scale: var(--blazor-load-percentage, 0%) 100%;
     transform-origin: left top;
     transition: scale ease-out 0.5s;

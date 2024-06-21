@@ -1578,11 +1578,6 @@ details.collapse summary::-webkit-details-marker {
   margin-right: auto;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -1611,6 +1606,10 @@ details.collapse summary::-webkit-details-marker {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mt-1 {
@@ -1681,10 +1680,6 @@ details.collapse summary::-webkit-details-marker {
   height: 1px;
 }
 
-.h-\[3\.25rem\] {
-  height: 3.25rem;
-}
-
 .h-\[max\(1vh\2c 1vw\)\] {
   height: max(1vh,1vw);
 }
@@ -1715,10 +1710,6 @@ details.collapse summary::-webkit-details-marker {
 
 .w-\[100vw\] {
   width: 100vw;
-}
-
-.w-\[3\.25rem\] {
-  width: 3.25rem;
 }
 
 .w-\[8\.75rem\] {
@@ -1907,11 +1898,6 @@ details.collapse summary::-webkit-details-marker {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.bg-\[\#707273\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(112 114 115 / var(--tw-bg-opacity));
-}
-
 .bg-\[hsla\(26\2c 28\%\2c 95\%\2c \.5\)\] {
   background-color: hsla(26,28%,95%,.5);
 }
@@ -1929,6 +1915,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-neutral-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
 
 .bg-stone-100 {
@@ -1982,6 +1973,16 @@ details.collapse summary::-webkit-details-marker {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 .py-2 {
@@ -2176,6 +2177,11 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.text-neutral-800 {
+  --tw-text-opacity: 1;
+  color: rgb(38 38 38 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -2183,6 +2189,11 @@ details.collapse summary::-webkit-details-marker {
 
 .line-through {
   text-decoration-line: line-through;
+}
+
+.contrast-75 {
+  --tw-contrast: contrast(.75);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .content-\[\'\'\] {
