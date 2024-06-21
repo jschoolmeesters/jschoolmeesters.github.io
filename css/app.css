@@ -6,6 +6,24 @@
     --vh: '0px';
 }
 
+.ani-box {
+    position: relative;
+    --before-y-percent: 0%;
+    overflow: hidden;
+}
+
+.ani-box::before {
+    transform: translateY(var(--before-y-percent));
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    @apply dark:bg-black;
+    z-index: 1;
+}
+
 .square {
     @apply inline-block;
     @apply h-[0.6rem];
@@ -14,9 +32,14 @@
     @apply bg-black;
 }
 
-.h-hero {
+.h-fullvh {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(calc(var(--vh, 1vh) * 100) - 4.75rem);
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+.min-h-fullvh {
+    min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .mt-1\/4vh {
@@ -232,7 +255,7 @@ nav .active > .nav-link-icon::after {
 
 .linear-progress {
     /*background: #ffffff30;hsla(26,28%,95%,.3);*/
-    height: 1px;
+    height: 2px;
     overflow: hidden;
     position: relative;
 }

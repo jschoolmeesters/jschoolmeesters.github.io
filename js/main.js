@@ -74,6 +74,8 @@ let staggerDefault = 0.07;
 let durationDefault = 1.47;
 let durationDefaultFaster = 1.2;
 let durationDefaultFastest = 0.9;
+let durationDefaultUltraFast = 0.6;
+
 
 CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
 CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
@@ -248,19 +250,13 @@ window.homeLoaded = () => {
             }
         });
 
-        tl.fromTo(".index.gsap-animate-transition", {
-            yPercent: 100
-        }, {
+        tl.fromTo(".loader-fill.gsap-animate-transition", {
             yPercent: 0,
+        }, {
+            yPercent: -100,
             ease: "primary-ease",
-            duration: durationDefaultFaster
+            duration: durationDefaultUltraFast
         });
-    
-        /*
-        tl.set(".about.gsap-animate-transition", {
-            yPercent: 50
-        });
-        */
     
         tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
             autoAlpha: 0,
@@ -273,7 +269,31 @@ window.homeLoaded = () => {
             ease: "primary-ease",
             duration: durationDefault,
             stagger: staggerDefault
-        });
+        }, "+= 2");
+
+        /* move up slightly and fade in : .hero-img */
+        tl.fromTo(".hero-img.gsap-animate-transition", {
+            yPercent: 20,
+            autoAlpha: 0,
+        },{
+            yPercent: 0,
+            autoAlpha: 1,
+            duration: durationDefault,
+            ease: "primary-ease",
+        }, "<");
+
+        /* border width from 0 to 1 for .border-bottom */
+        tl.fromTo(".border-bottom.gsap-animate-transition", {
+            scaleX: 0,
+            autoAlpha: 0,
+            y: 50,
+        },{
+            scaleX: 1,
+            autoAlpha: 1,
+            y: 0,
+            duration: durationDefault,
+            ease: "primary-ease",
+        }, "<");
     
         /*
         tl.to(".about.gsap-animate-transition", {
@@ -295,17 +315,19 @@ window.homeLoaded = () => {
             duration: durationDefault,
             stagger: staggerDefault
         }, "<");
-    
-        // used to be xpercent animation
-        tl.fromTo(".fill.gsap-animate-transition", {
-            autoAlpha: 1
-        },{
-            delay: 0.5,
+
+        /* move up ypercent of .ani-box::after by 100 */
+        tl.fromTo(".ani-box.gsap-animate-transition", {
+            "--before-y-percent": "0%",
             autoAlpha: 0,
+        },{
+            "--before-y-percent": "-100%",
+            autoAlpha: 1,
+            duration: durationDefaultFastest,
             ease: "primary-ease",
-            duration: durationDefault
-        }, "<");
-    
+        }, "-=1.5");
+
+        /*
         tl.fromTo(".navbar.gsap-animate-transition", {
             yPercent: -100
         },{
@@ -313,14 +335,6 @@ window.homeLoaded = () => {
             ease: "primary-ease",
             duration: durationDefaultFaster
         }, "< +=0.65");
-    
-        tl.fromTo(".darkmode.gsap-animate-transition", {
-            autoAlpha: 0
-        },{
-            autoAlpha: 1,
-            ease: "primary-ease",
-            duration: durationDefault
-        }, "<");
     
         tl.fromTo(".scroll.gsap-animate-transition", {
             yPercent: 100,
@@ -331,7 +345,7 @@ window.homeLoaded = () => {
             ease: "primary-ease",
             duration: durationDefaultFaster
         }, "<");
-
+        */
     });
 }
 
