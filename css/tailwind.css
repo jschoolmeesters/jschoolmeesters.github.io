@@ -2129,6 +2129,10 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
 .tracking-\[-0\.035em\] {
   letter-spacing: -0.035em;
 }
