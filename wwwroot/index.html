@@ -21,15 +21,15 @@
 </head>
 
 <body>
-    <div class="loader gsap-animate-transition z-[-2] flex flex-col bg-[#707273] text-black min-h-fullvh wrapper w-full max-w-[500px] left-1/2 -translate-x-1/2 absolute">
-        <img src="media/apparat_logo_bold.svg" class="px-3 my-3 w-full h-auto inset-0 relative"/>
+    <div class="loader gsap-animate-transition z-[-2] flex flex-col bg-neutral-700 text-neutral-800 min-h-fullvh wrapper w-full max-w-[500px] left-1/2 -translate-x-1/2 absolute">
+        <img src="media/apparat_logo_bold.svg" class="contrast-75 px-3 my-3 w-full h-auto inset-0 relative"/>
         <div class="relative">
             <div class="relative linear-progress w-full"></div>
         </div>
         <div class="grow"></div>
         <span class="flex flex-row justify-between relative p-3">
-            <span class="text-lg leading-none">Loading</span>
-            <span class="leading-none text-lg after:content-[var(--blazor-load-percentage-text)]"></span>
+            <span class="text-base leading-none kmr-apparat-bold">Loading</span>
+            <span class="leading-none text-base kmr-apparat-bold after:content-[var(--blazor-load-percentage-text)]"></span>
         </span>
     </div>
     <div class="z-[-1] loader-fill gsap-animate-transition h-full w-full bg-black fixed translate-y-full content-['']"></div>
