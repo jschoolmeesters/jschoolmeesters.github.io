@@ -6,6 +6,25 @@
     --vh: '0px';
 }
 
+.content {
+    position: relative;
+    --before-y-percent: 100%;
+    /*overflow: hidden;*/
+}
+
+.content::before {
+    transform: translateY(var(--before-y-percent));
+    content: '';
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    @apply dark:bg-black;
+    @apply bg-white;
+    z-index: -1;
+}
+
 .leading-tighter {
     line-height: 1.05;
 }
