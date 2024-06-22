@@ -229,6 +229,7 @@ window.homeLoaded = () => {
             }
         });
 
+        /*
         tl.fromTo(".loader-fill.gsap-animate-transition", {
             yPercent: 0,
         }, {
@@ -236,6 +237,18 @@ window.homeLoaded = () => {
             ease: "primary-ease",
             duration: 0.75
         });
+        */
+
+        tl.fromTo(".content.gsap-animate-transition", {
+            "--before-y-percent": "100%",
+            autoAlpha: 0,
+        },{
+            "--before-y-percent": "0%",
+            autoAlpha: 1,
+            duration: durationDefaultFastest,
+            ease: "primary-ease",
+        });
+        
     
         tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
             autoAlpha: 0,
