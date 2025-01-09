@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Making an RTOS for an ARM CORTEX© M4 based microcontroller"
-tags: tutorial, embedded systems
+title: "ARM CORTEX© M4 RTOS"
+tags: Coding
 date: "06/06/2024"
 description: ""
 ---

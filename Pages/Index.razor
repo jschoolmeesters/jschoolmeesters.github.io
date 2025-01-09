@@ -6,118 +6,46 @@
 @inject IJSRuntime JS
 <PageTitle>Jordy Schoolmeesters — Computing Science</PageTitle>
 
-<div class="scroll gsap-animate-transition z-[1] absolute right-0 bottom-0 m-3">
-   <span class="ani-box gsap-animate-transition flex flex-row justify-between cursor-pointer text-base bg-black text-white dark:bg-white w-[8rem] text-justify py-0.5 px-3 dark:text-black"><span class="kmr-apparat-bold">Scroll</span><span class="kmr-apparat-bold">↓</span></span>
-</div>
-
 <div class="index gsap-animate-transition w-full relative">
 
-   <div class="p-3 pb-9 pt-[4.75rem] relative"> 
+   <div class="p-3 pt-[4rem] pb-9 relative"> 
 
       <div class="about gsap-animate-transition">
 
-         <div class="mt-1/4vh flex flex-col w-full">
+         <div class="flex flex-col w-full">
 
-            <div class="pb-3">
-               <h2 class="about-first gsap-lines gsap-animate-transition p-0 m-0 mb-5">
-                  <div class="gsap-line">
-                     <div class="gsap-line-inner text-sm kmr-apparat-bold">
-                        <span class="square"></span> About me
-                     </div>
-                  </div>
-               </h2>
+            <div class="border-bottom gsap-animate-transition h-[1px] w-full bg-black dark:bg-white"></div>
 
-               <h1 class="about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
+            <div class="py-3">
+
+               <h1 class="about-first gsap-lines gsap-animate-transition text-3xl tracking-[-0.035em] leading-none">
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        Computer science
+                        Dutch creative specialized
                      </div>
                   </div>
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        student specializing
-                     </div>
-                  </div>
-                  <div class="gsap-line">
-                     <div class="gsap-line-inner">
-                        in high performance
-                     </div>
-                  </div>
-                  <div class="gsap-line">
-                     <div class="gsap-line-inner">
-                        computing and
-                     </div>
-                  </div>
-                  <div class="gsap-line">
-                     <div class="gsap-line-inner">
-                        embedded systems.
+                        in webdesign and audio.
                      </div>
                   </div>
                </h1>
             </div>
             <div class="border-bottom gsap-animate-transition h-[1px] w-full bg-black dark:bg-white"></div>
-            <img src="https://static4.arrow.com/-/media/arrow/images/820-x-410/0/0218-what-is-a-microcontroller-article.jpg?mw=734&hash=F024E2C0707F137A62E82122A7652A98" class="hero-img gsap-animate-transition mt-3"/>
 
          </div>
 
-         <br>
-         <h1 class="about-rest gsap-lines gsap-animate-transition text-2xl tracking-[-0.035em] leading-none">
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  Here I'll be sharing my progress,
-               </div>
-            </div>
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  insights, tutorials and tips on all
-               </div>
-            </div>
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  things coding and music production.
-               </div>
-            </div>
-         </h1>
-         <br>
-         <h1 class="about-rest gsap-lines gsap-animate-transition text-2xl tracking-[-0.035em] leading-none">
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  Currently working at Archive-IT,
-               </div>
-            </div>
-            <div class="gsap-line">
-               <div class="gsap-line-inner">
-                  based in Reuver, the Netherlands.
-               </div>
-            </div>
-         </h1>
-      </div>
-   </div>
-
-   <div class="z-0">
-      <div class="px-3">
-         <h2 class="text-sm p-0 m-0 pt-6 mb-5 kmr-apparat-bold">Current projects</h2>
-         <ul class="pt-2 border-t border-black dark:border-white list-image-subdir pl-6 grid text-2xl tracking-[-0.035em] leading-tighter">
-            <li>MIT OCW courses on C/C++</li>
-            <li>Making an RTOS for an ARM CORTEX© M4 based microcontroller</li>
-         </ul>
-
-         <h2 class="text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold">Long-term goals</h2>
-         <ul class="pt-2 border-t border-black dark:border-white list-image-subdir pl-6 grid text-2xl tracking-[-0.035em] leading-tighter">
-            <li>Excelling at C/C++</li>
-            <li>Refreshing Bash/Python skills</li>
-            <li><a href="https://www.ru.nl/courseguides/science/bachelor/bachelor-computing-science/">Computing Science bachelor</a></li>
-         </ul>
-
-         @*
-         <img class="border border-black dark:border-none w-full mt-12 rounded" src="https://i.seadn.io/gcs/files/396a124e569b6ee79d34a010035f2da0.png?auto=format&dpr=1&w=1000">
-         *@
-
-
-         
          <div class="posts-header gsap-animate-transition">
             <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-12 mb-5 kmr-apparat-bold">Latest posts</h2>
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-3 mb-5 text-[rgb(145,145,145)]">Categories</h2>
+            </div>
+            <div class="posts-filter gap-x-1 flex flex-wrap">
+               @code{
+                  string[] tags = new string[] { "All", "Project Updates", "Audio", "Studio Insights" };
+               }
+               @foreach (int i in Enumerable.Range(0, tags.Length)) {
+                  <span class="whitespace-nowrap @(i > 0 ? "text-[rgb(145,145,145)]" : "")"><span class="text-2xl @(i == 0 ? "underline decoration-2" : "") cursor-pointer">@tags[i]</span><span class="text-sm align-top">(@FilteredPosts.Count)</span></span>
+               }
             </div>
          </div>
 
@@ -131,32 +59,26 @@
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
                <div class="grow flex flex-col">
-                  <h2 class="text-2xl tracking-[-0.035em] leading-tighter">@post.Title</h2>
-                  <div class="mt-1.5">
-                     @foreach (string tag in post.TagsAsList) {
-                        <div class="badge align-middle text-xs bg-transparent rounded-full text-black dark:text-white border border-black dark:border-white mr-2 uppercase">@tag</div>
+                  <h2 class="text-lg tracking-[-0.035em] leading-tighter">@post.Title</h2>
+                  <div class="flex flex-wrap">
+                     @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
+                        <div class="text-lg whitespace-nowrap">@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</div>
                      }
-                  </div>
-                  <div class="flex flex-row mt-3">
-                     <div class="basis-1/2"><span>@post.DateAsUriString</span></div>
-                     <div class="basis-1/2 text-end"><span class="">5 min read →</span></div>
                   </div>
                </div>
             </div>
             <div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>
          }
 
-         <footer class="pt-12 pb-6 flex flex-col">
-            <img src="media/apparat_logo_bold.svg" class="w-full h-auto dark:invert py-3"/>
+         <footer class="py-6 flex flex-col">
 
-            <h2 class="text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold">Connect</h2>
             <div class="links gsap-animate-transition relative overflow-hidden">
                <BlazorPortfolio.Components.Links />
             </div>
 
-            <div class="footer-text gsap-animate-transition mt-6 text-lg tracking-[-0.035em] leading-none grid grid-cols-2 gap-y-3">
-               <div>Back to top ↑</div>
-               <div class="text-end">Shift + G</div>
+            <div class="gap-y-0 footer-text gsap-animate-transition mt-6 text-lg tracking-[-0.035em] leading-none items-stretch grid grid-cols-2">
+               <div class="text-lg tracking-[-0.035em] leading-none self-end"><span>Shift + G</span><br><span>Back to top ↑</span></div>
+               <img class="w-full" src="media/logo_js.svg"/>
             </div>
          </footer>
       </div>
