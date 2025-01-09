@@ -1616,6 +1616,10 @@ details.collapse summary::-webkit-details-marker {
   height: 100%;
 }
 
+.max-h-12 {
+  max-height: 3rem;
+}
+
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
