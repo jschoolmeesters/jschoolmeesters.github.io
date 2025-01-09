@@ -1608,6 +1608,10 @@ details.collapse summary::-webkit-details-marker {
   height: 1px;
 }
 
+.h-\[40vh\] {
+  height: 40vh;
+}
+
 .h-\[max\(1vh\2c 1vw\)\] {
   height: max(1vh,1vw);
 }
@@ -1618,10 +1622,6 @@ details.collapse summary::-webkit-details-marker {
 
 .h-full {
   height: 100%;
-}
-
-.max-h-12 {
-  max-height: 3rem;
 }
 
 .min-h-\[100vh\] {
@@ -1847,6 +1847,11 @@ details.collapse summary::-webkit-details-marker {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-0 {
