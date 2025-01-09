@@ -22,6 +22,9 @@ namespace BlazorPortfolio.Models {
         [JsonPropertyName("description")]
         public string Description { get; set; } = "";
 
+        [JsonPropertyName("img")]
+        public string Img { get; set; } = "";
+
         public DateTime DateAsDateTime {
             get {
                 return DateTime.Parse(Date, new CultureInfo("nl-NL"));
