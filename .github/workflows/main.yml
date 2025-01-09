@@ -45,8 +45,8 @@ jobs:
     - name: Build CSS
       run: npx tailwindcss -o ./wwwroot/css/tailwind.css
 
-    - name: Install ICU
-      run: sudo apt-get update && sudo apt-get install -y libicu-dev
+    - name: Set Invariant Globalization
+      run: echo "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1" >> $GITHUB_ENV
       
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
