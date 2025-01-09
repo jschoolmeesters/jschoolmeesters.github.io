@@ -47,6 +47,11 @@ jobs:
 
     - name: Set Invariant Globalization
       run: echo "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1" >> $GITHUB_ENV
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libssl-dev
       
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
