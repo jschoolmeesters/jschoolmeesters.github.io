@@ -37,7 +37,7 @@
 
          <div class="posts-header gsap-animate-transition">
             <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-3 mb-5 text-[rgb(145,145,145)]">Categories</h2>
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-3 mb-6 text-[rgb(145,145,145)]">Categories</h2>
             </div>
             <div class="posts-filter gap-x-1 flex flex-wrap">
                @code{
@@ -59,7 +59,7 @@
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
                <div class="grow flex flex-col">
-                  <div class="h-[40vh]"><img class="mb-3 object-cover" src="@("posts/media/" + post.Img)"/></div>
+                  <div class="h-[40vh] w-full mb-3 bg-blue-600"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
                   <h2 class="text-lg tracking-[-0.035em] leading-tighter">@post.Title</h2>
                   <div class="flex flex-wrap">
                      @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
