@@ -59,7 +59,7 @@
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
                <div class="grow flex flex-col">
-                  <div class="h-[40vh] w-full mb-3 bg-blue-600"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
+                  <div class="h-[40vh] w-full mb-3"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
                   <h2 class="text-lg tracking-[-0.035em] leading-tighter">@post.Title</h2>
                   <div class="flex flex-wrap">
                      @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
