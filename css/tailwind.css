@@ -1519,8 +1519,8 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mr-2 {
@@ -1835,6 +1835,11 @@ details.collapse summary::-webkit-details-marker {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-0 {
