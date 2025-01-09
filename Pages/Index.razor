@@ -60,10 +60,10 @@
                </div>
                <div class="grow flex flex-col">
                   <div class="h-[30vh] w-full mb-3"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
-                  <h2 class="text-lg tracking-[-0.035em] leading-tighter">@post.Title</h2>
+                  <h2 class="tracking-[-0.035em] leading-tighter">@post.Title</h2>
                   <div class="flex flex-wrap">
                      @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
-                        <div class="text-lg whitespace-nowrap">@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</div>
+                        <div class="whitespace-nowrap">@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</div>
                      }
                   </div>
                </div>
