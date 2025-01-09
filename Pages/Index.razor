@@ -21,12 +21,12 @@
                <h1 class="about-first gsap-lines gsap-animate-transition text-2xl tracking-[-0.035em] leading-none">
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        Dutch creative specialized in
+                        Dutch <span class="inferi-normal-italic">creative</span> specialized in
                      </div>
                   </div>
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        webdesign and audio.
+                        webdesign and audio
                      </div>
                   </div>
                </h1>
@@ -65,6 +65,7 @@
                      @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
                         <div class="whitespace-nowrap">@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</div>
                      }
+                     <div class="whitespace-nowrap text-[rgb(145,145,145)]">&nbsp;(Case study)</div>
                   </div>
                </div>
             </div>
