@@ -1604,8 +1604,8 @@ details.collapse summary::-webkit-details-marker {
   height: 1px;
 }
 
-.h-\[40vh\] {
-  height: 40vh;
+.h-\[30vh\] {
+  height: 30vh;
 }
 
 .h-\[max\(1vh\2c 1vw\)\] {
