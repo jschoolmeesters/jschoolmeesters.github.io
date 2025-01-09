@@ -54,10 +54,12 @@
             var post = item.post;
             var index = item.i;
 
-            <div class="post gsap-animate-transition cursor-pointer py-3 flex flex-row" @onclick="@((e) => NavigateToPost(e, post))">
+            <div class="post gsap-animate-transition cursor-pointer pt-3 flex flex-row" @onclick="@((e) => NavigateToPost(e, post))">
+               @*
                <div class="pr-3">
                   <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
                </div>
+               *@
                <div class="grow flex flex-col">
                   <div class="h-[30vh] w-full mb-3"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
                   <h2 class="tracking-[-0.035em] leading-tighter">@post.Title</h2>
