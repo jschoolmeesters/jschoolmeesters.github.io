@@ -44,6 +44,9 @@ jobs:
     # Run Tailwind CLI tool to scan your template files for classes and build your CSS
     - name: Build CSS
       run: npx tailwindcss -o ./wwwroot/css/tailwind.css
+
+    - name: Install ICU
+      run: sudo apt-get update && sudo apt-get install -y libicu-dev
       
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
