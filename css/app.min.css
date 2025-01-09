@@ -2945,6 +2945,34 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   font-style: normal;
 }
 
+.inferi-normal-italic {
+  font-family: "Inferi Normal Italic", sans-serif;
+}
+
+@font-face {
+  font-family: "Inferi Normal Italic";
+
+  src: url("../fonts/Inferi/Inferi-Trial-NormalItalic.otf");
+
+  font-weight: 400;
+
+  font-style: italic;
+}
+
+.inferi-normal {
+  font-family: "Inferi Normal", sans-serif;
+}
+
+@font-face {
+  font-family: "Inferi Normal";
+
+  src: url("../fonts/Inferi/Inferi-Trial-Normal.otf");
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
 /* 
 Fix to prevent FocusOnNavigate in App.razor from adding outline to the first h1 on a page
 https://www.reddit.com/r/Blazor/comments/xl09d8/blazor_h1_element_is_focused_on_startup_for_no/
