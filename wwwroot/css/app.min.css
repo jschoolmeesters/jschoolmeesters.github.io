@@ -1956,8 +1956,20 @@ details.collapse summary::-webkit-details-marker {
   text-decoration-line: underline;
 }
 
+.decoration-\[rgb\(145\2c 145\2c 145\)\] {
+  text-decoration-color: rgb(145,145,145);
+}
+
+.decoration-1 {
+  text-decoration-thickness: 1px;
+}
+
 .decoration-2 {
   text-decoration-thickness: 2px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
 }
 
 .contrast-75 {
@@ -2845,7 +2857,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 @font-face {
   font-family: "Inferi Normal";
 
-  src: url("../fonts/Inferi/Inferi-Trial-Normal.otf");
+  src: url("../fonts/Inferi/Inferi-Trial-Regular.otf");
 
   font-weight: 400;
 
