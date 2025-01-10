@@ -1901,11 +1901,6 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(145 145 145 / var(--tw-text-opacity, 1));
 }
 
-.text-\[rgb\(240\2c 240\2c 240\)\] {
-  --tw-text-opacity: 1;
-  color: rgb(240 240 240 / var(--tw-text-opacity, 1));
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
