@@ -1,4 +1,4 @@
-@page "/"
+@page "/contact"
 @using System.Text.Json
 @using BlazorPortfolio.Models;
 @using System.Globalization
@@ -10,23 +10,23 @@
 
    <div class="px-3 pt-[4rem] relative"> 
 
-      <div class="">
+      <div class="about gsap-animate-transition">
 
          <div class="flex flex-col w-full">
 
             <div class="border-bottom h-[1px] w-full bg-black dark:bg-white"></div>
 
-            <div class="py-3 index gsap-animate-transition">
+            <div class="py-3">
 
                <h1 class="about-first gsap-lines gsap-animate-transition text-2xl tracking-[-0.035em] leading-none">
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        Dutch <span class="inferi-normal-italic">creative</span> specialized in
+                        Let's work <span class="inferi-normal-italic">together</span>, what can
                      </div>
                   </div>
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        webdesign and audio
+                        I help you with?
                      </div>
                   </div>
                </h1>
@@ -35,52 +35,12 @@
 
          </div>
 
-         <div class="posts-header gsap-animate-transition">
-            <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-6 mb-3 text-[rgb(145,145,145)]">Categories</h2>
-            </div>
-            <div class="posts-filter gap-x-1 flex flex-wrap">
-               @foreach (int i in Enumerable.Range(0, Tags.Length)) {
-                  <span class="whitespace-nowrap @(i > 0 ? "text-[rgb(145,145,145)]" : "")"><span class="text-2xl @(i == 0 ? "underline decoration-2" : "") cursor-pointer">@Tags[i].Item1</span><span class="text-sm align-top">(@Tags[i].Item2)</span></span>
-               }
-            </div>
-         </div>
-
-         <div class="post-border gsap-animate-transition w-full"></div>
-         @foreach (var item in FilteredPosts) {
-            var post = item.post;
-            var index = item.i;
-
-            <div class="post gsap-animate-transition cursor-pointer pt-3 flex flex-row" @onclick="@((e) => NavigateToPost(e, post))">
-               @*
-               <div class="pr-3">
-                  <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
-               </div>
-               *@
-               <div class="grow flex flex-col">
-                  <div class="h-[30vh] w-full mb-3"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
-                  <h2 class="tracking-[-0.035em] leading-tighter">@post.Title</h2>
-                  <div class="flex flex-wrap">
-                     @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
-                        <div class="whitespace-nowrap">@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</div>
-                     }
-                     <div class="whitespace-nowrap text-[rgb(145,145,145)]">&nbsp;(Case study)</div>
-                  </div>
-               </div>
-            </div>
-            @*<div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>*@
-         }
-
          <footer class="py-6 flex flex-col">
 
             <div class="links gsap-animate-transition relative overflow-hidden">
                <BlazorPortfolio.Components.Links />
             </div>
 
-            <div class="gap-y-0 footer-text gsap-animate-transition mt-6 text-lg tracking-[-0.035em] leading-none items-stretch grid grid-cols-2">
-               <div class="text-lg tracking-[-0.035em] leading-none self-end"><span>Shift + G</span><br><span>Back to top ↑</span></div>
-               <img class="w-full" src="media/logo_js.svg"/>
-            </div>
          </footer>
       </div>
    </div>

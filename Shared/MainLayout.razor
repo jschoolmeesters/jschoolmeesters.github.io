@@ -2,61 +2,28 @@
 @inject NavigationManager NavigationManager
 @using Components
 @using System.Text.Json
+@using Pages
 @inject IJSRuntime JS
 
 <main class="@(DarkMode ? "dark" : "")">
 
     <div class="transition-box gsap-animate-transition z-[2000] rounded-full bg-black h-[max(1vh,1vw)] w-[max(1vh,1vw)] fixed content-['']"></div>
 
-    <div class="min-h-[100vh] wrapper w-full max-w-[500px] mx-auto text-black dark:text-white">
+    <div class="bg-black min-h-[100vh] wrapper w-full max-w-[500px] mx-auto text-black dark:text-white">
 
         <div class="z-[500] fixed top-0 w-full max-w-[500px]">
             <div id="navbar" class="navbar gsap-animate-transition relative z-[510] flex items-center p-3">
                 <div class="inline-block"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(async () => NavigateToPage(""))" class="h-5"/></div></div>
                 <span class="grow"></span>
                 @*<div @onclick="@(()=> DarkMode = !DarkMode)" class="@(ShowMenu ? "" : "hidden") mr-3 text-xl rounded-full text-black dark:text-white grid cursor-pointer"><span class="block place-self-center @(DarkMode ? "iconoir-sun-light" : "iconoir-half-moon")"</span></div>*@
-                <div class="z-[511] inline-block"><span @onclick="@(async () => ShowMenu = !ShowMenu )" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer text-lg tracking-[-0.035em] leading-none w-[8rem] py-0.5"><span>@(ShowMenu ? "Close" : "Contact")</span></span></div>
+                <div class="z-[511] inline-block"><span @onclick="@(() => CurrentPage = CurrentPage != typeof(Pages.Contact) ? typeof(Pages.Contact) : typeof(Pages.Index) )" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer text-lg tracking-[-0.035em] leading-none py-0.5"><span>@(CurrentPage == typeof(Pages.Contact) ? "Close" : "Contact")</span></span></div>
             </div>
             @*<div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-stone-100 dark:bg-black relative pt-0 p-2 w-full gap-x-1"></div>*@
         </div>
 
-        <aside class="gsap-animate-transition text-black dark:text-white bg-stone-50 dark:bg-black wrapper max-w-[500px] mx-auto fixed inset-0 overflow-hidden z-[499]">
-            <nav class="gsap-animate-transition flex absolute inset-0">
-                <div class="flex flex-col justify-end w-full">
-                    <div></div>
-                    <ul class="p-4 flex flex-col items-start">
-                        <li class="nav-link-container gsap-animate-transition overflow-hidden border-t border-b w-full border-black dark:border-white">
-                            <NavLink href="/" @onclick="@(async () => await OnMenuClick(false))" Match="NavLinkMatch.All" class="nav-link gsap-animate-transition py-6 flex flex-row text-4xl leading-[1.05]">
-                                <span class="grow">Index</span><span class="nav-link-icon"></span>
-                            </NavLink>
-                        </li>
-                        <li class="nav-link-container gsap-animate-transition overflow-hidden border-b w-full border-black dark:border-white">
-                            <NavLink href="/blog" @onclick="@(async () => await OnMenuClick(false))" class="nav-link gsap-animate-transition py-6 flex flex-row text-4xl leading-[1.05]">
-                                <span class="grow">Archive<span class="text-xl align-top kmr-apparat-bold">[@PostCount]</span></span><span class="nav-link-icon"></span>
-                            </NavLink>
-                        </li>
-                        <li class="nav-link-container gsap-animate-transition overflow-hidden border-b w-full border-black dark:border-white">
-                        <NavLink class="nav-link gsap-animate-transition py-6 flex flex-row disabled text-4xl leading-[1.05]">
-                            <span class="line-through grow">About</span><span class="nav-link-icon"></span>
-                        </NavLink>
-                        </li>
-                        <li class="nav-link-container gsap-animate-transition overflow-hidden border-b w-full border-black dark:border-white">
-                        <NavLink class="nav-link gsap-animate-transition py-6 flex flex-row disabled text-4xl leading-[1.05]">
-                            <span class="line-through grow">Contact</span><span class="nav-link-icon"></span>
-                        </NavLink>
-                        </li>
-                    </ul>
-                    <div class="nav-bottom gsap-animate-transition">
-                        <div class="mb-4 mx-4">
-                            <h2 class="text-sm p-0 m-0 mt-12 mb-2 kmr-apparat-bold">Connect</h2>
-                            <BlazorPortfolio.Components.Links />
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </aside>
         <div class="content gsap-animate-transition">
-            @Body
+            @*@Body*@
+            <DynamicComponent Type="CurrentPage"/>
         </div>
 
     </div>
@@ -66,9 +33,9 @@
 @code {
    [Inject]
    private HttpClient HttpClient { get; set; }
-    private bool ShowMenu { get; set; } = false;
     private int PostCount { get; set; } = 0;
     private bool DarkMode { get; set; } = true;
+    private Type CurrentPage { get; set; } = typeof(Pages.Index);
 
     private ValueTask PreventScrolling(bool val) {
         return JS.InvokeVoidAsync("preventScrolling", val);
@@ -87,32 +54,11 @@
         //await JS.InvokeVoidAsync("fadeIn");
     }
 
-    private async Task OnMenuClick() {
-        var val = !ShowMenu;
-        ShowMenu = val;
-        await PreventScrolling(val);
-        if (val)
-            await OpenMenuAnimate();
-        else
-            await CloseMenuAnimate();
-    }
-
-    private async Task OnMenuClick(bool val) {
-        ShowMenu = val;
-        await PreventScrolling(val);
-        if (val)
-            await OpenMenuAnimate();
-        else
-            await CloseMenuAnimate();
-    }
-
     private async void NavigateToPage(string page) {
         var uri = Path.Combine(NavigationManager.BaseUri, page);
 
         if (!(uri == NavigationManager.Uri))
             NavigationManager.NavigateTo(uri);
-            
-        await OnMenuClick(false);
     }
 
    protected override async Task OnInitializedAsync()

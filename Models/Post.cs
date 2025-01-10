@@ -39,7 +39,7 @@ namespace BlazorPortfolio.Models {
 
         public List<string> TagsAsList {
             get {
-                return Tags.Split(',').ToList();
+                return Tags.Split(',').ToList().Select(tag => tag.Trim()).ToList();
             }
         }
 
