@@ -1927,11 +1927,6 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(145 145 145 / var(--tw-text-opacity));
 }
 
-.text-\[rgb\(240\2c 240\2c 240\)\] {
-  --tw-text-opacity: 1;
-  color: rgb(240 240 240 / var(--tw-text-opacity));
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -2850,7 +2845,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 @font-face {
   font-family: "Inferi Normal";
 
-  src: url("../fonts/Inferi/Inferi-Trial-Regular.otf");
+  src: url("../fonts/Inferi/Inferi-Trial-Normal.otf");
 
   font-weight: 400;
 
