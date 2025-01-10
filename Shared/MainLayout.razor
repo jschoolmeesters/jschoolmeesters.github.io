@@ -16,7 +16,7 @@
                 <div class="inline-block"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(async () => NavigateToPage(""))" class="h-5"/></div></div>
                 <span class="grow"></span>
                 @*<div @onclick="@(()=> DarkMode = !DarkMode)" class="@(ShowMenu ? "" : "hidden") mr-3 text-xl rounded-full text-black dark:text-white grid cursor-pointer"><span class="block place-self-center @(DarkMode ? "iconoir-sun-light" : "iconoir-half-moon")"</span></div>*@
-                <div class="z-[511] inline-block"><span @onclick="@(() => CurrentPage = CurrentPage != typeof(Pages.Contact) ? typeof(Pages.Contact) : typeof(Pages.Index) )" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer text-lg tracking-[-0.035em] leading-none py-0.5"><span>@(CurrentPage == typeof(Pages.Contact) ? "Close" : "Contact")</span></span></div>
+                <div class="z-[511] inline-block"><span @onclick="@(() => CurrentPage = CurrentPage != typeof(Pages.Contact) ? typeof(Pages.Contact) : typeof(Pages.Index) )" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer text-lg tracking-[-0.035em] leading-none pl-6 py-1"><span>@(CurrentPage == typeof(Pages.Contact) ? "Close" : "Contact")</span></span></div>
             </div>
             @*<div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-stone-100 dark:bg-black relative pt-0 p-2 w-full gap-x-1"></div>*@
         </div>

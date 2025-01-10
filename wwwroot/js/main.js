@@ -175,6 +175,7 @@ window.homeLoaded = () => {
         autoAlpha: 0,
     });
 
+    /*
     gsap.fromTo(".posts-header.gsap-animate-transition .gsap-line-inner", {
         autoAlpha: 0,
         yPercent: 100,
@@ -194,24 +195,7 @@ window.homeLoaded = () => {
             //scrub: 1
         }
     });
-
-    gsap.fromTo(".footer-text.gsap-animate-transition", {
-        yPercent: 100,
-        autoAlpha: 0,
-    },{
-        yPercent: 0,
-        autoAlpha: 1,
-        duration: durationDefaultFaster,
-        ease: "primary-ease",
-        scrollTrigger: {
-            trigger: '.footer-text.gsap-animate-transition',
-            toggleActions: 'play none none reverse',
-            //pin: true, // pin the trigger element while active
-            start: 'top bottom', // when the top of the trigger hits the top of the viewport
-            //end: () => `+=${document.querySelector('.links.gsap-animate-transition').offsetHeight / 2}`, // dynamically calculate the end position to the middle of the element
-            //scrub: 1
-        }
-    })
+    */
 
     return new Promise((resolve) => {
         const tl = gsap.timeline({
@@ -233,16 +217,16 @@ window.homeLoaded = () => {
         tl.fromTo(".index.gsap-animate-transition", {
             "--before-y-percent": "100%",
             autoAlpha: 0,
-            yPercent: 5
+            y: "5vh"
         },{
             "--before-y-percent": "0%",
             autoAlpha: 1,
-            yPercent: 0,
+            y: "0vh",
             duration: durationDefaultFastest,
             ease: "primary-ease",
         });
         
-    
+        /*
         tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
             autoAlpha: 0,
             yPercent: 100,
@@ -252,9 +236,10 @@ window.homeLoaded = () => {
             yPercent: 0,
             rotate: 0.001,
             ease: "primary-ease",
-            duration: durationDefault,
+            duration: durationDefaultFastest,
             stagger: staggerDefault
         }, "+= 2");
+        */
 
         // move up slightly and fade in : .hero-img
         tl.fromTo(".hero-img.gsap-animate-transition", {
@@ -268,6 +253,7 @@ window.homeLoaded = () => {
         }, "<");
 
         // border width from 0 to 1 for .border-bottom
+        /*
         tl.fromTo(".border-bottom.gsap-animate-transition", {
             scaleX: 0,
             autoAlpha: 0,
@@ -279,26 +265,13 @@ window.homeLoaded = () => {
             duration: durationDefault,
             ease: "primary-ease",
         }, "<");
-    
+        */
+
         //tl.to(".about.gsap-animate-transition", {
         //    yPercent: 0,
         //    duration: durationDefaultFastest,
         //    ease: "primary-ease"
         //}, "<");/*"+=0.5");
-    
-        tl.fromTo(".about-rest.gsap-lines.gsap-animate-transition .gsap-line-inner", {
-            autoAlpha: 0,
-            yPercent: 100,
-            rotate: 0.001
-        },{
-            //delay: 0.3,
-            autoAlpha: 1,
-            yPercent: 0,
-            rotate: 0.001,
-            ease: "primary-ease",
-            duration: durationDefault,
-            stagger: staggerDefault
-        }, "<");
 
         // move up ypercent of .ani-box::after by 100
         tl.fromTo(".ani-box.gsap-animate-transition", {
@@ -309,7 +282,7 @@ window.homeLoaded = () => {
             autoAlpha: 1,
             duration: durationDefaultFastest,
             ease: "primary-ease",
-        }, "-=1.5");
+        }, "<");
 
         
         //tl.fromTo(".navbar.gsap-animate-transition", {
