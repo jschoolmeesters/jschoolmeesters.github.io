@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "ARM CORTEX© M4 RTOS"
-tags: Coding
+title: "Jordy Schoolmeesters portfolio"
+tags: Project Updates,Webdesign
 date: "06/06/2024"
 description: ""
 img: "stone.jpg"

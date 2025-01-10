@@ -21,19 +21,21 @@ window.waitForPosts = async function (count) {
 
 
 // Prevent scrolling while menu is open
-
+/*
 window.preventScrolling = (val) => {
     if (val)
         document.body.style.overflow = "hidden";
     else
         document.body.style.overflow = "auto";
 };
+*/
 
 // Fade in page after load
 
 window.fadeIn = () => {
     document.body.querySelector("main").classList.add('loaded');
 };
+
 
 // Lenis smooth scroll
 
@@ -63,6 +65,7 @@ function initCheckWindowHeight() {
 }
 
 // GSAP animations
+
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger, CustomEase);
     initCheckWindowHeight();
@@ -80,6 +83,7 @@ let durationDefaultUltraFast = 0.6;
 CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
 CustomEase.create("primary-ease-out", ".34, 1.56, 0.64, 1");
 
+/*
 window.beginTransitionBox = (x, y) => {
 
     return new Promise((resolve) => {
@@ -163,23 +167,10 @@ window.animatePosts = () => {
         }
     })
 }
+*/
 
 // Animation - Page Loader Home Part 1
 window.homeLoaded = () => { 
-    gsap.to(".scroll.gsap-animate-transition", {
-        opacity: 0,
-        //y: 15, // Move down by 5% of the element's height
-        scrollTrigger: {
-          start: "top+=0 top", // Start the animation after scrolling 100px from the top of the page
-          end: "+=200", // The animation will end after scrolling another 100px
-          scrub: true // Smoothly animate the changes as the user scrolls
-        }
-    });
-
-    gsap.set("aside.gsap-animate-transition", {
-        xPercent: 100
-    });
-
     gsap.set(".transition-box.gsap-animate-transition", {
         autoAlpha: 0,
     });
@@ -229,22 +220,24 @@ window.homeLoaded = () => {
             }
         });
 
-        /*
-        tl.fromTo(".loader-fill.gsap-animate-transition", {
-            yPercent: 0,
-        }, {
-            yPercent: -100,
-            ease: "primary-ease",
-            duration: 0.75
-        });
-        */
+        
+        //tl.fromTo(".loader-fill.gsap-animate-transition", {
+        //    yPercent: 0,
+        //}, {
+        //    yPercent: -100,
+        //    ease: "primary-ease",
+        //    duration: 0.75
+        //});
 
-        tl.fromTo(".content.gsap-animate-transition", {
+        
+        tl.fromTo(".index.gsap-animate-transition", {
             "--before-y-percent": "100%",
             autoAlpha: 0,
+            yPercent: 5
         },{
             "--before-y-percent": "0%",
             autoAlpha: 1,
+            yPercent: 0,
             duration: durationDefaultFastest,
             ease: "primary-ease",
         });
@@ -263,7 +256,7 @@ window.homeLoaded = () => {
             stagger: staggerDefault
         }, "+= 2");
 
-        /* move up slightly and fade in : .hero-img */
+        // move up slightly and fade in : .hero-img
         tl.fromTo(".hero-img.gsap-animate-transition", {
             yPercent: 20,
             autoAlpha: 0,
@@ -274,7 +267,7 @@ window.homeLoaded = () => {
             ease: "primary-ease",
         }, "<");
 
-        /* border width from 0 to 1 for .border-bottom */
+        // border width from 0 to 1 for .border-bottom
         tl.fromTo(".border-bottom.gsap-animate-transition", {
             scaleX: 0,
             autoAlpha: 0,
@@ -287,12 +280,11 @@ window.homeLoaded = () => {
             ease: "primary-ease",
         }, "<");
     
-        /*
-        tl.to(".about.gsap-animate-transition", {
-            yPercent: 0,
-            duration: durationDefaultFastest,
-            ease: "primary-ease"
-        }, "<");/*"+=0.5");*/
+        //tl.to(".about.gsap-animate-transition", {
+        //    yPercent: 0,
+        //    duration: durationDefaultFastest,
+        //    ease: "primary-ease"
+        //}, "<");/*"+=0.5");
     
         tl.fromTo(".about-rest.gsap-lines.gsap-animate-transition .gsap-line-inner", {
             autoAlpha: 0,
@@ -308,7 +300,7 @@ window.homeLoaded = () => {
             stagger: staggerDefault
         }, "<");
 
-        /* move up ypercent of .ani-box::after by 100 */
+        // move up ypercent of .ani-box::after by 100
         tl.fromTo(".ani-box.gsap-animate-transition", {
             "--before-y-percent": "0%",
             autoAlpha: 0,
@@ -319,95 +311,23 @@ window.homeLoaded = () => {
             ease: "primary-ease",
         }, "-=1.5");
 
-        /*
-        tl.fromTo(".navbar.gsap-animate-transition", {
-            yPercent: -100
-        },{
-            yPercent: 0,
-            ease: "primary-ease",
-            duration: durationDefaultFaster
-        }, "< +=0.65");
+        
+        //tl.fromTo(".navbar.gsap-animate-transition", {
+        //    yPercent: -100
+        //},{
+        //    yPercent: 0,
+        //    ease: "primary-ease",
+        //    duration: durationDefaultFaster
+        //}, "< +=0.65");
     
-        tl.fromTo(".scroll.gsap-animate-transition", {
-            yPercent: 100,
-            autoAlpha: 0
-        },{
-            autoAlpha: 1,
-            yPercent: 0,
-            ease: "primary-ease",
-            duration: durationDefaultFaster
-        }, "<");
-        */
-    });
-}
-
-window.openMenu = () => { 
-    tl = gsap.timeline();
-
-    // TODO: blur .content using GSAP CSSPlugin
-
-    tl.fromTo("aside.gsap-animate-transition", {
-        xPercent: 100
-    },{
-        xPercent: 0,
-        ease: "primary-ease",
-        duration: durationDefaultFastest
-    }, "<");
-
-    tl.fromTo(".nav-link-container.gsap-animate-transition", {
-        xPercent: 25
-    },{
-        xPercent: 0,
-        duration: durationDefaultFastest,
-        ease: "primary-ease",
-        stagger: 0.045
-    }, "<")
-
-    tl.fromTo(".nav-link.gsap-animate-transition", {
-        xPercent: 15,
-        autoAlpha: 0,
-    },{
-        xPercent: 0,
-        autoAlpha: 1,
-        duration: durationDefaultFaster,
-        ease: "primary-ease",
-        stagger: 0.035
-    }, "< += 1.47")
-
-    tl.fromTo(".nav-bottom.gsap-animate-transition", {
-        xPercent: 25,
-        autoAlpha: 0,
-    },{
-        xPercent: 0,
-        autoAlpha: 1,
-        duration: durationDefaultFaster,
-        ease: "primary-ease"
-    }, "< += 1.47")
-}
-
-window.closeMenu = () => { 
-    tl = gsap.timeline();
-
-    // TODO: unblur .content using GSAP CSSPlugin
-
-    tl.to("aside.gsap-animate-transition", {
-        xPercent: 100,
-        ease: "primary-ease-out",
-        duration: durationDefaultFastest
-    }, "<");
-
-    tl.fromTo("nav.gsap-animate-transition", {
-        xPercent: 0,
-        autoAlpha: 1,
-    },{
-        xPercent: 25,
-        autoAlpha: 0,
-        duration: durationDefaultFastest,
-        ease: "primary-ease-out"
-    }, "<")
-
-    tl.to("nav.gsap-animate-transition", {
-        xPercent: 0,
-        autoAlpha: 1
+        //tl.fromTo(".scroll.gsap-animate-transition", {
+        //    yPercent: 100,
+        //    autoAlpha: 0
+        //},{
+        //    autoAlpha: 1,
+        //    yPercent: 0,
+        //    ease: "primary-ease",
+        //    duration: durationDefaultFaster
+        //}, "<");
     });
 }
