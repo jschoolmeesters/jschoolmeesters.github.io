@@ -1765,9 +1765,9 @@ details.collapse summary::-webkit-details-marker {
   padding-right: 1rem;
 }
 
-.py-0\.5 {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -1792,6 +1792,10 @@ details.collapse summary::-webkit-details-marker {
 
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
 }
 
 .pl-\[1\.125rem\] {
