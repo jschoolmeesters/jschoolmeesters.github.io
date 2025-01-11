@@ -1938,10 +1938,6 @@ details.collapse summary::-webkit-details-marker {
   text-decoration-color: rgb(145,145,145);
 }
 
-.decoration-1 {
-  text-decoration-thickness: 1px;
-}
-
 .decoration-2 {
   text-decoration-thickness: 2px;
 }

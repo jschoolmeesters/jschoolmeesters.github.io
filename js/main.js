@@ -169,6 +169,24 @@ window.animatePosts = () => {
 }
 */
 
+window.observeFadeIn = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                window.pageFadeIn();
+                observer.disconnect(); // Stop observing once faded in
+            }
+        },
+        { threshold: 0.1 } // Adjust threshold as needed
+    );
+
+    //element.style.opacity = 0; // Ensure initially hidden
+    observer.observe(element);
+};
+
 window.pageFadeOut = () => {
     const tl = gsap.timeline();
 
