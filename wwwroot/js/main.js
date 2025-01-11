@@ -169,6 +169,14 @@ window.animatePosts = () => {
 }
 */
 
+window.pageFadeOut = () => {
+    gsap.to(".index.gsap-animate-transition", {
+        autoAlpha: 0,
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+    });
+}
+
 window.pageFadeIn = () => {
     const tl = gsap.timeline();
 

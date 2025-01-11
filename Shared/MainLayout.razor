@@ -66,8 +66,10 @@ private string ContactUri
     private async void NavigateToPage(string page) {
         var uri = Path.Combine(NavigationManager.BaseUri, page);
 
-        if (!(uri == NavigationManager.Uri))
+        if (!(uri == NavigationManager.Uri)) {
+            await JS.InvokeVoidAsync("pageFadeOut");
             NavigationManager.NavigateTo(uri);
+        }
     }
 
    protected override async Task OnInitializedAsync()
