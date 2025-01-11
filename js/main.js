@@ -170,11 +170,23 @@ window.animatePosts = () => {
 */
 
 window.pageFadeOut = () => {
-    gsap.to(".index.gsap-animate-transition", {
+    const tl = gsap.timeline();
+
+    tl.to(".index.gsap-animate-transition", {
         autoAlpha: 0,
         duration: durationDefaultFastest,
         ease: "primary-ease",
-    });
+    }, "<");
+
+    tl.fromTo(".ani-box.gsap-animate-transition", {
+        "--before-y-percent": "0%",
+        autoAlpha: 0,
+    },{
+        "--before-y-percent": "-100%",
+        autoAlpha: 1,
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+    }, "<");
 }
 
 window.pageFadeIn = () => {
@@ -197,7 +209,7 @@ window.pageFadeIn = () => {
     tl.fromTo(".index.gsap-animate-transition", {
         "--before-y-percent": "100%",
         autoAlpha: 0,
-        y: "5vh"
+        y: "3vh"
     },{
         "--before-y-percent": "0%",
         autoAlpha: 1,
