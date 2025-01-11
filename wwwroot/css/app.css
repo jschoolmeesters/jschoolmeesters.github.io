@@ -288,7 +288,7 @@ nav .active > .nav-link-icon::after {
 }
 
 .linear-progress {
-    /*background: #ffffff30;hsla(26,28%,95%,.3);*/
+    background: rgb(145,145,145);
     height: 2px;
     overflow: hidden;
     position: relative;
@@ -303,7 +303,7 @@ nav .active > .nav-link-icon::after {
     content: '';
     position: absolute;
     inset: 0;
-    @apply bg-neutral-800; /*hsla(26,28%,95%,.9);*/
+    @apply bg-white;
     scale: var(--blazor-load-percentage, 0%) 100%;
     transform-origin: left top;
     transition: scale ease-out 0.5s;
