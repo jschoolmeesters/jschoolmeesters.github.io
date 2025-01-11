@@ -110,14 +110,14 @@
       await base.OnAfterRenderAsync(firstRender);
 
       if (firstRender) {
-         await JS.InvokeVoidAsync("homeLoaded");
+        await JS.InvokeVoidAsync("pageLoaded");
         
          while (FilteredPosts.Count == 0)
             await Task.Delay(100);
          bool result = await JS.InvokeAsync<bool>("waitForPosts", FilteredPosts.Count);
 
          if (result) {
-            await JS.InvokeVoidAsync("animatePosts");
+            await JS.InvokeVoidAsync("pageFadeIn");
          }
       }
    }

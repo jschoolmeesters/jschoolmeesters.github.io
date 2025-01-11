@@ -67,67 +67,13 @@
 </div>
 
 @code {
-   [Inject]
-   private HttpClient HttpClient { get; set; }
-   private List<Models.Post> Posts { get; set; } = new List<Models.Post>();
-   private string SearchValue { get; set; } = String.Empty;
-   private List<(Models.Post post, int i)> FilteredPosts
-   {
-      get
-      {
-         return Posts.Where(p => string.IsNullOrEmpty(SearchValue) ? true : p.Title.ToLower().Contains(SearchValue.ToLower()))
-                                 .OrderByDescending(p => p.DateAsDateTime)
-                                 .Take(3)
-                                 .Select((post, i) => ( post, i ))
-                                 .ToList();
-      }
-   }
-
-   private (string, int)[] Tags = (new string[] { "All", "Project Updates", "Audio", "Webdesign", "Insights" }).Select((tag) => (tag, 0)).ToArray();
-
    protected override async Task OnAfterRenderAsync(bool firstRender)
    {
       await base.OnAfterRenderAsync(firstRender);
 
       if (firstRender) {
-         await JS.InvokeVoidAsync("homeLoaded");
-        
-         while (FilteredPosts.Count == 0)
-            await Task.Delay(100);
-         bool result = await JS.InvokeAsync<bool>("waitForPosts", FilteredPosts.Count);
-
-         if (result) {
-            await JS.InvokeVoidAsync("animatePosts");
-         }
+        //await JS.InvokeVoidAsync("pageLoaded");
+        await JS.InvokeVoidAsync("pageFadeIn");
       }
-   }
-
-   public async Task PostsLoaded() {
-      await JS.InvokeVoidAsync("postsLoaded");
-   }
-
-   protected override async Task OnInitializedAsync()
-   {
-      var jsonContent = await HttpClient.GetStringAsync("posts/posts.json");
-      var posts = JsonSerializer.Deserialize<List<Models.Post>>(jsonContent);
-      if (posts != null) {
-         Posts = posts;
-
-         foreach (var post in Posts)
-            Tags.Where(t => post.TagsAsList.Contains(t.Item1)).ToList()
-                .ForEach(tag => { Tags[Array.IndexOf(Tags, tag)] = (tag.Item1, tag.Item2 + 1); Tags[0] = (Tags[0].Item1, Tags[0].Item2 + 1); });
-      }
-   }
-
-   private async Task NavigateToPost(MouseEventArgs e, Models.Post post)
-   {
-      await JS.InvokeVoidAsync("beginTransitionBox", e.ClientX, e.ClientY);
-      var baseUri = NavigationManager.BaseUri;
-      NavigationManager.NavigateTo(Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1)));
-   }
-
-   private void HandleInputChange(ChangeEventArgs e)
-   {
-      SearchValue = e.Value.ToString();
    }
 }
