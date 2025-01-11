@@ -169,12 +169,43 @@ window.animatePosts = () => {
 }
 */
 
+window.pageFadeIn = () => {
+    const tl = gsap.timeline();
+
+    tl.set(".index.gsap-animate-transition", {
+        autoAlpha: 0,
+    }, "<");
+
+    tl.fromTo(".ani-box.gsap-animate-transition", {
+        "--before-y-percent": "0%",
+        autoAlpha: 0,
+    },{
+        "--before-y-percent": "-100%",
+        autoAlpha: 1,
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+    }, "<");
+
+    tl.fromTo(".index.gsap-animate-transition", {
+        "--before-y-percent": "100%",
+        autoAlpha: 0,
+        y: "5vh"
+    },{
+        "--before-y-percent": "0%",
+        autoAlpha: 1,
+        y: "0vh",
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+    }, "<");
+};
+
+
 // Animation - Page Loader Home Part 1
-window.homeLoaded = () => { 
-    gsap.set(".transition-box.gsap-animate-transition", {
+window.pageLoaded = () => { 
+    
+    gsap.set(".index.gsap-animate-transition", {
         autoAlpha: 0,
     });
-
     /*
     gsap.fromTo(".posts-header.gsap-animate-transition .gsap-line-inner", {
         autoAlpha: 0,
@@ -213,7 +244,7 @@ window.homeLoaded = () => {
         //    duration: 0.75
         //});
 
-        
+        /*
         tl.fromTo(".index.gsap-animate-transition", {
             "--before-y-percent": "100%",
             autoAlpha: 0,
@@ -225,6 +256,7 @@ window.homeLoaded = () => {
             duration: durationDefaultFastest,
             ease: "primary-ease",
         });
+        */
         
         /*
         tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
@@ -241,6 +273,7 @@ window.homeLoaded = () => {
         }, "+= 2");
         */
 
+        /*
         // move up slightly and fade in : .hero-img
         tl.fromTo(".hero-img.gsap-animate-transition", {
             yPercent: 20,
@@ -251,6 +284,7 @@ window.homeLoaded = () => {
             duration: durationDefault,
             ease: "primary-ease",
         }, "<");
+        */
 
         // border width from 0 to 1 for .border-bottom
         /*
@@ -274,15 +308,7 @@ window.homeLoaded = () => {
         //}, "<");/*"+=0.5");
 
         // move up ypercent of .ani-box::after by 100
-        tl.fromTo(".ani-box.gsap-animate-transition", {
-            "--before-y-percent": "0%",
-            autoAlpha: 0,
-        },{
-            "--before-y-percent": "-100%",
-            autoAlpha: 1,
-            duration: durationDefaultFastest,
-            ease: "primary-ease",
-        }, "<");
+
 
         
         //tl.fromTo(".navbar.gsap-animate-transition", {
