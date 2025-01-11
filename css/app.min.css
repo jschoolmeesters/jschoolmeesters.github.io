@@ -1659,6 +1659,10 @@ details.collapse summary::-webkit-details-marker {
   white-space: nowrap;
 }
 
+.break-words {
+  overflow-wrap: break-word;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -1826,6 +1830,10 @@ details.collapse summary::-webkit-details-marker {
   text-align: left;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-right {
   text-align: right;
 }
@@ -1889,6 +1897,10 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
 .tracking-\[-0\.035em\] {
   letter-spacing: -0.035em;
 }
@@ -1947,8 +1959,8 @@ details.collapse summary::-webkit-details-marker {
   text-decoration-line: underline;
 }
 
-.decoration-\[rgb\(145\2c 145\2c 145\)\] {
-  text-decoration-color: rgb(145,145,145);
+.decoration-\[rgb\(100\2c 100\2c 100\)\] {
+  text-decoration-color: rgb(100,100,100);
 }
 
 .decoration-2 {
