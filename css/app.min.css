@@ -1497,10 +1497,6 @@ details.collapse summary::-webkit-details-marker {
   height: max(1vh,1vw);
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-full {
   height: 100%;
 }
@@ -1608,6 +1604,10 @@ details.collapse summary::-webkit-details-marker {
 
 .items-stretch {
   align-items: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -2339,7 +2339,7 @@ nav .active > .nav-link-icon::after {
 }
 
 .linear-progress {
-  /*background: #ffffff30;hsla(26,28%,95%,.3);*/
+  background: rgb(145,145,145);
   height: 2px;
   overflow: hidden;
   position: relative;
@@ -2355,8 +2355,7 @@ nav .active > .nav-link-icon::after {
   position: absolute;
   inset: 0;
   --tw-bg-opacity: 1;
-  background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1));
-  /*hsla(26,28%,95%,.9);*/
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   scale: var(--blazor-load-percentage, 0%) 100%;
   transform-origin: left top;
   transition: scale ease-out 0.5s;
