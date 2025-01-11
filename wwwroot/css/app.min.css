@@ -1610,6 +1610,10 @@ details.collapse summary::-webkit-details-marker {
   align-items: stretch;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-end {
   justify-content: flex-end;
 }
@@ -1657,6 +1661,10 @@ details.collapse summary::-webkit-details-marker {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded {
@@ -1830,6 +1838,10 @@ details.collapse summary::-webkit-details-marker {
   text-align: left;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-right {
   text-align: right;
 }
@@ -1893,6 +1905,14 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1;
 }
 
+.leading-snug {
+  line-height: 1.375;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
 .tracking-\[-0\.035em\] {
   letter-spacing: -0.035em;
 }
@@ -1951,12 +1971,8 @@ details.collapse summary::-webkit-details-marker {
   text-decoration-line: underline;
 }
 
-.decoration-\[rgb\(145\2c 145\2c 145\)\] {
-  text-decoration-color: rgb(145,145,145);
-}
-
-.decoration-1 {
-  text-decoration-thickness: 1px;
+.decoration-\[rgb\(100\2c 100\2c 100\)\] {
+  text-decoration-color: rgb(100,100,100);
 }
 
 .decoration-2 {
