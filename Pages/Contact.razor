@@ -69,11 +69,11 @@
 @code {
    protected override async Task OnAfterRenderAsync(bool firstRender)
    {
-      await base.OnAfterRenderAsync(firstRender);
-
       if (firstRender) {
         //await JS.InvokeVoidAsync("pageLoaded");
         await JS.InvokeVoidAsync("pageFadeIn");
       }
+
+      await base.OnAfterRenderAsync(firstRender);
    }
 }
