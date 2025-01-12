@@ -59,15 +59,17 @@ private string ContactUri
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender) {
+        if (firstRender)
+            await JS.InvokeVoidAsync("animateNavbar");
+
         await base.OnAfterRenderAsync(firstRender);
-        //await JS.InvokeVoidAsync("fadeIn");
     }
 
     private async void NavigateToPage(string page) {
         var uri = Path.Combine(NavigationManager.BaseUri, page);
 
         if (!(uri == NavigationManager.Uri)) {
-            await JS.InvokeVoidAsync("pageFadeOut");
+            await JS.InvokeAsync<object>("pageFadeOut");
             NavigationManager.NavigateTo(uri);
         }
     }

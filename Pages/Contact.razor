@@ -83,7 +83,7 @@
    protected override async Task OnAfterRenderAsync(bool firstRender)
    {
       if (firstRender) {
-        //await JS.InvokeVoidAsync("pageLoaded");
+        await JS.InvokeVoidAsync("pageLoaded");
         await JS.InvokeVoidAsync("pageFadeIn");
       }
 
