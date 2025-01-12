@@ -172,13 +172,68 @@ window.animatePosts = () => {
 */
 
 window.pageFadeOut = () => {
+    return new Promise((resolve) => {
+        const tl = gsap.timeline({
+            onComplete: () => {
+                resolve(); // Resolves the promise when the timeline is complete
+            }
+        });
+    
+        tl.to(".index.gsap-animate-transition", {
+            autoAlpha: 0,
+            duration: durationDefaultFastest,
+            ease: "primary-ease",
+        }, "<");
+    
+        /*
+        tl.fromTo(".ani-box.gsap-animate-transition", {
+            "--before-y-percent": "0%",
+            autoAlpha: 0,
+        },{
+            "--before-y-percent": "-100%",
+            autoAlpha: 1,
+            duration: durationDefaultFastest,
+            ease: "primary-ease",
+        }, "<");
+        */
+    });
+}
+
+window.pageFadeIn = () => {
     const tl = gsap.timeline();
 
-    tl.to(".index.gsap-animate-transition", {
+    tl.set(".index.gsap-animate-transition", {
         autoAlpha: 0,
-        duration: durationDefault,
+    }, "<");
+
+    /*
+    tl.fromTo(".ani-box.gsap-animate-transition", {
+        "--before-y-percent": "0%",
+        autoAlpha: 0,
+    },{
+        "--before-y-percent": "-100%",
+        autoAlpha: 1,
+        duration: durationDefaultFastest,
         ease: "primary-ease",
     }, "<");
+    */
+
+    tl.fromTo(".index.gsap-animate-transition", {
+        "--before-y-percent": "100%",
+        autoAlpha: 0,
+        y: "3vh"
+    },{
+        "--before-y-percent": "0%",
+        autoAlpha: 1,
+        y: "0vh",
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+    }, "<");
+};
+
+// Animation - Page Loader Home Part 1
+window.animateNavbar = () => { 
+    const tl = gsap.timeline();
 
     tl.fromTo(".ani-box.gsap-animate-transition", {
         "--before-y-percent": "0%",
@@ -191,43 +246,15 @@ window.pageFadeOut = () => {
     }, "<");
 }
 
-window.pageFadeIn = () => {
+
+// Animation - Page Loader Home Part 1
+window.pageLoaded = () => { 
     const tl = gsap.timeline();
 
     tl.set(".index.gsap-animate-transition", {
         autoAlpha: 0,
-    }, "<");
-
-    tl.fromTo(".ani-box.gsap-animate-transition", {
-        "--before-y-percent": "0%",
-        autoAlpha: 0,
-    },{
-        "--before-y-percent": "-100%",
-        autoAlpha: 1,
-        duration: durationDefaultFastest,
-        ease: "primary-ease",
-    }, "<");
-
-    tl.fromTo(".index.gsap-animate-transition", {
-        "--before-y-percent": "100%",
-        autoAlpha: 0,
-        y: "3vh"
-    },{
-        "--before-y-percent": "0%",
-        autoAlpha: 1,
-        y: "0vh",
-        duration: durationDefaultFaster,
-        ease: "primary-ease",
-    }, "<");
-};
-
-
-// Animation - Page Loader Home Part 1
-window.pageLoaded = () => { 
-    
-    gsap.set(".index.gsap-animate-transition", {
-        autoAlpha: 0,
     });
+
     /*
     gsap.fromTo(".posts-header.gsap-animate-transition .gsap-line-inner", {
         autoAlpha: 0,
@@ -249,13 +276,6 @@ window.pageLoaded = () => {
         }
     });
     */
-
-    return new Promise((resolve) => {
-        const tl = gsap.timeline({
-            onComplete: () => {
-                resolve();
-            }
-        });
 
         
         //tl.fromTo(".loader-fill.gsap-animate-transition", {
@@ -350,5 +370,4 @@ window.pageLoaded = () => {
         //    ease: "primary-ease",
         //    duration: durationDefaultFaster
         //}, "<");
-    });
 }
