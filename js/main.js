@@ -44,9 +44,11 @@ const lenis = new Lenis({
     touchMultiplier: 1,
 })
 
+/*
 lenis.on('scroll', (e) => {
   console.log(e)
 })
+*/
 
 function raf(time) {
   lenis.raf(time)
