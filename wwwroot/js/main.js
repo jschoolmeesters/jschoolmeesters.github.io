@@ -171,30 +171,12 @@ window.animatePosts = () => {
 }
 */
 
-window.observeFadeIn = (elementId) => {
-    const element = document.getElementById(elementId);
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-                window.pageFadeIn();
-                observer.disconnect(); // Stop observing once faded in
-            }
-        },
-        { threshold: 0.1 } // Adjust threshold as needed
-    );
-
-    //element.style.opacity = 0; // Ensure initially hidden
-    observer.observe(element);
-};
-
 window.pageFadeOut = () => {
     const tl = gsap.timeline();
 
     tl.to(".index.gsap-animate-transition", {
         autoAlpha: 0,
-        duration: durationDefaultFastest,
+        duration: durationDefault,
         ease: "primary-ease",
     }, "<");
 
@@ -234,7 +216,7 @@ window.pageFadeIn = () => {
         "--before-y-percent": "0%",
         autoAlpha: 1,
         y: "0vh",
-        duration: durationDefaultFastest,
+        duration: durationDefaultFaster,
         ease: "primary-ease",
     }, "<");
 };
