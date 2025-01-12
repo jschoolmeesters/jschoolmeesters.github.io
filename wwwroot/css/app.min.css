@@ -1905,10 +1905,6 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1;
 }
 
-.leading-snug {
-  line-height: 1.375;
-}
-
 .leading-tight {
   line-height: 1.25;
 }
