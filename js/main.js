@@ -19,24 +19,6 @@ window.waitForPosts = async function (count) {
     return await waitForElements('.post.gsap-animate-transition', count);
 };
 
-
-// Prevent scrolling while menu is open
-/*
-window.preventScrolling = (val) => {
-    if (val)
-        document.body.style.overflow = "hidden";
-    else
-        document.body.style.overflow = "auto";
-};
-*/
-
-// Fade in page after load
-
-window.fadeIn = () => {
-    document.body.querySelector("main").classList.add('loaded');
-};
-
-
 // Lenis smooth scroll
 
 const lenis = new Lenis({
@@ -179,54 +161,29 @@ window.pageFadeOut = () => {
             }
         });
     
-        tl.to(".index.gsap-animate-transition", {
+        tl.to(".content.gsap-animate-transition", {
             autoAlpha: 0,
-            duration: durationDefaultFastest,
+            y: "1vh",
+            duration: durationDefaultUltraFast,
             ease: "primary-ease",
         }, "<");
-    
-        /*
-        tl.fromTo(".ani-box.gsap-animate-transition", {
-            "--before-y-percent": "0%",
-            autoAlpha: 0,
-        },{
-            "--before-y-percent": "-100%",
-            autoAlpha: 1,
-            duration: durationDefaultFastest,
-            ease: "primary-ease",
-        }, "<");
-        */
     });
 }
 
 window.pageFadeIn = () => {
     const tl = gsap.timeline();
 
-    tl.set(".index.gsap-animate-transition", {
+    tl.set(".content.gsap-animate-transition", {
         autoAlpha: 0,
     }, "<");
 
-    /*
-    tl.fromTo(".ani-box.gsap-animate-transition", {
-        "--before-y-percent": "0%",
+    tl.fromTo(".content.gsap-animate-transition", {
         autoAlpha: 0,
+        y: "1vh"
     },{
-        "--before-y-percent": "-100%",
-        autoAlpha: 1,
-        duration: durationDefaultFastest,
-        ease: "primary-ease",
-    }, "<");
-    */
-
-    tl.fromTo(".index.gsap-animate-transition", {
-        "--before-y-percent": "100%",
-        autoAlpha: 0,
-        y: "3vh"
-    },{
-        "--before-y-percent": "0%",
         autoAlpha: 1,
         y: "0vh",
-        duration: durationDefaultFastest,
+        duration: durationDefaultUltraFast,
         ease: "primary-ease",
     }, "<");
 };
@@ -241,7 +198,7 @@ window.animateNavbar = () => {
     },{
         "--before-y-percent": "-100%",
         autoAlpha: 1,
-        duration: durationDefaultFastest,
+        duration: durationDefault,
         ease: "primary-ease",
     }, "<");
 }
@@ -251,123 +208,7 @@ window.animateNavbar = () => {
 window.pageLoaded = () => { 
     const tl = gsap.timeline();
 
-    tl.set(".index.gsap-animate-transition", {
+    tl.set(".content.gsap-animate-transition", {
         autoAlpha: 0,
     });
-
-    /*
-    gsap.fromTo(".posts-header.gsap-animate-transition .gsap-line-inner", {
-        autoAlpha: 0,
-        yPercent: 100,
-        rotate: 0.001
-    },{
-        autoAlpha: 1,
-        yPercent: 0,
-        rotate: 0.001,
-        ease: "primary-ease",
-        duration: durationDefault,
-        scrollTrigger: {
-            trigger: '.posts-header.gsap-animate-transition',
-            toggleActions: 'play none none reverse',
-            //pin: true, // pin the trigger element while active
-            start: 'top bottom', // when the top of the trigger hits the top of the viewport
-            //end: () => `+=${document.querySelector('.links.gsap-animate-transition').offsetHeight / 2}`, // dynamically calculate the end position to the middle of the element
-            //scrub: 1
-        }
-    });
-    */
-
-        
-        //tl.fromTo(".loader-fill.gsap-animate-transition", {
-        //    yPercent: 0,
-        //}, {
-        //    yPercent: -100,
-        //    ease: "primary-ease",
-        //    duration: 0.75
-        //});
-
-        /*
-        tl.fromTo(".index.gsap-animate-transition", {
-            "--before-y-percent": "100%",
-            autoAlpha: 0,
-            y: "5vh"
-        },{
-            "--before-y-percent": "0%",
-            autoAlpha: 1,
-            y: "0vh",
-            duration: durationDefaultFastest,
-            ease: "primary-ease",
-        });
-        */
-        
-        /*
-        tl.fromTo(".about-first.gsap-lines.gsap-animate-transition .gsap-line-inner", {
-            autoAlpha: 0,
-            yPercent: 100,
-            rotate: 0.001
-        },{
-            autoAlpha: 1,
-            yPercent: 0,
-            rotate: 0.001,
-            ease: "primary-ease",
-            duration: durationDefaultFastest,
-            stagger: staggerDefault
-        }, "+= 2");
-        */
-
-        /*
-        // move up slightly and fade in : .hero-img
-        tl.fromTo(".hero-img.gsap-animate-transition", {
-            yPercent: 20,
-            autoAlpha: 0,
-        },{
-            yPercent: 0,
-            autoAlpha: 1,
-            duration: durationDefault,
-            ease: "primary-ease",
-        }, "<");
-        */
-
-        // border width from 0 to 1 for .border-bottom
-        /*
-        tl.fromTo(".border-bottom.gsap-animate-transition", {
-            scaleX: 0,
-            autoAlpha: 0,
-            y: 50,
-        },{
-            scaleX: 1,
-            autoAlpha: 1,
-            y: 0,
-            duration: durationDefault,
-            ease: "primary-ease",
-        }, "<");
-        */
-
-        //tl.to(".about.gsap-animate-transition", {
-        //    yPercent: 0,
-        //    duration: durationDefaultFastest,
-        //    ease: "primary-ease"
-        //}, "<");/*"+=0.5");
-
-        // move up ypercent of .ani-box::after by 100
-
-
-        
-        //tl.fromTo(".navbar.gsap-animate-transition", {
-        //    yPercent: -100
-        //},{
-        //    yPercent: 0,
-        //    ease: "primary-ease",
-        //    duration: durationDefaultFaster
-        //}, "< +=0.65");
-    
-        //tl.fromTo(".scroll.gsap-animate-transition", {
-        //    yPercent: 100,
-        //    autoAlpha: 0
-        //},{
-        //    autoAlpha: 1,
-        //    yPercent: 0,
-        //    ease: "primary-ease",
-        //    duration: durationDefaultFaster
-        //}, "<");
 }

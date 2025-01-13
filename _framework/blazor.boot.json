@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazorPortfolio",
   "resources": {
-    "hash": "sha256-TtWYAqaYzGRs2m8XcZzqJiot+suGx84DQ1ila7S2tag=",
+    "hash": "sha256-1R3gNHvtvkKQZk8ap13LYU3YFDAr+A6ezW1/rMH3iQs=",
     "jsModuleNative": {
       "dotnet.native.8.0.11.n1sf6xr5tz.js": "sha256-VdKq87/z5NIxZKmuM+fv38XF+RcEb/bg3jVBwQSfwP4="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "BlazorPortfolio.wasm": "sha256-H8yW0Qi5J8H3Yr+c7JRJq3ZWa4QmRMld+pzwCOA+9L0=",
+      "BlazorPortfolio.wasm": "sha256-ufT0sTsGj4A1OvGDiGqWByZ/PbaDJ0g0OtenMnJC+64=",
       "Markdig.wasm": "sha256-Jv9S5coLP28fMUd+sd72uOfd5e3pWx+IFMRNtR/lykc=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-dzQIqcBijdK1JuJVNwwtYVt0bdzbi3h/dW2my4uLBoE=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-1/q8HCnkfx2cBfBoL7rb6O3Y7KIh1kZ4j9xG3A72XlU=",
