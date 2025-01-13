@@ -29,6 +29,10 @@
     line-height: 1.05;
 }
 
+.accordion-child-content {
+    overflow: hidden;
+    height: 0px;
+}
 
 
 ul.arrow-list  {

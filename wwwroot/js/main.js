@@ -153,6 +153,33 @@ window.animatePosts = () => {
 }
 */
 
+// Expand accordion-child-content from height: 0 to height: auto using to
+window.expandAccordion = (id) => {   
+    const accordion = document.querySelector(`.accordion-child-content#${id}`);
+    const height = accordion.scrollHeight;
+
+    const tl = gsap.timeline();
+
+    tl.to("#" + id, {
+        height: height,
+        autoAlpha: 1,
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+    });
+}
+
+// Collapse accordion-child-content
+window.collapseAccordion = (id) => {
+    const tl = gsap.timeline();
+
+    tl.to("#" + id, {
+        height: 0,
+        autoAlpha: 0,
+        duration: durationDefaultFastest,
+        ease: "primary-ease",
+    });
+}
+
 window.pageFadeOut = () => {
     return new Promise((resolve) => {
         const tl = gsap.timeline({
