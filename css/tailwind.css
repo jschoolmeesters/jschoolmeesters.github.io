@@ -1460,6 +1460,10 @@ details.collapse summary::-webkit-details-marker {
   display: none;
 }
 
+.h-0 {
+  height: 0px;
+}
+
 .h-32 {
   height: 8rem;
 }
@@ -1474,10 +1478,6 @@ details.collapse summary::-webkit-details-marker {
 
 .h-\[30vh\] {
   height: 30vh;
-}
-
-.h-\[max\(1vh\2c 1vw\)\] {
-  height: max(1vh,1vw);
 }
 
 .h-full {
@@ -1506,10 +1506,6 @@ details.collapse summary::-webkit-details-marker {
 
 .w-\[8\.75rem\] {
   width: 8.75rem;
-}
-
-.w-\[max\(1vh\2c 1vw\)\] {
-  width: max(1vh,1vw);
 }
 
 .w-full {
