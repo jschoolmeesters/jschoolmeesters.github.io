@@ -17,18 +17,17 @@
     private IJSRuntime JS { get; set; }
     private bool isExpanded = false;
     [Parameter]
-    public string Id { get; set; }
+    public string Id { get; set; } = ToShortGuid(Guid.NewGuid());
     [Parameter]
     public string Title { get; set; } = "[Undefined]";
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
-    protected override void OnInitialized()
+    public static string ToShortGuid(Guid guid)
     {
-        Id ??= Guid.NewGuid().ToString();
-        base.OnInitialized();
+        string encoded = Convert.ToBase64String(guid.ToByteArray());
+        return encoded.Replace("/", "_").Replace("+", "-").TrimEnd('=');
     }
-
     private void ToggleContent()
     {
         isExpanded = !isExpanded;
