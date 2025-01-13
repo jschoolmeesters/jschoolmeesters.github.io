@@ -21,7 +21,7 @@
                <h1 class="about-first gsap-lines gsap-animate-transition text-2xl tracking-[-0.035em] leading-none">
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        Dutch <span class="inferi-normal-italic">creative</span> developer specialized
+                        Dutch <span class="inferi-normal-italic">creative</span> DEV specialized
                      </div>
                   </div>
                   <div class="gsap-line">
@@ -141,9 +141,15 @@
 
    private async Task NavigateToPost(MouseEventArgs e, Models.Post post)
    {
-      await JS.InvokeVoidAsync("beginTransitionBox", e.ClientX, e.ClientY);
+      //await JS.InvokeVoidAsync("beginTransitionBox", e.ClientX, e.ClientY);
       var baseUri = NavigationManager.BaseUri;
-      NavigationManager.NavigateTo(Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1)));
+      var uri = Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1));
+      
+      if (!(uri == NavigationManager.Uri)) {
+         await JS.InvokeAsync<object>("pageFadeOut");
+         await JS.InvokeVoidAsync("pageLoaded");
+         NavigationManager.NavigateTo(uri);
+      }
    }
 
    private void HandleInputChange(ChangeEventArgs e)

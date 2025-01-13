@@ -124,20 +124,26 @@
         base.OnInitialized();
     }
 
-    protected override async void OnAfterRender(bool firstRender)
-    {
-        await base.OnAfterRenderAsync(firstRender);
-        if (firstRender)
-        {
-            await JS.InvokeVoidAsync("homeLoaded");
-            //await JS.InvokeVoidAsync("initializeProgressBar");
-            await JS.InvokeVoidAsync("endTransitionBox");
-        }
-    }
-
-   private void NavigateToPost(Models.Post post)
+   protected override async Task OnAfterRenderAsync(bool firstRender)
    {
+      if (firstRender) {
+        await JS.InvokeVoidAsync("pageLoaded");
+        await JS.InvokeVoidAsync("pageFadeIn");
+      }
+
+      await base.OnAfterRenderAsync(firstRender);
+   }
+
+   private async Task NavigateToPost(Models.Post post)
+   {
+      //await JS.InvokeVoidAsync("beginTransitionBox", e.ClientX, e.ClientY);
       var baseUri = NavigationManager.BaseUri;
-      NavigationManager.NavigateTo(Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1)), true);
+      var uri = Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1));
+      
+      if (!(uri == NavigationManager.Uri)) {
+         await JS.InvokeAsync<object>("pageFadeOut");
+         await JS.InvokeVoidAsync("pageLoaded");
+         NavigationManager.NavigateTo(uri);
+      }
    }
 }

@@ -2,6 +2,7 @@
 @using System.Text.Json
 @using BlazorPortfolio.Models;
 @using System.Globalization
+@using BlazorPortfolio.Components;
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
 <PageTitle>Jordy Schoolmeesters — Computing Science</PageTitle>
@@ -37,33 +38,32 @@
                   <h2 class="gsap-line-inner text-sm p-0 m-0 mt-6 mb-3 text-[rgb(145,145,145)]">Webdesign</h2>
             </div>
 
-            <div class="grid grid-cols-2 gap-2">
-                <div class="border h-24 flex items-center justify-center bg-[rgb(25,25,25)] border-none">
-                    <span class="underline underline-offset-4 decoration-2 decoration-[rgb(100,100,100)] inline-block text-2xl align-middle leading-tight inferi-normal text-center break-words">Wordpress</span>
-                </div>
-                <div class="border h-24 flex items-center justify-center bg-[rgb(25,25,25)] border-none">
-                    <span class="underline underline-offset-4 decoration-2 decoration-[rgb(100,100,100)] inline-block text-2xl align-middle leading-tight inferi-normal text-center break-words">Bespoke</span>
-                </div>
-                <div class="border h-24 flex items-center justify-center bg-[rgb(25,25,25)] border-none">
-                    <span class="underline underline-offset-4 decoration-2 decoration-[rgb(100,100,100)] inline-block text-2xl align-middle leading-tight inferi-normal text-center break-words">Webflow</span>
-                </div>
-                <div class="border h-24 flex items-center justify-center bg-[rgb(25,25,25)] border-none">
-                    <span class="underline underline-offset-4 decoration-2 decoration-[rgb(100,100,100)] inline-block text-2xl align-middle leading-tight inferi-normal text-center break-words">Consultancy</span>
-                </div>
-            </div>
+            <Accordion Title="Wordpress">
+               <p>A modern website using the world's #1 system for managing your content.</p>
+               <ul class="pl-5">
+                  <li class="relative before:content-['—'] before:absolute before:-left-5 before:text-white">Fastest delivery time</li>
+                  <li class="relative before:content-['—'] before:absolute before:-left-5 before:text-white">Easy content management</li>
+                  <li class="relative before:content-['—'] before:absolute before:-left-5 before:text-white">Long term stable</li>
+               </ul>
+            </Accordion>
 
-            <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-6 mb-3 text-[rgb(145,145,145)]">Audio</h2>
-            </div>
+            <Accordion Title="Bespoke">
+               <p>A handcrafted website using only the latest technologies to create an ultra fast and responsive and new home your brand without any compromises.</p>
+               <ul class="pl-5">
+                  <li class="relative before:content-['—'] before:absolute before:-left-5 before:text-white">Highly personalized and detailed design</li>
+                  <li class="relative before:content-['—'] before:absolute before:-left-5 before:text-white">Easy content management</li>
+               </ul>
+            </Accordion>
 
-            <div class="grid grid-cols-2 gap-2">
-                <div class="border h-24 flex items-center justify-center bg-[rgb(25,25,25)] border-none">
-                    <span class="underline underline-offset-4 decoration-2 decoration-[rgb(100,100,100)] inline-block text-2xl leading-none align-middle inferi-normal">Mixing</span>
-                </div>
-                <div class="border h-24 flex items-center justify-center bg-[rgb(25,25,25)] border-none">
-                    <span class="underline underline-offset-4 decoration-2 decoration-[rgb(100,100,100)] inline-block text-2xl leading-none align-middle inferi-normal">Production</span>
-                </div>
-            </div>
+            <Accordion Title="Consultancy">
+               <p>Need some advice on your options regarding a current or future website?</p>
+               <p>Then a consultancy session might just be what you need to explore or evaluate your options.</p>
+            </Accordion>
+
+            <Accordion Title="Technical support">
+               <p>Got technical issues with your current website?</p>
+               <p>We've got you covered, with years of experience working with many different technologies there's no problem we can't fix.</p>
+            </Accordion>
          </div>
 
          <div class="mt-6 h-[30vh] w-full"><img class="object-cover object-center w-full h-full" src="@("/media/ice_comp.webp")"/></div>
