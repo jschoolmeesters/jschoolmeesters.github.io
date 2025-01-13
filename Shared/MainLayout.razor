@@ -59,8 +59,11 @@ private string ContactUri
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender) {
-        if (firstRender)
+        if (firstRender) {
+            // Prevent showing page before fading in
+            await JS.InvokeVoidAsync("pageLoaded");
             await JS.InvokeVoidAsync("animateNavbar");
+        }
 
         await base.OnAfterRenderAsync(firstRender);
     }
@@ -70,6 +73,7 @@ private string ContactUri
 
         if (!(uri == NavigationManager.Uri)) {
             await JS.InvokeAsync<object>("pageFadeOut");
+            await JS.InvokeVoidAsync("pageLoaded");
             NavigationManager.NavigateTo(uri);
         }
     }
