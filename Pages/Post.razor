@@ -86,8 +86,15 @@
     private Models.Post? PreviousPost { get; set; }
     private Models.Post? NextPost { get; set; }
 
+    private bool reload = false;
+
     protected override async Task OnInitializedAsync()
     {
+      await LoadData();
+      await base.OnInitializedAsync();
+    }
+
+    private async Task LoadData() {
         if (!string.IsNullOrEmpty(Slug))
         {
             var trimmedSlug = Slug.TrimEnd('/');
@@ -111,21 +118,31 @@
 
                     var orderedPosts = posts.OrderBy(p => p.DateAsDateTime).Select((post, i) => ( post, i )).ToList();
                     var currentIndex = orderedPosts.FindIndex(p => p.post.Id == post.Id);
-                    if (currentIndex > 0) {
+                    
+                    if (currentIndex > 0)
                         NextPost = orderedPosts[currentIndex - 1].post;
-                    }
-                    if (currentIndex < orderedPosts.Count - 1) {
+                    else
+                        NextPost = null;
+
+                    if (currentIndex < orderedPosts.Count - 1)
                         PreviousPost = orderedPosts[currentIndex + 1].post;
-                    }
+                     else
+                        PreviousPost = null;
                 }
             }
         }
-        
-        base.OnInitialized();
     }
 
    protected override async Task OnAfterRenderAsync(bool firstRender)
    {
+      if (reload) {
+         await LoadData();
+         reload = false;
+         StateHasChanged();
+         //await JS.InvokeVoidAsync("pageLoaded");
+         await JS.InvokeVoidAsync("pageFadeIn");
+      }
+
       if (firstRender) {
         await JS.InvokeVoidAsync("pageLoaded");
         await JS.InvokeVoidAsync("pageFadeIn");
@@ -144,6 +161,7 @@
          await JS.InvokeAsync<object>("pageFadeOut");
          await JS.InvokeVoidAsync("pageLoaded");
          NavigationManager.NavigateTo(uri);
+         reload = true;
       }
    }
 }

@@ -1853,10 +1853,6 @@ details.collapse summary::-webkit-details-marker {
   line-height: 2.25rem;
 }
 
-.text-\[2rem\] {
-  font-size: 2rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1888,6 +1884,10 @@ details.collapse summary::-webkit-details-marker {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 .leading-\[1\.2\] {

@@ -62,6 +62,7 @@ let durationDefault = 1.47;
 let durationDefaultFaster = 1.2;
 let durationDefaultFastest = 0.9;
 let durationDefaultUltraFast = 0.6;
+let durationDefaultCrazyFast = 0.3;
 
 
 CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
@@ -163,7 +164,7 @@ window.expandAccordion = (id) => {
     tl.to("#" + id, {
         height: height,
         autoAlpha: 1,
-        duration: durationDefaultFastest,
+        duration: durationDefaultUltraFast,
         ease: "primary-ease",
     });
 }
@@ -175,7 +176,38 @@ window.collapseAccordion = (id) => {
     tl.to("#" + id, {
         height: 0,
         autoAlpha: 0,
-        duration: durationDefaultFastest,
+        duration: durationDefaultUltraFast,
+        ease: "primary-ease",
+    });
+}
+
+// Fade out posts
+window.fadeOutPosts = () => {
+    return new Promise((resolve) => {
+        const tl = gsap.timeline({
+            onComplete: () => {
+                resolve(); // Resolves the promise when the timeline is complete
+            }
+        });
+
+        tl.fromTo(".posts.gsap-animate-transition", {
+            autoAlpha: 0,
+            ease: "primary-ease",
+        }, {
+            autoAlpha: 1,
+            duration: durationDefault,
+            ease: "primary-ease"
+        });
+    });
+}
+
+// Fade in posts
+window.fadeInPosts = () => {
+    const tl = gsap.timeline();
+
+    tl.to(".posts.gsap-animate-transition", {
+        autoAlpha: 1,
+        duration: durationDefault,
         ease: "primary-ease",
     });
 }
@@ -193,7 +225,7 @@ window.pageFadeOut = () => {
             y: "1vh",
             duration: durationDefaultUltraFast,
             ease: "primary-ease",
-        }, "<");
+        });
     });
 }
 
@@ -202,7 +234,7 @@ window.pageFadeIn = () => {
 
     tl.set(".content.gsap-animate-transition", {
         autoAlpha: 0,
-    }, "<");
+    });
 
     tl.fromTo(".content.gsap-animate-transition", {
         autoAlpha: 0,
@@ -212,7 +244,7 @@ window.pageFadeIn = () => {
         y: "0vh",
         duration: durationDefaultUltraFast,
         ease: "primary-ease",
-    }, "<");
+    }, ">");
 };
 
 // Animation - Page Loader Home Part 1
@@ -227,7 +259,7 @@ window.animateNavbar = () => {
         autoAlpha: 1,
         duration: durationDefault,
         ease: "primary-ease",
-    }, "<");
+    });
 }
 
 

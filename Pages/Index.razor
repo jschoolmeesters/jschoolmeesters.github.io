@@ -40,36 +40,38 @@
                   <h2 class="gsap-line-inner text-sm p-0 m-0 mt-6 mb-3 text-[rgb(145,145,145)]">Categories</h2>
             </div>
             <div class="posts-filter gap-x-1 flex flex-wrap">
-               @foreach (int i in Enumerable.Range(0, Tags.Length)) {
-                  <span class="whitespace-nowrap @(i > 0 ? "text-[rgb(145,145,145)]" : "")"><span class="text-2xl @(i == 0 ? "underline decoration-2" : "") cursor-pointer">@Tags[i].Item1</span><span class="text-sm align-top">(@Tags[i].Item2)</span></span>
+               @foreach (int i in Enumerable.Range(0, tags.Length)) {
+                  var tag = tags[i];
+                  <span @onclick="@(() => ChangeFilterTag(tag.Item1))" class="whitespace-nowrap @(filterTag != tag.Item1 ? "text-[rgb(145,145,145)]" : "")"><span class="text-2xl @(filterTag == tag.Item1 ? "underline decoration-2" : "") cursor-pointer">@tag.Item1</span><span class="text-sm align-top">(@tag.Item2)</span></span>
                }
             </div>
          </div>
 
-         <div class="post-border gsap-animate-transition w-full"></div>
-         @foreach (var item in FilteredPosts) {
-            var post = item.post;
-            var index = item.i;
+         <div class="posts gsap-animate-transition">
+            @foreach (var item in FilteredPosts.Where(p => filterTag == "All" ? true : p.post.TagsAsList.Contains(filterTag))) {
+               var post = item.post;
+               var index = item.i;
 
-            <div class="post gsap-animate-transition cursor-pointer pt-3 flex flex-row" @onclick="@((e) => NavigateToPost(e, post))">
-               @*
-               <div class="pr-3">
-                  <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
-               </div>
-               *@
-               <div class="grow flex flex-col">
-                  <div class="h-[30vh] w-full mb-3"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
-                  <h2 class="tracking-[-0.035em] leading-tighter">@post.Title</h2>
-                  <div class="flex flex-wrap">
-                     @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
-                        <div class="whitespace-nowrap">@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</div>
-                     }
-                     <div class="whitespace-nowrap text-[rgb(145,145,145)]">&nbsp;(Case study)</div>
+               <div class="post gsap-animate-transition cursor-pointer pt-3 flex flex-row" @onclick="@((e) => NavigateToPost(e, post))">
+                  @*
+                  <div class="pr-3">
+                     <span class="leading-none">@(index < 10 ? "0" + (index + 1) : (index + 1))</span>
+                  </div>
+                  *@
+                  <div class="grow flex flex-col">
+                     <div class="h-[30vh] w-full mb-3"><img class="object-cover object-center w-full h-full" src="@("posts/media/" + post.Img)"/></div>
+                     <h2 class="tracking-[-0.035em] leading-tighter">@post.Title</h2>
+                     <div class="flex flex-wrap">
+                        @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
+                           <div class="whitespace-nowrap">@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</div>
+                        }
+                        <div class="whitespace-nowrap text-[rgb(145,145,145)]">&nbsp;(Case study)</div>
+                     </div>
                   </div>
                </div>
-            </div>
-            @*<div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>*@
-         }
+               @*<div class="post-border gsap-animate-transition w-full border-t border-black dark:border-white"></div>*@
+            }
+         </div>
 
          <footer class="py-6 flex flex-col">
 
@@ -103,8 +105,8 @@
       }
    }
 
-   private (string, int)[] Tags = (new string[] { "All", "Project Updates", "Audio", "Webdesign", "Insights" }).Select((tag) => (tag, 0)).ToArray();
-
+   private (string, int)[] tags = (new string[] { "All", "Project Updates", "Audio", "Webdesign", "Insights" }).Select((tag) => (tag, 0)).ToArray();
+   private string filterTag = "All";
    protected override async Task OnAfterRenderAsync(bool firstRender)
    {
       if (firstRender) {
@@ -134,8 +136,8 @@
          Posts = posts;
 
          foreach (var post in Posts)
-            Tags.Where(t => post.TagsAsList.Contains(t.Item1)).ToList()
-                .ForEach(tag => { Tags[Array.IndexOf(Tags, tag)] = (tag.Item1, tag.Item2 + 1); Tags[0] = (Tags[0].Item1, Tags[0].Item2 + 1); });
+            tags.Where(t => post.TagsAsList.Contains(t.Item1)).ToList()
+                .ForEach(tag => { tags[Array.IndexOf(tags, tag)] = (tag.Item1, tag.Item2 + 1); tags[0] = (tags[0].Item1, tags[0].Item2 + 1); });
       }
    }
 
@@ -150,6 +152,13 @@
          await JS.InvokeVoidAsync("pageLoaded");
          NavigationManager.NavigateTo(uri);
       }
+   }
+
+   private void ChangeFilterTag(string tag)
+   {
+      var result = JS.InvokeAsync<object>("fadeOutPosts");
+      filterTag = tag;
+      JS.InvokeVoidAsync("fadeInPosts");
    }
 
    private void HandleInputChange(ChangeEventArgs e)
