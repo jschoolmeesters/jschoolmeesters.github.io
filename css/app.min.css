@@ -1878,6 +1878,10 @@ details.collapse summary::-webkit-details-marker {
   text-transform: uppercase;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .leading-\[1\.2\] {
   line-height: 1.2;
 }
