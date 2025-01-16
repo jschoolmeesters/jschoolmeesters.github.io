@@ -1,12 +1,12 @@
 @using System.Text.RegularExpressions
-<div class="w-full border-t leading-[1.2]">
+<div class="w-full border-t border-black dark:border-white leading-[1.2]">
     <div class="py-3 flex justify-between items-center cursor-pointer" @onclick="ToggleContent">
         <h2 class="text-3xl">@Title</h2>
         <button class="transition">
             <span class="text-3xl">@(isExpanded ? "−" : "+")</span>
         </button>
     </div>
-    <div id="@id" class="accordion-child-content overflow-hidden h-0">
+    <div id="@id" class="accordion-child-content overflow-hidden @(StartExpanded ? "h-auto" : "h-0")">
         <div class="py-3 space-y-3">
             @ChildContent
         </div>
@@ -19,12 +19,15 @@
     [Parameter]
     public string Title { get; set;} = "Undefined";
     [Parameter]
+    public bool StartExpanded { get; set; } = false;
+    [Parameter]
     public RenderFragment? ChildContent { get; set; }
     private bool isExpanded = false;
     private string id = string.Empty;
     protected override void OnParametersSet()
     {
         id = ToId(Title, "acc");
+        isExpanded = StartExpanded;
     }
     public static string ToShortGuid(Guid guid)
     {

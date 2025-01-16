@@ -5,13 +5,13 @@
 @using Pages
 @inject IJSRuntime JS
 
-<main class="@(DarkMode ? "dark" : "")">
+<main class="@(!DarkMode ? "dark" : "")">
 
-    <div class="bg-black min-h-[100vh] wrapper w-full max-w-[500px] mx-auto text-black dark:text-white">
+    <div class="bg-white dark:bg-black min-h-[100vh] wrapper w-full max-w-[500px] mx-auto text-black dark:text-white">
 
-        <div class="bg-black z-[500] fixed top-0 w-full max-w-[500px]">
+        <div class="bg-white dark:bg-black z-[500] fixed top-0 w-full max-w-[500px]">
             <div id="navbar" class="navbar gsap-animate-transition relative z-[510] flex items-center p-3">
-                <div class="inline-block"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(() => NavigateToPage("/"))" class="h-5"/></div></div>
+                <div class="inline-block"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(() => NavigateToPage("/"))" class="invert dark:filter-none h-5"/></div></div>
                 <span class="grow"></span>
                 @*<div @onclick="@(()=> DarkMode = !DarkMode)" class="@(ShowMenu ? "" : "hidden") mr-3 text-xl rounded-full text-black dark:text-white grid cursor-pointer"><span class="block place-self-center @(DarkMode ? "iconoir-sun-light" : "iconoir-half-moon")"</span></div>*@
                 <div class="z-[511] inline-block"><span @onclick="@(() => NavigateToPage(ContactUri))" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer text-lg tracking-[-0.035em] leading-none pl-6 py-1"><span>@(ContactUri == "/contact" ? "Contact" : "Close")</span></span></div>

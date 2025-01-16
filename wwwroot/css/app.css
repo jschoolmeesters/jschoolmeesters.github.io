@@ -29,11 +29,6 @@
     line-height: 1.05;
 }
 
-.accordion-child-content {
-    overflow: hidden;
-    height: 0px;
-}
-
 
 ul.arrow-list  {
     list-style-image: url(../media/arrow-down-right.svg);
@@ -374,31 +369,6 @@ body {
    max-width: 1280px;
    margin-left: auto;
    margin-right: auto;
-}
-
-.tribal-img {
-   background-image: url("../media/tribal-img.svg");
-   background-size: auto 140%;
-   background-repeat: no-repeat;
-   background-position: center;
-   filter: invert(1) blur(1px);
-   opacity: 50%;
-   content:"";
-}
-
-.tribal-img-new {
-    background-image: url("../media/tribal-img.svg");
-    background-size: auto 70%;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: invert(12%) sepia(19%) saturate(489%) hue-rotate(51deg) brightness(89%) contrast(81%) opacity(50%);
-    /*filter: invert(1);*/
-    opacity: 100%;
-    content:"";
- }
-
-.tribal-icon {
-    filter: invert(75%) sepia(12%) saturate(261%) hue-rotate(31deg) brightness(88%) contrast(87%);
 }
 
 @layer components {
