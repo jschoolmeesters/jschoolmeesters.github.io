@@ -1824,8 +1824,8 @@ details.collapse summary::-webkit-details-marker {
   padding-top: 0.75rem;
 }
 
-.pt-48 {
-  padding-top: 12rem;
+.pt-\[14rem\] {
+  padding-top: 14rem;
 }
 
 .pt-\[4\.9rem\] {
@@ -1916,6 +1916,10 @@ details.collapse summary::-webkit-details-marker {
   text-transform: lowercase;
 }
 
+.leading-\[0\.75\] {
+  line-height: 0.75;
+}
+
 .leading-\[1\.2\] {
   line-height: 1.2;
 }
@@ -1934,6 +1938,10 @@ details.collapse summary::-webkit-details-marker {
 
 .tracking-\[-0\.035em\] {
   letter-spacing: -0.035em;
+}
+
+.tracking-\[-0\.07em\] {
+  letter-spacing: -0.07em;
 }
 
 .tracking-tighter {
