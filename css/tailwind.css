@@ -1412,6 +1412,10 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 0.75rem;
 }
 
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -1760,11 +1764,6 @@ details.collapse summary::-webkit-details-marker {
   padding-right: 1rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1789,6 +1788,10 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0.75rem;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -1807,6 +1810,10 @@ details.collapse summary::-webkit-details-marker {
 
 .pt-0 {
   padding-top: 0px;
+}
+
+.pt-1\.5 {
+  padding-top: 0.375rem;
 }
 
 .pt-24 {
@@ -1921,6 +1928,10 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1.25;
 }
 
+.tracking-\[-0\.015em\] {
+  letter-spacing: -0.015em;
+}
+
 .tracking-\[-0\.035em\] {
   letter-spacing: -0.035em;
 }
@@ -1968,11 +1979,6 @@ details.collapse summary::-webkit-details-marker {
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity, 1));
-}
-
-.text-neutral-600 {
-  --tw-text-opacity: 1;
-  color: rgb(82 82 82 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
@@ -2027,12 +2033,6 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
-.before\:text-white::before {
-  content: var(--tw-content);
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
 .before\:content-\[\'\2014\'\]::before {
   --tw-content: '—';
   content: var(--tw-content);
@@ -2079,6 +2079,11 @@ details.collapse summary::-webkit-details-marker {
 .dark\:text-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.dark\:invert:is(.dark *) {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .dark\:filter-none:is(.dark *) {

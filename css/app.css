@@ -740,7 +740,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 
 @font-face {
     font-family: "Inferi Normal Italic";
-    src: url("../fonts/Inferi/Inferi-Trial-NormalItalic.otf");
+    src: url("../fonts/Inferi/Inferi-Trial-RegularItalic.otf");
     font-weight: 400;
     font-style: italic;
 }
@@ -751,8 +751,8 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 
 @font-face {
     font-family: "Inferi Normal";
-    src: url("../fonts/Inferi/Inferi-Trial-Regular.otf");
-    font-weight: 400;
+    src: url("../fonts/Suisse/SuisseIntl-Regular-WebTrial.woff");
+    font-weight: 500;
     font-style: normal;
 }
 
