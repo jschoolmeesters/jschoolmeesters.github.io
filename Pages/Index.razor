@@ -18,7 +18,7 @@
             <div class="pb-3 pt-48">
                <h1 class="about-first gsap-lines gsap-animate-transition text-[2.7rem] tracking-[-0.035em] leading-tight">
                   <div class="gsap-line">
-                     <div class="gsap-line-inner">
+                     <div class="gsap-line-inner inferi-normal">
                         Unlock Your <span class="inferi-normal-italic">Digital Potential</span> Through Bold Design
                      </div>
                   </div>
@@ -45,27 +45,38 @@
 
          </div>
 
+         @* About section *@
+         <div class="pt-24 space-y-6">
+            <h3 class="text-4xl leading-none inferi-normal tracking-[-0.015em]">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </h3>
+            <p>
+               Lorem ipsum odor amet, consectetuer adipiscing elit. Pretium per augue vulputate nec porta sagittis. Taciti finibus curae vehicula platea interdum. Maecenas malesuada ullamcorper malesuada libero ullamcorper ex ultricies sem. Ligula justo taciti facilisi, consectetur class lacus eleifend.
+            </p>
+            <p>
+               Lorem ipsum odor amet, consectetuer adipiscing elit. Est duis at venenatis etiam urna potenti consectetur ac. Nibh elit ridiculus etiam consectetur viverra. Taciti sem natoque tristique tempus lectus sociosqu morbi porttitor.
+            </p>
+         </div>
+
 
          @* Services section *@
-         <div class="flex flex-col w-full">
+         <div class="flex flex-col w-full mt-24">
+
+            <h1 class="mb-3 about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
+               <div class="gsap-line">
+                  <div class="gsap-line-inner">
+                     Services
+                  </div>
+               </div>
+            </h1>
 
             @*<div class="border-bottom h-[1px] w-full bg-black dark:bg-white"></div>*@
 
-            <div class="py-3 mt-24">
-
-               <h1 class="about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
-                  <div class="gsap-line">
-                     <div class="gsap-line-inner">
-                        Services
-                     </div>
-                  </div>
-               </h1>
-            </div>
-            <div class="border-bottom gsap-animate-transition h-[1px] w-full bg-black dark:bg-white"></div>
-
+            @*
             <div class="gsap-line">
-                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-6 mb-3 text-[rgb(145,145,145)]">Webdesign</h2>
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mb-3 text-[rgb(145,145,145)]">Webdesign</h2>
             </div>
+            *@
 
             <Accordion Title="Websites" StartExpanded="true">
                <img src="media/services2.jpg" class="w-full"/>
@@ -126,7 +137,7 @@
             <div class="posts-filter gap-x-1 flex flex-wrap">
                @foreach (int i in Enumerable.Range(0, tags.Length)) {
                   var tag = tags[i];
-                  <span @onclick="@(() => ChangeFilterTag(tag.Item1))" class="whitespace-nowrap @(filterTag != tag.Item1 ? "text-neutral-600 dark:text-[rgb(145,145,145)]" : "")"><span class="text-2xl @(filterTag == tag.Item1 ? "underline decoration-2" : "") cursor-pointer">@tag.Item1</span><span class="text-sm align-top">(@tag.Item2)</span></span>
+                  <span @onclick="@(() => ChangeFilterTag(tag.Item1))" class="whitespace-nowrap @(filterTag != tag.Item1 ? "text-black dark:text-[rgb(145,145,145)]" : "")"><span class="text-2xl @(filterTag == tag.Item1 ? "underline decoration-2" : "") cursor-pointer">@tag.Item1</span><span class="text-sm align-top">(@tag.Item2)</span></span>
                }
             </div>
          </div>
@@ -157,7 +168,7 @@
             }
          </div>
 
-         <footer class="py-6 flex flex-col">
+         <footer class="pb-6 mt-24 flex flex-col">
 
             <div class="links gsap-animate-transition relative overflow-hidden">
                <BlazorPortfolio.Components.Links />
