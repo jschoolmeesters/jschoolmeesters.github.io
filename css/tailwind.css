@@ -1986,6 +1986,10 @@ details.collapse summary::-webkit-details-marker {
   text-transform: lowercase;
 }
 
+.leading-5 {
+  line-height: 1.25rem;
+}
+
 .leading-\[0\.75\] {
   line-height: 0.75;
 }
