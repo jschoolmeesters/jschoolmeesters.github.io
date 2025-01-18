@@ -1805,20 +1805,6 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gradient-to-t {
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.from-\[\#feedee\] {
-  --tw-gradient-from: #feedee var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(254 237 238 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-white {
-  --tw-gradient-to: #fff var(--tw-gradient-to-position);
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1851,11 +1837,6 @@ details.collapse summary::-webkit-details-marker {
 
 .p-4 {
   padding: 1rem;
-}
-
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 .px-1 {
@@ -1901,10 +1882,6 @@ details.collapse summary::-webkit-details-marker {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.pb-0 {
-  padding-bottom: 0px;
 }
 
 .pb-3 {
@@ -2039,6 +2016,10 @@ details.collapse summary::-webkit-details-marker {
   text-transform: lowercase;
 }
 
+.leading-5 {
+  line-height: 1.25rem;
+}
+
 .leading-\[0\.75\] {
   line-height: 0.75;
 }
@@ -2077,11 +2058,6 @@ details.collapse summary::-webkit-details-marker {
 
 .tracking-wider {
   letter-spacing: 0.05em;
-}
-
-.text-\[\#232323\] {
-  --tw-text-opacity: 1;
-  color: rgb(35 35 35 / var(--tw-text-opacity));
 }
 
 .text-\[hsla\(26\2c 28\%\2c 95\%\2c \.5\)\] {
