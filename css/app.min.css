@@ -1447,6 +1447,11 @@ details.collapse summary::-webkit-details-marker {
   margin-right: auto;
 }
 
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -1537,16 +1542,20 @@ details.collapse summary::-webkit-details-marker {
   height: 1.25rem;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
 .h-\[14rem\] {
   height: 14rem;
 }
 
 .h-\[1px\] {
   height: 1px;
-}
-
-.h-\[30vh\] {
-  height: 30vh;
 }
 
 .h-auto {
@@ -1581,6 +1590,10 @@ details.collapse summary::-webkit-details-marker {
   width: 8.75rem;
 }
 
+.w-\[calc\(90vw-1\.5rem\)\] {
+  width: calc(90vw - 1.5rem);
+}
+
 .w-full {
   width: 100%;
 }
@@ -1595,6 +1608,10 @@ details.collapse summary::-webkit-details-marker {
 
 .flex-none {
   flex: none;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .grow {
@@ -1628,6 +1645,18 @@ details.collapse summary::-webkit-details-marker {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.snap-x {
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
+}
+
+.snap-mandatory {
+  --tw-scroll-snap-strictness: mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
 }
 
 .grid-cols-2 {
@@ -1687,6 +1716,18 @@ details.collapse summary::-webkit-details-marker {
   row-gap: 0.125rem;
 }
 
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1713,6 +1754,14 @@ details.collapse summary::-webkit-details-marker {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap {
@@ -1768,6 +1817,10 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(255 216 103 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#ffffff1a\] {
+  background-color: #ffffff1a;
+}
+
 .bg-\[hsla\(26\2c 28\%\2c 95\%\2c \.5\)\] {
   background-color: hsla(26,28%,95%,.5);
 }
@@ -1799,16 +1852,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.object-center {
-  -o-object-position: center;
-     object-position: center;
 }
 
 .p-0 {
@@ -1846,9 +1889,19 @@ details.collapse summary::-webkit-details-marker {
   padding-right: 1rem;
 }
 
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .py-0\.5 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -1901,10 +1954,6 @@ details.collapse summary::-webkit-details-marker {
 
 .pt-1\.5 {
   padding-top: 0.375rem;
-}
-
-.pt-24 {
-  padding-top: 6rem;
 }
 
 .pt-3 {
@@ -2003,6 +2052,14 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1.25rem;
 }
 
+.leading-6 {
+  line-height: 1.5rem;
+}
+
+.leading-8 {
+  line-height: 2rem;
+}
+
 .leading-\[0\.75\] {
   line-height: 0.75;
 }
@@ -2089,6 +2146,10 @@ details.collapse summary::-webkit-details-marker {
   text-decoration-thickness: 2px;
 }
 
+.underline-offset-1 {
+  text-underline-offset: 1px;
+}
+
 .contrast-75 {
   --tw-contrast: contrast(.75);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2114,6 +2175,37 @@ details.collapse summary::-webkit-details-marker {
 
 :root {
   --vh: '0px';
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+section {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 4rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+section.dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .content {
