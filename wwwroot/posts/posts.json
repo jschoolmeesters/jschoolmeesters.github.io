@@ -1,4 +1,4 @@
 ﻿[
-{"id":"bluespark-digital", "contentStartIndex":185, "layout":"post", "title":"Bluespark Digital", "tags":"Project Updates,Webdesign", "date":"06/06/2024", "img":"stone_comp.webp"},
-{"id":"how-to-use-clipping-in-your-mixes", "contentStartIndex":190, "layout":"post", "title":"How to use clipping in your mixes", "tags":"Insights,Audio", "date":"05/06/2024", "img":"glass_comp.webp"}
+{"id":"bluespark-digital", "contentStartIndex":337, "layout":"post", "title":"Bluespark Digital", "category":"Project Updates", "tags":"Webdesign,Brand Identity", "date":"06/06/2024", "description":"Lorem ipsum odor amet, consectetuer adipiscing elit. Ornare purus aenean erat tristique feugiat proin auctor sed. Nascetur tempor congue himenaeos quam platea primis.", "img":"stone_comp.webp"},
+{"id":"how-to-use-clipping-in-your-mixes", "contentStartIndex":397, "layout":"post", "title":"How to use clipping in your mixes", "category":"Studio Insights", "tags":"Audio,Mixing", "date":"05/06/2024", "description":"Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam vitae praesent est eget, dapibus praesent. Lectus proin consectetur habitant maecenas proin nisl. Rutrum felis facilisi felis non accumsan vehicula risus pharetra.", "img":"glass_comp.webp"}
 ]

@@ -9,6 +9,9 @@ namespace BlazorPortfolio.Models {
 
         [JsonPropertyName("title")]
         public string Title { get; set; } = "";
+        
+        [JsonPropertyName("category")]
+        public string Category { get; set; } = "";
 
         [JsonPropertyName("date")]
         public string Date { get; set; } = "";

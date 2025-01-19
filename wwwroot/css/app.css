@@ -6,6 +6,28 @@
     --vh: '0px';
 }
 
+.scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+section {
+    @apply px-3;
+    @apply py-12;
+    @apply mb-16;
+    @apply bg-white;
+    @apply text-black;
+}
+
+section.dark {
+    @apply bg-black;
+    @apply text-white;
+}
+
 .content {
     position: relative;
     --before-y-percent: 100%;

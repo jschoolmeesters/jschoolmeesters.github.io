@@ -1,0 +1,85 @@
+@using BlazorPortfolio.Models;
+@inject IJSRuntime JS;
+@inject HttpClient HttpClient;
+@inject NavigationManager NavigationManager;
+
+<div class="posts-header gsap-animate-transition">
+            <div class="gsap-line">
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-6 mb-3 text-[rgb(145,145,145)]">Categories</h2>
+            </div>
+            <div class="posts-filter gap-x-1 flex flex-wrap">
+               @foreach (int i in Enumerable.Range(0, categories.Length)) {
+                  var category = categories[i];
+                  <span @onclick="@(() => ChangeFilterTag(category))" class="whitespace-nowrap @(selectedCategory != category.Name ? "text-black dark:text-[rgb(145,145,145)]" : "")"><span class="text-2xl @(selectedCategory == category.Name ? "underline decoration-2" : "") cursor-pointer">@category.Name</span><span class="text-sm align-top">(@category.Count)</span></span>
+               }
+            </div>
+         </div>
+
+         <div class="space-x-3 posts gsap-animate-transition scrollbar-none overflow-x-scroll flex snap-x snap-mandatory scroll-smooth">
+            @foreach (var item in Posts.Where(p => selectedCategory == "All" ? true : p.Post.Category == selectedCategory)) {
+               var post = item.Post;
+               var index = item.Index;
+
+                <div class="space-y-3 flex-shrink-0 snap-start w-[calc(90vw-1.5rem)] h-auto post gsap-animate-transition cursor-pointer pt-3 grow flex flex-col" @onclick="@((e) => NavigateToPost(e, post))">
+                    <img class="w-full h-auto" src="@("posts/media/" + post.Img)"/>
+
+                    <div class="flex flex-row w-full justify-between">
+                        <span class="text-md h-8 leading-8 align-middle inline-block">@post.DateAsDateTime.ToString("d MMMM yyyy")</span>
+                        <div class="bg-[#ffffff1a] px-3 py-1 rounded-full">
+                            <img class="h-6 inline-block" src="@("media/" + post.Category.ToLower().Replace(' ', '_') + ".svg")"/>
+                            <span class="text-md h-6 leading-6 align-middle inline-block">@post.Category</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <span class="tracking-[-0.035em] leading-tighter">@post.Title</span>
+                        <p class="text-[rgb(145,145,145)] tracking-[-0.035em] leading-tighter">@post.Description</p>
+
+                        <div class="flex flex-wrap">
+                            @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
+                                <span class="text-[rgb(145,145,145)] whitespace-nowrap">#@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</span>
+                            }
+                        </div>
+                        <span class="underline underline-offset-1">View article</span>
+                    </div>
+                </div>
+            }
+         </div>
+
+@code {
+    [Parameter]
+    public List<(Post Post, int Index)> Posts { get; set; } = new();
+    private (string Name, int Count)[] categories = (new string[] { "All", "Project Updates", "News", "Studio Insights" }).Select((tag) => (tag, 0)).ToArray();
+    private string selectedCategory = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        selectedCategory = categories[0].Name;
+
+        foreach (var post in Posts)
+            categories.Where(c => post.Post.Category == c.Name).ToList()
+                .ForEach(c => { categories[Array.IndexOf(categories, c)] = (c.Name, c.Count + 1); categories[0] = (categories[0].Name, categories[0].Count + 1); });
+        
+        base.OnParametersSet();
+    }
+
+   private void ChangeFilterTag((string Name, int Count) category)
+   {
+        if (category.Count == 0)
+            return;
+        var result = JS.InvokeAsync<object>("fadeOutPosts");
+        selectedCategory = category.Name;
+        JS.InvokeVoidAsync("fadeInPosts");
+   }
+   private async Task NavigateToPost(MouseEventArgs e, Models.Post post)
+   {
+        var baseUri = NavigationManager.BaseUri;
+        var uri = Path.Combine(baseUri, "blog", "post", post.DateAsUriString, post.Id.Substring(post.Id.LastIndexOf('/') + 1));
+        
+        if (!(uri == NavigationManager.Uri)) {
+            await JS.InvokeAsync<object>("pageFadeOut");
+            await JS.InvokeVoidAsync("pageLoaded");
+            NavigationManager.NavigateTo(uri);
+        }
+   }
+}
