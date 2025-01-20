@@ -10,11 +10,19 @@
     <div class="bg-white dark:bg-black min-h-[100vh] wrapper w-full max-w-[500px] mx-auto text-black dark:text-white">
 
         <div class="bg-none z-[500] fixed top-0 w-full max-w-[500px]">
-            <div id="navbar" class="navbar gsap-animate-transition relative z-[510] flex items-center p-3">
-                <div class="inline-block pl-3 -ml-3"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(() => NavigateToPage("/"))" class="invert dark:filter-none h-5 mt-1.5"/></div></div>
+            <div id="navbar" class="navbar bg-white gsap-animate-transition relative z-[510] flex items-center p-3">
+                <div class="inline-block"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(() => NavigateToPage("/"))" class="invert dark:filter-none h-5"/></div></div>
                 <span class="grow"></span>
                 @*<div @onclick="@(()=> DarkMode = !DarkMode)" class="@(ShowMenu ? "" : "hidden") mr-3 text-xl rounded-full text-black dark:text-white grid cursor-pointer"><span class="block place-self-center @(DarkMode ? "iconoir-sun-light" : "iconoir-half-moon")"</span></div>*@
-                <div class="select-none z-[511] inline-block"><span @onclick="@(() => NavigateToPage(ContactUri))" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer tracking-[-0.035em] leading-none px-3 -mr-3 rounded-full py-1.5 bg-white"><span class="h-5 leading-5 align-middle inline-block">@(ContactUri == "/contact" ? "Let's Connect" : "Close")</span><img src="@(ContactUri == "/contact" ? "media/conversation_icon.svg" : "media/close_icon.svg")" class="dark:invert ml-1 h-5"/></span></div>
+                <div class="select-none z-[511] inline-block">
+                    <span @onclick="@(() => NavigateToPage(ContactUri))" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer tracking-[-0.035em] leading-none py-1.5">
+                        <span class="relative overflow-hidden">
+                            <span class="h-5 leading-5 align-middle inline-block">@(ContactUri == "/contact" ? "Let's Connect" : "Close")</span>
+                            <div class="absolute bottom-0 left-0 line-animation"></div>
+                        </span>
+                        <img src="@(ContactUri == "/contact" ? "media/conversation_icon.svg" : "media/close_icon.svg")" class="dark:invert ml-1 h-5"/>
+                    </span>
+                </div>
             </div>
         </div>
 
