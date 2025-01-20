@@ -158,15 +158,23 @@
 
          <footer class="dark my-0 pb-6 flex flex-col items-start space-y-12">
             
-            <div class="space-y-6">
-               <p class="text-[rgb(145,145,145)] inferi-normal text-3xl leading-none tracking-[-0.015em]">
+            <div class="">
+               <p class="text-[rgb(145,145,145)] text-3xl leading-none tracking-[-0.015em]">
                   Interested in working with us?
                </p>
                <div>
-                  <a class="underline inferi-normal text-3xl leading-none tracking-[-0.015em]">Get in touch<img class="ml-1 h-9 invert inline-block" src="media/conversation_icon.svg"/></a>
-                  <span class="inferi-normal text-3xl leading-none tracking-[-0.015em]">&#32;or&#32;</span>
-                  <a class="underline inferi-normal text-3xl leading-none tracking-[-0.015em]">check out our company deck<img class="ml-1 h-9 inline-block" src="media/company_deck.svg"/></a>
+                  <a class="underline text-3xl leading-none tracking-[-0.015em]">Get in touch</a>
+                  <span class="text-3xl leading-none tracking-[-0.015em]">&#32;or&#32;</span>
+                  <a class="underline text-3xl leading-none tracking-[-0.015em]">check out our company deck</a>
                </div>
+            </div>
+
+            <div>
+               <div class="gsap-line">
+                  <h2 class="gsap-line-inner text-sm p-0 m-0 mt-6 mb-3 text-[rgb(145,145,145)]">Info</h2>
+               </div>
+
+               <Links/>
             </div>
 
             <div class="marquee rotate-12 bottom-24 absolute w-full min-w-full">
@@ -177,8 +185,13 @@
                </div>
             </div>
 
-            <div class="w-full links gsap-animate-transition relative overflow-hidden">
-               <BlazorPortfolio.Components.Links />
+            <div class="flex flex-row w-full">
+               <ul class="flex-1 w-1/2 gap-y-0">
+                     <li><a class="text-lg tracking-[-0.035em] leading-none">© 2025 Vemo™</a></li>
+               </ul>
+               <ul>
+                  <li><span class="text-lg tracking-[-0.035em] leading-none">kvk 12345678</span></li>
+               </ul>
             </div>
 
          </footer>

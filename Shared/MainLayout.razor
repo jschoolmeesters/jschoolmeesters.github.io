@@ -9,19 +9,17 @@
 
     <div class="bg-white dark:bg-black min-h-[100vh] wrapper w-full max-w-[500px] mx-auto text-black dark:text-white">
 
-        <div class="bg-white dark:bg-black z-[500] fixed top-0 w-full max-w-[500px]">
+        <div class="bg-none z-[500] fixed top-0 w-full max-w-[500px]">
             <div id="navbar" class="navbar gsap-animate-transition relative z-[510] flex items-center p-3">
-                <div class="inline-block"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(() => NavigateToPage("/"))" class="invert dark:filter-none h-5 mt-1.5"/></div></div>
+                <div class="inline-block pl-3 -ml-3"><div class="ani-box gsap-animate-transition"><img src="media/logo_js.svg" @onclick="@(() => NavigateToPage("/"))" class="invert dark:filter-none h-5 mt-1.5"/></div></div>
                 <span class="grow"></span>
                 @*<div @onclick="@(()=> DarkMode = !DarkMode)" class="@(ShowMenu ? "" : "hidden") mr-3 text-xl rounded-full text-black dark:text-white grid cursor-pointer"><span class="block place-self-center @(DarkMode ? "iconoir-sun-light" : "iconoir-half-moon")"</span></div>*@
-                <div class="select-none z-[511] inline-block"><span @onclick="@(() => NavigateToPage(ContactUri))" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer tracking-[-0.035em] leading-none pl-6 pt-1.5"><span class="h-5 leading-5 align-middle inline-block">@(ContactUri == "/contact" ? "Let's Connect" : "Close")</span><img src="@(ContactUri == "/contact" ? "media/conversation_icon.svg" : "media/close_icon.svg")" class="dark:invert ml-1 h-5"/></span></div>
+                <div class="select-none z-[511] inline-block"><span @onclick="@(() => NavigateToPage(ContactUri))" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer tracking-[-0.035em] leading-none px-3 -mr-3 rounded-full py-1.5 bg-white"><span class="h-5 leading-5 align-middle inline-block">@(ContactUri == "/contact" ? "Let's Connect" : "Close")</span><img src="@(ContactUri == "/contact" ? "media/conversation_icon.svg" : "media/close_icon.svg")" class="dark:invert ml-1 h-5"/></span></div>
             </div>
-            @*<div id="progress-container" class="@(!ShowMenu && NavigationManager.Uri.Contains("blog/post") ? "flex" : "hidden") bg-stone-100 dark:bg-black relative pt-0 p-2 w-full gap-x-1"></div>*@
         </div>
 
         <div class="content gsap-animate-transition">
             @Body
-            @*<DynamicComponent Type="CurrentPage"/>*@
         </div>
 
     </div>
