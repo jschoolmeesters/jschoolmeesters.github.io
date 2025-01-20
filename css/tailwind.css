@@ -1449,14 +1449,6 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
-.-ml-3 {
-  margin-left: -0.75rem;
-}
-
-.-mr-3 {
-  margin-right: -0.75rem;
-}
-
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1920,11 +1912,6 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0.5rem;
 }
 
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1940,16 +1927,16 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 1.5rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
 
 .pb-6 {
   padding-bottom: 1.5rem;
-}
-
-.pl-3 {
-  padding-left: 0.75rem;
 }
 
 .pl-5 {
@@ -2158,8 +2145,16 @@ details.collapse summary::-webkit-details-marker {
   text-decoration-thickness: 2px;
 }
 
+.decoration-from-font {
+  text-decoration-thickness: from-font;
+}
+
 .underline-offset-1 {
   text-underline-offset: 1px;
+}
+
+.underline-offset-2 {
+  text-underline-offset: 2px;
 }
 
 .opacity-10 {
