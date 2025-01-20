@@ -770,11 +770,11 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 }
 
 .inferi-normal {
-    font-family: "Inferi Normal", sans-serif;
+    font-family: "Suisse Intl Regular", sans-serif;
 }
 
 @font-face {
-    font-family: "Inferi Normal";
+    font-family: "Suisse Intl Regular";
     src: url("../fonts/Suisse/SuisseIntl-Regular-WebTrial.woff");
     font-weight: 500;
     font-style: normal;

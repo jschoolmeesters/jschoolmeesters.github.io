@@ -32,15 +32,15 @@
                     </div>
                     
                     <div class="space-y-1">
-                        <span class="tracking-[-0.035em] leading-tighter">@post.Title</span>
-                        <p class="text-[rgb(145,145,145)] tracking-[-0.035em] leading-tighter">@post.Description</p>
+                        <span class="tracking-[-0.035em] text-lg leading-tighter">@post.Title</span>
+                        <p class="text-[rgb(145,145,145)] text-lg tracking-[-0.035em] leading-tighter">@post.Description</p>
 
                         <div class="flex flex-wrap">
                             @foreach (int i in Enumerable.Range(0, post.TagsAsList.Count)) {
-                                <span class="text-[rgb(145,145,145)] whitespace-nowrap">#@post.TagsAsList[i]@(i < post.TagsAsList.Count - 1 ? "/" : "")</span>
+                                <span class="text-lg text-[rgb(145,145,145)] whitespace-nowrap">#@post.TagsAsList[i]</span>
                             }
                         </div>
-                        <span class="underline underline-offset-1">View article</span>
+                        <span class="underline underline-offset-1 text-lg">View article</span>
                     </div>
                 </div>
             }

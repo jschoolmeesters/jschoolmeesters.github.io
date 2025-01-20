@@ -20,7 +20,7 @@
             <div class="pb-3">
                <div class="h-[14rem] relative mb-3">
                   <div class="tip1 absolute bottom-24 right-[20%] margin-right-[-30px] left-auto top-auto">
-                     <span class="bg-[#e6ff9a] px-1 py-0.5">Bold & Innovative</span>
+                     <span class="bg-[#e6ff9a] px-1 py-0.5">Bold & Memorable</span>
                   </div>
 
                   <div class="tip1 absolute bottom-16 left-0 margin-left-[-30px] right-auto top-auto">
@@ -66,21 +66,27 @@
          </section>
 
          @* About section *@
-         <section class="dark space-y-6">
-            <h3 class="text-4xl leading-none inferi-normal tracking-[-0.015em]">
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+         <section class="dark mb-0 py-24 space-y-6">
+            <h3 class="text-[rgb(145,145,145)] text-3xl leading-none inferi-normal tracking-[-0.015em]">
+               Did you know most web design companies actually sell pre-made websites?
             </h3>
-            <p>
-               Lorem ipsum odor amet, consectetuer adipiscing elit. Pretium per augue vulputate nec porta sagittis. Taciti finibus curae vehicula platea interdum. Maecenas malesuada ullamcorper malesuada libero ullamcorper ex ultricies sem. Ligula justo taciti facilisi, consectetur class lacus eleifend.
-            </p>
-            <p>
-               Lorem ipsum odor amet, consectetuer adipiscing elit. Est duis at venenatis etiam urna potenti consectetur ac. Nibh elit ridiculus etiam consectetur viverra. Taciti sem natoque tristique tempus lectus sociosqu morbi porttitor.
-            </p>
+            <h3 class="text-3xl leading-none inferi-normal tracking-[-0.015em]">
+               We believe that your company deserves better.
+            </h3>
+            <h3 class="text-xl leading-none inferi-normal tracking-[-0.015em]">
+               By working closely with our clients we create websites, brands or strategies that truly resonate—not just with them, but most importantly, with their audience. 
+            </h3>
+            <h3 class="text-xl leading-none inferi-normal tracking-[-0.015em]">
+               We are a small agile team specializing in creating bold modern designs that emphasize functionality and clearly communicate your brand's values.
+            </h3>
+            <h3 class="text-xl leading-none inferi-normal tracking-[-0.015em]">
+               So don't just settle for "good enough", and <span class="underline">let's create something amazing together</span>.
+            </h3>
          </section>
 
 
          @* Services section *@
-         <section class="flex flex-col w-full">
+         <section class="mb-0 flex flex-col w-full">
 
             <h1 class="mb-3 about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
                <div class="gsap-line">
@@ -136,7 +142,7 @@
          </section>
 
          
-         <section class="dark mb-0">
+         <section class="dark pt-24 mb-0">
             <h1 class="about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
                <div class="gsap-line">
                   <div class="gsap-line-inner">
@@ -150,29 +156,29 @@
             <PostCarousel Posts="Posts" />
          </section>
 
-         <footer class="dark my-0 pb-6 flex flex-col items-start">
-            <div class="mb-12">
-               <img class="mb-3 h-9 invert inline-block opacity-60" src="media/conversation_icon.svg"/>
-               <p class="text-[rgb(145,145,145)] text-3xl leading-none tracking-[-0.015em]">
+         <footer class="dark my-0 pb-6 flex flex-col items-start space-y-12">
+            
+            <div class="space-y-6">
+               <p class="text-[rgb(145,145,145)] inferi-normal text-3xl leading-none tracking-[-0.015em]">
                   Interested in working with us?
                </p>
-               <a class="underline text-3xl leading-none tracking-[-0.015em]">Get in touch</a>
-               <span class="text-[rgb(145,145,145)] text-3xl leading-none tracking-[-0.015em]">
-                  or
-               </span>
-               <a class="underline text-3xl leading-none tracking-[-0.015em]">check out our company deck</a>
+               <div>
+                  <a class="underline inferi-normal text-3xl leading-none tracking-[-0.015em]">Get in touch<img class="ml-1 h-9 invert inline-block" src="media/conversation_icon.svg"/></a>
+                  <span class="inferi-normal text-3xl leading-none tracking-[-0.015em]">&#32;or&#32;</span>
+                  <a class="underline inferi-normal text-3xl leading-none tracking-[-0.015em]">check out our company deck<img class="ml-1 h-9 inline-block" src="media/company_deck.svg"/></a>
+               </div>
             </div>
 
-            <div class="w-full links gsap-animate-transition relative overflow-hidden">
-               <BlazorPortfolio.Components.Links />
-            </div>
-
-            <div class="marquee w-full min-w-full mt-6">
+            <div class="marquee rotate-12 bottom-24 absolute w-full min-w-full">
                <div class="marquee-content scroll w-full min-w-full">
                   <img class="opacity-10 w-full inline-block" src="media/logo_js.svg" alt="Marquee Logo" />
                   <img class="opacity-10 w-full inline-block" src="media/logo_js.svg" alt="Marquee Logo" />
                   <img class="opacity-10 w-full inline-block" src="media/logo_js.svg" alt="Marquee Logo" />
                </div>
+            </div>
+
+            <div class="w-full links gsap-animate-transition relative overflow-hidden">
+               <BlazorPortfolio.Components.Links />
             </div>
 
          </footer>
