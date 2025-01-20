@@ -18,7 +18,9 @@
                     <span @onclick="@(() => NavigateToPage(ContactUri))" class="ani-box gsap-animate-transition justify-end flex flex-row cursor-pointer tracking-[-0.035em] leading-none py-1.5">
                         <span class="relative overflow-hidden">
                             <span class="h-5 leading-5 align-middle inline-block">@(ContactUri == "/contact" ? "Let's Connect" : "Close")</span>
-                            <div class="absolute bottom-0 left-0 line-animation"></div>
+                            @if(ContactUri != "/contact") {
+                                <div class="absolute bottom-0 left-0 line-animation"></div>
+                            }
                         </span>
                         <img src="@(ContactUri == "/contact" ? "media/conversation_icon.svg" : "media/close_icon.svg")" class="dark:invert ml-1 h-5"/>
                     </span>
