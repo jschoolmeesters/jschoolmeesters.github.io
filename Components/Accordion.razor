@@ -1,7 +1,7 @@
 @using System.Text.RegularExpressions
 <div class="w-full border-t border-black dark:border-white leading-[1.2]">
     <div class="py-3 flex justify-between items-center cursor-pointer" @onclick="ToggleContent">
-        <h2 class="text-3xl">@Title</h2>
+        <h2 class="@(SmallHeader ? "text-lg" : "text-3xl")">@Title</h2>
         <button class="transition">
             <span class="text-3xl">@(isExpanded ? "−" : "+")</span>
         </button>
@@ -21,12 +21,17 @@
     [Parameter]
     public bool StartExpanded { get; set; } = false;
     [Parameter]
+    public bool SmallHeader { get; set; } = false;
+    [Parameter]
+    public string? Id { get; set; }
+    [Parameter]
     public RenderFragment? ChildContent { get; set; }
     private bool isExpanded = false;
     private string id = string.Empty;
     protected override void OnParametersSet()
     {
-        id = ToId(Title, "acc");
+        Id ??= Title;
+        id = ToId(Id, "acc");
         isExpanded = StartExpanded;
     }
     public static string ToShortGuid(Guid guid)
