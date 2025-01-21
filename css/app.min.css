@@ -1450,6 +1450,8 @@ input, textarea {
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(145 145 145 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {

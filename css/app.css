@@ -12,6 +12,7 @@ input, textarea {
     @apply w-full;
     @apply border;
     @apply border-[rgb(145,145,145)];
+    @apply bg-white;
 }
 
 input::placeholder, textarea::placeholder {
