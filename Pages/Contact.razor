@@ -13,25 +13,25 @@
 
       <div class="">
 
-         <section class="mb-0 pt-24 pb-12 space-y-6">
+         <section class="mb-0 pt-24 pb-12">
             <h3 class="text-4xl leading-none inferi-normal tracking-[-0.015em]">
                Lorem ipsum odor amet, consectetuer adipiscing elit?
             </h3>
 
-            <div class="border-bottom h-[1px] w-full bg-black dark:bg-white"></div>
+            <div class="mt-6 border-bottom h-[1px] w-full bg-black dark:bg-white"></div>
 
-            <div class="flex flex-row space-x-3">
+            <div class="flex flex-row space-x-3 mt-3">
                <img class="h-20 w-20 rounded-full" src="media/pf.jpg"/>
                <div class="flex flex-col h-20 justify-center">
                   <span>Jordy Schoolmeesters</span>
                   <span class="underline underline-offset-2 decoration-from-font">hello@vemo.studio</span>
-                  <span class="text-[rgb(145,145,145)]">Founder</span>
+                  <span class="text-[rgb(145,145,145)]">Founder, Developer & Designer</span>
                </div>
             </div>
             
-            <p>Mail ons of vul het onderstaande formulier in, dan nemen we z.s.m. contact met u op.</p>
+            <p class="mt-6">Mail ons of vul het onderstaande formulier in, dan nemen we z.s.m. contact met je op.</p>
 
-            <EditForm Model="@mailForm" OnValidSubmit="HandleValidSubmit" class="space-y-3">
+            <EditForm Model="@mailForm" OnValidSubmit="HandleValidSubmit" class="space-y-3 mt-6">
                <div class="">
                   <label for="form-fullname" class="block">Voor- en Achternaam*</label>
                   <input @bind="mailForm.FullName" id="form-fullname" type="text" placeholder="Voornaam Achternaam"/>
@@ -71,12 +71,12 @@
 
          </section>
 
-         <section class="dark pt-24 mb-0 flex flex-col w-full">
+         <section class="dark pt-6 my-0 flex flex-col w-full">
 
-            <h1 class="mb-3 about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
+            <h1 class="mb-16 about-first gsap-lines gsap-animate-transition text-4xl tracking-[-0.035em] leading-none">
                <div class="gsap-line">
                   <div class="gsap-line-inner">
-                     Veelgestelde vragen
+                     Veelgestelde vragen m.b.t. web design en branding
                   </div>
                </div>
             </h1>

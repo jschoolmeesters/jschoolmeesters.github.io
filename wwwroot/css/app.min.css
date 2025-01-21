@@ -690,6 +690,10 @@ video {
   margin-bottom: 0px;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1230,6 +1234,10 @@ video {
   padding-top: 0.75rem;
 }
 
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .pt-\[4\.9rem\] {
   padding-top: 4.9rem;
 }
@@ -1410,6 +1418,10 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.decoration-1 {
+  text-decoration-thickness: 1px;
 }
 
 .decoration-2 {
