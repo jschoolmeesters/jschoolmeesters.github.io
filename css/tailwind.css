@@ -1330,8 +1330,8 @@ video {
   line-height: 2rem;
 }
 
-.leading-\[0\.75\] {
-  line-height: 0.75;
+.leading-\[0\.9\] {
+  line-height: 0.9;
 }
 
 .leading-\[1\.2\] {
@@ -1348,6 +1348,10 @@ video {
 
 .tracking-\[-0\.015em\] {
   letter-spacing: -0.015em;
+}
+
+.tracking-\[-0\.02em\] {
+  letter-spacing: -0.02em;
 }
 
 .tracking-\[-0\.035em\] {
