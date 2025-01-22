@@ -2,30 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* General styling */
+
 :root {
     --vh: '0px';
-}
-
-input, textarea {
-    @apply text-black;
-    @apply p-3;
-    @apply w-full;
-    @apply border;
-    @apply border-[rgb(145,145,145)];
-    @apply bg-white;
-}
-
-input::placeholder, textarea::placeholder {
-    @apply text-[rgb(145,145,145)];
-}
-
-.scrollbar-none::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
-}
-
-.scrollbar-none {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
 }
 
 section, footer {
@@ -41,32 +22,41 @@ section.dark, footer.dark {
     @apply text-white;
 }
 
-@keyframes slide {
-    0% {
-      transform: translateX(-100%);
-    }
-    20% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(100%); /* Hold position at the end */
-    }
-  }
-  
-  .line-animation {
-    animation: slide 5s ease-in-out infinite;
-    width: 100%;
-    height: 1px;
-    background-color: #000; /* Tailwind's blue-500 */
-  }
-
-.content {
-    position: relative;
-    --before-y-percent: 100%;
-    /*overflow: hidden;*/
+.scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
-.content::before {
+.scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.leading-tighter {
+    line-height: 1.05;
+}
+
+.h-fullvh {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+.min-h-fullvh {
+    min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.mt-1\/4vh {
+    margin-top: calc(calc(100vh - 4.75rem) / 4); /* Fallback for browsers that do not support Custom Properties */
+    margin-top: calc(calc(calc(var(--vh, 1vh) * 100) - 4.75rem) / 4);
+}
+
+/* MainLayout */
+.content { /* TODO  REMOVE */
+    position: relative;
+    --before-y-percent: 100%;
+}
+
+.content::before { /* TODO  REMOVE */
     transform: translateY(var(--before-y-percent));
     content: '';
     position: fixed;
@@ -79,41 +69,66 @@ section.dark, footer.dark {
     z-index: -1;
 }
 
-.leading-tighter {
-    line-height: 1.05;
+.content-percentage::after { /* TODO REMOVE? */
+    content: calc(var(--blazor-load-percentage) * 1);
+}
+
+/* Index */
+
+/* Contact */
+
+input, textarea {
+    @apply text-black;
+    @apply p-3;
+    @apply w-full;
+    @apply border;
+    @apply border-[rgb(145,145,145)];
+    @apply bg-white;
+}
+
+input::placeholder, textarea::placeholder {
+    @apply text-[rgb(145,145,145)];
 }
 
 
-ul.arrow-list  {
-    list-style-image: url(../media/arrow-down-right.svg);
+/* Footer */
+.marquee {
+    white-space: nowrap;
+    display: block;
 }
 
-ul.arrow-list li {
-    @apply pl-6;
+.scroll {
+    animation: scroll 10s linear infinite;
 }
-
-
 
 @keyframes scroll {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     to {
-      transform: translateX(calc(-100% - 1rem));
+        transform: translateX(calc(-100% - 1rem));
     }
-  }
+}
 
+@keyframes slide { /* TODO REMOVE? */
+    0% {
+        transform: translateX(-100%);
+    }
+    20% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(100%); /* Hold position at the end */
+    }
+}
 
-  .marquee {
-    white-space: nowrap;
-    display: block;
-  }
-  
-  .scroll {
-    animation: scroll 10s linear infinite;
-  }
-
-
+/* Navigation */
+.line-animation {
+    animation: slide 5s ease-in-out infinite;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+}
 
 .ani-box {
     position: relative;
@@ -133,42 +148,27 @@ ul.arrow-list li {
     z-index: 1;
 }
 
-.square {
-    @apply inline-block;
-    @apply h-[0.6rem];
-    @apply w-[0.6rem];
-    @apply dark:bg-white;
-    @apply bg-black;
-}
 
-.h-fullvh {
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-}
 
-.min-h-fullvh {
-    min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    min-height: calc(var(--vh, 1vh) * 100);
-}
 
-.mt-1\/4vh {
-    margin-top: calc(calc(100vh - 4.75rem) / 4); /* Fallback for browsers that do not support Custom Properties */
-    margin-top: calc(calc(calc(var(--vh, 1vh) * 100) - 4.75rem) / 4);
-}
 
-.content-percentage::after {
-    content: calc(var(--blazor-load-percentage) * 1);
-}
 
-.img-filter {
-    filter: sepia(49%) saturate(207%) hue-rotate(45deg) brightness(117%) contrast(92%);
-}
 
-.hero {
-    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    width: auto;
-}
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
 
 /* BEGIN GSAP */
 
@@ -603,7 +603,7 @@ mark:before {
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span {
-    font-family: "FK Grotesk Neue", sans-serif;
+    font-family: "ABC Monument Grotesk", sans-serif;
 }
 
 .something {
@@ -640,7 +640,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 }
 
 * {
-    font-family: "FK Grotesk Neue", sans-serif;
+    font-family: "ABC Monument Grotesk", sans-serif;
 }
 
 .fk-grotesk-neue {
@@ -798,6 +798,17 @@ h1, h2, h3, h4, h5, h6, p, a, span {
     font-family: "Suisse Intl Regular";
     src: url("../fonts/Suisse/SuisseIntl-Regular-WebTrial.woff");
     font-weight: 500;
+    font-style: normal;
+}
+
+.abc-monument-grotesk {
+    font-family: "ABC Monument Grotesk", sans-serif;
+}
+
+@font-face {
+    font-family: "ABC Monument Grotesk";
+    src: url("../fonts/ABC Monument Grotesk.woff2");
+    font-weight: 400;
     font-style: normal;
 }
 
