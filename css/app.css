@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "typography.css";
-@import "markdown.css";
+@import "./typography.css";
+@import "./markdown.css";
 
 
 /* START General */
@@ -24,8 +24,8 @@ body {
     margin-right: auto;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, * {
-    font-family: "ABC Monument Grotesk", sans-serif;
+h1, h2, h3, h4, h5, h6, p, a, span, input, select, textarea {
+    @apply abc-monument-grotesk-regular;
 }
 
 /* 
@@ -347,3 +347,141 @@ html.lenis, html.lenis body {
          filter: saturate(4);
     }
 }
+
+
+
+    /* Thinner paragraph font: FK Grotesk Neue Regular (dub) */
+
+    @font-face {
+        font-family: "FK Grotesk Neue Regular Dub";
+        src: url("../fonts/FK Grotesk Neue Regular Dub.woff2");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .fk-grotesk-neue-regular-dub {
+        font-family: "FK Grotesk Neue Regular Dub", sans-serif;
+    }
+
+    /* Accent header font: Inferi Normal Italic */
+
+    @font-face {
+        font-family: "Inferi Regular Italic";
+        src: url("../fonts/Inferi Regular Italic.otf");
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    .inferi-regular-italic {
+        font-family: "Inferi Regular Italic", serif;
+    }
+
+    /* Main font: ABC Monument Grotesk*/
+
+    @font-face {
+        font-family: "ABC Monument Grotesk Regular";
+        src: url("../fonts/ABC Monument Grotesk Regular.woff2");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .abc-monument-grotesk-regular {
+        font-family: "ABC Monument Grotesk Regular", sans-serif;
+    }
+
+
+    article h1, article h2, article h3, article h4, article h5, article h6,
+    article p, article a, article ul, article ol, article li, article blockquote {
+        @apply tracking-[-0.035em];
+        @apply leading-none;
+        @apply my-3;
+    }
+
+    article h1, article h2, article h3, article h4, article h5, article h6 {
+        @apply mt-7;
+        @apply mb-3;
+    }
+
+    article p, article p > code, article a, article ul, article ol, article li, article blockquote {
+        @apply text-lg;
+    }
+
+    article h1 {
+        @apply text-4xl;
+    }
+
+    article h2 {
+        @apply text-3xl;
+        @apply border-b-2;
+        @apply border-stone-300;
+        @apply dark:border-stone-600;
+        @apply pb-2;
+    }
+
+    article h3 {
+        @apply text-2xl;
+    }
+
+    article h4 {
+        @apply text-xl;
+    }
+
+    article h5 {
+        @apply text-lg;
+    }
+
+    article ul {
+        @apply list-disc;
+        @apply pl-4;
+    }
+
+    article ol {
+        @apply list-decimal;
+        @apply pl-4;
+    }
+
+    article code {
+        @apply bg-stone-800;
+        @apply text-stone-300;
+        @apply rounded;
+        @apply px-1;
+    }
+
+    article pre > code {
+        @apply p-3;
+        @apply block;
+        @apply w-full;
+    }
+
+    article a {
+        @apply text-[#1e62f2];
+        @apply dark:text-[#437cf4];
+        @apply underline;
+        @apply rounded;
+        @apply px-1.5;
+    }
+
+    article a > i {
+        @apply text-stone-600;
+        @apply dark:text-stone-300;
+        @apply align-middle;
+    }
+
+    article ul > li::marker, article ol > li::marker {
+        @apply text-stone-400;
+        @apply dark:text-stone-600;
+    }
+
+    article ul > li, article ol > li {
+        @apply text-black;
+        @apply dark:text-white;
+    }
+
+    article p > a, article ul > li > a, article ol > li > a {
+        @apply px-1;
+    }
+
+    article p > a > i, article ul > li > a > i, article ol > li > a {
+        @apply text-sm;
+        @apply ml-1;
+    }
