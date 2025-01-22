@@ -1,5 +1,12 @@
 module.exports = {
-  content: ["./wwwroot/css/*.css", "./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}", "./Components/*.{razor,html,cshtml}"],
+  content: [
+    "./wwwroot/css/typography.css",
+    "./wwwroot/css/markdown.css",
+    "./wwwroot/index.html",
+    "./Pages/*.{razor,html,cshtml}",
+    "./Shared/*.{razor,html,cshtml}",
+    "./Components/*.{razor,html,cshtml}"
+  ],
   darkMode: 'class',
   theme: { 
     extend: {
@@ -9,8 +16,9 @@ module.exports = {
     } 
   },
   plugins: [
+    require('postcss-import'),
     require('tailwindcss'),
     require('@tailwindcss/typography'),
-    require('postcss-import')
+    require('autoprefixer'),
   ],
 }
