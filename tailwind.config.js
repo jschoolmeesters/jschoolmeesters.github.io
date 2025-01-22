@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}", "./Components/*.{razor,html,cshtml}"],
+  content: ["./wwwroot/css/*.css", "./wwwroot/index.html", "./Pages/*.{razor,html,cshtml}", "./Shared/*.{razor,html,cshtml}", "./Components/*.{razor,html,cshtml}"],
   darkMode: 'class',
   theme: { 
     extend: {
@@ -11,5 +11,6 @@ module.exports = {
   plugins: [
     require('tailwindcss'),
     require('@tailwindcss/typography'),
+    require('postcss-import')
   ],
 }
