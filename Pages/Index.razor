@@ -18,7 +18,7 @@
          <section class="my-0 py-0 flex flex-col w-full">
 
             <div class="pb-3">
-               <div class="h-[16rem] relative mb-3">
+               <div class="h-[12rem] relative">@*
                   <div class="tip1 absolute bottom-24 right-[20%] margin-right-[-30px] left-auto top-auto">
                      <span class="bg-[#e6ff9a] px-1.5 py-1 fk-grotesk-neue">Bold & Memorable</span>
                   </div>
@@ -33,22 +33,35 @@
 
                   <div class="tip1 absolute bottom-0 right-0 margin-right-[-30px] left-auto top-auto">
                      <span class="bg-[#bdef74] px-1.5 py-1 fk-grotesk-neue">Creative Webdesign Agency</span>
-                  </div>
+                  </div>*@
                </div>
 
 
-               <h1 class="about-first gsap-lines gsap-animate-transition text-[3.2rem] tracking-[-0.07em] leading-[2.9rem]">
+               <h1 class="about-first gsap-lines gsap-animate-transition text-[3.7em] tracking-[-0.05em] leading-[3.5rem]">
                   <div class="gsap-line">
                      <div class="gsap-line-inner">
-                        Unlock Your <span class="inferi-regular-italic">Digital Potential</span>
+                        Jouw creatieve partner voor web design en branding op maat.
                      </div>
                   </div>
                </h1>
             </div>
 
-            <div class="border-bottom h-[0.666667px] bg-[rgb(23,25,26)] w-full"></div>
-            @*<div class="border-bottom gsap-animate-transition h-[1px] w-full bg-black dark:bg-white"></div>*@
-
+            @*<div class="border-bottom h-[0.666667px] bg-[rgb(23,25,26)] w-full"></div>
+            <div class="border-bottom gsap-animate-transition h-[1px] w-full bg-black dark:bg-white"></div>*@
+            <div class="flex -xlex-row justify-between">
+               <div>
+                  <div class="inline-block">
+                     <div class="h-4 py-4 flex items-center justify-center">
+                        <!-- Outer pulsing layer -->
+                        <div class="absolute w-4 h-4 rounded-full bg-green-500 pulse-out"></div>
+                        <!-- Static green circle -->
+                        <div class="relative w-4 h-4 rounded-full bg-green-500"></div>
+                     </div>
+                  </div>
+                  <span class="inline-block align-middle h-8 leading-8">Open for new work</span>
+               </div>
+               <span>Roermond, NL</span>
+            </div>
          </section>
 
          @* Highlighted projects section *@
@@ -222,6 +235,12 @@
       await JS.InvokeVoidAsync("postsLoaded");
    }
 
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+         Task.Run(StartClock);
+    }
+
    protected override async Task OnInitializedAsync()
    {
       var jsonContent = await HttpClient.GetStringAsync("posts/posts.json");
@@ -230,4 +249,23 @@
       if (posts != null)
          Posts = posts.Select((post, i) => ( post, i )).ToList();
    }
+private string currentTime = DateTime.Now.ToString("HH:mm:ss");
+    private bool showColon = true;
+
+    private async Task StartClock()
+    {
+        while (true)
+        {
+            showColon = !showColon; // Toggle colon visibility
+            currentTime = GetCurrentTime(); // Update the time string
+            await InvokeAsync(StateHasChanged); // Refresh the UI
+            await Task.Delay(1000); // Wait 1 second
+        }
+    }
+
+    private string GetCurrentTime()
+    {
+        var now = DateTime.Now;
+        return $"{now:HH}{(showColon ? ":" : " ")}{now:mm}";
+    }
 }

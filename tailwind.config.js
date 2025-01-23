@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       listStyleImage: {
         subdir: "url('../media/subdirectory.svg')",
-      }
+      },
     } 
   },
   plugins: [
