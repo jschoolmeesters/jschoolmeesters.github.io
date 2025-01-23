@@ -1094,6 +1094,11 @@ video {
   background-color: hsla(26,28%,95%,.5);
 }
 
+.bg-\[rgb\(23\2c 25\2c 26\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 25 26 / var(--tw-bg-opacity, 1));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
