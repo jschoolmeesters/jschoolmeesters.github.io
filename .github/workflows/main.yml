@@ -32,11 +32,11 @@ jobs:
     #- name: Initialize npm
     #  run: npm init tailwindcss
 
-    #- name: Install Tailwind CSS
-    #  run: npm install -D tailwindcss
+    - name: Install Tailwind CSS
+      run: npm install -D tailwindcss
       
-    #- name: Initialize Tailwind CSS
-    #  run: npx tailwindcss init
+    - name: Initialize Tailwind CSS
+      run: npx tailwindcss init
       
     #- name: Setup Flowbite for Tailwind components
     #  run: npm i flowbite
