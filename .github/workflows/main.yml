@@ -32,6 +32,9 @@ jobs:
     #- name: Initialize npm
     #  run: npm init tailwindcss
 
+    - name: Install Dependencies
+      run: npm install
+
     - name: Install Tailwind CSS
       run: npm install -D tailwindcss
       
