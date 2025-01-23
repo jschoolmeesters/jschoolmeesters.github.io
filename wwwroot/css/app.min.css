@@ -786,6 +786,10 @@ video {
   height: 2rem;
 }
 
+.h-\[0\.05rem\] {
+  height: 0.05rem;
+}
+
 .h-\[14rem\] {
   height: 14rem;
 }
@@ -1475,18 +1479,26 @@ video {
 
 :root {
   --vh: '0px';
+  --theme-color: #17191a;
+  --theme-bg: #f2f2f2;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-size: 15px;
 }
 
 body {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+}
+
+html, body, main, .page {
+  background: var(--theme-bg);
+  color: var(--theme-color);
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span, input, select, textarea {
@@ -1508,17 +1520,21 @@ section, footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-bottom: 4rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  background: var(--theme-bg);
+  color: var(--theme-color);
 }
 
 section.dark, footer.dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  background: #000;
+  color: var(--theme-bg);
+}
+
+.text-default {
+  color: var(--theme-color);
+}
+
+.bg-default {
+  background: var(--theme-bg);
 }
 
 .scrollbar-none::-webkit-scrollbar {
@@ -2089,11 +2105,6 @@ article p > a > i, article ul > li > a > i, article ol > li > a {
 .dark\:border-white:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.dark\:bg-black:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .dark\:bg-white:is(.dark *) {
