@@ -29,8 +29,8 @@ jobs:
       with:
         dotnet-version: '8.0.x'
         
-    - name: Initialize npm
-      run: npm init tailwindcss
+    #- name: Initialize npm
+    #  run: npm init tailwindcss
 
     - name: Install Tailwind CSS
       run: npm install -D tailwindcss
