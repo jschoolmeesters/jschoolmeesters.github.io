@@ -1,7 +1,5 @@
 module.exports = {
   content: [
-    "./wwwroot/css/typography.css",
-    "./wwwroot/css/markdown.css",
     "./wwwroot/index.html",
     "./Pages/*.{razor,html,cshtml}",
     "./Shared/*.{razor,html,cshtml}",
@@ -16,7 +14,6 @@ module.exports = {
     } 
   },
   plugins: [
-    require('postcss-import'),
     require('tailwindcss'),
     require('@tailwindcss/typography'),
     require('autoprefixer'),
