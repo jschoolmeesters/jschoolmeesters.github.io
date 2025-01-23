@@ -10,18 +10,26 @@
 
 :root {
     --vh: '0px';
+    --theme-color: #17191a;
+    --theme-bg: #f2f2f2;
 }
 
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-size: 15px;
 }
  
 body {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
+}
+
+html, body, main, .page {
+    background: var(--theme-bg);
+    color: var(--theme-color);
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span, input, select, textarea {
@@ -40,13 +48,21 @@ section, footer {
     @apply px-3;
     @apply py-12;
     @apply mb-16;
-    @apply bg-white;
-    @apply text-black;
+    background: var(--theme-bg);
+    color: var(--theme-color);
 }
 
 section.dark, footer.dark {
-    @apply bg-black;
-    @apply text-white;
+    background: #000;
+    color: var(--theme-bg);
+}
+
+.text-default {
+    color: var(--theme-color);
+}
+
+.bg-default {
+    background: var(--theme-bg);
 }
 
 .scrollbar-none::-webkit-scrollbar {
